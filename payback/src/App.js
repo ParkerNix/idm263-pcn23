@@ -8,15 +8,18 @@ function App() {
   const [personapercent, setPersonapercent] = useState(0.2);
   const [personbpercent, setPersonbpercent] = useState(0.3);
   const [personcpercent, setPersoncpercent] = useState(0.5);
+  const [personapercentstring, setPersonapercentstring] = useState("20");
+  const [personbpercentstring, setPersonbpercentstring] = useState("30");
+  const [personcpercentstring, setPersoncpercentstring] = useState("50");
   const [personalocked, setPersonalocked] = useState(20);
   const [personblocked, setPersonblocked] = useState(30);
   const [personclocked, setPersonclocked] = useState(50);
   const [personapercentlocked, setPersonapercentlocked] = useState(0.2);
   const [personbpercentlocked, setPersonbpercentlocked] = useState(0.3);
   const [personcpercentlocked, setPersoncpercentlocked] = useState(0.5);
-  const [lock1, setlock1] = useState("lock");
-  const [lock2, setlock2] = useState("lock");
-  const [lock3, setlock3] = useState("lock");
+  const [lock1, setlock1] = useState("Click to lock");
+  const [lock2, setlock2] = useState("Click to lock");
+  const [lock3, setlock3] = useState("Click to lock");
   const [lock1enabled, setlock1enabled] = useState(false);
   const [lock2enabled, setlock2enabled] = useState(false);
   const [lock3enabled, setlock3enabled] = useState(false);
@@ -222,10 +225,16 @@ function App() {
                       setPersonapercent(personapercentnew);
                       const personanew = total * personapercentnew;
                       setPersona(personanew);
+                      const personapercentstring = 100 * personapercentnew;
+                      setPersonapercentstring(personapercentstring)
                       Evenvalues("persona", personanew);
                     }
                   }
                 />
+                <p className='mt-3'>Joey</p>
+                <div className="progress mt-1 mb-3" style={ { width: "50%" } }>
+                  <div className="progress-bar" style={ {width: ` ${personapercentstring}%`, backgroundColor: "#C2A6FF"} }></div>
+                </div>
               </label>
               <label>
                 Person B's percentage looks like: 
@@ -277,11 +286,11 @@ function App() {
                     () => {
                       if ( lock1enabled === true ) {
                         setlock1enabled(false);
-                        setlock1("lock");
+                        setlock1("Click to lock");
                       } 
                       if ( lock1enabled === false ) {
                         setlock1enabled(true);
-                        setlock1("unlock");
+                        setlock1("Click to unlock");
                       }
                       setPersonalocked(persona);
                       setPersonapercentlocked(personapercent);
@@ -298,11 +307,11 @@ function App() {
                     () => {
                       if ( lock2enabled === true ) {
                         setlock2enabled(false);
-                        setlock2("lock");
+                        setlock2("Click to lock");
                       } 
                       if ( lock2enabled === false ) {
                         setlock2enabled(true);
-                        setlock2("unlock");
+                        setlock2("Click to unlock");
                       }
                       setPersonblocked(personb);
                       setPersonbpercentlocked(personbpercent);
@@ -319,11 +328,11 @@ function App() {
                     () => {
                       if ( lock3enabled === true ) {
                         setlock3enabled(false);
-                        setlock3("lock");
+                        setlock3("Click to lock");
                       } 
                       if ( lock3enabled === false ) {
                         setlock3enabled(true);
-                        setlock3("unlock");
+                        setlock3("Click to unlock");
                       }
                       setPersonclocked(personc);
                       setPersoncpercentlocked(personcpercent);
@@ -341,7 +350,7 @@ function App() {
             </div>
             <div className='d-inline'>
               <button id='submit'>
-                submit
+                Submit
               </button>
               <p className='text-danger'>{error}</p>
             </div>
