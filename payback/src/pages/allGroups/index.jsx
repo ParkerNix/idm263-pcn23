@@ -1,23 +1,37 @@
-import CartItem from "../cart_item"
-import { useSelector } from 'react-redux';
-
-export const Cart = () => {
-    const cart = useSelector((state) => state.cart_slicey.value);
+export const allGroups = () => {
 
     return (
         <>
-            <h2 className="h1">Cart</h2>
-            <div>
-                {cart.map((item) => (
-                <CartItem
-                    key={item.id}
-                    id={item.id}
-                    title={item.title}
-                    price={item.price} 
-                />
-                ))}
-                <p>Add more, we dare you!</p>
+           <div class="topNavigation">
+            <h6>Groups</h6>
+            {/* Add back arrow and 3 vertical dots */}
+        </div>
+
+        <h4>All Groups</h4>
+
+        <div className ='groupsContainer'>
+            <div className ='groupsCard'>
+                <div className = 'groupsCardRow'>
+                    <div className ='groupsCardImg'>
+                        {/* <img src="images/groupsCardImg.png" alt="groupImg"> */}
+                    </div>
+                    <div class='groupsCardInfo'>
+                        <h4>Roomies</h4>
+                        <p>Money money money</p>
+                    </div>
+                    <div className ='groupsCardHeart'>
+                        {/* <img src="images/groupsCardHeart.png" alt="heart"> */}
+                    </div>
+                </div>
+                <div className ='groupsCardRow'>
+                    <div className ='groupsCardIcons'>
+                        {/* <img src="">
+                        <img src="">
+                        <img src=""> */}
+                    </div>
+                </div>
             </div>
+        </div>
         </>
-    )
+    );
 }
