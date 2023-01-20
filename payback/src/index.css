@@ -13,8 +13,6 @@ code {
 }
 
 
-
-/* 
 :root {
   --main-bg-color: #FDFAFF;
   --h1-color: #3d008a;
@@ -38,7 +36,7 @@ code {
   
 }
 
-
+/* 
 @font-face {
   font-family: 'GreyCliff-Bold';
   src: url('fonts/GreycliffCFBold.woff') format('woff2');
@@ -65,7 +63,7 @@ code {
   src: url('fonts/GreycliffCFMediumRegular.woff') format('woff2');
   font-weight: normal;
   font-style: normal;
-}
+} */
 
 * { 
 box-sizing: border-box;
@@ -141,15 +139,25 @@ button {
 }
 
 /* GROUPS PAGE */
-/* 
+
+.topNavigation h6 {
+  text-align: center;
+}
+
 .groupsContainer {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+.allGroupsPageHeader h4 {
+  width: 96px;
+  height: 20px;
+  margin: 19px 40px 10px 24px;
+}
+
 .groupsCard {
-  width: 327px;
+  width: 360px;
   height: 135px;
   flex-grow: 0;
   margin: 20px 24px 392px;
@@ -168,13 +176,50 @@ button {
 }
 
 .groupsCardImg {
-  margin-left: 0.75rem;
+  margin-left: 0.2rem;
+  /* width: 20px;
+  height: 20px; */
 }
 
 .groupsCardInfo {
-  margin-top: -1rem;
+  margin-top: -1.5rem;
+  margin-left: -4rem;
 }
 
 .groupsCardInfo p {
   margin-top: -1.75rem;
-}  */
+}
+
+.groupsCardButton button {
+height: 30px;
+flex-grow: 0;
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+gap: 10px;
+/* margin: 8px 0.1px 0 116px; */
+margin-top: -0.1rem;
+padding: 8px 12px;
+border-radius: 30px;
+font-size: var(--small-copy)
+}
+
+.groupsCardIcons img {
+  width: 30.1px;
+  height: 30.1px;
+  margin-left: -0.5rem;
+}
+
+.groupsCardIcons {
+  display: flex;
+  flex-direction: row;
+  margin-left: 0.75rem;
+}
+
+.groupsCardRowTwo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 0.3rem;
+}
