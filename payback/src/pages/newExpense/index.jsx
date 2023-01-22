@@ -53,7 +53,7 @@ export const NewExpense = () => {
                                         <button className='ml-2'>lock</button>
                                     </div>
                                     <div class="progress">
-                                        <div class="progress-bar" style="width:70%"></div>
+                                        <div class="progress-bar" style={{ width: "70%" }}></div>
                                     </div>
                                 </label>
                                 <label>
@@ -68,7 +68,7 @@ export const NewExpense = () => {
                                         <button className='ml-2'>lock</button>
                                     </div>
                                     <div class="progress">
-                                        <div class="progress-bar" style="width:70%"></div>
+                                        <div class="progress-bar" style={{ width: "70%" }}></div>
                                     </div>
                                 </label>
                                 <label>
@@ -83,7 +83,7 @@ export const NewExpense = () => {
                                         <button className='ml-2'>lock</button>
                                     </div>
                                     <div class="progress">
-                                        <div class="progress-bar" style="width:70%"></div>
+                                        <div class="progress-bar" style={{ width: "70%" }}></div>
                                     </div>
                                 </label>
                                 <label>
@@ -98,7 +98,7 @@ export const NewExpense = () => {
                                         <button className='ml-2'>lock</button>
                                     </div>
                                     <div class="progress">
-                                        <div class="progress-bar" style="width:70%"></div>
+                                        <div class="progress-bar" style={{ width: "70%" }}></div>
                                     </div>
                                 </label>
                                 <label>
@@ -113,7 +113,7 @@ export const NewExpense = () => {
                                         <button className='ml-2'>lock</button>
                                     </div>
                                     <div class="progress">
-                                        <div class="progress-bar" style="width:70%"></div>
+                                        <div class="progress-bar" style={{ width: "70%" }}></div>
                                     </div>
                                 </label>
                             </div>
