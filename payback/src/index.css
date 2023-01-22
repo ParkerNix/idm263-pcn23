@@ -15,13 +15,11 @@ code {
 
 :root {
   --main-bg-color: #FDFAFF;
-  --h1-color: #3d008a;
-  --h2-color: purple;
-  --h3-color: purple;
-  --h4-color: #3d008a;
-  --h5-color: #3d008a;
-  --h6-color: #3d008a;
-  --p-color: #3d008a;
+  --text-dark-purple: #3d008a;
+  --nav-bar-color: #FFFDFE;
+  --orange-icon-color: #ff6341;
+  --nav-unactive-color: linear-gradient(180deg, #8561d4, rgba(184,113,240,0.9));
+  --nav-active-color: linear-gradient(180deg, #552ccc, #8741df);
   --large-copy: 20px;
   --medium-copy: 16px;
   --small-copy: 14px;
@@ -29,41 +27,13 @@ code {
   --button-color: #471FBA;
   --button-text-color: #F5F5F5;
   --button-text-size: 16px;
-  --greycliff-extrabold-font-family: 'Greycliff-ExtraBold';
+  /* --greycliff-extrabold-font-family: 'Greycliff-ExtraBold';
   --greycliff-bold-font-family: 'Greycliff-Bold';
   --greycliff-medium-font-family: 'Greycliff-Medium';
-  --greycliff-regular-font-family: 'Greycliff-Regular';
+  --greycliff-regular-font-family: 'Greycliff-Regular'; */
   
 }
 
-/* 
-@font-face {
-  font-family: 'GreyCliff-Bold';
-  src: url('fonts/GreycliffCFBold.woff') format('woff2');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Greycliff-Regular';
-  src: url('fonts/GreycliffCFRegular.woff') format('woff2');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Greycliff-ExtraBold';
-  src: url('fonts/GreycliffCFExtraBoldRegular.woff') format('woff2');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Greycliff-Medium';
-  src: url('fonts/GreycliffCFMediumRegular.woff') format('woff2');
-  font-weight: normal;
-  font-style: normal;
-} */
 
 * { 
 box-sizing: border-box;
@@ -87,48 +57,43 @@ body {
 
 
 h1 {
-  color: var(--h1-color);
+  color: var(--text-dark-purple);
   font-size: 48px;
-  font-family: var(--greycliff-extrabold-font-family);
 }
 
 h2 {
-  color: var(--h2-color);
+  color: var(--text-dark-purple);
   font-size: 32px;
 }
 
 h3 {
-  color: var(--h3-color);
+  color: var(--text-dark-purple);
   font-size: 24px;
 }
 
 h4 {
-  color: var(--h4-color);
-  font-family: var(--greycliff-bold-font-family);
+  color: var(--text-dark-purple);
   font-size: 20px;
 }
 
 h5 {
-  color: var(--h5-color);
+  color: var(--text-dark-purple);
   font-size: 18px;
 }
 
 h6 {
-  color: var(--h6-color);
-  font-family: var(--greycliff-bold-font-family);
+  color: var(--text-dark-purple);
   font-size: 16px;
 }
 
 p {
-  color: var(--p-color);
-  font-family: var(--greycliff-regular-font-family);
+  color: var(--text-dark-purple);
   font-size: 14px;
 }
 
 button {
  background-color: var(--button-color);
  color: var(--button-text-color);
- font-family: var(--greycliff-bold-font-family);
  font-size: var(--button-text-size);
  margin: 8px 8px 12px 0;
  padding: 12px 32px;
