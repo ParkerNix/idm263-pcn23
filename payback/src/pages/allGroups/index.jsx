@@ -10,11 +10,11 @@ export const allGroups = () => {
         <div className='allGroupsPage'>
 
             <div className='allGroupsPageHeader'>  
-                <h4>All Groups</h4>
+                <h4>All Groups</h4> 
             </div>
         
 
-            <div className ='groupsContainer'>
+            <div className ='container'>
                 <div className ='groupsCard'>
                     <div className = 'groupsCardRow'>
                         <div className ='groupsCardImg'>
