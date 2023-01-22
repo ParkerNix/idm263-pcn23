@@ -16,6 +16,7 @@ code {
 :root {
   --main-bg-color: #FDFAFF;
   --text-dark-purple: #3d008a;
+  --main-cta-purple: #471fba;
   --nav-bar-color: #FFFDFE;
   --orange-icon-color: #ff6341;
   --nav-unactive-color: linear-gradient(180deg, #8561d4, rgba(184,113,240,0.9));
