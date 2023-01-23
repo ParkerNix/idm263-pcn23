@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import AdminItem from "../../components/admin_item";
+import AdminItem from "../../components/noBalancesOverview";
 
 export const Admin = () => {
     const item_slicey = useSelector((state) => state.item_slicey.value);
