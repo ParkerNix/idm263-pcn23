@@ -12,7 +12,7 @@ export const AllGroups = () => {
         <>
         <div className="container">
             <div class="row">
-                <div className="col mt-4 mb-2 mx-2 d-flex justify-content-between">
+                <div className="col mt-4 mb-2 mx-3 d-flex justify-content-between">
                     <img src={backArrow} alt="back" className="topNavBack" />
                     <h1 className="h6 bold">Groups</h1>
                     <img src={options} alt="back" className="topNavOptions" />
@@ -21,18 +21,18 @@ export const AllGroups = () => {
             </div>
 
             <div className='row'>
-                <div className="col mx-2">
-                    <h2 className="h4 bold mb-3">All Groups</h2>
+                <div className="col mx-3">
+                    <h2 className="h4 bold my-4">All Groups</h2>
                     <div>
                         <div className ='card'>
                             <div className='card-body'>
-                                <div className='d-flex align-items-center justify-content-between'>
+                                <div className='d-flex align-items-center justify-content-between mb-2'>
                                     <div className='d-flex align-items-center'>
                                         <div className='groupsCardImg'>
                                             <img src={groupImg} alt="groupImg" className='groupImg' />
                                             <span className="placeholder"></span>
                                         </div>
-                                        <div>
+                                        <div className='ms-2'>
                                             <h1 className="h4 bold">Roomies</h1>
                                             <p className="medium">Money money money</p>
                                         </div>
@@ -54,6 +54,9 @@ export const AllGroups = () => {
                             </div>
                         </div>
                     </div>
+                    <button className="btmRightBtn bold">
+                        Create new group
+                    </button>
                 </div>
             </div>
         </div>
