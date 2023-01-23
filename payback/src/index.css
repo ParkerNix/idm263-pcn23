@@ -101,7 +101,7 @@ h6, .h6 {
   margin: 0;
 }
 
-p {
+p, .dropdown-item {
   color: var(--text-dark-purple);
   font-size: 14px;
   margin: 0;
