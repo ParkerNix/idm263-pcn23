@@ -8,6 +8,7 @@ import store from './store/store';
 import { Provider } from 'react-redux';
 import { NewExpense } from './pages/newExpense';
 import { AllGroups } from './pages/allGroups';
+import { CreateGroup } from './pages/createGroup';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -19,6 +20,7 @@ root.render(
               <Route path="/" element={<App />}></Route>
               <Route path="/pages/allGroups" element={<AllGroups />}></Route>
               <Route path="/pages/newExpense" element={<NewExpense />}></Route>
+              <Route path="/pages/createGroup" element={<CreateGroup />}></Route>
           </Routes>
       </BrowserRouter>
     </Provider>
