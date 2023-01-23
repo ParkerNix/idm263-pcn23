@@ -1,5 +1,7 @@
 import newGroupImg from '../../components/Assets/newGroupIcon.png'
 import lockIcon from '../../components/Assets/lock.png'
+import backArrowWhite from '../../components/Assets/backArrowWhite.png'
+import note from '../../components/Assets/note.png'
 import allieSmiley from '../../components/Assets/allie_smiley.png'
 import molynaSmiley from '../../components/Assets/molyna_smiley.png'
 import parkerSmiley from '../../components/Assets/parker_smiley.png'
@@ -13,9 +15,13 @@ export const NewExpense = () => {
             <div className="container gradientContainer">
                 <div className="row">
                     <div className="col">
-                        <div className='my-4 d-flex flex-column align-items-center'>
-                            <h1 className="h4 white">Payback Gang</h1>
-                            <img src={newGroupImg} alt="newGroupImg" className='groupImg mt-2' />
+                        <div className='my-4 d-flex flex-column align-items-stretch'>
+                            <div className='d-flex justify-content-between align-items-center'>
+                                <img src={backArrowWhite} alt="backArrowWhite" className='topNavBack align-self-start' />
+                                <h1 className="h4 white bold">Payback Gang</h1>
+                                <span></span>
+                            </div>
+                            <img src={newGroupImg} alt="newGroupImg" className='groupImg mt-2 align-self-center' />
                             <label className="d-flex flex-column align-items-center">
                               <p className="white">Total Cost</p>
                               <input
@@ -30,12 +36,12 @@ export const NewExpense = () => {
                     </div>
                 </div>
                 <div className="row pageTab pb-5">
-                    <div className="col pt-3">
+                    <div className="col pt-3 px-4">
                         <div>
                             <div className='expenseSection'>
                                 <div className='my-2 d-flex justify-content-between align-items-center'>
                                     <h2 className='h4 bold'>What is it?</h2>
-                                    <button className='noteBtn medium'>Add a note</button>
+                                    <button className='noteBtn medium'>Add a note <img src={note} alt="note" className='noteIcon ms-2' /></button>
                                 </div>
                                 <div class="dropdown">
                                     <button type="button" class="dropdownBtn dropdown-toggle" data-bs-toggle="dropdown">
@@ -61,7 +67,7 @@ export const NewExpense = () => {
                                 <h2 className='h4 bold mb-3'>Who covered the bill?</h2>
                                 <div class="dropdown">
                                     <button type="button" class="dropdownBtn dropdown-toggle" data-bs-toggle="dropdown">
-                                        Choose Group Member
+                                        Choose group member
                                     </button>
                                     <ul class="dropdown-menu">
                                         <li><a class="dropdown-item" href="#">Megan</a></li>
@@ -87,7 +93,7 @@ export const NewExpense = () => {
                                 </div>
                             </div>
                             <div className='mb-4 d-flex flex-column'>
-                                <h2 className='h4 bold mb-4'>Cost Distribution</h2>
+                                <h2 className='h4 bold mb-4'>Cost distribution</h2>
                                 <label className='memberExpense'>
                                     <div className='d-flex justify-content-between mb-3'>
                                         <div className='d-flex align-items-center'>
@@ -195,7 +201,7 @@ export const NewExpense = () => {
                                 </label>
                             </div>
                             <button id='submit' className="btmRightBtn bold">
-                                Save Expense
+                                Save expense
                             </button>
                         </div>
                     </div>
