@@ -1,12 +1,12 @@
 import "./App.css";
 
-import { NewExpense } from "./pages/newExpense";
+import { AllGroups } from './pages/allGroups';
 
 function App() {
 
   return (
     <>
-      <NewExpense />
+      <AllGroups />
     </>
   );
 }
