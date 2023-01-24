@@ -9,6 +9,7 @@ import { Provider } from 'react-redux';
 import { NewExpense } from './pages/newExpense';
 import { AllGroups } from './pages/allGroups';
 import { CreateGroup } from './pages/createGroup';
+import { AddFriends } from './pages/friends';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -21,6 +22,7 @@ root.render(
               <Route path="/pages/allGroups" element={<AllGroups />}></Route>
               <Route path="/pages/newExpense" element={<NewExpense />}></Route>
               <Route path="/pages/createGroup" element={<CreateGroup />}></Route>
+              <Route path="/pages/friends" element={<AddFriends />}></Route>
           </Routes>
       </BrowserRouter>
     </Provider>
