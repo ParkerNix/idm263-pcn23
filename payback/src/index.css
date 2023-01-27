@@ -20,6 +20,7 @@ code {
   --main-cta-purple: #471fba;
   --button-light-purple: #eae3fb;
   --button-medium-purple:#7446d7;
+  --profile--name-purple: #dfcfff;
   --nav-bar-color: #FFFDFE;
   --orange-icon-color: #ff6341;
   --nav-unactive-color: linear-gradient(180deg, #8561d4, rgba(184,113,240,0.9));
@@ -439,16 +440,64 @@ h1#noFriends {
 }
 
 
+/* PROFILE */
+/* ////////// */
+/* ////////// */
+/* ////////// */
+/* ////////// */
+/* ////////// */
 
+h1#profile {
+  color: var(--main-bg-color);
+}
 
+.profileSmiley {
+  width: 100px;
+  height: 100px;
+  padding: 4px 1px 1px 4px;
+  margin-top: 18px;
+}
+
+button#addButton {
+  width: 32px;
+  height: 32px;
+  flex-grow: 0;
+  margin-top: 90px;
+  margin-left: -2rem;
+  padding: 11px 10px 10px 11px;
+  border-radius: 21px;
+  background-color: var(--orange-icon-color);
+}
+
+h1#profileName.h1.bold {
+  color: var(--main-bg-color);
+  font-size: 24px;
+}
+
+p#profileName {
+  color: var(--profile--name-purple);
+  font-size: var(--medium-copy);
+}
+
+p#profileFriends {
+  color: var(--main-bg-color);
+  font-size: var(--medium-copy);
+  margin-bottom: 32px;
+}
 
 .gradientContainer {
+  background-image: linear-gradient(#6527c9, #330a8b 62.86%);
+}
+
+.gradientContainerTwo {
   background-image: linear-gradient(176.73deg, #3414AF 2.7%, #C749E8 62.86%);
 }
 
 .friendsCheck {
   background-color: var(--main-bg-color);
+  font-size: var(--medium-copy);
 }
+
 
 .pageTab {
   background-color: var(--main-bg-color);

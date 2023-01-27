@@ -43,8 +43,8 @@ export const SearchFriends = () => {
 
                                 <div className="friendsRow d-flex flex-row justify-content-between">
                                     <div className="friendsName d-flex flex-row">
-                                    <img src={allieSmiley} alt="smiley" className="smiley"/>
-                                    <p className="p demiBold" id="friendName">Allie Drake</p>
+                                    <img src={parkerSmiley} alt="smiley" className="smiley"/>
+                                    <p className="p demiBold" id="friendName">Parker Nix</p>
                                     </div>
                                         <div className="addFriend">
                                             <img src={addFriend} alt="addFriend" className="addFriend"/>
@@ -54,8 +54,8 @@ export const SearchFriends = () => {
                                 
                                 <div className="friendsRow d-flex flex-row justify-content-between">
                                     <div className="friendsName d-flex flex-row">
-                                    <img src={allieSmiley} alt="smiley" className="smiley"/>
-                                    <p className="p demiBold" id="friendName">Joey McQuillan</p>
+                                    <img src={parkerSmiley} alt="smiley" className="smiley"/>
+                                    <p className="p demiBold" id="friendName">Parkour Nix</p>
                                     </div>
                                     <div className="addFriend">
                                             <img src={addFriend} alt="addFriend" className="addFriend"/>
@@ -65,8 +65,8 @@ export const SearchFriends = () => {
 
                                 <div className="friendsRow d-flex flex-row justify-content-between">
                                     <div className="friendsName d-flex flex-row">
-                                    <img src={allieSmiley} alt="smiley" className="smiley"/>
-                                    <p className="p demiBold" id="friendName">Megan Lam</p>
+                                    <img src={parkerSmiley} alt="smiley" className="smiley"/>
+                                    <p className="p demiBold" id="friendName">Parkourrrrrr</p>
                                     </div>
                                     <div className="addFriend">
                                             <img src={addFriend} alt="addFriend" className="addFriend"/>
@@ -74,8 +74,27 @@ export const SearchFriends = () => {
                                 </div>
                                 <hr className="addFriend"></hr>
                         
+                                <div className="friendsRow d-flex flex-row justify-content-between">
+                                    <div className="friendsName d-flex flex-row">
+                                    <img src={parkerSmiley} alt="smiley" className="smiley"/>
+                                    <p className="p demiBold" id="friendName">Peter Parker</p>
+                                    </div>
+                                    <div className="addFriend">
+                                            <img src={addFriend} alt="addFriend" className="addFriend"/>
+                                    </div>
+                                </div>
+                                <hr className="addFriend"></hr>
 
-
+                                <div className="friendsRow d-flex flex-row justify-content-between">
+                                    <div className="friendsName d-flex flex-row">
+                                    <img src={parkerSmiley} alt="smiley" className="smiley"/>
+                                    <p className="p demiBold" id="friendName">Peter Mix</p>
+                                    </div>
+                                    <div className="addFriend">
+                                            <img src={addFriend} alt="addFriend" className="addFriend"/>
+                                    </div>
+                                </div>
+                                <hr className="addFriend"></hr>
                             </div>
                         </div>
                     </div>

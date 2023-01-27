@@ -12,6 +12,8 @@ import { CreateGroup } from './pages/createGroup';
 import { AddFriends } from './pages/friends';
 import { SearchFriends } from './pages/searchFriends';
 import { NoFriends } from './pages/noFriends';
+import { Profile } from './pages/profile';
+
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -27,6 +29,7 @@ root.render(
               <Route path="/pages/friends" element={<AddFriends />}></Route>
               <Route path="/pages/searchFriends" element={<SearchFriends />}></Route>
               <Route path="/pages/noFriends" element={<NoFriends />}></Route>
+              <Route path="/pages/profile" element={<Profile />}></Route>
           </Routes>
       </BrowserRouter>
     </Provider>

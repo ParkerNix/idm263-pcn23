@@ -5,6 +5,7 @@ import smileySmiley from '../../components/Assets/smiley_smiley.png'
 import molynaSmiley from '../../components/Assets/molyna_smiley.png'
 import parkerSmiley from '../../components/Assets/parker_smiley.png'
 import heartEmpty from '../../components/Assets/heartEmpty.png'
+import backArrowWhite from '../../components/Assets/backArrowWhite.png'
 
 export const AllGroups = () => {
 
