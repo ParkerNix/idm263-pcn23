@@ -273,6 +273,21 @@ img.editIcon {
   background-color: #fff;
 }
 
+#searchFormTwo {
+  width: 327px;
+  height: 41px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 11px 12px 24px 24px;
+  padding: 12px 16px;
+  border-radius: 55px;
+  box-shadow: 0 5px 20px 0 rgba(1, 0, 51, 0.05);
+  background-color: #fff;
+}
+
 
 button#submit.searchButton {
   width: 80.8px;
@@ -315,13 +330,20 @@ button#submit.searchButton {
   height: 25px;
 }
 
-.friendName {
+.friendsName {
   gap: 7.6px;
 }
 
 #friendName {
   font-size: var(--medium-copy);
 }
+
+img.addFriend {
+  width: 23px;
+  height: 23px;
+  flex-grow: 0;
+}
+
 
 /* The container */
 .friendsCheck {
@@ -351,7 +373,6 @@ button#submit.searchButton {
   left: 0;
   width: 20.8px;
   height: 20.8px;
-  margin-left:175px; 
   background-color: var(--main-bg-color);
   border: 1.5px solid #8573ae;
   border-radius: 50%;
@@ -359,7 +380,8 @@ button#submit.searchButton {
 
 /* On mouse-over, add a grey background color */
 .friendsCheck:hover input ~ .checkmark {
-  background-color: #ccc;
+  background-color: var(--orange-icon-color);
+  border: 1.5px solid var(--orange-icon-color);
 }
 
 /* When the radio button is checked, add a blue background */
@@ -396,10 +418,25 @@ hr.friendsList {
   color: var(--hr-color);
 }
 
+hr.addFriend {
+  width: 327px;
+  height: 1px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: var(--hr-color);
+}
 
+.sadSmiley {
+  width: 60px;
+  height: 60px;
+  margin-top: 40px;
+  object-fit: contain;
+}
 
-
-
+h1#noFriends {
+  font-size: 24px;
+  margin-top: 11px;
+}
 
 
 

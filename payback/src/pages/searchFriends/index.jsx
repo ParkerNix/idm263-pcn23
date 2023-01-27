@@ -10,10 +10,11 @@ import meganSmiley from '../../components/Assets/megan_smiley.png'
 import heartEmpty from '../../components/Assets/heartEmpty.png'
 import editIcon from '../../components/Assets/editIcon.png'
 import link from '../../components/Assets/link.png'
+import addFriend from '../../components/Assets/addFriend.png'
 
 
 
-export const AddFriends = () => {
+export const SearchFriends = () => {
 
     return (
         <>
@@ -29,21 +30,15 @@ export const AddFriends = () => {
                 <div className="col">
                     <div className="searchFriends d-flex flex-row justify-content-center">
                         
-                    <div className="input-group">
+                    <div className="input-group d-flex justify-content-center">
                         <div clasName="form-outline">
-                            <input type="text" id="searchForm" class="form-control" placeholder="Search for friends"/>
-                            {/* <label class="form-label" for="searchForm">Search</label> */}
+                            <input type="text" id="searchFormTwo" class="form-control" placeholder="Search for friends"/>
                         </div>
-                        </div>
-                    <div className="searchButton">
-                    <button id='submit' className="searchButton bold">
-                    <img src={link} alt="link" className="link" />Invite
-                            </button>
                     </div>
                     </div>
                     </div>
                         <div className="friendsList">
-                            <h3 className="h5 bold mb-3" id="yourFriends">Your Friends</h3>
+                            <h3 className="h5 bold mb-3" id="yourFriends">Add New Friends</h3>
                             <div className="row d-flex flex-row justify-content-center">
 
                                 <div className="friendsRow d-flex flex-row justify-content-between">
@@ -51,36 +46,33 @@ export const AddFriends = () => {
                                     <img src={allieSmiley} alt="smiley" className="smiley"/>
                                     <p className="p demiBold" id="friendName">Allie Drake</p>
                                     </div>
-                                        <div className="friendsCheck">
-                                            <input type="radio" name="radio"/>
-                                            <span class="checkmark"></span>
+                                        <div className="addFriend">
+                                            <img src={addFriend} alt="addFriend" className="addFriend"/>
                                     </div>
                                 </div>
-                                <hr className="friendsList"></hr>
+                                <hr className="addFriend"></hr>
                                 
                                 <div className="friendsRow d-flex flex-row justify-content-between">
                                     <div className="friendsName d-flex flex-row">
                                     <img src={allieSmiley} alt="smiley" className="smiley"/>
                                     <p className="p demiBold" id="friendName">Joey McQuillan</p>
                                     </div>
-                                        <div className="friendsCheck">
-                                            <input type="radio" name="radio"/>
-                                            <span class="checkmark"></span>
+                                    <div className="addFriend">
+                                            <img src={addFriend} alt="addFriend" className="addFriend"/>
                                     </div>
                                 </div>
-                                <hr className="friendsList"></hr>
+                                <hr className="addFriend"></hr>
 
                                 <div className="friendsRow d-flex flex-row justify-content-between">
                                     <div className="friendsName d-flex flex-row">
                                     <img src={allieSmiley} alt="smiley" className="smiley"/>
                                     <p className="p demiBold" id="friendName">Megan Lam</p>
                                     </div>
-                                        <div className="friendsCheck">
-                                            <input type="radio" name="radio"/>
-                                            <span class="checkmark"></span>
+                                    <div className="addFriend">
+                                            <img src={addFriend} alt="addFriend" className="addFriend"/>
                                     </div>
                                 </div>
-                                <hr className="friendsList"></hr>
+                                <hr className="addFriend"></hr>
                         
 
 
