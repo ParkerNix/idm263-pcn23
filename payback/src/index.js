@@ -23,7 +23,7 @@ root.render(
               <Route path="/pages/allGroups" element={<AllGroups />}></Route>
               <Route path="/pages/newExpense" element={<NewExpense />}></Route>
               <Route path="/pages/costBreakdown" element={<CostBreakdown />}></Route>
-              <Route path="/pages/groupOverview" element={<ViewGroup />}></Route>
+              <Route path="/pages/viewGroup" element={<ViewGroup />}></Route>
           </Routes>
       </BrowserRouter>
     </Provider>
