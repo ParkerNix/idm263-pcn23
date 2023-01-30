@@ -6,6 +6,7 @@ import smileySmiley from '../../components/Assets/smiley_smiley.png'
 import molynaSmiley from '../../components/Assets/molyna_smiley.png'
 import parkerSmiley from '../../components/Assets/parker_smiley.png'
 import heartEmpty from '../../components/Assets/heartEmpty.png'
+import molynaProfile from '../../components/Assets/molyna_profile.png'
 
 export const Profile = () => {
 
@@ -20,7 +21,7 @@ export const Profile = () => {
                     </div>
                         <div className='d-flex flex-column align-items-center'>
                             <div className='profilePic d-flex flex-row justify-content-center'>
-                            <img src={smileySmiley} alt="smiley" className="profileSmiley" />
+                            <img src={molynaProfile} alt="smiley" className="profileSmiley" />
                             <button id='addButton'></button>
                             </div>
 
@@ -31,18 +32,71 @@ export const Profile = () => {
                     </div>
                 </div>
 
-            <div className="row pageTab pb-5">
-                <div className="col pt-3 px-4">
-                    <div className='d-flex flex-column justify-content-center'>
-                        <div className="completedTransactions">
-                            <h4 className="h4 bold">Completed Transactions</h4>
+            
+                <div className="col px-4">
+                    <h4 className="h4 bold" id="transactionsHeader">Completed Transactions</h4>
+                        <div className="d-flex justify-content-between">
+                            <div className="d-flex justify-content-between">
+                                <div className="transactions">
+                                    <img src={smileySmiley} alt="smiley" className="transactionSmiley d-flex justify-content-center" />
+                                </div>
+
+                            <div className="transactionInfo d-flex flex-column justify-content-center">
+                                    <p className="p demiBold" id="groupName">Payback Gang</p>
+                                    <h6 className="h6 demiBold" id="groupMember">Parker Nix</h6>
+                                    </div>
                         </div>
-                        
-                    </div>
+
+                            <div className="transactionInfo d-flex flex-column justify-content-center">
+                                <h6 className="h6 demiBold" id="GroupCost">+$12.75</h6>
+                                <p className="p bold" id="groupDate">10/10/22</p>    
+                            </div>
+                        </div>
                 </div>
-            </div>
-                
-    
+                <hr className="addFriend"></hr>
+
+                <div className="col px-4">
+                        <div className="d-flex justify-content-between">
+                            <div className="d-flex justify-content-between">
+                                <div className="transactions">
+                                    <img src={smileySmiley} alt="smiley" className="transactionSmiley d-flex justify-content-center" />
+                                </div>
+
+                            <div className="transactionInfo d-flex flex-column justify-content-center">
+                                    <p className="p demiBold" id="groupName">Payback Gang</p>
+                                    <h6 className="h6 demiBold" id="groupMember">Allie Drake</h6>
+                                    </div>
+                        </div>
+
+                            <div className="transactionInfo d-flex flex-column justify-content-center">
+                                <h6 className="h6 demiBold" id="GroupCost">-$18.20</h6>
+                                <p className="p bold" id="groupDate">10/03/22</p>    
+                            </div>
+                        </div>
+                </div>
+                <hr className="addFriend"></hr>
+
+                <div className="col px-4">
+                        <div className="d-flex justify-content-between">
+                            <div className="d-flex justify-content-between">
+                                <div className="transactions">
+                                    <img src={smileySmiley} alt="smiley" className="transactionSmiley d-flex justify-content-center" />
+                                </div>
+
+                            <div className="transactionInfo d-flex flex-column justify-content-center">
+                                    <p className="p demiBold" id="groupName">Payback Gang</p>
+                                    <h6 className="h6 demiBold" id="groupMember">Megan Lam</h6>
+                                    </div>
+                        </div>
+
+                            <div className="transactionInfo d-flex flex-column justify-content-center">
+                                <h6 className="h6 demiBold" id="GroupCost">-$21.00</h6>
+                                <p className="p bold" id="groupDate">09/28/22</p>    
+                            </div>
+                        </div>
+                </div>
+                <hr className="profile"></hr>
+            
                        
             
         </>
