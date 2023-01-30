@@ -28,6 +28,7 @@ code {
   --medium-copy: 16px;
   --small-copy: 14px;
   --xsmall-copy: 12px;
+  --xxsmall-copy: 8px;
   --button-color: #471FBA;
   --button-text-color: #F5F5F5;
   --button-text-size: 16px;
@@ -36,6 +37,12 @@ code {
   --progress-bar-light-purple: #c2a6ff;
   --progress-bar-pink: #f09bd8;
   --progress-bar-orange: #ff985f;
+  --category-food: ;
+  --category-food: ;
+  --category-food: ;
+  --category-food: ;
+  --category-food: ;
+
   /* --greycliff-extrabold-font-family: 'Greycliff-ExtraBold';
   --greycliff-bold-font-family: 'Greycliff-Bold';
   --greycliff-medium-font-family: 'Greycliff-Medium';
@@ -101,10 +108,37 @@ h6, .h6 {
   margin: 0;
 }
 
-p, .dropdown-item {
+p, .p, .dropdown-item, a:link, a:visited, a:hover, a:active {
   color: var(--text-dark-purple);
   font-size: 14px;
   margin: 0;
+}
+
+a:link, a:visited, a:hover, a:active {
+  text-decoration: none;
+}
+
+.largeCopy {
+  font-size: var(--large-copy) !important;
+}
+
+.mediumCopy {
+  font-size: var(--medium-copy) !important;
+}
+
+.smallCopy {
+  font-size: var(--small-copy) !important;
+}
+
+.xsmallCopy {
+  font-size: var(--xsmall-copy) !important;
+}
+.xtestsmallCopy {
+  font-size: 10px !important;
+}
+
+.xxsmallCopy {
+  font-size: var(--xxsmall-copy) !important;
 }
 
 button, .button {
@@ -212,6 +246,14 @@ margin:0 ;
   background-image: linear-gradient(176.73deg, #3414AF 2.7%, #C749E8 62.86%);
 }
 
+.gradientContainerCB {
+  background-image: linear-gradient(159deg, #6527c9 0%, #330a8b 36%)
+}
+
+.gradientContainerVG {
+  background-image: linear-gradient(165deg, #3414af 5%, #c749e8 64%)
+}
+
 .container {
   background-color: var(--main-bg-color);
 }
@@ -259,6 +301,10 @@ margin:0 ;
 .card {
   border: 0;
   box-shadow: 0 5px 20px 0 rgba(1, 0, 51, 0.05);
+}
+
+.card-body {
+  padding-bottom: 12px !important;
 }
 
 .expenseSection {
@@ -365,4 +411,62 @@ margin:0 ;
 .progress-bar {
   border-radius: 50px;
   height: .75rem;
+}
+
+/*costBreakdown*/
+
+.categoryTitle {
+  padding: 3px 9px 0px;
+  margin: 0;
+  border-radius: 23px;
+  font-size: var(--xsmall-copy);
+}
+
+.categoryFood {
+  background-color: #ffe299;
+  color: #594921;
+}
+
+.iconButton {
+  height: 27px;
+  width: 37px;
+  padding: 7px 11px 6px;
+  background-color: rgba(194, 166, 255, 0.7);
+  border-radius: 12px;
+}
+
+.doughnutText {
+  position: relative;
+  top: -155px;
+  margin-bottom:-75px;
+}
+
+.lineHeight64 {
+  line-height: 1.3;
+}
+
+.doughnutTextCard {
+  position: relative;
+  top: -53px;
+  margin-bottom:-30px;
+  line-height: 0.7;
+}
+
+.OptionsHorizontal {
+  width: 22px;
+  height: 22px;
+}
+
+.textVGCard {
+  line-height: 0.7;
+}
+
+.checkCB {
+  width: 20px;
+  height: 20px;
+}
+
+.circleCB {
+  width: 12px;
+  height: 12px;
 }
