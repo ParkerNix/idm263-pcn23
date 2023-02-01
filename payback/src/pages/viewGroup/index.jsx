@@ -36,7 +36,7 @@ export const ViewGroup = () => {
 
     return (
         <>
-            <div className="container gradientContainerVG">
+            <div className="container gradientContainer">
                 <div className="row mx-3 mb-4 justify-content-center">
                     <div className="col mt-4 mb-4 p-0 d-flex justify-content-between">
                         <img src={backArrowWhite} alt="back" className="topNavBack" />
@@ -49,7 +49,7 @@ export const ViewGroup = () => {
                         </div>
                         <div className='mx-4'>
                             <h2 className='white h3 bold'>Payback Gang</h2>
-                            <p className='white xsmallCopy demibold'>You must pay!</p>
+                            <p className='white xsmallCopy demiBold'>You must pay!</p>
                         </div>
                     </div>
                 </div>
@@ -74,7 +74,7 @@ export const ViewGroup = () => {
                                         </div>
                                         <div className='doughnutTextCard'>
                                             <p className='text-center h4 bold'>20%</p>
-                                            <p className='text-center xtestsmallCopy bold'>paid back</p>
+                                            <p className='text-center xtestsmallCopy medium'>paid back</p>
                                         </div>
                                     </div>
                                 </div>
