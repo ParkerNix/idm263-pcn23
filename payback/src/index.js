@@ -13,6 +13,7 @@ import { AddFriends } from './pages/friends';
 import { SearchFriends } from './pages/searchFriends';
 import { NoFriends } from './pages/noFriends';
 import { Profile } from './pages/profile';
+import { FriendProfile } from './pages/friendProfile';
 
 
 
@@ -30,6 +31,7 @@ root.render(
               <Route path="/pages/searchFriends" element={<SearchFriends />}></Route>
               <Route path="/pages/noFriends" element={<NoFriends />}></Route>
               <Route path="/pages/profile" element={<Profile />}></Route>
+              <Route path="/pages/friendProfile" element={<FriendProfile />}></Route>
           </Routes>
       </BrowserRouter>
     </Provider>

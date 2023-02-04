@@ -484,6 +484,9 @@ p#profileFriends {
   color: var(--main-bg-color);
   font-size: var(--medium-copy);
   margin-bottom: 32px;
+  padding: 1px 14px;
+  border-radius: 10px;
+  border: solid 1.5px #9e84d4;
 }
 
 img.transactionSmiley {
@@ -537,6 +540,34 @@ hr.profile {
   background-color: var(--main-bg-color);
   font-size: var(--medium-copy);
 }
+
+
+
+/* ///////////////////// */
+/* ///////////////////// */
+/* ///////////////////// */
+/* Other friend profile */
+/* ///////////////////// */
+/* ///////////////////// */
+/* ///////////////////// */
+
+
+img.friendCheck {
+  width: 12.6px;
+  height: 12px;
+  flex-grow: 0;
+  margin-right: 8px;
+}
+
+img.remind {
+  width: 12px;
+  height: 15px;
+  flex-grow: 0;
+  margin: 0 8px 1px 0;
+  padding: 0.9px 0.9px;
+}
+
+
 
 
 .pageTab {
