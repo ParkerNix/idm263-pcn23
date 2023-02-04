@@ -199,6 +199,7 @@ margin:0 ;
   flex-direction: row;
 }
 
+
 .groupsCardRowTwo {
   display: flex;
   flex-direction: row;
@@ -567,6 +568,36 @@ img.remind {
   padding: 0.9px 0.9px;
 }
 
+#recentFriends {
+  color: var(--main-bg-color);
+}
+
+#viewAll {
+  color: var(--button-light-purple);
+  text-decoration: underline;
+  font-size: var(--medium-copy);
+}
+
+.recentFriends {
+  padding: 40px 24px 22px 24px;
+}
+
+img.smileyInScroll {
+  width: 63px;
+  height: 62px;
+}
+
+.smileyScroll {
+  gap: 21px;
+  padding-bottom: 38.1px;
+}
+
+#smileyScrollName {
+color: var(--button-light-purple);
+margin-top: 5.2px;
+}
+
+
 
 
 
@@ -588,6 +619,7 @@ img.remind {
   width: 32px;
   height: 32px;
   margin: 0 7.6px 0 0;
+  margin-right: -10px;
 }
 
 .heartIcon {

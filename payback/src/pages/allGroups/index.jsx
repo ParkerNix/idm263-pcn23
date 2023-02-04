@@ -6,6 +6,7 @@ import molynaSmiley from '../../components/Assets/molyna_smiley.png'
 import parkerSmiley from '../../components/Assets/parker_smiley.png'
 import heartEmpty from '../../components/Assets/heartEmpty.png'
 import backArrowWhite from '../../components/Assets/backArrowWhite.png'
+import newGroupIcon from '../../components/Assets/newGroupIcon.png'
 
 export const AllGroups = () => {
 
@@ -30,11 +31,11 @@ export const AllGroups = () => {
                                 <div className='d-flex align-items-center justify-content-between mb-2'>
                                     <div className='d-flex align-items-center'>
                                         <div className='groupsCardImg'>
-                                            <img src={groupImg} alt="groupImg" className='groupImg' />
+                                            <img src={newGroupIcon} alt="groupImg" className='groupImg' />
                                             <span className="placeholder"></span>
                                         </div>
                                         <div className='ms-2'>
-                                            <h1 className="h4 bold">Roomies</h1>
+                                            <h1 className="h4 bold">Payback</h1>
                                             <p className="medium">Money money money</p>
                                         </div>
                                     </div>

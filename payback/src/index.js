@@ -14,6 +14,7 @@ import { SearchFriends } from './pages/searchFriends';
 import { NoFriends } from './pages/noFriends';
 import { Profile } from './pages/profile';
 import { FriendProfile } from './pages/friendProfile';
+import { Groups } from './pages/groups';
 
 
 
@@ -32,6 +33,7 @@ root.render(
               <Route path="/pages/noFriends" element={<NoFriends />}></Route>
               <Route path="/pages/profile" element={<Profile />}></Route>
               <Route path="/pages/friendProfile" element={<FriendProfile />}></Route>
+              <Route path="/pages/groups" element={<Groups />}></Route>
           </Routes>
       </BrowserRouter>
     </Provider>
