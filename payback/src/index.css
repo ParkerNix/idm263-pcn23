@@ -479,6 +479,10 @@ img.addFriend {
 	background: white;
 }
 
+.checkmark#addFriendCheck {
+  margin-left: 10px;
+}
+
 hr.friendsList {
   margin: 17.5px 24px 17.5px 24px;
   height: 4px;
