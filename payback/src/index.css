@@ -506,6 +506,25 @@ h1#noFriends {
   margin-top: 11px;
 }
 
+img.deleteFriend {
+  width: 18px;
+  height: 18px;
+}
+
+img.add {
+  width: 18px;
+  height: 18px;
+  transform: rotate(-45deg);
+}
+
+hr.editFriend {
+  width: 327px;
+  height: 1px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  color: var(--hr-color);
+}
+
 
 /* PROFILE */
 /* ////////// */
@@ -665,6 +684,7 @@ img.smileyInScroll {
 color: var(--button-light-purple);
 margin-top: 5.2px;
 }
+
 
 
 
