@@ -6,6 +6,12 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import store from './store/store';
 import { Provider } from 'react-redux';
+import { NewExpense } from './pages/newExpense';
+import { AllGroups } from './pages/allGroups';
+import { CostBreakdown } from './pages/costBreakdown';
+import { ViewGroup } from './pages/viewGroup';
+import { Overview } from './pages/overview';
+
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -14,9 +20,11 @@ root.render(
     <Provider store={store}>
       <BrowserRouter>
           <Routes>
-              <Route path="/" element={<App />}>
-                <Route path="/*" element={<p>Nothing found here.</p>}></Route>
-              </Route>
+              <Route path="/" element={<Overview />}></Route>
+              <Route path="/pages/allGroups" element={<AllGroups />}></Route>
+              <Route path="/pages/newExpense" element={<NewExpense />}></Route>
+              <Route path="/pages/costBreakdown" element={<CostBreakdown />}></Route>
+              <Route path="/pages/viewGroup" element={<ViewGroup />}></Route>
           </Routes>
       </BrowserRouter>
     </Provider>
