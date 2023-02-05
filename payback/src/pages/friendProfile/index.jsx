@@ -22,7 +22,7 @@ export const FriendProfile = () => {
 
     return (
         <>
-        <div className="container gradientContainer">
+            <div className="gradientContainer">
                 <div className="row">
                     <div className="col mt-4 mb-2 mx-3 d-flex justify-content-between">
                         <img src={backArrowWhite} alt="back" className="topNavBack" />
@@ -39,9 +39,9 @@ export const FriendProfile = () => {
                             <p className="p demiBold mt-2" id="profileFriends"><img src={friendCheck} alt="friendCheck" className="friendCheck"/>Friend</p>
                         </div>
                     </div>
-                </div>
+        
 
-            <div className="pageTabTwo">
+            <div className="pageTab">
                 <div className="col px-4">
                 <h4 className="h4 bold" id="transactionsHeader">Between You</h4>
                 <div className ='card'>
@@ -134,6 +134,8 @@ export const FriendProfile = () => {
                 <hr className="profile"></hr>
             </div>
 
+            </div>
+
             <div class="navbar">
                 <div class="navStack">
                     <img src={navOverviewDefault} className="navIcons" alt="overview" />
@@ -157,7 +159,6 @@ export const FriendProfile = () => {
                 </div>
             </div>
                        
-            
         </>
     );
 

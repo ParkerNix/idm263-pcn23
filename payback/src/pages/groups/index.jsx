@@ -128,27 +128,27 @@ export const Groups = () => {
 
 
             <div class="navbar">
-            <div class="navStack">
-                <img src={navOverviewDefault} className="navIcons" alt="overview" />
-                <a href="#home" className="active bold">Overview</a>
+                <div class="navStack">
+                    <img src={navOverviewDefault} className="navIcons" alt="overview" />
+                    <a href="#home" className="active bold">Overview</a>
+                </div>
+                <div class="navStack">
+                    <img src={navMonthlyDefault} className="navIcons" alt="monthly" />
+                    <a href="#monthly" className="bold">Monthly</a>
+                </div>
+                <div class="navStack">
+                    <img src={navExpenseDefault} className="navIcons" alt="expense" />
+                    <a href="#expense" className="bold">Expense</a>
+                </div>
+                <div class="navStack">
+                    <img src={navGroupsDefault} className="navIcons" alt="groups" />
+                    <a href="#groups" className="bold">Groups</a>
+                </div>
+                <div class="navStack">
+                    <img src={navProfileDefault} className="navIcons" alt="profile" />
+                    <a href="#groups" className="bold">Profile</a>
+                </div>
             </div>
-            <div class="navStack">
-                <img src={navMonthlyDefault} className="navIcons" alt="monthly" />
-                <a href="#monthly" className="bold">Monthly</a>
-            </div>
-            <div class="navStack">
-                <img src={navExpenseDefault} className="navIcons" alt="expense" />
-                <a href="#expense" className="bold">Expense</a>
-            </div>
-            <div class="navStack">
-                <img src={navGroupsDefault} className="navIcons" alt="groups" />
-                <a href="#groups" className="bold">Groups</a>
-            </div>
-            <div class="navStack">
-                <img src={navProfileDefault} className="navIcons" alt="profile" />
-                <a href="#groups" className="bold">Profile</a>
-            </div>
-        </div>
         </div>
         </div>           
         

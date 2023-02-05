@@ -17,25 +17,24 @@ export const Profile = () => {
 
     return (
         <>
-        <div className="container gradientContainer">
-                <div className="row">
-                    <div className="col mt-4 mb-2 mx-3 d-flex justify-content-between">
-                        <img src={backArrowWhite} alt="back" className="topNavBack" />
-                        <h1 className="h6 bold" id="profile">Profile</h1>
-                        <img src={optionsIcon} alt="back" className="topNavOptions" />
+        <div className="gradientContainer">
+            <div className="row">
+                <div className="col mt-4 mb-2 mx-3 d-flex justify-content-between">
+                    <img src={backArrowWhite} alt="back" className="topNavBack" />
+                    <h1 className="h6 bold" id="profile">Profile</h1>
+                    <img src={optionsIcon} alt="back" className="topNavOptions" />
+                 </div>
+                <div className='d-flex flex-column align-items-center'>
+                    <div className='profilePic d-flex flex-row justify-content-center'>
+                        <img src={molynaProfile} alt="smiley" className="profileSmiley" />
+                        <button id='addButton'></button>
                     </div>
-                        <div className='d-flex flex-column align-items-center'>
-                            <div className='profilePic d-flex flex-row justify-content-center'>
-                            <img src={molynaProfile} alt="smiley" className="profileSmiley" />
-                            <button id='addButton'></button>
-                            </div>
-
-                            <h1 className='h1 bold' id="profileName">Molyna Tep</h1>
-                            <p className="p demiBold mt-2" id="profileName">@mochi</p>
-                            <p className="p demiBold mt-2" id="profileFriends">24 friends</p>
-                        </div>
-                    </div>
-        </div>
+                    <h1 className='h1 bold' id="profileName">Molyna Tep</h1>
+                    <p className="p demiBold mt-2" id="profileName">@mochi</p>
+                    <p className="p demiBold mt-2" id="profileFriends">24 friends</p>
+                </div>
+            </div>
+        
 
             <div className="pageTab">
                 <div className="col px-4">
@@ -45,12 +44,11 @@ export const Profile = () => {
                                 <div className="transactions">
                                     <img src={smileySmiley} alt="smiley" className="transactionSmiley d-flex justify-content-center" />
                                 </div>
-
-                            <div className="transactionInfo d-flex flex-column justify-content-center">
+                                <div className="transactionInfo d-flex flex-column justify-content-center">
                                     <p className="p demiBold" id="groupName">Payback Gang</p>
                                     <h6 className="h6 demiBold" id="groupMember">Parker Nix</h6>
-                                    </div>
-                        </div>
+                                </div>
+                            </div>
 
                             <div className="transactionInfo d-flex flex-column justify-content-center">
                                 <h6 className="h6 demiBold" id="GroupCost">+$12.75</h6>
@@ -58,6 +56,7 @@ export const Profile = () => {
                             </div>
                         </div>
                 </div>
+
                 <hr className="addFriend"></hr>
 
                 <div className="col px-4">
@@ -79,6 +78,7 @@ export const Profile = () => {
                             </div>
                         </div>
                 </div>
+
                 <hr className="addFriend"></hr>
 
                 <div className="col px-4">
@@ -100,8 +100,9 @@ export const Profile = () => {
                             </div>
                         </div>
                 </div>
-                <hr className="profile"></hr>
+       
             </div>
+        </div>
 
             <div class="navbar">
                 <div class="navStack">
