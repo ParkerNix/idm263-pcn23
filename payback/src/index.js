@@ -18,6 +18,10 @@ import { Groups } from './pages/groups';
 import { EditGroup } from './pages/editgroup';
 import { AddedFriend } from './pages/addedFriend';
 
+import { CostBreakdown } from './pages/costBreakdown';
+import { ViewGroup } from './pages/viewGroup';
+import { Overview } from './pages/overview';
+
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -26,7 +30,7 @@ root.render(
     <Provider store={store}>
       <BrowserRouter>
           <Routes>
-              <Route path="/" element={<App />}></Route>
+              <Route path="/" element={<Overview />}></Route>
               <Route path="/pages/allGroups" element={<AllGroups />}></Route>
               <Route path="/pages/newExpense" element={<NewExpense />}></Route>
               <Route path="/pages/createGroup" element={<CreateGroup />}></Route>
@@ -38,6 +42,8 @@ root.render(
               <Route path="/pages/groups" element={<Groups />}></Route>
               <Route path="/pages/editgroup" element={<EditGroup />}></Route>
               <Route path="/pages/addedFriend" element={<AddedFriend />}></Route>
+              <Route path="/pages/costBreakdown" element={<CostBreakdown />}></Route>
+              <Route path="/pages/viewGroup" element={<ViewGroup />}></Route>
           </Routes>
       </BrowserRouter>
     </Provider>
