@@ -12,6 +12,11 @@ import editIcon from '../../components/Assets/editIcon.png'
 import link from '../../components/Assets/link.png'
 import addFriend from '../../components/Assets/addFriend.png'
 import sadSmiley from '../../components/Assets/sad_smiley.png'
+import navOverviewDefault from '../../components/Assets/nav_overview_default.png'
+import navMonthlyDefault from '../../components/Assets/nav_monthly_default.png'
+import navExpenseDefault from '../../components/Assets/nav_expense_default.png'
+import navGroupsDefault from '../../components/Assets/nav_groups_default.png'
+import navProfileDefault from '../../components/Assets/nav_profile_default.png'
 
 
 
@@ -46,6 +51,30 @@ export const NoFriends = () => {
                     </div>
                 </div>
                 </div>
+
+                <div class="navbar">
+                <div class="navStack">
+                    <img src={navOverviewDefault} className="navIcons" alt="overview" />
+                    <a href="#home" className="active bold">Overview</a>
+                </div>
+                <div class="navStack">
+                    <img src={navMonthlyDefault} className="navIcons" alt="monthly" />
+                    <a href="#monthly" className="bold">Monthly</a>
+                </div>
+                <div class="navStack">
+                    <img src={navExpenseDefault} className="navIcons" alt="expense" />
+                    <a href="#expense" className="bold">Expense</a>
+                </div>
+                <div class="navStack">
+                    <img src={navGroupsDefault} className="navIcons" alt="groups" />
+                    <a href="#groups" className="bold">Groups</a>
+                </div>
+                <div class="navStack">
+                    <img src={navProfileDefault} className="navIcons" alt="profile" />
+                    <a href="#groups" className="bold">Profile</a>
+                </div>
+            </div>
+
             </>
          );
     }

@@ -13,6 +13,11 @@ import meganProfile from '../../components/Assets/megan_profile.png'
 import friendCheck from '../../components/Assets/friend_check.png'
 import remind from '../../components/Assets/remind.png'
 import newGroupIcon from '../../components/Assets/newGroupIcon.png'
+import navOverviewDefault from '../../components/Assets/nav_overview_default.png'
+import navMonthlyDefault from '../../components/Assets/nav_monthly_default.png'
+import navExpenseDefault from '../../components/Assets/nav_expense_default.png'
+import navGroupsDefault from '../../components/Assets/nav_groups_default.png'
+import navProfileDefault from '../../components/Assets/nav_profile_default.png'
 
 export const Groups = () => {
 
@@ -50,75 +55,100 @@ export const Groups = () => {
                     </div>
                 </div>
 
-            <div className="pageTab">
+            <div className="pageTabTwo">
                 <div className="col px-4">
-                <h4 className="h4 bold" id="transactionsHeader">All Groups</h4>
-                    <div className ='card mb-3'>
-                                <div className='card-body'>
-                                    <div className='d-flex align-items-center justify-content-between mb-2'>
-                                        <div className='d-flex align-items-center'>
-                                            <div className='groupsCardImg'>
-                                                <img src={groupImg} alt="groupImg" className='groupImg' />
-                                                <span className="placeholder"></span>
+                    <h4 className="h4 bold" id="transactionsHeader">All Groups</h4>
+                        <div className ='card mb-3'>
+                                    <div className='card-body'>
+                                        <div className='d-flex align-items-center justify-content-between mb-2'>
+                                            <div className='d-flex align-items-center'>
+                                                <div className='groupsCardImg'>
+                                                    <img src={groupImg} alt="groupImg" className='groupImg' />
+                                                    <span className="placeholder"></span>
+                                                </div>
+                                                <div className='ms-2'>
+                                                    <h1 className="h4 bold">Roomies</h1>
+                                                    <p className="medium">Money money money</p>
+                                                </div>
                                             </div>
-                                            <div className='ms-2'>
-                                                <h1 className="h4 bold">Roomies</h1>
-                                                <p className="medium">Money money money</p>
+                                            <div className="groupsCardHeart align-self-start">
+                                                <img src={heartEmpty} alt="heart" className="heartIcon" />
                                             </div>
                                         </div>
-                                        <div className="groupsCardHeart align-self-start">
-                                            <img src={heartEmpty} alt="heart" className="heartIcon" />
-                                        </div>
-                                    </div>
-                                    <div className ='d-flex align-items-center justify-content-between'>
-                                        <div class="groupsCardIcons">
-                                            <img src={smileySmiley} className="memberIcons" alt="member1" />
-                                            <img src={molynaSmiley} className="memberIcons" alt="member2" />
-                                            <img src={parkerSmiley} className="memberIcons" alt="member3" />
-                                        </div>
-                                        <div class="groupsCardButton">
-                                            <button className='demiBold'>View Group</button>
+                                        <div className ='d-flex align-items-center justify-content-between'>
+                                            <div class="groupsCardIcons">
+                                                <img src={smileySmiley} className="memberIcons" alt="member1" />
+                                                <img src={molynaSmiley} className="memberIcons" alt="member2" />
+                                                <img src={parkerSmiley} className="memberIcons" alt="member3" />
+                                            </div>
+                                            <div class="groupsCardButton">
+                                                <button className='demiBold'>View Group</button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
 
-                            <div className ='card'>
-                                <div className='card-body'>
-                                    <div className='d-flex align-items-center justify-content-between mb-2'>
-                                        <div className='d-flex align-items-center'>
-                                            <div className='groupsCardImg'>
-                                                <img src={newGroupIcon} alt="groupImg" className='groupImg' />
-                                                <span className="placeholder"></span>
+                                <div className ='card'>
+                                    <div className='card-body'>
+                                        <div className='d-flex align-items-center justify-content-between mb-2'>
+                                            <div className='d-flex align-items-center'>
+                                                <div className='groupsCardImg'>
+                                                    <img src={newGroupIcon} alt="groupImg" className='groupImg' />
+                                                    <span className="placeholder"></span>
+                                                </div>
+                                                <div className='ms-2'>
+                                                    <h1 className="h4 bold">Payback Gang</h1>
+                                                    <p className="medium">You must pay!</p>
+                                                </div>
                                             </div>
-                                            <div className='ms-2'>
-                                                <h1 className="h4 bold">Payback Gang</h1>
-                                                <p className="medium">You must pay!</p>
+                                            <div className="groupsCardHeart align-self-start">
+                                                <img src={heartEmpty} alt="heart" className="heartIcon" />
                                             </div>
                                         </div>
-                                        <div className="groupsCardHeart align-self-start">
-                                            <img src={heartEmpty} alt="heart" className="heartIcon" />
+                                        <div className ='d-flex align-items-center justify-content-between'>
+                                            <div class="groupsCardIcons">
+                                                <img src={smileySmiley} className="memberIcons" alt="member1" />
+                                                <img src={molynaSmiley} className="memberIcons" alt="member2" />
+                                                <img src={parkerSmiley} className="memberIcons" alt="member3" />
+                                                <img src={meganSmiley} className="memberIcons" alt="member3" />
+                                            </div>
+                                            <div class="groupsCardButton">
+                                                <button className='demiBold'>View Group</button>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div className ='d-flex align-items-center justify-content-between'>
-                                        <div class="groupsCardIcons">
-                                            <img src={smileySmiley} className="memberIcons" alt="member1" />
-                                            <img src={molynaSmiley} className="memberIcons" alt="member2" />
-                                            <img src={parkerSmiley} className="memberIcons" alt="member3" />
-                                            <img src={meganSmiley} className="memberIcons" alt="member3" />
-                                        </div>
-                                        <div class="groupsCardButton">
-                                            <button className='demiBold'>View Group</button>
-                                        </div>
-                                    </div>
+                                </div>
+                                <button className="btmRightBtn bold">
+                                    Create new group
+                                </button>
                             </div>
-                        </div>
-                        <button className="btmRightBtn bold">
-                        Create new group
-                        </button>
+                            
                 </div>
 
             </div>
+
+
+            <div class="navbar">
+            <div class="navStack">
+                <img src={navOverviewDefault} className="navIcons" alt="overview" />
+                <a href="#home" className="active bold">Overview</a>
+            </div>
+            <div class="navStack">
+                <img src={navMonthlyDefault} className="navIcons" alt="monthly" />
+                <a href="#monthly" className="bold">Monthly</a>
+            </div>
+            <div class="navStack">
+                <img src={navExpenseDefault} className="navIcons" alt="expense" />
+                <a href="#expense" className="bold">Expense</a>
+            </div>
+            <div class="navStack">
+                <img src={navGroupsDefault} className="navIcons" alt="groups" />
+                <a href="#groups" className="bold">Groups</a>
+            </div>
+            <div class="navStack">
+                <img src={navProfileDefault} className="navIcons" alt="profile" />
+                <a href="#groups" className="bold">Profile</a>
+            </div>
+        </div>
         </div>
         </div>           
         

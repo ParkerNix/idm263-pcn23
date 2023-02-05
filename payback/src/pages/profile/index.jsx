@@ -7,6 +7,11 @@ import molynaSmiley from '../../components/Assets/molyna_smiley.png'
 import parkerSmiley from '../../components/Assets/parker_smiley.png'
 import heartEmpty from '../../components/Assets/heartEmpty.png'
 import molynaProfile from '../../components/Assets/molyna_profile.png'
+import navOverviewDefault from '../../components/Assets/nav_overview_default.png'
+import navMonthlyDefault from '../../components/Assets/nav_monthly_default.png'
+import navExpenseDefault from '../../components/Assets/nav_expense_default.png'
+import navGroupsDefault from '../../components/Assets/nav_groups_default.png'
+import navProfileDefault from '../../components/Assets/nav_profile_default.png'
 
 export const Profile = () => {
 
@@ -30,7 +35,7 @@ export const Profile = () => {
                             <p className="p demiBold mt-2" id="profileFriends">24 friends</p>
                         </div>
                     </div>
-                </div>
+        </div>
 
             <div className="pageTab">
                 <div className="col px-4">
@@ -96,6 +101,29 @@ export const Profile = () => {
                         </div>
                 </div>
                 <hr className="profile"></hr>
+            </div>
+
+            <div class="navbar">
+                <div class="navStack">
+                    <img src={navOverviewDefault} className="navIcons" alt="overview" />
+                    <a href="#home" className="active bold">Overview</a>
+                </div>
+                <div class="navStack">
+                    <img src={navMonthlyDefault} className="navIcons" alt="monthly" />
+                    <a href="#monthly" className="bold">Monthly</a>
+                </div>
+                <div class="navStack">
+                    <img src={navExpenseDefault} className="navIcons" alt="expense" />
+                    <a href="#expense" className="bold">Expense</a>
+                </div>
+                <div class="navStack">
+                    <img src={navGroupsDefault} className="navIcons" alt="groups" />
+                    <a href="#groups" className="bold">Groups</a>
+                </div>
+                <div class="navStack">
+                    <img src={navProfileDefault} className="navIcons" alt="profile" />
+                    <a href="#groups" className="bold">Profile</a>
+                </div>
             </div>
                        
             
