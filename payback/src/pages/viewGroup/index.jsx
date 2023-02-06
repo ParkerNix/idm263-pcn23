@@ -105,32 +105,34 @@ export const ViewGroup = () => {
                                 </div>
                             </div>
                         </div>
-                        <button id='submit' className="btmRightBtn bold">
-                            New expense
-                        </button>
                     </div>
                 </div>
             </div>
-            <div class="navbar">
-                <div class="navStack">
+
+            <button id='submit' className="btmRightBtn bold">
+                New expense
+            </button>
+
+            <div className="navbar">
+                <div className="navStack">
                     <Link to='/' className="bold d-flex flex-column align-items-center">
                         <img src={navOverviewDefault} className="navIcons" alt="overview" />
                         Overview
                     </Link>
                 </div>
-                <div class="navStack">
+                <div className="navStack">
                     <img src={navMonthlyDefault} className="navIcons" alt="monthly" />
                     <a href="#monthly" className="bold">Monthly</a>
                 </div>
-                <div class="navStack">
+                <div className="navStack">
                     <img src={navExpenseDefault} className="navIcons" alt="expense" />
                     <a href="#expense" className="bold">Expense</a>
                 </div>
-                <div class="navStack">
+                <div className="navStack">
                     <img src={navGroupsDefault} className="navIcons" alt="groups" />
                     <a href="#groups" className="bold">Groups</a>
                 </div>
-                <div class="navStack">
+                <div className="navStack">
                     <Link to='/pages/profile' className="bold d-flex flex-column align-items-center">
                         <img src={navProfileDefault} className="navIcons" alt="profile" />
                         Profile

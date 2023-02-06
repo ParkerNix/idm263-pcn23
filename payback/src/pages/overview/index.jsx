@@ -44,7 +44,7 @@ export const Overview = () => {
     return (
         <>
             <div className="container gradientContainerCB">
-                <div class="row justify-content-center">
+                <div className="row justify-content-center">
                     <div className="col mt-4 mb-3 mx-3 d-flex justify-content-center align-items-center">
                         <h1 className="h6 bold white">Overview</h1>
                     </div>
@@ -81,26 +81,26 @@ export const Overview = () => {
                 </div>
             </div>
 
-            <div class="navbar">
-                <div class="navStack">
+            <div className="navbar">
+                <div className="navStack">
                     <Link to='/' className="bold d-flex flex-column align-items-center">
                         <img src={navOverviewDefault} className="navIcons" alt="overview" />
                         Overview
                     </Link>
                 </div>
-                <div class="navStack">
+                <div className="navStack">
                     <img src={navMonthlyDefault} className="navIcons" alt="monthly" />
                     <a href="#monthly" className="bold">Monthly</a>
                 </div>
-                <div class="navStack">
+                <div className="navStack">
                     <img src={navExpenseDefault} className="navIcons" alt="expense" />
                     <a href="#expense" className="bold">Expense</a>
                 </div>
-                <div class="navStack">
+                <div className="navStack">
                     <img src={navGroupsDefault} className="navIcons" alt="groups" />
                     <a href="#groups" className="bold">Groups</a>
                 </div>
-                <div class="navStack">
+                <div className="navStack">
                     <Link to='/pages/profile' className="bold d-flex flex-column align-items-center">
                         <img src={navProfileDefault} className="navIcons" alt="profile" />
                         Profile

@@ -34,7 +34,7 @@ export const EditGroup = () => {
     return (
         <>
         <div className="container">
-        <div class="row">
+        <div className="row">
                 <div className="col mt-4 mb-2 mx-3 d-flex justify-content-between">
                     <a onClick={goBack} className="bold line-height">
                         <img src={backArrow} alt="back" className="topNavBack" />
@@ -48,15 +48,15 @@ export const EditGroup = () => {
                 <div className="col">
                     <div className="createGroup">
                     <img src={newGroupIcon} alt="groupImg" className='newGroupImg mt-4 align-self-center'/>
-                    <div class="groupName d-flex flex-row align-items-center mt-3">
+                    <div className="groupName d-flex flex-row align-items-center mt-3">
                         <h2 id="groupH2" className = 'h3 bold'>Payback Gang</h2>
                         <img src={editIcon} alt="editIcon" className='editIcon' />
                     </div>
                 </div>
                     <div className="description">
                         <h3 className="h5 bold mt-4 mb-3">Description</h3>
-                        <div class="form-group">
-                            <textarea class="form-control" rows="5" cols="50" id="comment">You must pay!</textarea>
+                        <div className="form-group">
+                            <textarea className="form-control" rows="5" cols="50" id="comment">You must pay!</textarea>
                           </div>
                     </div>
                     <div className="groupMembers d-flex justify-content-center">
@@ -123,32 +123,32 @@ export const EditGroup = () => {
 
 
                           </div>
-                            <Link to="/pages/newExpense" className="button btmRightBtn demiBold">Save group</Link>
                     </div>
             </div>
         </div>
 
+        <Link to="/pages/newExpense" className="button btmRightBtn demiBold">Save group</Link>
 
-        <div class="navbar">
-                <div class="navStack">
+        <div className="navbar">
+                <div className="navStack">
                     <Link to='/' className="bold d-flex flex-column align-items-center">
                         <img src={navOverviewDefault} className="navIcons" alt="overview" />
                         Overview
                     </Link>
                 </div>
-                <div class="navStack">
+                <div className="navStack">
                     <img src={navMonthlyDefault} className="navIcons" alt="monthly" />
                     <a href="#monthly" className="bold">Monthly</a>
                 </div>
-                <div class="navStack">
+                <div className="navStack">
                     <img src={navExpenseDefault} className="navIcons" alt="expense" />
                     <a href="#expense" className="bold">Expense</a>
                 </div>
-                <div class="navStack">
+                <div className="navStack">
                     <img src={navGroupsDefault} className="navIcons" alt="groups" />
                     <a href="#groups" className="bold">Groups</a>
                 </div>
-                <div class="navStack">
+                <div className="navStack">
                     <Link to='/pages/profile' className="bold d-flex flex-column align-items-center">
                         <img src={navProfileDefault} className="navIcons" alt="profile" />
                         Profile

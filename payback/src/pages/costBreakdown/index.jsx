@@ -58,7 +58,7 @@ export const CostBreakdown = () => {
     return (
         <>
             <div className="container gradientContainerCB">
-                <div class="row justify-content-center">
+                <div className="row justify-content-center">
                     <div className="col mt-4 mb-3 mx-3 d-flex justify-content-between align-items-center">
                         <a onClick={goBack} className="bold line-height">
                             <img src={backArrowWhite} alt="back" className="topNavBack" />
@@ -85,7 +85,7 @@ export const CostBreakdown = () => {
                                     <h2 className='h4 bold'>Who covered the bill?</h2>
                                     <p className='categoryTitle categoryFood'>Food</p>
                                 </div>
-                                <div class="d-flex align-items-start">
+                                <div className="d-flex align-items-start">
                                     <div>
                                         <img src={checkCostBreakdown} alt='paid' className='checkCB' />
                                     </div>
@@ -138,33 +138,35 @@ export const CostBreakdown = () => {
                                     </div>
                                 </div>
                             </div>
-                            <button id='submit' className="btmRightBtn bold">
-                                Payback
-                            </button>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="navbar">
-                <div class="navStack">
+
+            <button id='submit' className="btmRightBtn bold">
+                Payback
+            </button>
+
+            <div className="navbar">
+                <div className="navStack">
                     <Link to='/' className="bold d-flex flex-column align-items-center">
                         <img src={navOverviewDefault} className="navIcons" alt="overview" />
                         Overview
                     </Link>
                 </div>
-                <div class="navStack">
+                <div className="navStack">
                     <img src={navMonthlyDefault} className="navIcons" alt="monthly" />
                     <a href="#monthly" className="bold">Monthly</a>
                 </div>
-                <div class="navStack">
+                <div className="navStack">
                     <img src={navExpenseDefault} className="navIcons" alt="expense" />
                     <a href="#expense" className="bold">Expense</a>
                 </div>
-                <div class="navStack">
+                <div className="navStack">
                     <img src={navGroupsDefault} className="navIcons" alt="groups" />
                     <a href="#groups" className="bold">Groups</a>
                 </div>
-                <div class="navStack">
+                <div className="navStack">
                     <Link to='/pages/profile' className="bold d-flex flex-column align-items-center">
                         <img src={navProfileDefault} className="navIcons" alt="profile" />
                         Profile

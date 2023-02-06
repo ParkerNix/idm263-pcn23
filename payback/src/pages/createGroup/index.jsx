@@ -34,7 +34,7 @@ export const CreateGroup = () => {
                     <a onClick={goBack} className="bold line-height">
                         <img src={backArrow} alt="back" className="topNavBack" />
                     </a>
-                    <h1 className="h6 bold">Groups</h1>
+                    <h1 className="h6 bold">Edit Group</h1>
                     <img src={optionsIcon} alt="back" className="topNavOptions" />
                     {/* Add back arrow and 3 vertical dots */}
                 </div>
@@ -63,16 +63,17 @@ export const CreateGroup = () => {
                             </Link>
                         </div>
                     </div>
-                    <button id='submit' className="btmRightBtn bold">
-                        Save group
-                    </button>
                 </div>
             </div>
         </div>
 
+        <button id='submit' className="btmRightBtn bold">
+            Save group
+        </button>
+
 
         <div className="navbar">
-                <div class="navStack">
+                <div className="navStack">
                     <Link to='/' className="bold d-flex flex-column align-items-center">
                         <img src={navOverviewDefault} className="navIcons" alt="overview" />
                         Overview

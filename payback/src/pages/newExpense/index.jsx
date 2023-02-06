@@ -60,16 +60,16 @@ export const NewExpense = () => {
                                     <h2 className='h4 bold'>What is it?</h2>
                                     <button className='noteBtn medium'>Add a note <img src={note} alt="note" className='noteIcon ms-2' /></button>
                                 </div>
-                                <div class="dropdown">
-                                    <button type="button" class="dropdownBtn dropdown-toggle" data-bs-toggle="dropdown">
+                                <div className="dropdown">
+                                    <button type="button" className="dropdownBtn dropdown-toggle" data-bs-toggle="dropdown">
                                         Category
                                     </button>
-                                    <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="#">Food</a></li>
-                                        <li><a class="dropdown-item" href="#">Travel</a></li>
-                                        <li><a class="dropdown-item" href="#">Entertainment</a></li>
-                                        <li><a class="dropdown-item" href="#">Bills</a></li>
-                                        <li><a class="dropdown-item" href="#">Other</a></li>
+                                    <ul className="dropdown-menu">
+                                        <li><a className="dropdown-item" href="#">Food</a></li>
+                                        <li><a className="dropdown-item" href="#">Travel</a></li>
+                                        <li><a className="dropdown-item" href="#">Entertainment</a></li>
+                                        <li><a className="dropdown-item" href="#">Bills</a></li>
+                                        <li><a className="dropdown-item" href="#">Other</a></li>
                                     </ul>
                                 </div>
                                 <select value="Other" hidden>
@@ -82,16 +82,16 @@ export const NewExpense = () => {
                             </div>
                             <div className='expenseSection'>
                                 <h2 className='h4 bold mb-3'>Who covered the bill?</h2>
-                                <div class="dropdown">
-                                    <button type="button" class="dropdownBtn dropdown-toggle" data-bs-toggle="dropdown">
+                                <div className="dropdown">
+                                    <button type="button" className="dropdownBtn dropdown-toggle" data-bs-toggle="dropdown">
                                         Choose group member
                                     </button>
-                                    <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="#">Megan</a></li>
-                                        <li><a class="dropdown-item" href="#">Molyna</a></li>
-                                        <li><a class="dropdown-item" href="#">Parker</a></li>
-                                        <li><a class="dropdown-item" href="#">Allie</a></li>
-                                        <li><a class="dropdown-item" href="#">Joey</a></li>
+                                    <ul className="dropdown-menu">
+                                        <li><a className="dropdown-item" href="#">Megan</a></li>
+                                        <li><a className="dropdown-item" href="#">Molyna</a></li>
+                                        <li><a className="dropdown-item" href="#">Parker</a></li>
+                                        <li><a className="dropdown-item" href="#">Allie</a></li>
+                                        <li><a className="dropdown-item" href="#">Joey</a></li>
                                     </ul>
                                 </div>
                                 <select value="Megan" hidden>
@@ -128,8 +128,8 @@ export const NewExpense = () => {
                                             />
                                         </div>
                                     </div>
-                                    <div class="progress">
-                                        <div class="progress-bar progressLightPurple" style={{ width: "20%" }}></div>
+                                    <div className="progress">
+                                        <div className="progress-bar progressLightPurple" style={{ width: "20%" }}></div>
                                     </div>
                                 </label>
                                 <label className='memberExpense'>
@@ -149,8 +149,8 @@ export const NewExpense = () => {
                                         />
                                         </div>
                                     </div>
-                                    <div class="progress">
-                                        <div class="progress-bar progressOrange" style={{ width: "20%" }}></div>
+                                    <div className="progress">
+                                        <div className="progress-bar progressOrange" style={{ width: "20%" }}></div>
                                     </div>
                                 </label>
                                 <label className='memberExpense'>
@@ -170,8 +170,8 @@ export const NewExpense = () => {
                                         />
                                         </div>
                                     </div>
-                                    <div class="progress">
-                                        <div class="progress-bar progressPink" style={{ width: "20%" }}></div>
+                                    <div className="progress">
+                                        <div className="progress-bar progressPink" style={{ width: "20%" }}></div>
                                     </div>
                                 </label>
                                 <label className='memberExpense'>
@@ -191,8 +191,8 @@ export const NewExpense = () => {
                                         />
                                         </div>
                                     </div>
-                                    <div class="progress">
-                                        <div class="progress-bar progressYellow" style={{ width: "20%" }}></div>
+                                    <div className="progress">
+                                        <div className="progress-bar progressYellow" style={{ width: "20%" }}></div>
                                     </div>
                                 </label>
                                 <label className='memberExpense'>
@@ -212,36 +212,38 @@ export const NewExpense = () => {
                                         />
                                         </div>
                                     </div>
-                                    <div class="progress">
-                                        <div class="progress-bar progressLightBlue" style={{ width: "20%" }}></div>
+                                    <div className="progress">
+                                        <div className="progress-bar progressLightBlue" style={{ width: "20%" }}></div>
                                     </div>
                                 </label>
                             </div>
-                            <Link to="/pages/viewGroup" className="button btmRightBtn demiBold">Save expense</Link>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="navbar">
-                <div class="navStack">
+
+            <Link to="/pages/viewGroup" className="button btmRightBtn demiBold">Save expense</Link>
+            
+            <div className="navbar">
+                <div className="navStack">
                     <Link to='/' className="bold d-flex flex-column align-items-center">
                         <img src={navOverviewDefault} className="navIcons" alt="overview" />
                         Overview
                     </Link>
                 </div>
-                <div class="navStack">
+                <div className="navStack">
                     <img src={navMonthlyDefault} className="navIcons" alt="monthly" />
                     <a href="#monthly" className="bold">Monthly</a>
                 </div>
-                <div class="navStack">
+                <div className="navStack">
                     <img src={navExpenseDefault} className="navIcons" alt="expense" />
                     <a href="#expense" className="bold">Expense</a>
                 </div>
-                <div class="navStack">
+                <div className="navStack">
                     <img src={navGroupsDefault} className="navIcons" alt="groups" />
                     <a href="#groups" className="bold">Groups</a>
                 </div>
-                <div class="navStack">
+                <div className="navStack">
                     <Link to='/pages/profile' className="bold d-flex flex-column align-items-center">
                         <img src={navProfileDefault} className="navIcons" alt="profile" />
                         Profile
