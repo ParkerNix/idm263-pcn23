@@ -218,12 +218,13 @@ export const NewExpense = () => {
                                 </label>
                             </div>
                         </div>
+                        <div className='stickyBtn2'>
+                            <Link to="/pages/viewGroup" className="button btmRightBtn demiBold">Save expense</Link>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <Link to="/pages/viewGroup" className="button btmRightBtn demiBold">Save expense</Link>
-            
             <div className="navbar">
                 <div className="navStack">
                     <Link to='/' className="bold d-flex flex-column align-items-center">

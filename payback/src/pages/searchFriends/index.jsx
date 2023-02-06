@@ -16,43 +16,54 @@ import navMonthlyDefault from '../../components/Assets/nav_monthly_default.png'
 import navExpenseDefault from '../../components/Assets/nav_expense_default.png'
 import navGroupsDefault from '../../components/Assets/nav_groups_default.png'
 import navProfileDefault from '../../components/Assets/nav_profile_default.png'
+import { Link, useNavigate } from 'react-router-dom';
 
 
 
 export const SearchFriends = () => {
+
+    // Use this hook to programmatically navigate to another page
+    const navigate = useNavigate();
+
+    // This function is used to navigate to the home page
+    // It will be called when the button is clicked
+    const goBack = () => {
+        navigate(-1);
+    };
 
     return (
         <>
         <div className="container">
         <div class="row">
                 <div className="col mt-4 mb-2 mx-3 d-flex justify-content-between">
-                    <img src={backArrow} alt="back" className="topNavBack" />
+                    <a onClick={goBack} className="bold line-height">
+                        <img src={backArrow} alt="back" className="topNavBack" />
+                    </a>
                     <h1 id="friendsTitle" className="h6 bold">Friends</h1>
                     <img src={optionsIcon} alt="back" className="topNavOptions" />
                 </div>
             </div>
             <div className="row">
-                <div className="col">
-                    <div className="searchFriends d-flex flex-row justify-content-center">
-                        
-                    <div className="input-group d-flex justify-content-center">
+                <div className="col my-4">
+                    <div className="searchFriends d-flex justify-content-center">
                         <div clasName="form-outline">
                             <input type="text" id="searchFormTwo" class="form-control" placeholder="Search for friends"/>
                         </div>
                     </div>
-                    </div>
-                    </div>
+                </div>
                         <div className="friendsList">
                             <h3 className="h5 bold mb-3" id="yourFriends">Add New Friends</h3>
                             <div className="row d-flex flex-row justify-content-center">
 
                                 <div className="friendsRow d-flex flex-row justify-content-between">
                                     <div className="friendsName d-flex flex-row">
-                                    <img src={parkerSmiley} alt="smiley" className="smiley"/>
-                                    <p className="p demiBold" id="friendName">Parker Nix</p>
+                                        <img src={parkerSmiley} alt="smiley" className="smiley"/>
+                                        <p className="p demiBold" id="friendName">Parker Nix</p>
                                     </div>
-                                        <div className="addFriend">
+                                    <div className="addFriend">
+                                        <Link to="/pages/friends">
                                             <img src={addFriend} alt="addFriend" className="addFriend"/>
+                                        </Link>
                                     </div>
                                 </div>
                                 <hr className="addFriend"></hr>

@@ -28,51 +28,50 @@ export const CreateGroup = () => {
 
     return (
         <>
-        <div className="container">
-        <div className="row">
-                <div className="col mt-4 mb-2 mx-3 d-flex justify-content-between">
-                    <a onClick={goBack} className="bold line-height">
-                        <img src={backArrow} alt="back" className="topNavBack" />
-                    </a>
-                    <h1 className="h6 bold">Edit Group</h1>
-                    <img src={optionsIcon} alt="back" className="topNavOptions" />
-                    {/* Add back arrow and 3 vertical dots */}
-                </div>
-            </div>
-            <div className="row">
-                <div className="col">
-                    <div className="createGroup">
-                        <img src={groupImg} alt="groupImg" className='newGroupImg mt-4 align-self-center'/>
-                        <div className="groupName d-flex flex-row justify-content-center align-items-center mt-3">
-                            <h2 className ='h3 bold'>Group 1</h2>
-                            <img src={editIcon} alt="editIcon" className='editIcon' />
-                        </div>
-                    </div>
-                    <div className="description">
-                        <h3 className="h5 bold mt-4 mb-3">Description</h3>
-                        <div className="form-group">
-                            <textarea className="form-control" rows="5" cols="50" id="comment">Add group description</textarea>
-                          </div>
-                    </div>
-                    <div className="groupMembers d-flex justify-content-center">
-                        <h3 className='h5 bold mb-3'>Groups Members (0)</h3>
-                        <div className="checkbox d-flex flex-row gap-2">
-                            <Link to="/pages/editGroup" className="d-flex demiBold">
-                                    <img src={deletePlaceholder} alt="smiley" className="add"/>
-                                    <p className="p demiBold ms-1" id="friendName">Add more friends</p>
-                            </Link>
-                        </div>
+            <div className="container">
+                <div className="row">
+                    <div className="col mt-4 mb-2 mx-3 d-flex justify-content-between">
+                        <a onClick={goBack} className="bold line-height">
+                            <img src={backArrow} alt="back" className="topNavBack" />
+                        </a>
+                        <h1 className="h6 bold">Edit Group</h1>
+                        <img src={optionsIcon} alt="back" className="topNavOptions" />
+                        {/* Add back arrow and 3 vertical dots */}
                     </div>
                 </div>
+                <div className="row">
+                    <div className="col">
+                        <div className="createGroup">
+                            <img src={groupImg} alt="groupImg" className='newGroupImg mt-4 align-self-center'/>
+                            <div className="groupName d-flex flex-row justify-content-center align-items-center mt-3">
+                                <h2 className ='h3 bold'>Group 1</h2>
+                                <img src={editIcon} alt="editIcon" className='editIcon' />
+                            </div>
+                        </div>
+                        <div className="description">
+                            <h3 className="h5 bold mt-4 mb-3">Description</h3>
+                            <div className="form-group">
+                                <textarea className="form-control" rows="5" cols="50" id="comment">Add group description</textarea>
+                              </div>
+                        </div>
+                        <div className="groupMembers d-flex justify-content-center">
+                            <h3 className='h5 bold mb-3'>Groups Members (0)</h3>
+                            <div className="checkbox d-flex flex-row gap-2">
+                                <Link to="/pages/friends" className="d-flex demiBold">
+                                        <img src={deletePlaceholder} alt="smiley" className="add"/>
+                                        <p className="p demiBold ms-1" id="friendName">Add more friends</p>
+                                </Link>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className='stickyBtn4'>
+                    <button className="btmRightBtn demiBold">Save group</button>
+                </div>
             </div>
-        </div>
-
-        <button id='submit' className="btmRightBtn bold">
-            Save group
-        </button>
 
 
-        <div className="navbar">
+            <div className="navbar">
                 <div className="navStack">
                     <Link to='/' className="bold d-flex flex-column align-items-center">
                         <img src={navOverviewDefault} className="navIcons" alt="overview" />
@@ -99,6 +98,6 @@ export const CreateGroup = () => {
                 </div>
             </div>
             
-            </>
-         );
-    }
+        </>
+    );
+}

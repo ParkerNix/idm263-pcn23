@@ -15,17 +15,29 @@ import navMonthlyDefault from '../../components/Assets/nav_monthly_default.png'
 import navExpenseDefault from '../../components/Assets/nav_expense_default.png'
 import navGroupsDefault from '../../components/Assets/nav_groups_default.png'
 import navProfileDefault from '../../components/Assets/nav_profile_default.png'
+import { Link, useNavigate } from 'react-router-dom';
 
 
 
 export const AddFriends = () => {
+
+    // Use this hook to programmatically navigate to another page
+    const navigate = useNavigate();
+
+    // This function is used to navigate to the home page
+    // It will be called when the button is clicked
+    const goBack = () => {
+      navigate(-1);
+    };
 
     return (
         <>
         <div className="container">
         <div class="row">
                 <div className="col mt-4 mb-2 mx-3 d-flex justify-content-between">
-                    <img src={backArrow} alt="back" className="topNavBack" />
+                    <Link to="/pages/editGroup">
+                        <img src={backArrow} alt="back" className="topNavBack" />
+                    </Link>
                     <h1 id="friendsTitle" className="h6 bold">Friends</h1>
                     <img src={optionsIcon} alt="back" className="topNavOptions" />
                 </div>
@@ -36,7 +48,9 @@ export const AddFriends = () => {
                         
                     <div className="input-group">
                         <div clasName="form-outline">
-                            <input type="text" id="searchForm" class="form-control" placeholder="Search for friends"/>
+                            <Link to="/pages/noFriends" className="d-flex demiBold">
+                                <input type="text" id="searchForm" class="form-control" placeholder="Search for friends"/>
+                            </Link>
                             {/* <label class="form-label" for="searchForm">Search</label> */}
                         </div>
                         </div>

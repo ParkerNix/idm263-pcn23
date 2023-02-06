@@ -34,7 +34,7 @@ export const EditGroup = () => {
     return (
         <>
         <div className="container">
-        <div className="row">
+            <div className="row">
                 <div className="col mt-4 mb-2 mx-3 d-flex justify-content-between">
                     <a onClick={goBack} className="bold line-height">
                         <img src={backArrow} alt="back" className="topNavBack" />
@@ -47,87 +47,85 @@ export const EditGroup = () => {
             <div className="row pageBottom">
                 <div className="col">
                     <div className="createGroup">
-                    <img src={newGroupIcon} alt="groupImg" className='newGroupImg mt-4 align-self-center'/>
-                    <div className="groupName d-flex flex-row align-items-center mt-3">
-                        <h2 id="groupH2" className = 'h3 bold'>Payback Gang</h2>
-                        <img src={editIcon} alt="editIcon" className='editIcon' />
+                        <img src={newGroupIcon} alt="groupImg" className='newGroupImg mt-4 align-self-center'/>
+                        <div className="groupName d-flex flex-row align-items-center mt-3">
+                            <h2 id="groupH2" className = 'h3 bold'>Payback Gang</h2>
+                            <img src={editIcon} alt="editIcon" className='editIcon' />
+                        </div>
                     </div>
-                </div>
                     <div className="description">
                         <h3 className="h5 bold mt-4 mb-3">Description</h3>
                         <div className="form-group">
                             <textarea className="form-control" rows="5" cols="50" id="comment">You must pay!</textarea>
-                          </div>
+                        </div>
                     </div>
                     <div className="groupMembers d-flex justify-content-center">
                         <h3 className='h5 bold mb-3'>Groups Members (4)</h3>
 
-                            <div className="row d-flex flex-row justify-content-center">
+                        <div className="row d-flex flex-row justify-content-center">
 
-                                <div className="friendsRow d-flex flex-row justify-content-between">
-                                    <div className="friendsName d-flex flex-row">
+                            <div className="friendsRow d-flex flex-row justify-content-between">
+                                <div className="friendsName d-flex flex-row">
                                     <img src={allieSmiley} alt="smiley" className="smiley"/>
                                     <p className="p demiBold" id="friendName">Allie Drake</p>
-                                    </div>
-                                        <div className="addFriend">
-                                            <img src={deletePlaceholder} alt="addFriend" className="deleteFriend"/>
-                                    </div>
                                 </div>
+                                <div className="addFriend">
+                                    <img src={deletePlaceholder} alt="addFriend" className="deleteFriend"/>
+                                </div>
+                            </div>
 
-                                <hr className="editFriend"></hr>
-                                
-                                <div className="friendsRow d-flex flex-row justify-content-between">
-                                    <div className="friendsName d-flex flex-row">
+                            <hr className="editFriend"></hr>
+                            
+                            <div className="friendsRow d-flex flex-row justify-content-between">
+                                <div className="friendsName d-flex flex-row">
                                     <img src={joeySmiley} alt="smiley" className="smiley"/>
                                     <p className="p demiBold" id="friendName">Joey McQuillan</p>
-                                    </div>
-                                    <div className="addFriend">
-                                            <img src={deletePlaceholder} alt="addFriend" className="deleteFriend"/>
-                                    </div>
                                 </div>
-                                <hr className="editFriend"></hr>
+                                <div className="addFriend">
+                                    <img src={deletePlaceholder} alt="addFriend" className="deleteFriend"/>
+                                </div>
+                            </div>
+                            <hr className="editFriend"></hr>
 
-                                <div className="friendsRow d-flex flex-row justify-content-between">
-                                    <div className="friendsName d-flex flex-row">
+                            <div className="friendsRow d-flex flex-row justify-content-between">
+                                <div className="friendsName d-flex flex-row">
                                     <img src={meganSmiley} alt="smiley" className="smiley"/>
                                     <p className="p demiBold" id="friendName">Megan Lam</p>
-                                    </div>
-                                    <div className="addFriend">
-                                            <img src={deletePlaceholder} alt="addFriend" className="deleteFriend"/>
-                                    </div>
                                 </div>
-                                <hr className="editFriend"></hr>
+                                <div className="addFriend">
+                                    <img src={deletePlaceholder} alt="addFriend" className="deleteFriend"/>
+                                </div>
+                            </div>
+                            <hr className="editFriend"></hr>
                         
-                                <div className="friendsRow d-flex flex-row justify-content-between">
-                                    <div className="friendsName d-flex flex-row">
+                            <div className="friendsRow d-flex flex-row justify-content-between">
+                                <div className="friendsName d-flex flex-row">
                                     <img src={parkerSmiley} alt="smiley" className="smiley"/>
                                     <p className="p demiBold" id="friendName">Parker Nix</p>
-                                    </div>
-                                    <div className="addFriend">
-                                            <img src={deletePlaceholder} alt="addFriend" className="deleteFriend"/>
-                                    </div>
                                 </div>
-
-                                <hr className="editFriend"></hr>
-
-                                <div className="friendsRow d-flex flex-row justify-content-between">
-                                    <div className="friendsName d-flex flex-row align-items-center">
-                                    <img src={deletePlaceholder} alt="smiley" className="add"/>
-                                    <p className="p demiBold" id="friendName">Add more friends</p>
-                                    </div>
+                                <div className="addFriend">
+                                    <img src={deletePlaceholder} alt="addFriend" className="deleteFriend"/>
                                 </div>
-
                             </div>
-                        
 
+                            <hr className="editFriend"></hr>
 
-
-                          </div>
+                            <div className="friendsRow d-flex flex-row justify-content-between">
+                                <div className="friendsName d-flex flex-row align-items-center">
+                                    <Link to="/pages/friends" className="d-flex demiBold">
+                                        <img src={deletePlaceholder} alt="smiley" className="add"/>
+                                        <p className="p demiBold ms-1" id="friendName">Add more friends</p>
+                                    </Link>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+                    <div className='stickyBtn'>
+                        <Link to="/pages/newExpense" className="button btmRightBtn demiBold">Save group</Link>
+                    </div>
+                </div>
             </div>
         </div>
-
-        <Link to="/pages/newExpense" className="button btmRightBtn demiBold">Save group</Link>
 
         <div className="navbar">
                 <div className="navStack">

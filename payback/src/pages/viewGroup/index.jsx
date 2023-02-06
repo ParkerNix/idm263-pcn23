@@ -105,13 +105,12 @@ export const ViewGroup = () => {
                                 </div>
                             </div>
                         </div>
+                        <div className='stickyBtn2'>
+                            <Link to="/pages/newExpense" className="button btmRightBtn demiBold">New expense</Link>
+                        </div>
                     </div>
                 </div>
             </div>
-
-            <button id='submit' className="btmRightBtn bold">
-                New expense
-            </button>
 
             <div className="navbar">
                 <div className="navStack">

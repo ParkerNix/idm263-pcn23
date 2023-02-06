@@ -67,18 +67,24 @@ export const AllGroups = () => {
                                         <img src={parkerSmiley} className="memberIcons" alt="member3" />
                                     </div>
                                     <div className="groupsCardButton">
-                                        <button className='demiBold'>View Group</button>
+                                        <Link to='/pages/viewGroup' className="button bold">
+                                            View Group
+                                        </Link>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <Link to='/pages/createGroup' className="button btmRightBtn bold">
-                        Create new group
-                    </Link>
                 </div>
             </div>
+                <div className='stickyBtn3'>
+                    <Link to="/pages/createGroup" className="button btmRightBtn demiBold">Create group</Link>
+                </div>
         </div>
+
+        <Link to='/pages/createGroup' className="button btmRightBtn bold">
+            Create new group
+        </Link>
 
         <div className="navbar">
             <div className="navStack">
