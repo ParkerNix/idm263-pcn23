@@ -20,6 +20,8 @@ code {
   --main-cta-purple: #471fba;
   --button-light-purple: #eae3fb;
   --button-medium-purple:#7446d7;
+  --profile--name-purple: #dfcfff;
+  --desaturated-purple: #644dbd;
   --nav-bar-color: #FFFDFE;
   --orange-icon-color: #ff6341;
   --nav-unactive-color: linear-gradient(180deg, #8561d4, rgba(184,113,240,0.9));
@@ -43,11 +45,7 @@ code {
   --category-food: ;
   --category-food: ;
 
-  /* --greycliff-extrabold-font-family: 'Greycliff-ExtraBold';
-  --greycliff-bold-font-family: 'Greycliff-Bold';
-  --greycliff-medium-font-family: 'Greycliff-Medium';
-  --greycliff-regular-font-family: 'Greycliff-Regular'; */
-  
+  --hr-color: #e6e2ec;
 }
 
 
@@ -117,7 +115,7 @@ h6, .h6 {
   margin: 0;
 }
 
-p, .p, .dropdown-item, a:link, a:visited, a:hover, a:active {
+p, .p, .dropdown-item, a:link, a:visited, a:hover, a:active, textarea {
   color: var(--text-dark-purple);
   font-size: 14px;
   margin: 0;
@@ -162,7 +160,7 @@ button, .button {
  border: 0;
 }
 
-h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, p, .p, a, link, button, input {
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, p, .p, a, link, button, input, textarea {
   font-family: greycliff-cf;
 }
 
@@ -184,6 +182,71 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, p, .p, a, link, button, in
   right: 16px;
   padding: 12px 16px;
 }
+
+
+
+/* ////////// ////*/
+/* ////////// ////*/
+/* ////////// ////*/
+/* ////NAVBAR ////*/
+/* ////////// ////*/
+/* ////////// ////*/
+/* ////////// ////*/
+
+
+.navStack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 13px;
+  margin-bottom: 5px;
+}
+
+
+.navbar {
+  overflow: hidden;
+  background-color: var(--nav-bar-color);
+  border-radius: 20px 20px 0px 0px;
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 30px;
+  padding-right: 30px;
+  bottom: 0;
+  width: 100%;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 -2px 5px 0 rgba(53, 0, 138, 0.1);
+}
+
+.navbar a {
+  color: var(--button-medium-purple);
+  text-align: center;
+  font-size: var(--xsmall-copy);
+  /* padding: 14px 20px; */
+  text-decoration: none;
+}
+
+.navbar .navStack:hover {
+  background-image: linear-gradient(to bottom, rgba(140, 62, 219, 0.08) 0%, rgba(163, 84, 203, 0) 100%);
+  color: var(--nav);
+}
+
+/* .navbar a.active {
+  background-color: #04AA6D;
+  color: white;
+} */
+
+.navIcons {
+  width: 24px;
+  height: 24px;
+}
+
+
+
+
 
 /* GROUPS PAGE */
 
@@ -244,6 +307,7 @@ margin:0 ;
   flex-direction: row;
 }
 
+
 .groupsCardRowTwo {
   display: flex;
   flex-direction: row;
@@ -251,7 +315,356 @@ margin:0 ;
   padding-top: 0.3rem;
 }
 
+#groupH2 {
+  margin-top: 16px;
+}
+
+/* NEW GROUP PAGE */
+
+.createGroup {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.newGroupImg {
+  width: 74px;
+  height: 74px;
+}
+
+.description {
+  padding-left: 28px;
+  padding-right: 28px;
+}
+
+.form-control {
+  height: 74px;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px 0 rgba(1, 0, 51, 0.05);
+}
+
+.groupMembers {
+  margin-top: 2rem;
+  flex-direction: column;
+  padding-left:28px;
+  padding-right: 28px;
+}
+
+.checkbox p {
+  color: var(--text-dark-purple);
+  font-size: var(--medium-copy);
+}
+
+img.editIcon {
+  width: 24px;
+  height: 24px;
+  margin-top: 1.1rem;
+  margin-left: 0.3rem;
+}
+
+
+/* ADD FRIENDS */
+/* 
+*/
+
+#searchForm {
+  width: 234px;
+  height: 41px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 11px 12px 24px 24px;
+  padding: 12px 16px;
+  border-radius: 55px;
+  box-shadow: 0 5px 20px 0 rgba(1, 0, 51, 0.05);
+  background-color: #fff;
+}
+
+#searchFormTwo {
+  width: 327px;
+  height: 41px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 11px 12px 24px 24px;
+  padding: 12px 16px;
+  border-radius: 55px;
+  box-shadow: 0 5px 20px 0 rgba(1, 0, 51, 0.05);
+  background-color: #fff;
+}
+
+
+button#submit.searchButton {
+  width: 80.8px;
+  height: 30.8px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+  margin: 16px 24.2px 29.2px 12px;
+  padding: 8px 13px;
+  border-radius: 10px;
+  background-color: var(--button-color);
+}
+
+.searchFriends {
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+#yourFriends {
+  margin-bottom: 24px !important;
+}
+
+.friendsList {
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.link {
+  width: 14.8px;
+  height: 14.8px;
+  flex-grow: 0;
+  object-fit: contain;
+  margin-right: 4px;
+}
+
+.smiley {
+  width: 25px;
+  height: 25px;
+}
+
+.friendsName {
+  gap: 7.6px;
+}
+
+#friendName {
+  font-size: var(--medium-copy);
+}
+
+img.addFriend {
+  width: 23px;
+  height: 23px;
+  flex-grow: 0;
+}
+
+
+/* The container */
+.friendsCheck {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.friendsCheck input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom radio button */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20.8px;
+  height: 20.8px;
+  background-color: var(--main-bg-color);
+  border: 1.5px solid #8573ae;
+  border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.friendsCheck:hover input ~ .checkmark {
+  background-color: var(--orange-icon-color);
+  border: 1.5px solid var(--orange-icon-color);
+}
+
+/* When the radio button is checked, add a blue background */
+.friendsCheck input:checked ~ .checkmark {
+  background-color: #2196F3;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.friendsCheck input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.friendsCheck .checkmark:after {
+ 	top: 9px;
+	left: 9px;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: white;
+}
+
+.checkmark#addFriendCheck {
+  margin-left: 10px;
+}
+
+hr.friendsList {
+  margin: 17.5px 24px 17.5px 24px;
+  height: 4px;
+  width: 327px;
+  color: var(--hr-color);
+}
+
+hr.addFriend {
+  width: 327px;
+  height: 1px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: var(--hr-color);
+}
+
+.sadSmiley {
+  width: 60px;
+  height: 60px;
+  margin-top: 40px;
+  object-fit: contain;
+}
+
+h1#noFriends {
+  font-size: 24px;
+  margin-top: 11px;
+}
+
+img.deleteFriend {
+  width: 18px;
+  height: 18px;
+}
+
+img.add {
+  width: 18px;
+  height: 18px;
+  transform: rotate(-45deg);
+}
+
+hr.editFriend {
+  width: 327px;
+  height: 1px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  color: var(--hr-color);
+}
+
+
+/* PROFILE */
+/* ////////// */
+/* ////////// */
+/* ////////// */
+/* ////////// */
+/* ////////// */
+
+h1#profile {
+  color: var(--main-bg-color);
+}
+
+.profileSmiley {
+  width: 100px;
+  height: 100px;
+  padding: 4px 1px 1px 4px;
+  margin-top: 18px;
+}
+
+button#addButton {
+  width: 32px;
+  height: 32px;
+  flex-grow: 0;
+  margin-top: 90px;
+  margin-left: -2rem;
+  padding: 11px 10px 10px 11px;
+  border-radius: 21px;
+  background-color: var(--orange-icon-color);
+}
+
+h1#profileName.h1.bold {
+  color: var(--main-bg-color);
+  font-size: 24px;
+}
+
+p#profileName {
+  color: var(--profile--name-purple);
+  font-size: var(--medium-copy);
+}
+
+p#profileFriends {
+  color: var(--main-bg-color);
+  font-size: var(--medium-copy);
+  margin-bottom: 32px;
+  padding: 1px 14px;
+  border-radius: 10px;
+  border: solid 1.5px #9e84d4;
+}
+
+img.transactionSmiley {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+h4#transactionsHeader {
+  margin-bottom: 24px;
+  padding-top: 32px;
+}
+
+p#groupName {
+  color: var(--desaturated-purple);
+}
+
+h6#groupMember, h6#groupCost {
+  color: var(--text-dark-purple);
+  font-size: var(--medium-copy);
+}
+
+.transactions {
+  margin-right: 15.3px;
+}
+
+p#groupDate {
+ font-size: var(--xsmall-copy);
+}
+
+hr.profile {
+  width: 327px;
+  height: 1px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  color: var(--hr-color);
+}
+
+
+
+
 .gradientContainer {
+  background-image: linear-gradient(#6527c9, #330a8b 62.86%);
+}
+
+.gradientContainerTwo {
   background-image: linear-gradient(176.73deg, #3414AF 2.7%, #C749E8 62.86%);
 }
 
@@ -259,14 +672,82 @@ margin:0 ;
   background-image: linear-gradient(159deg, #6527c9 0%, #330a8b 36%)
 }
 
-.container {
+.friendsCheck, .container {
   background-color: var(--main-bg-color);
+  font-size: var(--medium-copy);
 }
+
+
+
+/* ///////////////////// */
+/* ///////////////////// */
+/* ///////////////////// */
+/* Other friend profile */
+/* ///////////////////// */
+/* ///////////////////// */
+/* ///////////////////// */
+
+
+img.friendCheck {
+  width: 12.6px;
+  height: 12px;
+  flex-grow: 0;
+  margin-right: 8px;
+}
+
+img.remind {
+  width: 12px;
+  height: 15px;
+  flex-grow: 0;
+  margin: 0 8px 1px 0;
+  padding: 0.9px 0.9px;
+}
+
+#cardGroupName {
+  padding-left: 8px;
+}
+
+#recentFriends {
+  color: var(--main-bg-color);
+}
+
+#viewAll {
+  color: var(--button-light-purple);
+  text-decoration: underline;
+  font-size: var(--medium-copy);
+}
+
+.recentFriends {
+  padding: 40px 24px 22px 24px;
+}
+
+img.smileyInScroll {
+  width: 63px;
+  height: 62px;
+}
+
+.smileyScroll {
+  gap: 21px;
+  padding-bottom: 38.1px;
+}
+
+#smileyScrollName {
+color: var(--button-light-purple);
+margin-top: 5.2px;
+}
+
+
+
 
 .pageTab {
   background-color: var(--main-bg-color);
   border-radius: 10px 10px 0px 0px;
   height: 100%;
+}
+
+.pageTabTwo {
+  background-color: var(--main-bg-color);
+  border-radius: 20px 20px 0px 0px;
 }
 
 .white {
@@ -282,6 +763,7 @@ margin:0 ;
   width: 32px;
   height: 32px;
   margin: 0 7.6px 0 0;
+  margin-right: -10px;
 }
 
 .heartIcon {

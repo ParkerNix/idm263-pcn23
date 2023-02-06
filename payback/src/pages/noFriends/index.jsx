@@ -4,8 +4,14 @@ import groupImg from '../../components/Assets/groupImg.png'
 import smileySmiley from '../../components/Assets/smiley_smiley.png'
 import molynaSmiley from '../../components/Assets/molyna_smiley.png'
 import parkerSmiley from '../../components/Assets/parker_smiley.png'
+import allieSmiley from '../../components/Assets/allie_smiley.png'
+import joeySmiley from '../../components/Assets/joey_smiley.png'
+import meganSmiley from '../../components/Assets/megan_smiley.png'
 import heartEmpty from '../../components/Assets/heartEmpty.png'
 import editIcon from '../../components/Assets/editIcon.png'
+import link from '../../components/Assets/link.png'
+import addFriend from '../../components/Assets/addFriend.png'
+import sadSmiley from '../../components/Assets/sad_smiley.png'
 import navOverviewDefault from '../../components/Assets/nav_overview_default.png'
 import navMonthlyDefault from '../../components/Assets/nav_monthly_default.png'
 import navExpenseDefault from '../../components/Assets/nav_expense_default.png'
@@ -13,7 +19,8 @@ import navGroupsDefault from '../../components/Assets/nav_groups_default.png'
 import navProfileDefault from '../../components/Assets/nav_profile_default.png'
 
 
-export const CreateGroup = () => {
+
+export const NoFriends = () => {
 
     return (
         <>
@@ -21,47 +28,31 @@ export const CreateGroup = () => {
         <div class="row">
                 <div className="col mt-4 mb-2 mx-3 d-flex justify-content-between">
                     <img src={backArrow} alt="back" className="topNavBack" />
-                    <h1 className="h6 bold">Groups</h1>
+                    <h1 id="friendsTitle" className="h6 bold">Friends</h1>
                     <img src={optionsIcon} alt="back" className="topNavOptions" />
-                    {/* Add back arrow and 3 vertical dots */}
                 </div>
             </div>
             <div className="row">
                 <div className="col">
-                    <div className="createGroup">
-                    <img src={groupImg} alt="groupImg" className='newGroupImg mt-4 align-self-center'/>
-                    <div class="groupName d-flex flex-row align-items-center mt-3">
-                        <h2 id="groupH2" className = 'h3 bold'>Group 1</h2>
-                        <img src={editIcon} alt="editIcon" className='editIcon' />
+                    <div className="searchFriends d-flex flex-row justify-content-center">
+                        
+                    <div className="input-group d-flex justify-content-center">
+                        <div clasName="form-outline">
+                            <input type="text" id="searchFormTwo" class="form-control" placeholder="Search for friends"/>
+                        </div>
+                    </div>
+                    </div>
+                    </div>
+                        
+                                
+                    <div className="noFriends d-flex flex-column justify-content-center align-items-center">
+                        <img src={sadSmiley} alt="sadSmiley" className="sadSmiley" />
+                        <h1 className='h1 bold' id="noFriends">No friends found yet.</h1>
                     </div>
                 </div>
-                    <div className="description">
-                        <h3 className="h5 bold mt-4 mb-3">Description</h3>
-                        <div class="form-group">
-                            <textarea class="form-control" rows="5" cols="50" id="comment">Add group description</textarea>
-                          </div>
-                    </div>
-                    <div className="groupMembers d-flex justify-content-center">
-                        <h3 className='h5 bold mb-3'>Groups Members (0)</h3>
-                        <div class="checkbox d-flex flex-row gap-2">
-                        <input
-                             className='add'
-                             type="checkbox"
-                             min="0"
-                             />
-                             <p className="p demiBold">Add Friends</p>
-                          </div>
-                          </div>
-                          <button id='submit' className="btmRightBtn bold">
-                                Save group
-                            </button>
-                    </div>
+                </div>
 
-            </div>
-        </div>
-
-
-        <div class="navbar">
+                <div class="navbar">
                 <div class="navStack">
                     <img src={navOverviewDefault} className="navIcons" alt="overview" />
                     <a href="#home" className="active bold">Overview</a>
@@ -83,7 +74,7 @@ export const CreateGroup = () => {
                     <a href="#groups" className="bold">Profile</a>
                 </div>
             </div>
-            
+
             </>
          );
     }
