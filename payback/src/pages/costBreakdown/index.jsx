@@ -165,8 +165,10 @@ export const CostBreakdown = () => {
                     <a href="#groups" className="bold">Groups</a>
                 </div>
                 <div class="navStack">
-                    <img src={navProfileDefault} className="navIcons" alt="profile" />
-                    <a href="#groups" className="bold">Profile</a>
+                    <Link to='/pages/profile' className="bold d-flex flex-column align-items-center">
+                        <img src={navProfileDefault} className="navIcons" alt="profile" />
+                        Profile
+                    </Link>
                 </div>
             </div>
         </>

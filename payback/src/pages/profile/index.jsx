@@ -12,15 +12,27 @@ import navMonthlyDefault from '../../components/Assets/nav_monthly_default.png'
 import navExpenseDefault from '../../components/Assets/nav_expense_default.png'
 import navGroupsDefault from '../../components/Assets/nav_groups_default.png'
 import navProfileDefault from '../../components/Assets/nav_profile_default.png'
+import { Link, useNavigate } from 'react-router-dom';
 
 export const Profile = () => {
+
+    // Use this hook to programmatically navigate to another page
+    const navigate = useNavigate();
+    
+    // This function is used to navigate to the home page
+    // It will be called when the button is clicked
+    const goBack = () => {
+      navigate(-1);
+    };
 
     return (
         <>
         <div className="gradientContainer">
             <div className="row">
                 <div className="col mt-4 mb-2 mx-3 d-flex justify-content-between">
-                    <img src={backArrowWhite} alt="back" className="topNavBack" />
+                    <a onClick={goBack} className="bold line-height">
+                        <img src={backArrowWhite} alt="back" className="topNavBack" />
+                    </a>
                     <h1 className="h6 bold" id="profile">Profile</h1>
                     <img src={optionsIcon} alt="back" className="topNavOptions" />
                  </div>
@@ -106,8 +118,10 @@ export const Profile = () => {
 
             <div class="navbar">
                 <div class="navStack">
-                    <img src={navOverviewDefault} className="navIcons" alt="overview" />
-                    <a href="#home" className="active bold">Overview</a>
+                    <Link to='/' className="bold d-flex flex-column align-items-center">
+                        <img src={navOverviewDefault} className="navIcons" alt="overview" />
+                        Overview
+                    </Link>
                 </div>
                 <div class="navStack">
                     <img src={navMonthlyDefault} className="navIcons" alt="monthly" />
@@ -122,8 +136,10 @@ export const Profile = () => {
                     <a href="#groups" className="bold">Groups</a>
                 </div>
                 <div class="navStack">
-                    <img src={navProfileDefault} className="navIcons" alt="profile" />
-                    <a href="#groups" className="bold">Profile</a>
+                    <Link to='/pages/profile' className="bold d-flex flex-column align-items-center">
+                        <img src={navProfileDefault} className="navIcons" alt="profile" />
+                        Profile
+                    </Link>
                 </div>
             </div>
                        

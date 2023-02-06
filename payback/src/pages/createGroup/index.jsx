@@ -91,8 +91,10 @@ export const CreateGroup = () => {
                     <a href="#groups" className="bold">Groups</a>
                 </div>
                 <div className="navStack">
-                    <img src={navProfileDefault} className="navIcons" alt="profile" />
-                    <a href="#groups" className="bold">Profile</a>
+                    <Link to='/pages/profile' className="bold d-flex flex-column align-items-center">
+                        <img src={navProfileDefault} className="navIcons" alt="profile" />
+                        Profile
+                    </Link>
                 </div>
             </div>
             
