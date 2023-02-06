@@ -1,6 +1,6 @@
 import backArrow from '../../components/Assets/Back arrow.png'
 import optionsIcon from '../../components/Assets/optionsDots.png'
-import groupImg from '../../components/Assets/groupImg.png'
+import groupImg from '../../components/Assets/emptyGroupImg.png'
 import smileySmiley from '../../components/Assets/smiley_smiley.png'
 import molynaSmiley from '../../components/Assets/molyna_smiley.png'
 import parkerSmiley from '../../components/Assets/parker_smiley.png'
@@ -42,7 +42,7 @@ export const CreateGroup = () => {
                 <div className="row">
                     <div className="col">
                         <div className="createGroup">
-                            <img src={groupImg} alt="groupImg" className='newGroupImg mt-4 align-self-center'/>
+                            <img src={groupImg} alt="groupImg" className='emptyGroupImg mt-4 align-self-center'/>
                             <div className="groupName d-flex flex-row justify-content-center align-items-center mt-3">
                                 <h2 className ='h3 bold'>Group 1</h2>
                                 <img src={editIcon} alt="editIcon" className='editIcon' />

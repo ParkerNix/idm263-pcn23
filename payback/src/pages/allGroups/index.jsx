@@ -52,7 +52,7 @@ export const AllGroups = () => {
                                             <span className="placeholder"></span>
                                         </div>
                                         <div className='ms-2'>
-                                            <h1 className="h4 bold">Payback</h1>
+                                            <h1 className="h4 bold">Roomies</h1>
                                             <p className="medium">Money money money</p>
                                         </div>
                                     </div>
@@ -67,8 +67,8 @@ export const AllGroups = () => {
                                         <img src={parkerSmiley} className="memberIcons" alt="member3" />
                                     </div>
                                     <div className="groupsCardButton">
-                                        <Link to='/pages/viewGroup' className="button bold">
-                                            View Group
+                                        <Link to='/pages/viewGroup' className="button demiBold">
+                                            View group
                                         </Link>
                                     </div>
                                 </div>
@@ -78,13 +78,9 @@ export const AllGroups = () => {
                 </div>
             </div>
                 <div className='stickyBtn3'>
-                    <Link to="/pages/createGroup" className="button btmRightBtn demiBold">Create group</Link>
+                    <Link to="/pages/createGroup" className="button mediumCopy btmRightBtn demiBold">Create new group</Link>
                 </div>
         </div>
-
-        <Link to='/pages/createGroup' className="button btmRightBtn bold">
-            Create new group
-        </Link>
 
         <div className="navbar">
             <div className="navStack">

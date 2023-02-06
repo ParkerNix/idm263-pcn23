@@ -43,10 +43,8 @@ export const NewExpense = () => {
                               <p className="white">Total Cost</p>
                               <input
                                 className='ml-2 total'
-                                type="number"
-                                min="0"
-                                step="0.1"
-                                value={"64.00"}
+                                type="text"
+                                value={"$64.00"}
                               />
                             </label>
                         </div>
@@ -121,10 +119,8 @@ export const NewExpense = () => {
                                             <img src={lockIcon} alt="lockIcon" className='lockIcon' />
                                             <input
                                                 className='ml-2 indivTotal bold'
-                                                type="number"
-                                                min="0"
-                                                step="0.1"
-                                                value={"12.80"}
+                                                type="text"
+                                                value={"$12.80"}
                                             />
                                         </div>
                                     </div>
@@ -142,15 +138,13 @@ export const NewExpense = () => {
                                         <img src={lockIcon} alt="lockIcon" className='lockIcon' />
                                         <input
                                             className='ml-2 indivTotal bold'
-                                            type="number"
-                                            min="0"
-                                            step="0.1"
-                                            value={"12.80"}
+                                            type="text"
+                                            value={"$32.00"}
                                         />
                                         </div>
                                     </div>
                                     <div className="progress">
-                                        <div className="progress-bar progressOrange" style={{ width: "20%" }}></div>
+                                        <div className="progress-bar progressOrange" style={{ width: "50%" }}></div>
                                     </div>
                                 </label>
                                 <label className='memberExpense'>
@@ -163,15 +157,13 @@ export const NewExpense = () => {
                                         <img src={lockIcon} alt="lockIcon" className='lockIcon' />
                                         <input
                                             className='ml-2 indivTotal bold'
-                                            type="number"
-                                            min="0"
-                                            step="0.1"
-                                            value={"12.80"}
+                                            type="text"
+                                            value={"$6.40"}
                                         />
                                         </div>
                                     </div>
                                     <div className="progress">
-                                        <div className="progress-bar progressPink" style={{ width: "20%" }}></div>
+                                        <div className="progress-bar progressPink" style={{ width: "10%" }}></div>
                                     </div>
                                 </label>
                                 <label className='memberExpense'>
@@ -184,15 +176,13 @@ export const NewExpense = () => {
                                         <img src={lockIcon} alt="lockIcon" className='lockIcon' />
                                         <input
                                             className='ml-2 indivTotal bold'
-                                            type="number"
-                                            min="0"
-                                            step="0.1"
-                                            value={"12.80"}
+                                            type="text"
+                                            value={"$6.40"}
                                         />
                                         </div>
                                     </div>
                                     <div className="progress">
-                                        <div className="progress-bar progressYellow" style={{ width: "20%" }}></div>
+                                        <div className="progress-bar progressYellow" style={{ width: "10%" }}></div>
                                     </div>
                                 </label>
                                 <label className='memberExpense'>
@@ -205,15 +195,13 @@ export const NewExpense = () => {
                                         <img src={lockIcon} alt="lockIcon" className='lockIcon' />
                                         <input
                                             className='ml-2 indivTotal bold'
-                                            type="number"
-                                            min="0"
-                                            step="0.1"
-                                            value={"12.80"}
+                                            type="text"
+                                            value={"$6.40"}
                                         />
                                         </div>
                                     </div>
                                     <div className="progress">
-                                        <div className="progress-bar progressLightBlue" style={{ width: "20%" }}></div>
+                                        <div className="progress-bar progressLightBlue" style={{ width: "10%" }}></div>
                                     </div>
                                 </label>
                             </div>
