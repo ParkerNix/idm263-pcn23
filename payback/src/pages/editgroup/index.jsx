@@ -17,22 +17,34 @@ import navProfileDefault from '../../components/Assets/nav_profile_default.png'
 import newGroupIcon from '../../components/Assets/newGroupIcon.png'
 import addFriend from '../../components/Assets/addFriend.png'
 import deletePlaceholder from '../../components/Assets/delete_placeholder.png'
+import { Link, useNavigate } from 'react-router-dom';
 
 
 export const EditGroup = () => {
+
+    // Use this hook to programmatically navigate to another page
+    const navigate = useNavigate();
+
+    // This function is used to navigate to the home page
+    // It will be called when the button is clicked
+    const goBack = () => {
+      navigate(-1);
+    };
 
     return (
         <>
         <div className="container">
         <div class="row">
                 <div className="col mt-4 mb-2 mx-3 d-flex justify-content-between">
-                    <img src={backArrow} alt="back" className="topNavBack" />
+                    <a onClick={goBack} className="bold line-height">
+                        <img src={backArrow} alt="back" className="topNavBack" />
+                    </a>
                     <h1 className="h6 bold">Edit Group</h1>
                     <img src={optionsIcon} alt="back" className="topNavOptions" />
                     {/* Add back arrow and 3 vertical dots */}
                 </div>
             </div>
-            <div className="row">
+            <div className="row pageBottom">
                 <div className="col">
                     <div className="createGroup">
                     <img src={newGroupIcon} alt="groupImg" className='newGroupImg mt-4 align-self-center'/>
@@ -73,7 +85,7 @@ export const EditGroup = () => {
                                             <img src={deletePlaceholder} alt="addFriend" className="deleteFriend"/>
                                     </div>
                                 </div>
-                                <hr className="addFriend"></hr>
+                                <hr className="editFriend"></hr>
 
                                 <div className="friendsRow d-flex flex-row justify-content-between">
                                     <div className="friendsName d-flex flex-row">
@@ -111,19 +123,18 @@ export const EditGroup = () => {
 
 
                           </div>
-                          <button id='submit' className="btmRightBtn bold">
-                                Save group
-                            </button>
+                            <Link to="/pages/newExpense" className="button btmRightBtn demiBold">Save group</Link>
                     </div>
-
             </div>
         </div>
 
 
         <div class="navbar">
                 <div class="navStack">
-                    <img src={navOverviewDefault} className="navIcons" alt="overview" />
-                    <a href="#home" className="active bold">Overview</a>
+                    <Link to='/' className="bold d-flex flex-column align-items-center">
+                        <img src={navOverviewDefault} className="navIcons" alt="overview" />
+                        Overview
+                    </Link>
                 </div>
                 <div class="navStack">
                     <img src={navMonthlyDefault} className="navIcons" alt="monthly" />

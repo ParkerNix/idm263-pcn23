@@ -1,6 +1,12 @@
 import backArrowWhite from '../../components/Assets/backArrowWhite.png'
 import optionsIconHorizontal from '../../components/Assets/optionsDotsHorizontal.png'
+import navOverviewDefault from '../../components/Assets/nav_overview_default.png'
+import navMonthlyDefault from '../../components/Assets/nav_monthly_default.png'
+import navExpenseDefault from '../../components/Assets/nav_expense_default.png'
+import navGroupsDefault from '../../components/Assets/nav_groups_default.png'
+import navProfileDefault from '../../components/Assets/nav_profile_default.png'
 import React from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import newGroupImg from '../../components/Assets/newGroupIcon.png'
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Doughnut } from 'react-chartjs-2';
@@ -34,12 +40,23 @@ const options = {
 
 export const ViewGroup = () => {
 
+    // Use this hook to programmatically navigate to another page
+    const navigate = useNavigate();
+    
+    // This function is used to navigate to the home page
+    // It will be called when the button is clicked
+    const goBack = () => {
+      navigate(-1);
+    };
+
     return (
         <>
             <div className="container gradientContainer">
                 <div className="row mx-3 mb-4 justify-content-center">
                     <div className="col mt-4 mb-4 p-0 d-flex justify-content-between">
-                        <img src={backArrowWhite} alt="back" className="topNavBack" />
+                        <a onClick={goBack} className="bold line-height">
+                            <img src={backArrowWhite} alt="back" className="topNavBack" />
+                        </a>
                         <h1 className="h6 bold white">View Group</h1>
                         <img src={optionsIconHorizontal} alt="options" className="OptionsHorizontal" />
                     </div>
@@ -83,7 +100,7 @@ export const ViewGroup = () => {
                                         <p className='bold line-height'>10/10/22</p>
                                     </div>
                                     <div className="groupsCardButton">
-                                        <a className='bold line-height' href='#'>View breakdown →</a>
+                                        <Link to="/pages/costBreakdown" className="bold line-height">View breakdown →</Link>
                                     </div>
                                 </div>
                             </div>
@@ -92,6 +109,30 @@ export const ViewGroup = () => {
                             New expense
                         </button>
                     </div>
+                </div>
+            </div>
+            <div class="navbar">
+                <div class="navStack">
+                    <Link to='/' className="bold d-flex flex-column align-items-center">
+                        <img src={navOverviewDefault} className="navIcons" alt="overview" />
+                        Overview
+                    </Link>
+                </div>
+                <div class="navStack">
+                    <img src={navMonthlyDefault} className="navIcons" alt="monthly" />
+                    <a href="#monthly" className="bold">Monthly</a>
+                </div>
+                <div class="navStack">
+                    <img src={navExpenseDefault} className="navIcons" alt="expense" />
+                    <a href="#expense" className="bold">Expense</a>
+                </div>
+                <div class="navStack">
+                    <img src={navGroupsDefault} className="navIcons" alt="groups" />
+                    <a href="#groups" className="bold">Groups</a>
+                </div>
+                <div class="navStack">
+                    <img src={navProfileDefault} className="navIcons" alt="profile" />
+                    <a href="#groups" className="bold">Profile</a>
                 </div>
             </div>
         </>

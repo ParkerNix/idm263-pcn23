@@ -12,15 +12,27 @@ import navMonthlyDefault from '../../components/Assets/nav_monthly_default.png'
 import navExpenseDefault from '../../components/Assets/nav_expense_default.png'
 import navGroupsDefault from '../../components/Assets/nav_groups_default.png'
 import navProfileDefault from '../../components/Assets/nav_profile_default.png'
+import { Link, useNavigate } from 'react-router-dom';
 
 export const AllGroups = () => {
+
+    // Use this hook to programmatically navigate to another page
+    const navigate = useNavigate();
+    
+    // This function is used to navigate to the home page
+    // It will be called when the button is clicked
+    const goBack = () => {
+      navigate(-1);
+    };
 
     return (
         <>
         <div className="container">
             <div class="row">
                 <div className="col mt-4 mb-2 mx-3 d-flex justify-content-between">
-                    <img src={backArrow} alt="back" className="topNavBack" />
+                    <a onClick={goBack} className="bold line-height">
+                        <img src={backArrow} alt="back" className="topNavBack" />
+                    </a>
                     <h1 className="h6 bold">Groups</h1>
                     <img src={optionsIcon} alt="options" className="topNavOptions" />
                     {/* Add back arrow and 3 vertical dots */}
@@ -61,35 +73,37 @@ export const AllGroups = () => {
                             </div>
                         </div>
                     </div>
-                    <button className="btmRightBtn bold">
+                    <Link to='/pages/createGroup' className="button btmRightBtn bold">
                         Create new group
-                    </button>
+                    </Link>
                 </div>
             </div>
         </div>
 
         <div class="navbar">
-                <div class="navStack">
+            <div class="navStack">
+                <Link to='/' className="bold d-flex flex-column align-items-center">
                     <img src={navOverviewDefault} className="navIcons" alt="overview" />
-                    <a href="#home" className="active bold">Overview</a>
-                </div>
-                <div class="navStack">
-                    <img src={navMonthlyDefault} className="navIcons" alt="monthly" />
-                    <a href="#monthly" className="bold">Monthly</a>
-                </div>
-                <div class="navStack">
-                    <img src={navExpenseDefault} className="navIcons" alt="expense" />
-                    <a href="#expense" className="bold">Expense</a>
-                </div>
-                <div class="navStack">
-                    <img src={navGroupsDefault} className="navIcons" alt="groups" />
-                    <a href="#groups" className="bold">Groups</a>
-                </div>
-                <div class="navStack">
-                    <img src={navProfileDefault} className="navIcons" alt="profile" />
-                    <a href="#groups" className="bold">Profile</a>
-                </div>
+                    Overview
+                </Link>
             </div>
+            <div class="navStack">
+                <img src={navMonthlyDefault} className="navIcons" alt="monthly" />
+                <a href="#monthly" className="bold">Monthly</a>
+            </div>
+            <div class="navStack">
+                <img src={navExpenseDefault} className="navIcons" alt="expense" />
+                <a href="#expense" className="bold">Expense</a>
+            </div>
+            <div class="navStack">
+                <img src={navGroupsDefault} className="navIcons" alt="groups" />
+                <a href="#groups" className="bold">Groups</a>
+            </div>
+            <div class="navStack">
+                <img src={navProfileDefault} className="navIcons" alt="profile" />
+                <a href="#groups" className="bold">Profile</a>
+            </div>
+        </div>
 
 
         </>

@@ -150,7 +150,7 @@ a:link, a:visited, a:hover, a:active {
 
 button, .button {
  background-color: var(--button-color);
- color: var(--button-text-color);
+ color: var(--button-text-color) !important;
  font-size: var(--button-text-size);
  margin: 8px 8px 12px 0;
  padding: 12px 32px;
@@ -178,12 +178,14 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, p, .p, a, link, button, in
 
 .btmRightBtn {
   position: fixed;
-  bottom: 16px;
+  bottom: 92px;
   right: 16px;
   padding: 12px 16px;
 }
 
-
+.pageBottom {
+  padding-bottom: 10rem;
+}
 
 /* ////////// ////*/
 /* ////////// ////*/
@@ -315,8 +317,13 @@ margin:0 ;
   padding-top: 0.3rem;
 }
 
-#groupH2 {
-  margin-top: 16px;
+.groupName {
+  background-color: transparent;
+  padding: 0;
+  box-shadow: none;
+  border: none;
+  color: var(--text-dark-purple);
+  font-size: var(--large-copy);
 }
 
 /* NEW GROUP PAGE */
@@ -360,7 +367,6 @@ margin:0 ;
 img.editIcon {
   width: 24px;
   height: 24px;
-  margin-top: 1.1rem;
   margin-left: 0.3rem;
 }
 
@@ -759,10 +765,13 @@ margin-top: 5.2px;
   height: 69px;
 }
 
-.memberIcons {
+.memberIcons, .memberIconsNE {
   width: 32px;
   height: 32px;
   margin: 0 7.6px 0 0;
+}
+
+.memberIcons {
   margin-right: -10px;
 }
 
@@ -829,7 +838,7 @@ margin-top: 5.2px;
   line-height: 1.3;
   border-radius: 12px;
   box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.15);
-  color: var(--button-medium-purple);
+  color: var(--button-medium-purple) !important;
   margin: 0;
 }
 
@@ -837,7 +846,7 @@ margin-top: 5.2px;
   padding: 8px 13px 7px;
   border-radius: 12px;
   background-color: var(--button-light-purple);
-  color: var(--text-dark-purple);
+  color: var(--text-dark-purple) !important;
   margin: 0;
   font-size: var(--small-copy);
 }
@@ -867,7 +876,7 @@ margin-top: 5.2px;
   line-height: 1.8;
   border-radius: 12px;
   box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.15);
-  color: var(--button-medium-purple);
+  color: var(--button-medium-purple) !important;
   margin: 0;
 }
 

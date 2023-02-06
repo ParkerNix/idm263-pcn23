@@ -1,8 +1,14 @@
 
 import woohooSmiley from '../../components/Assets/woohoo_smiley.png'
+import navOverviewDefault from '../../components/Assets/nav_overview_default.png'
+import navMonthlyDefault from '../../components/Assets/nav_monthly_default.png'
+import navExpenseDefault from '../../components/Assets/nav_expense_default.png'
+import navGroupsDefault from '../../components/Assets/nav_groups_default.png'
+import navProfileDefault from '../../components/Assets/nav_profile_default.png'
 import React from 'react';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Doughnut } from 'react-chartjs-2';
+import { Link } from 'react-router-dom';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -68,10 +74,35 @@ export const Overview = () => {
                                 <img src={woohooSmiley} className="woohooSmiley mb-3" alt="Smiley" />
                                 <h3 className='bold'>Woohoo!</h3>
                                 <p className='mediumCopy medium mb-3'>All balances are cleared!</p>
-                                <button className='mediumCopy bold'>Create a new expense</button>
+                                <Link to='/pages/allGroups' className='button mediumCopy bold'>Create a new expense</Link>
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+
+            <div class="navbar">
+                <div class="navStack">
+                    <Link to='/' className="bold d-flex flex-column align-items-center">
+                        <img src={navOverviewDefault} className="navIcons" alt="overview" />
+                        Overview
+                    </Link>
+                </div>
+                <div class="navStack">
+                    <img src={navMonthlyDefault} className="navIcons" alt="monthly" />
+                    <a href="#monthly" className="bold">Monthly</a>
+                </div>
+                <div class="navStack">
+                    <img src={navExpenseDefault} className="navIcons" alt="expense" />
+                    <a href="#expense" className="bold">Expense</a>
+                </div>
+                <div class="navStack">
+                    <img src={navGroupsDefault} className="navIcons" alt="groups" />
+                    <a href="#groups" className="bold">Groups</a>
+                </div>
+                <div class="navStack">
+                    <img src={navProfileDefault} className="navIcons" alt="profile" />
+                    <a href="#groups" className="bold">Profile</a>
                 </div>
             </div>
         </>

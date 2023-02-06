@@ -6,8 +6,14 @@ import circleDarkPurple from '../../components/Assets/circleDarkPurple.png'
 import circleYellow from '../../components/Assets/circleYellow.png'
 import circleOrange from '../../components/Assets/circleOrange.png'
 import checkCostBreakdown from '../../components/Assets/checkCostBreakdown.png'
+import navOverviewDefault from '../../components/Assets/nav_overview_default.png'
+import navMonthlyDefault from '../../components/Assets/nav_monthly_default.png'
+import navExpenseDefault from '../../components/Assets/nav_expense_default.png'
+import navGroupsDefault from '../../components/Assets/nav_groups_default.png'
+import navProfileDefault from '../../components/Assets/nav_profile_default.png'
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Doughnut } from 'react-chartjs-2';
+import { Link, useNavigate } from 'react-router-dom';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -40,12 +46,23 @@ const options = {
 
 export const CostBreakdown = () => {
 
+      // Use this hook to programmatically navigate to another page
+    const navigate = useNavigate();
+
+    // This function is used to navigate to the home page
+    // It will be called when the button is clicked
+    const goBack = () => {
+      navigate(-1);
+    };
+
     return (
         <>
             <div className="container gradientContainerCB">
                 <div class="row justify-content-center">
                     <div className="col mt-4 mb-3 mx-3 d-flex justify-content-between align-items-center">
-                        <img src={backArrowWhite} alt="back" className="topNavBack" />
+                        <a onClick={goBack} className="bold line-height">
+                            <img src={backArrowWhite} alt="back" className="topNavBack" />
+                        </a>
                         <h1 className="h6 bold white">Cost Breakdown</h1>
                         <img src={note} alt="note" className="noteIcon iconButton" />
                     </div>
@@ -126,6 +143,30 @@ export const CostBreakdown = () => {
                             </button>
                         </div>
                     </div>
+                </div>
+            </div>
+            <div class="navbar">
+                <div class="navStack">
+                    <Link to='/' className="bold d-flex flex-column align-items-center">
+                        <img src={navOverviewDefault} className="navIcons" alt="overview" />
+                        Overview
+                    </Link>
+                </div>
+                <div class="navStack">
+                    <img src={navMonthlyDefault} className="navIcons" alt="monthly" />
+                    <a href="#monthly" className="bold">Monthly</a>
+                </div>
+                <div class="navStack">
+                    <img src={navExpenseDefault} className="navIcons" alt="expense" />
+                    <a href="#expense" className="bold">Expense</a>
+                </div>
+                <div class="navStack">
+                    <img src={navGroupsDefault} className="navIcons" alt="groups" />
+                    <a href="#groups" className="bold">Groups</a>
+                </div>
+                <div class="navStack">
+                    <img src={navProfileDefault} className="navIcons" alt="profile" />
+                    <a href="#groups" className="bold">Profile</a>
                 </div>
             </div>
         </>

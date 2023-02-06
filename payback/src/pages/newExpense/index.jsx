@@ -7,8 +7,23 @@ import molynaSmiley from '../../components/Assets/molyna_smiley.png'
 import parkerSmiley from '../../components/Assets/parker_smiley.png'
 import joeySmiley from '../../components/Assets/joey_smiley.png'
 import meganSmiley from '../../components/Assets/megan_smiley.png'
+import navOverviewDefault from '../../components/Assets/nav_overview_default.png'
+import navMonthlyDefault from '../../components/Assets/nav_monthly_default.png'
+import navExpenseDefault from '../../components/Assets/nav_expense_default.png'
+import navGroupsDefault from '../../components/Assets/nav_groups_default.png'
+import navProfileDefault from '../../components/Assets/nav_profile_default.png'
+import { Link, useNavigate } from 'react-router-dom';
 
 export const NewExpense = () => {
+
+    // Use this hook to programmatically navigate to another page
+    const navigate = useNavigate();
+
+    // This function is used to navigate to the home page
+    // It will be called when the button is clicked
+    const goBack = () => {
+      navigate(-1);
+    };
 
     return (
         <>
@@ -17,7 +32,9 @@ export const NewExpense = () => {
                     <div className="col">
                         <div className='my-4 d-flex flex-column align-items-stretch'>
                             <div className='d-flex justify-content-between align-items-center'>
-                                <img src={backArrowWhite} alt="backArrowWhite" className='topNavBack align-self-start' />
+                                <a onClick={goBack} className="bold line-height">
+                                    <img src={backArrowWhite} alt="back" className="topNavBack" />
+                                </a>
                                 <h1 className="h4 white bold">Payback Gang</h1>
                                 <span></span>
                             </div>
@@ -35,8 +52,8 @@ export const NewExpense = () => {
                         </div>
                     </div>
                 </div>
-                <div className="row pageTab pb-5">
-                    <div className="col pt-3 px-4">
+                <div className="row pageTab">
+                    <div className="col pt-3 px-4 pageBottom">
                         <div>
                             <div className='expenseSection'>
                                 <div className='my-2 d-flex justify-content-between align-items-center'>
@@ -97,7 +114,7 @@ export const NewExpense = () => {
                                 <label className='memberExpense'>
                                     <div className='d-flex justify-content-between mb-3'>
                                         <div className='d-flex align-items-center'>
-                                            <img src={meganSmiley} className="memberIcons" alt="member2" />
+                                            <img src={meganSmiley} className="memberIconsNE" alt="member2" />
                                             <h3 className='h6'>Megan</h3>
                                         </div>
                                         <div className='d-flex align-items-center'>
@@ -118,7 +135,7 @@ export const NewExpense = () => {
                                 <label className='memberExpense'>
                                     <div className='d-flex justify-content-between mb-3'>
                                         <div className='d-flex align-items-center'>
-                                            <img src={molynaSmiley} className="memberIcons" alt="member2" />
+                                            <img src={molynaSmiley} className="memberIconsNE" alt="member2" />
                                             <h3 className='h6'>Molyna</h3>
                                         </div>
                                         <div className='d-flex align-items-center'>
@@ -139,7 +156,7 @@ export const NewExpense = () => {
                                 <label className='memberExpense'>
                                     <div className='d-flex justify-content-between mb-3'>
                                         <div className='d-flex align-items-center'>
-                                            <img src={parkerSmiley} className="memberIcons" alt="member2" />
+                                            <img src={parkerSmiley} className="memberIconsNE" alt="member2" />
                                             <h3 className='h6'>Parker</h3>
                                         </div>
                                         <div className='d-flex align-items-center'>
@@ -160,7 +177,7 @@ export const NewExpense = () => {
                                 <label className='memberExpense'>
                                     <div className='d-flex justify-content-between mb-3'>
                                         <div className='d-flex align-items-center'>
-                                            <img src={allieSmiley} className="memberIcons" alt="member2" />
+                                            <img src={allieSmiley} className="memberIconsNE" alt="member2" />
                                             <h3 className='h6'>Allie</h3>
                                         </div>
                                         <div className='d-flex align-items-center'>
@@ -181,7 +198,7 @@ export const NewExpense = () => {
                                 <label className='memberExpense'>
                                     <div className='d-flex justify-content-between mb-3'>
                                         <div className='d-flex align-items-center'>
-                                            <img src={joeySmiley} className="memberIcons" alt="member2" />
+                                            <img src={joeySmiley} className="memberIconsNE" alt="member2" />
                                             <h3 className='h6'>Joey</h3>
                                         </div>
                                         <div className='d-flex align-items-center'>
@@ -200,11 +217,33 @@ export const NewExpense = () => {
                                     </div>
                                 </label>
                             </div>
-                            <button id='submit' className="btmRightBtn bold">
-                                Save expense
-                            </button>
+                            <Link to="/pages/viewGroup" className="button btmRightBtn demiBold">Save expense</Link>
                         </div>
                     </div>
+                </div>
+            </div>
+            <div class="navbar">
+                <div class="navStack">
+                    <Link to='/' className="bold d-flex flex-column align-items-center">
+                        <img src={navOverviewDefault} className="navIcons" alt="overview" />
+                        Overview
+                    </Link>
+                </div>
+                <div class="navStack">
+                    <img src={navMonthlyDefault} className="navIcons" alt="monthly" />
+                    <a href="#monthly" className="bold">Monthly</a>
+                </div>
+                <div class="navStack">
+                    <img src={navExpenseDefault} className="navIcons" alt="expense" />
+                    <a href="#expense" className="bold">Expense</a>
+                </div>
+                <div class="navStack">
+                    <img src={navGroupsDefault} className="navIcons" alt="groups" />
+                    <a href="#groups" className="bold">Groups</a>
+                </div>
+                <div class="navStack">
+                    <img src={navProfileDefault} className="navIcons" alt="profile" />
+                    <a href="#groups" className="bold">Profile</a>
                 </div>
             </div>
         </>
