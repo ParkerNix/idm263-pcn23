@@ -22,7 +22,7 @@ export const AllGroups = () => {
                 <div className="col mt-4 mb-2 mx-3 d-flex justify-content-between">
                     <img src={backArrow} alt="back" className="topNavBack" />
                     <h1 className="h6 bold">Groups</h1>
-                    <img src={optionsIcon} alt="back" className="topNavOptions" />
+                    <img src={optionsIcon} alt="options" className="topNavOptions" />
                     {/* Add back arrow and 3 vertical dots */}
                 </div>
             </div>
