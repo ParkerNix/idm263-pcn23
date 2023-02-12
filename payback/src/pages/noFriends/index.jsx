@@ -11,6 +11,7 @@ import heartEmpty from '../../components/Assets/heartEmpty.png'
 import editIcon from '../../components/Assets/editIcon.png'
 import link from '../../components/Assets/link.png'
 import addFriend from '../../components/Assets/addFriend.png'
+import search from '../../components/Assets/search.png'
 import sadSmiley from '../../components/Assets/sad_smiley.png'
 import navOverviewDefault from '../../components/Assets/nav_overview_default.png'
 import navMonthlyDefault from '../../components/Assets/nav_monthly_default.png'
@@ -49,7 +50,13 @@ export const NoFriends = () => {
                     <div className="searchFriends">
                         <div clasName="form-outline">
                             <Link to="/pages/searchFriends">
-                                <input type="text" id="searchFormtwo" class="form-control" placeholder="Search for friends"/>
+                                <input type="text" id="searchFormTwo" class="form-control" placeholder="Search for friends" style={
+                                    {
+                                        paddingLeft: 25,
+                                        background: `url(${search}) no-repeat left`,
+                                        backgroundSize: 20,
+                                    }
+                                }/>
                             </Link>
                         </div>
                     </div>

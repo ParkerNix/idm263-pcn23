@@ -9,6 +9,7 @@ import joeySmiley from '../../components/Assets/joey_smiley.png'
 import meganSmiley from '../../components/Assets/megan_smiley.png'
 import heartEmpty from '../../components/Assets/heartEmpty.png'
 import editIcon from '../../components/Assets/editIcon.png'
+import search from '../../components/Assets/search.png'
 import link from '../../components/Assets/link.png'
 import navOverviewDefault from '../../components/Assets/nav_overview_default.png'
 import navMonthlyDefault from '../../components/Assets/nav_monthly_default.png'
@@ -49,7 +50,13 @@ export const AddFriends = () => {
                     <div className="input-group">
                         <div clasName="form-outline">
                             <Link to="/pages/noFriends" className="d-flex demiBold">
-                                <input type="text" id="searchForm" class="form-control" placeholder="Search for friends"/>
+                                <input type="text" id="searchForm" class="form-control" placeholder="Search for friends" style={
+                                    {
+                                        paddingLeft: 25,
+                                        background: `url(${search}) no-repeat left`,
+                                        backgroundSize: 20,
+                                    }
+                                }/>
                             </Link>
                             {/* <label class="form-label" for="searchForm">Search</label> */}
                         </div>
@@ -62,7 +69,7 @@ export const AddFriends = () => {
                     </div>
                     </div>
                         <div className="friendsList">
-                            <h3 className="h5 bold mb-3" id="yourFriends">Your Friends</h3>
+                            <h3 className="h6 bold mb-3" id="yourFriends">Your Friends</h3>
                             <div className="row d-flex flex-row justify-content-center">
 
                                 <div className="friendsRow d-flex flex-row justify-content-between">

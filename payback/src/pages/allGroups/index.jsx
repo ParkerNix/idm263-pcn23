@@ -41,7 +41,7 @@ export const AllGroups = () => {
 
             <div className='row'>
                 <div className="col mx-3">
-                    <h2 className="h4 bold my-4">All Groups</h2>
+                    <h2 className="h4 bold my-4">All groups</h2>
                     <div>
                         <div className ='card'>
                             <div className='card-body'>

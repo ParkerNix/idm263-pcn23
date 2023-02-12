@@ -11,6 +11,7 @@ import heartEmpty from '../../components/Assets/heartEmpty.png'
 import editIcon from '../../components/Assets/editIcon.png'
 import link from '../../components/Assets/link.png'
 import addFriend from '../../components/Assets/addFriend.png'
+import search from '../../components/Assets/search.png'
 import navOverviewDefault from '../../components/Assets/nav_overview_default.png'
 import navMonthlyDefault from '../../components/Assets/nav_monthly_default.png'
 import navExpenseDefault from '../../components/Assets/nav_expense_default.png'
@@ -47,12 +48,18 @@ export const SearchFriends = () => {
                 <div className="col my-4">
                     <div className="searchFriends d-flex justify-content-center">
                         <div clasName="form-outline">
-                            <input type="text" id="searchFormTwo" class="form-control" placeholder="Search for friends"/>
+                        <input type="text" id="searchFormTwo" class="form-control" placeholder="Search for friends" style={
+                            {
+                                paddingLeft: 25,
+                                background: `url(${search}) no-repeat left`,
+                                backgroundSize: 20,
+                            }
+                        }/>
                         </div>
                     </div>
                 </div>
                         <div className="friendsList">
-                            <h3 className="h5 bold mb-3" id="yourFriends">Add New Friends</h3>
+                            <h3 className="h6 bold mb-3" id="yourFriends">Add New Friends</h3>
                             <div className="row d-flex flex-row justify-content-center">
 
                                 <div className="friendsRow d-flex flex-row justify-content-between">

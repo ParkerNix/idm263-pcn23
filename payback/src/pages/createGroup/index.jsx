@@ -12,6 +12,7 @@ import navExpenseDefault from '../../components/Assets/nav_expense_default.png'
 import navGroupsDefault from '../../components/Assets/nav_groups_default.png'
 import navProfileDefault from '../../components/Assets/nav_profile_default.png'
 import deletePlaceholder from '../../components/Assets/delete_placeholder.png'
+import addPlaceholder from '../../components/Assets/addFriendsPlaceholder.png'
 import { Link, useNavigate } from 'react-router-dom';
 
 
@@ -30,7 +31,7 @@ export const CreateGroup = () => {
         <>
             <div className="container">
                 <div className="row">
-                    <div className="col mt-4 mb-2 mx-3 d-flex justify-content-between">
+                    <div className="col mt-4 mb-2 mx-4 px-0 d-flex justify-content-between">
                         <a onClick={goBack} className="bold line-height">
                             <img src={backArrow} alt="back" className="topNavBack" />
                         </a>
@@ -57,9 +58,9 @@ export const CreateGroup = () => {
                         <div className="groupMembers d-flex justify-content-center">
                             <h3 className='h5 bold mb-3'>Groups Members (0)</h3>
                             <div className="checkbox d-flex flex-row gap-2">
-                                <Link to="/pages/friends" className="d-flex demiBold">
-                                        <img src={deletePlaceholder} alt="smiley" className="add"/>
-                                        <p className="p demiBold ms-1" id="friendName">Add more friends</p>
+                                <Link to="/pages/friends" className="d-flex align-items-center demiBold">
+                                        <img src={addPlaceholder} alt="smiley" className="deleteFriend"/>
+                                        <p className="p demiBold ms-1 pt-1" id="friendName">Add more friends</p>
                                 </Link>
                             </div>
                         </div>

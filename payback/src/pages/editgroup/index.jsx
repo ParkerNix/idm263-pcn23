@@ -17,6 +17,7 @@ import navProfileDefault from '../../components/Assets/nav_profile_default.png'
 import newGroupIcon from '../../components/Assets/newGroupIcon.png'
 import addFriend from '../../components/Assets/addFriend.png'
 import deletePlaceholder from '../../components/Assets/delete_placeholder.png'
+import addPlaceholder from '../../components/Assets/addFriendsPlaceholder.png'
 import { Link, useNavigate } from 'react-router-dom';
 
 
@@ -70,7 +71,7 @@ export const EditGroup = () => {
                                     <p className="p demiBold" id="friendName">Allie Drake</p>
                                 </div>
                                 <div className="addFriend">
-                                    <img src={deletePlaceholder} alt="addFriend" className="deleteFriend"/>
+                                    <img src={deletePlaceholder} alt="delete friend" className="deleteFriend"/>
                                 </div>
                             </div>
 
@@ -82,7 +83,7 @@ export const EditGroup = () => {
                                     <p className="p demiBold" id="friendName">Joey McQuillan</p>
                                 </div>
                                 <div className="addFriend">
-                                    <img src={deletePlaceholder} alt="addFriend" className="deleteFriend"/>
+                                    <img src={deletePlaceholder} alt="delete friend" className="deleteFriend"/>
                                 </div>
                             </div>
                             <hr className="editFriend"></hr>
@@ -93,7 +94,7 @@ export const EditGroup = () => {
                                     <p className="p demiBold" id="friendName">Megan Lam</p>
                                 </div>
                                 <div className="addFriend">
-                                    <img src={deletePlaceholder} alt="addFriend" className="deleteFriend"/>
+                                    <img src={deletePlaceholder} alt="delete friend" className="deleteFriend"/>
                                 </div>
                             </div>
                             <hr className="editFriend"></hr>
@@ -104,7 +105,7 @@ export const EditGroup = () => {
                                     <p className="p demiBold" id="friendName">Parker Nix</p>
                                 </div>
                                 <div className="addFriend">
-                                    <img src={deletePlaceholder} alt="addFriend" className="deleteFriend"/>
+                                    <img src={deletePlaceholder} alt="delete friend" className="deleteFriend"/>
                                 </div>
                             </div>
 
@@ -113,7 +114,7 @@ export const EditGroup = () => {
                             <div className="friendsRow d-flex flex-row justify-content-between">
                                 <div className="friendsName d-flex flex-row align-items-center">
                                     <Link to="/pages/friends" className="d-flex demiBold">
-                                        <img src={deletePlaceholder} alt="smiley" className="add"/>
+                                        <img src={addPlaceholder} alt="addMoreFriends" className="deleteFriend"/>
                                         <p className="p demiBold ms-1" id="friendName">Add more friends</p>
                                     </Link>
                                 </div>

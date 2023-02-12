@@ -330,10 +330,10 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, p, .p, a, link, button, in
 }
 
 .groupsCardButton a {
-padding: 8px 16px 7px;
-border-radius: 30px;
-font-size: var(--small-copy);
-margin:0 ;
+  padding: 8px 16px 7px;
+  border-radius: 30px;
+  font-size: var(--small-copy);
+  margin:0 ;
 }
 
 .groupsCardIcons {
@@ -378,8 +378,7 @@ margin:0 ;
 }
 
 .description {
-  padding-left: 28px;
-  padding-right: 28px;
+  padding: 0 12px;
 }
 
 .form-control {
@@ -391,8 +390,7 @@ margin:0 ;
 .groupMembers {
   margin-top: 2rem;
   flex-direction: column;
-  padding-left:28px;
-  padding-right: 28px;
+  padding:0 12px;
 }
 
 .checkbox p {
@@ -1011,7 +1009,7 @@ margin-top: 5.2px;
   padding: 5px 20px 3px;
   font-size: var(--small-copy);
   border-radius: 10px;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .overviewButtonsActive {
