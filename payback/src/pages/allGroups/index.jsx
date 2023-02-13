@@ -77,7 +77,7 @@ export const AllGroups = () => {
                     </div>
                 </div>
             </div>
-                <div className='stickyBtn3'>
+                <div className='stickyBtn3 mb-5'>
                     <Link to="/pages/createGroup" className="button mediumCopy btmRightBtn bold">Create new group</Link>
                 </div>
         </div>
