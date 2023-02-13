@@ -34,8 +34,8 @@ export const AddFriends = () => {
     return (
         <>
         <div className="container">
-        <div class="row">
-                <div className="col mt-4 mb-2 mx-3 d-flex justify-content-between">
+        <div class="row mb-4">
+                <div className="col mt-4 mx-3 d-flex justify-content-between">
                     <Link to="/pages/editGroup">
                         <img src={backArrow} alt="back" className="topNavBack" />
                     </Link>
@@ -44,30 +44,22 @@ export const AddFriends = () => {
                 </div>
             </div>
             <div className="row">
-                <div className="col">
-                    <div className="searchFriends d-flex flex-row justify-content-center">
-                        
-                    <div className="input-group">
-                        <div clasName="form-outline">
-                            <Link to="/pages/noFriends" className="d-flex demiBold">
-                                <input type="text" id="searchForm" class="form-control" placeholder="Search for friends" style={
-                                    {
-                                        paddingLeft: 25,
-                                        background: `url(${search}) no-repeat left`,
-                                        backgroundSize: 20,
-                                    }
-                                }/>
-                            </Link>
-                            {/* <label class="form-label" for="searchForm">Search</label> */}
-                        </div>
-                        </div>
-                    <div className="searchButton">
-                    <button id='submit' className="searchButton bold">
-                    <img src={link} alt="link" className="link" />Invite
-                            </button>
+                <div className="col mb-4">
+                    <div className="searchFriends d-flex flex-row justify-content-between">
+                        <Link to="/pages/noFriends" className="d-flex demiBold">
+                            <input type="text" id="searchForm" class="form-control" placeholder="Search for friends" style={
+                                {
+                                    paddingLeft: 25,
+                                    background: `url(${search}) no-repeat left`,
+                                    backgroundSize: 20,
+                                }
+                            }/>
+                        </Link>
+                        <button className="searchButton my-0">
+                            <img src={link} alt="link" className="link" />Invite
+                        </button>
                     </div>
-                    </div>
-                    </div>
+                </div>
                         <div className="friendsList">
                             <h3 className="h6 bold mb-3" id="yourFriends">Your Friends</h3>
                             <div className="row d-flex flex-row justify-content-center">
@@ -115,28 +107,34 @@ export const AddFriends = () => {
                     </div>
                 </div>
 
-                <div class="navbar">
-                <div class="navStack">
-                    <img src={navOverviewDefault} className="navIcons" alt="overview" />
-                    <a href="#home" className="active bold">Overview</a>
+            <div className="navbar">
+                <div className="navStack">
+                    <Link to='/' className="bold d-flex flex-column align-items-center">
+                        <img src={navOverviewDefault} className="navIcons" alt="overview" />
+                        Overview
+                    </Link>
                 </div>
-                <div class="navStack">
+                <div className="navStack">
                     <img src={navMonthlyDefault} className="navIcons" alt="monthly" />
                     <a href="#monthly" className="bold">Monthly</a>
                 </div>
-                <div class="navStack">
+                <div className="navStack">
                     <img src={navExpenseDefault} className="navIcons" alt="expense" />
                     <a href="#expense" className="bold">Expense</a>
                 </div>
-                <div class="navStack">
+                <div className="navStack">
+                    <Link to='/pages/groups' className="bold d-flex flex-column align-items-center">
                     <img src={navGroupsDefault} className="navIcons" alt="groups" />
-                    <a href="#groups" className="bold">Groups</a>
+                        Groups
+                    </Link>
                 </div>
-                <div class="navStack">
-                    <img src={navProfileDefault} className="navIcons" alt="profile" />
-                    <a href="#groups" className="bold">Profile</a>
+                <div className="navStack">
+                    <Link to='/pages/profile' className="bold d-flex flex-column align-items-center">
+                        <img src={navProfileDefault} className="navIcons" alt="profile" />
+                        Profile
+                    </Link>
                 </div>
-            </div>
+            </div> 
 
             </>
          );

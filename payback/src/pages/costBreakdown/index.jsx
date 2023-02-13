@@ -162,8 +162,10 @@ export const CostBreakdown = () => {
                     <a href="#expense" className="bold">Expense</a>
                 </div>
                 <div className="navStack">
+                    <Link to='/pages/groups' className="bold d-flex flex-column align-items-center">
                     <img src={navGroupsDefault} className="navIcons" alt="groups" />
-                    <a href="#groups" className="bold">Groups</a>
+                        Groups
+                    </Link>
                 </div>
                 <div className="navStack">
                     <Link to='/pages/profile' className="bold d-flex flex-column align-items-center">
@@ -171,7 +173,7 @@ export const CostBreakdown = () => {
                         Profile
                     </Link>
                 </div>
-            </div>
+            </div> 
         </>
     )
 }

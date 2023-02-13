@@ -30,7 +30,7 @@ export const NewExpense = () => {
             <div className="container gradientContainer">
                 <div className="row">
                     <div className="col">
-                        <div className='my-4 d-flex flex-column align-items-stretch'>
+                        <div className='my-4 mx-3 d-flex flex-column align-items-stretch'>
                             <div className='d-flex justify-content-between align-items-center'>
                                 <a onClick={goBack} className="bold line-height">
                                     <img src={backArrowWhite} alt="back" className="topNavBack" />
@@ -40,7 +40,7 @@ export const NewExpense = () => {
                             </div>
                             <img src={newGroupImg} alt="newGroupImg" className='groupImg mt-2 align-self-center' />
                             <label className="d-flex flex-column align-items-center">
-                              <p className="white">Total Cost</p>
+                              <p className="white demiBold">Total Cost</p>
                               <input
                                 className='ml-2 total'
                                 type="text"
@@ -56,7 +56,7 @@ export const NewExpense = () => {
                             <div className='expenseSection'>
                                 <div className='my-2 d-flex justify-content-between align-items-center'>
                                     <h2 className='h4 bold'>What is it?</h2>
-                                    <button className='noteBtn medium'>Add a note <img src={note} alt="note" className='noteIcon ms-2' /></button>
+                                    <button className='noteBtn demiBold'>Add a note <img src={note} alt="note" className='noteIcon ms-2' /></button>
                                 </div>
                                 <div className="dropdown">
                                     <button type="button" className="dropdownBtn dropdown-toggle" data-bs-toggle="dropdown">
@@ -207,7 +207,7 @@ export const NewExpense = () => {
                             </div>
                         </div>
                         <div className='stickyBtn2'>
-                            <Link to="/pages/viewGroup" className="button btmRightBtn demiBold">Save expense</Link>
+                            <Link to="/pages/viewGroup" className="button btmRightBtn mediumCopy bold">Save expense</Link>
                         </div>
                     </div>
                 </div>
@@ -229,8 +229,10 @@ export const NewExpense = () => {
                     <a href="#expense" className="bold">Expense</a>
                 </div>
                 <div className="navStack">
+                    <Link to='/pages/groups' className="bold d-flex flex-column align-items-center">
                     <img src={navGroupsDefault} className="navIcons" alt="groups" />
-                    <a href="#groups" className="bold">Groups</a>
+                        Groups
+                    </Link>
                 </div>
                 <div className="navStack">
                     <Link to='/pages/profile' className="bold d-flex flex-column align-items-center">
@@ -238,7 +240,7 @@ export const NewExpense = () => {
                         Profile
                     </Link>
                 </div>
-            </div>
+            </div> 
         </>
     );
 

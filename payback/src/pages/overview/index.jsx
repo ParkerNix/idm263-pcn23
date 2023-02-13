@@ -43,7 +43,7 @@ export const Overview = () => {
 
     return (
         <>
-            <div className="container gradientContainerCB">
+            <div className="container containerHeight gradientContainerCB">
                 <div className="row justify-content-center">
                     <div className="col mt-4 mb-3 mx-3 d-flex justify-content-center align-items-center">
                         <h1 className="h6 bold white">Overview</h1>
@@ -97,8 +97,10 @@ export const Overview = () => {
                     <a href="#expense" className="bold">Expense</a>
                 </div>
                 <div className="navStack">
+                    <Link to='/pages/groups' className="bold d-flex flex-column align-items-center">
                     <img src={navGroupsDefault} className="navIcons" alt="groups" />
-                    <a href="#groups" className="bold">Groups</a>
+                        Groups
+                    </Link>
                 </div>
                 <div className="navStack">
                     <Link to='/pages/profile' className="bold d-flex flex-column align-items-center">
@@ -106,7 +108,7 @@ export const Overview = () => {
                         Profile
                     </Link>
                 </div>
-            </div>
+            </div> 
         </>
     )
 }

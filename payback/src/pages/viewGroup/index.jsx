@@ -100,7 +100,7 @@ export const ViewGroup = () => {
                                         <p className='bold line-height'>10/10/22</p>
                                     </div>
                                     <div className="groupsCardButton">
-                                        <Link to="/pages/costBreakdown" className="bold line-height">View breakdown →</Link>
+                                        <Link to="/pages/costBreakdown" className="demiBold px-0 line-height">View breakdown →</Link>
                                     </div>
                                 </div>
                             </div>
@@ -128,8 +128,10 @@ export const ViewGroup = () => {
                     <a href="#expense" className="bold">Expense</a>
                 </div>
                 <div className="navStack">
+                    <Link to='/pages/groups' className="bold d-flex flex-column align-items-center">
                     <img src={navGroupsDefault} className="navIcons" alt="groups" />
-                    <a href="#groups" className="bold">Groups</a>
+                        Groups
+                    </Link>
                 </div>
                 <div className="navStack">
                     <Link to='/pages/profile' className="bold d-flex flex-column align-items-center">
@@ -137,7 +139,7 @@ export const ViewGroup = () => {
                         Profile
                     </Link>
                 </div>
-            </div>
+            </div> 
         </>
     )
 }

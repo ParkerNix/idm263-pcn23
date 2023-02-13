@@ -74,7 +74,12 @@ body {
   position: relative;
   width: 375px;
   height: 100%;
-  overflow-x: hidden;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+body::-webkit-scrollbar {
+  display: none;
 }
 
 #root {
@@ -82,9 +87,11 @@ body {
   width: 375px;
 }
 
-.container {
+.containerHeight {
   height: 100% !important;
 }
+
+
 
 
 h1, .h1 {
@@ -191,7 +198,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, p, .p, a, link, button, in
 .stickyBtn {
   display: flex;
   justify-content: end;
-  padding-right: 24px;
+  padding-right: 12px;
   margin-top: 16px;
   margin-bottom: 48px;
 }
@@ -205,7 +212,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, p, .p, a, link, button, in
 .stickyBtn3 {
   display: flex;
   justify-content: end;
-  margin-right: 24px;
+  margin-right: 12px;
   margin-top: 308px;
 }
 
@@ -288,7 +295,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, p, .p, a, link, button, in
   text-align: center;
 }
 
-.topNavBack {
+.topNavBack, a.topNavBack, a:visited.topNavBack, :active.topNavBack, a:hover.topNavBack {
   height: 16px;
   width: 10px;
 }
@@ -410,50 +417,23 @@ img.editIcon {
 */
 
 #searchForm {
-  width: 234px;
-  height: 41px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 10px;
-  margin: 11px 12px 24px 24px;
-  padding: 12px 16px;
   border-radius: 55px;
-  box-shadow: 0 5px 20px 0 rgba(1, 0, 51, 0.05);
-  background-color: #fff;
-}
-
-#searchFormTwo {
-  width: 327px;
-  height: 41px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 10px;
-  border-radius: 55px;
+  padding-right: 16px;
   box-shadow: 0 5px 20px 0 rgba(1, 0, 51, 0.05);
   background-color: #fff;
 }
 
 
-button#submit.searchButton {
-  width: 80.8px;
-  height: 30.8px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 2px;
-  margin: 16px 24.2px 29.2px 12px;
-  padding: 8px 13px;
+.searchButton {
+  padding: 0 13px;
   border-radius: 10px;
   background-color: var(--button-color);
+  font-size: var(--small-copy);
+  font-weight: 500;
 }
 
 .searchFriends {
-  padding-left: 12px;
+  margin: 0px 12px;
 }
 
 #yourFriends {
@@ -573,9 +553,15 @@ hr.friendsList {
 hr.addFriend {
   width: 327px;
   height: 1px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  color: var(--hr-color);
+  margin: 20px 0 20px 24px;
+  background-color: #ede4ff;
+}
+
+.addFriendBreak {
+  width: 327px;
+  height: 1px;
+  margin: 12px 0;
+  background-color: #ede4ff;
 }
 
 .sadSmiley {
@@ -639,11 +625,6 @@ button#addButton {
   background-color: var(--orange-icon-color);
 }
 
-h1#profileName.h1.bold {
-  color: var(--main-bg-color);
-  font-size: 24px;
-}
-
 p#profileName {
   color: var(--profile--name-purple);
   font-size: var(--medium-copy);
@@ -664,12 +645,7 @@ img.transactionSmiley {
   object-fit: contain;
 }
 
-h4#transactionsHeader {
-  margin-bottom: 24px;
-  padding-top: 32px;
-}
-
-p#groupName {
+.groupNameCard {
   color: var(--desaturated-purple);
 }
 
@@ -749,7 +725,7 @@ img.remind {
 }
 
 #viewAll {
-  color: var(--button-light-purple);
+  color: #decfff;
   text-decoration: underline;
   font-size: var(--medium-copy);
 }
@@ -773,18 +749,10 @@ color: var(--button-light-purple);
 margin-top: 5.2px;
 }
 
-
-
-
 .pageTab {
   background-color: var(--main-bg-color);
-  border-radius: 10px 10px 0px 0px;
-  height: 100%;
-}
-
-.pageTabTwo {
-  background-color: var(--main-bg-color);
   border-radius: 20px 20px 0px 0px;
+  height: 100%;
 }
 
 .white {

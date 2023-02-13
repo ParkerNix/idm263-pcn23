@@ -78,7 +78,7 @@ export const AllGroups = () => {
                 </div>
             </div>
                 <div className='stickyBtn3'>
-                    <Link to="/pages/createGroup" className="button mediumCopy btmRightBtn demiBold">Create new group</Link>
+                    <Link to="/pages/createGroup" className="button mediumCopy btmRightBtn bold">Create new group</Link>
                 </div>
         </div>
 
@@ -98,8 +98,10 @@ export const AllGroups = () => {
                 <a href="#expense" className="bold">Expense</a>
             </div>
             <div className="navStack">
+                <Link to='/pages/groups' className="bold d-flex flex-column align-items-center">
                 <img src={navGroupsDefault} className="navIcons" alt="groups" />
-                <a href="#groups" className="bold">Groups</a>
+                    Groups
+                </Link>
             </div>
             <div className="navStack">
                 <Link to='/pages/profile' className="bold d-flex flex-column align-items-center">
@@ -107,7 +109,7 @@ export const AllGroups = () => {
                     Profile
                 </Link>
             </div>
-        </div>
+        </div> 
 
 
         </>

@@ -45,8 +45,8 @@ export const EditGroup = () => {
                     {/* Add back arrow and 3 vertical dots */}
                 </div>
             </div>
-            <div className="row pageBottom">
-                <div className="col">
+            <div className="row pb-5">
+                <div className="col pb-5">
                     <div className="createGroup">
                         <img src={newGroupIcon} alt="groupImg" className='newGroupImg mt-4 align-self-center'/>
                         <div className="groupName d-flex flex-row align-items-center mt-3">
@@ -122,13 +122,13 @@ export const EditGroup = () => {
                         </div>
                     </div>
                     <div className='stickyBtn'>
-                        <Link to="/pages/newExpense" className="button btmRightBtn demiBold">Save group</Link>
+                        <Link to="/pages/newExpense" className="button mediumCopy btmRightBtn bold">Save group</Link>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div className="navbar">
+            <div className="navbar">
                 <div className="navStack">
                     <Link to='/' className="bold d-flex flex-column align-items-center">
                         <img src={navOverviewDefault} className="navIcons" alt="overview" />
@@ -144,8 +144,10 @@ export const EditGroup = () => {
                     <a href="#expense" className="bold">Expense</a>
                 </div>
                 <div className="navStack">
+                    <Link to='/pages/groups' className="bold d-flex flex-column align-items-center">
                     <img src={navGroupsDefault} className="navIcons" alt="groups" />
-                    <a href="#groups" className="bold">Groups</a>
+                        Groups
+                    </Link>
                 </div>
                 <div className="navStack">
                     <Link to='/pages/profile' className="bold d-flex flex-column align-items-center">
@@ -153,7 +155,7 @@ export const EditGroup = () => {
                         Profile
                     </Link>
                 </div>
-            </div>
+            </div> 
             
             </>
          );
