@@ -106,7 +106,7 @@ export const ViewGroup = () => {
                             </div>
                         </div>
                         <div className='stickyBtn2'>
-                            <Link to="/pages/newExpense" className="button btmRightBtn demiBold">New expense</Link>
+                            <Link to="/pages/newExpense" className="button mediumCopy btmRightBtn bold">New expense</Link>
                         </div>
                     </div>
                 </div>

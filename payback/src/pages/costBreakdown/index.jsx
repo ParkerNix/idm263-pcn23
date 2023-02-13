@@ -140,7 +140,7 @@ export const CostBreakdown = () => {
                             </div>
                         </div>
                         <div className='stickyBtn2'>
-                            <button className="btmRightBtn demiBold">Payback</button>
+                            <button className="btmRightBtn mediumCopy bold">Payback</button>
                         </div>
                     </div>
                 </div>
