@@ -124,12 +124,14 @@ export const ViewGroup = () => {
                     <a href="#monthly" className="bold">Monthly</a>
                 </div>
                 <div className="navStack">
-                    <img src={navExpenseDefault} className="navIcons" alt="expense" />
-                    <a href="#expense" className="bold">Expense</a>
+                    <Link to='/pages/allGroups' className="bold d-flex flex-column align-items-center">
+                        <img src={navExpenseDefault} className="navIcons" alt="expense" />
+                        Expense
+                    </Link>
                 </div>
                 <div className="navStack">
                     <Link to='/pages/groups' className="bold d-flex flex-column align-items-center">
-                    <img src={navGroupsDefault} className="navIcons" alt="groups" />
+                        <img src={navGroupsDefault} className="navIcons" alt="groups" />
                         Groups
                     </Link>
                 </div>
@@ -139,7 +141,7 @@ export const ViewGroup = () => {
                         Profile
                     </Link>
                 </div>
-            </div> 
+            </div>  
         </>
     )
 }
