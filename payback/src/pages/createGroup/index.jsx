@@ -29,7 +29,7 @@ export const CreateGroup = () => {
 
     return (
         <>
-            <div className="container">
+            <div className="container pb-5">
                 <div className="row">
                     <div className="col mt-4 mb-2 mx-4 px-0 d-flex justify-content-between">
                         <a onClick={goBack} className="bold line-height">
