@@ -24,7 +24,7 @@ export const Profile = () => {
 
     return (
         <>
-        <div className="gradientContainer">
+        <div className="gradientContainer mb-5">
             <div className="row">
                 <div className="col mt-4 mb-2 mx-3 d-flex justify-content-between">
                     <a onClick={goBack} className="bold line-height">
