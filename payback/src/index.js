@@ -23,6 +23,11 @@ import { ViewGroup } from './pages/viewGroup';
 import { Overview } from './pages/overview';
 
 
+import { ConfirmationCard} from './components/confirmationCard';
+import { FriendSettings} from './components/friendSettings';
+
+
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -44,6 +49,8 @@ root.render(
               <Route path="/pages/addedFriend" element={<AddedFriend />}></Route>
               <Route path="/pages/costBreakdown" element={<CostBreakdown />}></Route>
               <Route path="/pages/viewGroup" element={<ViewGroup />}></Route>
+              <Route path="/components/confirmationCard" element={<ConfirmationCard />}></Route>
+              <Route path="/components/friendSettings" element={<FriendSettings />}></Route>
           </Routes>
       </BrowserRouter>
     </Provider>

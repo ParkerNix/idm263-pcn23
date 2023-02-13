@@ -24,6 +24,7 @@ code {
   --desaturated-purple: #644dbd;
   --nav-bar-color: #FFFDFE;
   --orange-icon-color: #ff6341;
+  --red--text-color: #ba1f1f;
   --nav-unactive-color: linear-gradient(180deg, #8561d4, rgba(184,113,240,0.9));
   --nav-active-color: linear-gradient(180deg, #552ccc, #8741df);
   --large-copy: 20px;
@@ -573,6 +574,57 @@ hr.editFriend {
 }
 
 
+/* FRIEND SETTINGS MODAL */
+
+.viewProfile {
+  width: 327px;
+  height: 51px;
+  flex-grow: 0;
+  margin-bottom: 5px;
+  margin-top: 20px;
+  padding: 16px 16px ;
+  border-radius: 10px;
+  background-color: #f4efff;
+  font-size: var(--medium-copy);
+  
+}
+
+.blockRemove {
+  color: var(--red--text-color);
+  width: 327px;
+  height: 120px;
+  flex-grow: 0;
+  margin: 20px 8px 0 0;
+  padding: 16px 16px 15px 16px;
+  border-radius: 10px;
+  background-color: rgba(255, 151, 106, 0.35);
+}
+
+p#block, p#remove {
+  color: var(--red--text-color);
+  font-size: var(--medium-copy);
+}
+
+hr.block {
+  width: 295px;
+  height: 2.5px;
+  flex-grow: 0;
+  margin: 13.5px 0 16px;
+  transform: rotate(-0.19deg);
+  background-color: #f4c8b6;
+}
+
+img.blockFriend {
+  width: 18.3px;
+  height: 18.3px;
+  flex-grow: 0;
+  margin: 4px;
+}
+
+
+
+
+
 /* PROFILE */
 /* ////////// */
 /* ////////// */
@@ -986,4 +1038,64 @@ margin-top: 5.2px;
   position: relative;
   top: -145px;
   margin-bottom:-75px;
+}
+
+img.confirmationIcon {
+  margin-top: 15px;
+  width: 110px;
+  height:110px;
+}
+
+#modalTitle {
+  margin-top: 32px;
+}
+
+#youOwe {
+  margin-top: 14px;
+}
+
+#owedPrice {
+  margin-top: 10px;
+}
+
+#owedTo {
+  font-size: var(--medium-copy);
+  margin-top: 11px;
+}
+
+#paymentMethods {
+  margin-top: 32px;
+  font-size: var(--medium-copy);
+}
+
+#confirmationButton {
+  width: 327px;
+  margin-top: 15px;
+  font-size: var(--medium-copy);
+}
+
+#confirmationButtonTwo {
+  width: 327px;
+  margin-top: 15px;
+  font-size: var(--medium-copy);
+  border-radius: 30px;
+  color: var(--text-dark-purple);
+  box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.15);
+  border: solid 1.5px var(--text-dark-purple);
+  background-color: #fff;
+  margin-top: 12px;
+}
+
+img.venmoLogo {
+  width: 63.4px;
+  height: 12px;
+}
+
+img.noteIcon {
+  width: 18px;
+  height: 20.4px;
+}
+
+#noteIcon {
+  margin-top: 27px;
 }
