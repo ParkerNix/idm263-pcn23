@@ -1099,3 +1099,53 @@ img.noteIcon {
 #noteIcon {
   margin-top: 27px;
 }
+
+
+/* /////// */ 
+/* /////// */ 
+/* /////// */ 
+/* MONTHLY 
+/* /////// */ 
+/* /////// */ 
+/* /////// */ 
+
+p#netTotal {
+  font-size: var(--medium-copy);
+  color: var(--main-bg-color);
+  margin-top: 17px;
+}
+
+h2#netTotalNumber {
+  font-size: 32px;
+  color: var(--main-bg-color);
+  margin-bottom: 233px;
+}
+
+p#youPaid {
+  color: var(--text-dark-purple);
+  font-size: var(--xsmall-copy);
+}
+
+p#entertainmentTag {
+  font-size: var(--small-copy);
+  margin: 27px 47px 0 1.1px;
+  padding: 4px 12px;
+  border-radius: 27.6px;
+  background-color: #decfff;
+}
+
+
+h6#monthlyDate {
+  margin-top: 17px;
+  text-align: right;
+}
+
+#monthlyCard {
+  width: 327px;
+  height: 135px;
+  flex-grow: 0;
+  padding: 17px 16px 16px 14.9px;
+  border-radius: 9.6px;
+  box-shadow: 0 5.8px 23.1px 0 rgba(0, 0, 0, 0.05);
+  background-color: #fff;
+}

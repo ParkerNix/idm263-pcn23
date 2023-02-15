@@ -17,6 +17,7 @@ import { FriendProfile } from './pages/friendProfile';
 import { Groups } from './pages/groups';
 import { EditGroup } from './pages/editgroup';
 import { AddedFriend } from './pages/addedFriend';
+import { Monthly } from './pages/monthly';
 
 import { CostBreakdown } from './pages/costBreakdown';
 import { ViewGroup } from './pages/viewGroup';
@@ -51,6 +52,7 @@ root.render(
               <Route path="/pages/viewGroup" element={<ViewGroup />}></Route>
               <Route path="/components/confirmationCard" element={<ConfirmationCard />}></Route>
               <Route path="/components/friendSettings" element={<FriendSettings />}></Route>
+              <Route path="/pages/monthly" element={<Monthly />}></Route>
           </Routes>
       </BrowserRouter>
     </Provider>

@@ -86,8 +86,6 @@ export const AddFriends = () => {
                                     </div>
                                 </div>
                                 <hr className="friendsList"></hr>
-                        
-
 
                             </div>
                         </div>
