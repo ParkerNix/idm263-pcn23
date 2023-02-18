@@ -265,6 +265,11 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, p, .p, a, link, button, in
   width: 4px;
 }
 
+.topNavOptionsWhite {
+  width: 24px;
+  height: 24px;
+}
+
 .groupsContainer {
   display: flex;
   justify-content: center;
@@ -1109,6 +1114,10 @@ img.noteIcon {
 /* /////// */ 
 /* /////// */ 
 
+#monthly {
+  color: var(--main-bg-color);
+  margin-left: 150px;
+}
 p#netTotal {
   font-size: var(--medium-copy);
   color: var(--main-bg-color);
@@ -1128,10 +1137,19 @@ p#youPaid {
 
 p#entertainmentTag {
   font-size: var(--small-copy);
-  margin: 27px 47px 0 1.1px;
+  margin-top: 27px;
   padding: 4px 12px;
   border-radius: 27.6px;
   background-color: #decfff;
+  margin-bottom: 16px;
+}
+
+p#travelTag {
+  flex-grow: 0;
+  margin-top: 27px;
+  padding: 4px 12px;
+  border-radius: 27.6px;
+  background-color: #c6d6ff;
 }
 
 
@@ -1142,10 +1160,40 @@ h6#monthlyDate {
 
 #monthlyCard {
   width: 327px;
-  height: 135px;
+  height: 145px;
   flex-grow: 0;
+  /* margin-left: 24px;
+  margin-right: 24px; */
   padding: 17px 16px 16px 14.9px;
   border-radius: 9.6px;
   box-shadow: 0 5.8px 23.1px 0 rgba(0, 0, 0, 0.05);
   background-color: #fff;
+  margin: 0;
 }
+
+img.monthlyArrow {
+  width: 13.9px;
+  height: 14px;
+  flex-grow: 0;
+  margin-left: 4.5px;
+}
+
+h4#totalSpend {
+  color: var(--main-bg-color);
+  margin-bottom: 51px;
+}
+
+img.dropDownArrow {
+  width: 8px;
+  height: 5px;
+  margin-left: 4px;
+  flex-grow: 0;
+}
+
+/* img.monthySwipe {
+  width: 9px;
+  height: 17px;
+  flex-grow: 0;
+  transform: rotate(-90deg);
+  border: solid 3px rgba(219, 201, 255, 0.8);
+} */
