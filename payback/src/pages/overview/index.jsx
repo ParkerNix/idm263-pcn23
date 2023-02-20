@@ -9,6 +9,11 @@ import React from 'react';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Doughnut } from 'react-chartjs-2';
 import { Link } from 'react-router-dom';
+import { collection, onSnapshot, query, } from "firebase/firestore";
+import { db } from "../../firebase";
+import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { update } from "../../store/slices/items";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -40,6 +45,29 @@ const options = {
 };
 
 export const Overview = () => {
+
+    const dispatch = useDispatch();
+  
+    const [allItems, setAllItems] = useState([])
+  
+    useEffect(() => {
+      const q = query(collection(db, "Groups"))
+      onSnapshot(q, querySnapshot => {
+        setAllItems([])
+        querySnapshot.forEach(doc => {
+          setAllItems(prevAllItems => [
+            ...prevAllItems,
+            doc.data()
+          ])
+        })
+      })
+    }, [])
+  
+    useEffect(() => {
+      dispatch(update(allItems))
+    })
+  
+    console.log(allItems)
 
     return (
         <>

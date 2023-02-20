@@ -13,8 +13,96 @@ import navExpenseDefault from '../../components/Assets/nav_expense_default.png'
 import navGroupsDefault from '../../components/Assets/nav_groups_default.png'
 import navProfileDefault from '../../components/Assets/nav_profile_default.png'
 import { Link, useNavigate } from 'react-router-dom';
+import {useEffect, useState} from 'react';
 
 export const NewExpense = () => {
+
+    const [total, setTotal] = useState(0);
+    const [error, seterror] = useState("");
+    let members = [
+        {
+            name : "Megan Lam",
+            dollar : 12.80,
+            percent : 0,
+            lock : true
+        },
+        {
+            name : "Molyna Tep",
+            dollar : 24.00,
+            percent : 0,
+            lock : false
+        },
+        {
+            name : "Parker Nix",
+            dollar : 0,
+            percent : 0,
+            lock : false
+        },
+        {
+            name : "Allie Drake",
+            dollar : 0,
+            percent : 0,
+            lock : false
+        },
+        {
+            name : "Joey McQuillan",
+            dollar : 0,
+            percent : 0,
+            lock : false
+        }
+    ]
+
+    const Evenvalues = (name) => {
+        
+        let locknum = 0
+        let leftover = total
+
+        for(let i=0; i<members.length; i++) {
+            if(members[i].lock === true) {
+                locknum++
+                leftover = leftover - members[i].dollar
+            }
+        }
+
+        let maxLocks = members.length - 2
+        let unlockedNum = members.length - (1 + locknum)
+
+
+        if(locknum > maxLocks) {
+           console.log("return")
+        } else {
+            let difference = leftover - members[1].dollar
+            let divided = difference/unlockedNum
+            let divpercent = total/divided
+            for(let i=0; i<members.length; i++) {
+                if(members[i].name === name) {
+                    console.log(`this is ${name}`)
+                } else if(members[i].lock === false) {
+                    members[i].dollar = divided
+                    members[i].percent = divpercent
+                    console.log(members[i].dollar)
+                }
+            }
+        }
+    }
+    const isEven = () => {
+        let totalPercent = 0
+        for(let i=0; i<members.length; i++) {
+            totalPercent = totalPercent + members[i].percent
+        }
+        if ( 1 !== totalPercent ) {
+            seterror("Please recheck your values, they do not add up to your total!");
+        }
+        if ( 1 === totalPercent ) {
+            seterror("");
+        }
+    }
+    useEffect(() => {
+        isEven()
+    }, [members, total])
+    let handleChange = (event) => {
+    this.setState({value: event.target.value});
+    }
 
     // Use this hook to programmatically navigate to another page
     const navigate = useNavigate();
@@ -44,7 +132,13 @@ export const NewExpense = () => {
                               <input
                                 className='ml-2 total'
                                 type="text"
-                                value={"$64.00"}
+                                value={total}
+                                onChange={
+                                  event => {
+                                    handleChange(event)
+                                    setTotal(event.target.value);
+                                  }
+                                }
                               />
                             </label>
                         </div>
@@ -120,7 +214,17 @@ export const NewExpense = () => {
                                             <input
                                                 className='ml-2 indivTotal bold'
                                                 type="text"
-                                                value={"$12.80"}
+                                                value={members[0].dollar}
+                                                onChange={
+                                                    event => {
+                                                        console.log(event.target.value)
+                                                        const personanew = parseFloat(event.target.value)
+                                                        members[0].dollar = personanew
+                                                        const personapercentnew = personanew / total
+                                                        members[0].percent = personapercentnew
+                                                        Evenvalues("Megan Lam")
+                                                    }
+                                                  }
                                             />
                                         </div>
                                     </div>

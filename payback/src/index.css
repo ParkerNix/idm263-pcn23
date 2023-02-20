@@ -204,9 +204,12 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, p, .p, a, link, button, in
 }
 
 .stickyBtn2 {
-  display: flex;
-  justify-content: end;
-  margin-top: 16px;
+  position: fixed;
+  bottom:76px;
+  left: 51.5%;
+  /* display: flex;
+  justify-content: center; */
+  padding: 1em;
 }
 
 .stickyBtn3 {
