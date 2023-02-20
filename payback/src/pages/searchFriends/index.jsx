@@ -30,7 +30,7 @@ export const SearchFriends = () => {
                 <div className="col mt-4 mb-2 mx-3 d-flex justify-content-between">
                     <img src={backArrow} alt="back" className="topNavBack" />
                     <h1 id="friendsTitle" className="h6 bold">Friends</h1>
-                    <img src={optionsIcon} alt="back" className="topNavOptions" />
+                    <div className="navSpacer"></div>
                 </div>
             </div>
             <div className="row">

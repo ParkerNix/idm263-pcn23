@@ -19,7 +19,7 @@ export const MonthlyTotalGain = () => {
         <div className="gradientContainer">
             <div className="row">
                 <div className="col mt-4 mb-2 mx-3 d-flex justify-content-between">
-                    {/* <img src={backArrowWhite} alt="back" className="topNavBack" /> */}
+                    <div className="navSpacer"></div>
                     <h1 className="h6 bold" id="monthly">Monthly</h1>
                     <img src={optionsIconWhite} alt="back" className="topNavOptionsWhite" />
                  </div>
@@ -60,6 +60,7 @@ export const MonthlyTotalGain = () => {
                                     </div>
                                 </div>
                             </div>
+
 
                             
                     </div>

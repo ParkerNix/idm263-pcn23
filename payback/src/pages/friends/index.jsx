@@ -15,6 +15,7 @@ import navMonthlyDefault from '../../components/Assets/nav_monthly_default.png'
 import navExpenseDefault from '../../components/Assets/nav_expense_default.png'
 import navGroupsDefault from '../../components/Assets/nav_groups_default.png'
 import navProfileDefault from '../../components/Assets/nav_profile_default.png'
+import searchFriends from '../../components/Assets/searchFriends.png'
 
 
 
@@ -27,7 +28,7 @@ export const AddFriends = () => {
                 <div className="col mt-4 mb-2 mx-3 d-flex justify-content-between">
                     <img src={backArrow} alt="back" className="topNavBack" />
                     <h1 id="friendsTitle" className="h6 bold">Friends</h1>
-                    <img src={optionsIcon} alt="back" className="topNavOptions" />
+                    <div className="navSpacer"></div>
                 </div>
             </div>
             <div className="row">
@@ -36,6 +37,7 @@ export const AddFriends = () => {
                         
                     <div className="input-group">
                         <div clasName="form-outline">
+                        {/* <img src={searchFriends} alt="back" className="searchFriends" /> */}
                             <input type="text" id="searchForm" class="form-control" placeholder="Search for friends"/>
                             {/* <label class="form-label" for="searchForm">Search</label> */}
                         </div>
