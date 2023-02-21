@@ -58,7 +58,7 @@ export const EditGroup = () => {
                                     <p className="p demiBold" id="friendName">Allie Drake</p>
                                     </div>
                                         <div className="addFriend">
-                                            <img src={deletePlaceholder} alt="addFriend" className="deleteFriend"/>
+                                            <button id="deleteFriends"><p>+</p></button>
                                     </div>
                                 </div>
 
@@ -70,7 +70,7 @@ export const EditGroup = () => {
                                     <p className="p demiBold" id="friendName">Joey McQuillan</p>
                                     </div>
                                     <div className="addFriend">
-                                            <img src={deletePlaceholder} alt="addFriend" className="deleteFriend"/>
+                                        <button id="deleteFriends"><p>+</p></button>
                                     </div>
                                 </div>
                                 <hr className="addFriend"></hr>
@@ -81,7 +81,7 @@ export const EditGroup = () => {
                                     <p className="p demiBold" id="friendName">Megan Lam</p>
                                     </div>
                                     <div className="addFriend">
-                                            <img src={deletePlaceholder} alt="addFriend" className="deleteFriend"/>
+                                        <button id="deleteFriends"><p>+</p></button>
                                     </div>
                                 </div>
                                 <hr className="editFriend"></hr>
@@ -92,7 +92,7 @@ export const EditGroup = () => {
                                     <p className="p demiBold" id="friendName">Parker Nix</p>
                                     </div>
                                     <div className="addFriend">
-                                            <img src={deletePlaceholder} alt="addFriend" className="deleteFriend"/>
+                                        <button id="deleteFriends"><p>+</p></button>
                                     </div>
                                 </div>
 
@@ -100,8 +100,8 @@ export const EditGroup = () => {
 
                                 <div className="friendsRow d-flex flex-row justify-content-between">
                                     <div className="friendsName d-flex flex-row align-items-center">
-                                    <img src={deletePlaceholder} alt="smiley" className="add"/>
-                                    <p className="p demiBold" id="friendName">Add more friends</p>
+                                    <button id="addFriends"><p>+</p></button>
+                                        <p className="p demiBold" id="friendName">Add more friends</p>
                                     </div>
                                 </div>
 

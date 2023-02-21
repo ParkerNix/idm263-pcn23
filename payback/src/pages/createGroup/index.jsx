@@ -38,17 +38,18 @@ export const CreateGroup = () => {
                     <div className="description">
                         <h3 className="h5 bold mt-4 mb-3">Description</h3>
                         <div class="form-group">
-                            <textarea class="form-control" rows="5" cols="50" id="comment">Add group description</textarea>
+                            <textarea class="form-control" rows="5" cols="50" id="addGroupDescription">Add group description</textarea>
                           </div>
                     </div>
                     <div className="groupMembers d-flex justify-content-center">
                         <h3 className='h5 bold mb-3'>Groups Members (0)</h3>
                         <div class="checkbox d-flex flex-row gap-2">
-                        <input
+                        {/* <input
                              className='add'
                              type="checkbox"
                              min="0"
-                             />
+                             /> */}
+                             <button id="addFriends"><p>+</p></button>
                              <p className="p demiBold">Add Friends</p>
                           </div>
                           </div>

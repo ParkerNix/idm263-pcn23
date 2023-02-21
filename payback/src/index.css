@@ -179,7 +179,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, p, .p, a, link, button, in
 
 .btmRightBtn {
   position: fixed;
-  bottom: 16px;
+  bottom: 70px;
   right: 16px;
   padding: 12px 16px;
 }
@@ -353,6 +353,8 @@ margin:0 ;
   border: none;
   border-radius: 10px;
   box-shadow: 0 5px 20px 0 rgba(1, 0, 51, 0.05);
+  color: var(--text-dark-purple);
+  font-size: var(--small-copy);
 }
 
 .groupMembers {
@@ -374,6 +376,53 @@ img.editIcon {
   margin-left: 0.3rem;
 }
 
+button#addFriends {
+  border: none;
+  color: white;
+  padding: 20px;
+  width: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  height: 20px;
+  padding: 5.5px;
+}
+
+button#addFriends p {
+  color: white;
+  margin-top: -1.2rem;
+  font-size: 28px;
+  text-align: center;
+  margin-left: -0.1rem;
+}
+
+button#deleteFriends {
+  color: white;
+  background-color: var(--desaturated-purple);
+  padding: 20px;
+  width: 18px;
+  height: 18px;
+  /* text-align: center; */
+  /* text-decoration: none; */
+  /* display: inline-block; */
+  font-size: 16px;
+  margin: 4px 2px;
+  /* height: 20px; */
+  padding: 5.5px;
+}
+
+
+button#deleteFriends p {
+  color: white;
+  margin-top: -1.2rem;
+  font-size: 28px;
+  text-align: center;
+  margin-left: -0.27rem;
+  transform: rotate(-45deg);
+  object-fit:contain;
+}
 
 /* ADD FRIENDS */
 /* 
@@ -412,6 +461,7 @@ h1#friendsTitle {
   font-size: var(--small-copy);
   padding-left: 42px;
 }
+
 
 
 
@@ -982,6 +1032,10 @@ margin-top: 5.2px;
   border-radius: 50px;
   height: .75rem;
 }
+
+/* h2#groupSpending {
+  margin-bottom: 8px;
+} */
 
 /*costBreakdown*/
 
