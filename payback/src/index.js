@@ -25,13 +25,14 @@ import { MonthlyTotalSpend } from './pages/monthlyTotalSpend';
 import { MonthlyTotalGain } from './pages/monthlyTotalGain';
 import { Test} from './pages/test';
 
-import { CostBreakdown } from './pages/costBreakdown';
-import { ViewGroup } from './pages/viewGroup';
-import { Overview } from './pages/overview';
+// import { CostBreakdown } from './pages/costBreakdown';
+// import { ViewGroup } from './pages/viewGroup';
+// import { Overview } from './pages/overview';
 
 
 import { ConfirmationCard} from './components/confirmationCard';
 import { FriendSettings} from './components/friendSettings';
+import { AddPhoto} from './components/addPhoto';
 
 
 
@@ -60,6 +61,7 @@ root.render(
               <Route path="/pages/viewGroup" element={<ViewGroup />}></Route>
               <Route path="/components/confirmationCard" element={<ConfirmationCard />}></Route>
               <Route path="/components/friendSettings" element={<FriendSettings />}></Route>
+              <Route path="/components/addPhoto" element={<AddPhoto />}></Route>
               <Route path="/pages/monthlyNetTotal" element={<MonthlyNetTotal />}></Route>
               <Route path="/pages/monthlyTotalSpend" element={<MonthlyTotalSpend />}></Route>
               <Route path="/pages/monthlyTotalGain" element={<MonthlyTotalGain />}></Route>

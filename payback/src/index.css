@@ -885,6 +885,8 @@ margin-top: 5.2px;
 .pageTabTwo {
   background-color: var(--main-bg-color);
   border-radius: 20px 20px 0px 0px;
+  height: 550px;
+
 }
 
 .white {
@@ -1285,3 +1287,43 @@ img.dropDownArrow {
   border: solid 3px rgba(219, 201, 255, 0.8);
 } */
 
+
+
+/* Add photo modal */
+
+#gallery {
+  width: 279px;
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  margin: 8px 8px 12px 0;
+  padding: 12px 32px;
+  border-radius: 30px;
+  box-shadow: 0 3px 4px 0 rgba(0, 4, 97, 0.15);
+  background-color: var(--button-color);
+  /* margin-top: 48px; */
+}
+
+#gallery h1 {
+  color: #fff;
+}
+
+
+#takePhoto {
+  width: 279px;
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  margin: 0px 8px 0px 0;
+  padding: 12px 32px;
+  border: solid 1.5px var(--main-cta-purple);
+  border-radius: 30px;
+  box-shadow: 0 3px 4px 0 rgba(0, 4, 97, 0.15);
+  background-color: var(--button-main-cta-purple);
+}

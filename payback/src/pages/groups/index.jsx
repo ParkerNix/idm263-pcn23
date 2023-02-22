@@ -124,8 +124,8 @@ export const Groups = () => {
                             
                 </div>
 
-            </div>
-
+            
+                </div>  
 
             <div class="navbar">
                 <div class="navStack">
@@ -150,7 +150,8 @@ export const Groups = () => {
                 </div>
             </div>
         </div>
-        </div>           
+        </div>  
+               
         
         </>
     );
