@@ -199,6 +199,10 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, p, .p, a, link, button, in
 /* ////////// ////*/
 /* ////////// ////*/
 
+.highlight {
+  height:65px;
+}
+
 .navSpacer {
   width: 25px;
 }
@@ -208,8 +212,11 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, p, .p, a, link, button, in
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 7px;
-  margin-bottom: 5px;
+  /* margin-top: 7px;
+  margin-bottom: 5px; */
+  width: 65px;
+  height: 75px;
+  border-top-color: purple;
 }
 
 
@@ -221,8 +228,9 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, p, .p, a, link, button, in
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding-left: 30px;
-  padding-right: 30px;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 0;
   bottom: 0;
   width: 100%;
   height: 65px;
@@ -240,9 +248,15 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, p, .p, a, link, button, in
 }
 
 .navbar .navStack:hover {
-  background-image: linear-gradient(to bottom, rgba(140, 62, 219, 0.08) 0%, rgba(163, 84, 203, 0) 100%);
+  /* background-image: linear-gradient(to bottom, rgba(140, 62, 219, 0.08) 0%, rgba(163, 84, 203, 0) 100%); */
+  background-color: rgba(140, 62, 219, 0.08);
+  /* background-size: 90px 40px; */
+  border-top: 3px solid #552ccc;
   color: var(--nav);
+
 }
+
+
 
 /* .navbar a.active {
   background-color: #04AA6D;
