@@ -8,6 +8,9 @@ import store from './store/store';
 import { Provider } from 'react-redux';
 import { NewExpense } from './pages/newExpense';
 import { AllGroups } from './pages/allGroups';
+import { CostBreakdown } from './pages/costBreakdown';
+import { ViewGroup } from './pages/viewGroup';
+import { Overview } from './pages/overview';
 import { CreateGroup } from './pages/createGroup';
 import { AddFriends } from './pages/friends';
 import { SearchFriends } from './pages/searchFriends';
@@ -42,6 +45,8 @@ root.render(
               <Route path="/" element={<Overview />}></Route>
               <Route path="/pages/allGroups" element={<AllGroups />}></Route>
               <Route path="/pages/newExpense" element={<NewExpense />}></Route>
+              <Route path="/pages/costBreakdown" element={<CostBreakdown />}></Route>
+              <Route path="/pages/viewGroup" element={<ViewGroup />}></Route>
               <Route path="/pages/createGroup" element={<CreateGroup />}></Route>
               <Route path="/pages/friends" element={<AddFriends />}></Route>
               <Route path="/pages/searchFriends" element={<SearchFriends />}></Route>

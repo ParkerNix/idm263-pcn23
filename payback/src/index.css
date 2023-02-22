@@ -45,8 +45,13 @@ code {
   --category-food: ;
   --category-food: ;
   --category-food: ;
-
+  
   --hr-color: #e6e2ec;
+
+  /* --greycliff-extrabold-font-family: 'Greycliff-ExtraBold';
+  --greycliff-bold-font-family: 'Greycliff-Bold';
+  --greycliff-medium-font-family: 'Greycliff-Medium';
+  --greycliff-regular-font-family: 'Greycliff-Regular'; */
 }
 
 
@@ -1035,7 +1040,6 @@ margin-top: 5.2px;
 
 /* h2#groupSpending {
   margin-bottom: 8px;
-} */
 
 /*costBreakdown*/
 
@@ -1122,7 +1126,9 @@ margin-top: 5.2px;
   position: relative;
   top: -145px;
   margin-bottom:-75px;
+  
 }
+
 
 img.confirmationIcon {
   margin-top: 15px;
@@ -1278,3 +1284,4 @@ img.dropDownArrow {
   transform: rotate(-90deg);
   border: solid 3px rgba(219, 201, 255, 0.8);
 } */
+

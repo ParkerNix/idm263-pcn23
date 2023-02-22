@@ -84,7 +84,9 @@ export const ViewGroup = () => {
                                     </div>
                                     <div className="groupsCardButton">
                                         <a className='bold line-height' href='#'>View breakdown →</a>
+
                                         {/* Need to move this to around the entire card div so that hit box is whole entire card */}
+
                                     </div>
                                 </div>
                             </div>
