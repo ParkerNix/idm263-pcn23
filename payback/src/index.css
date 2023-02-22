@@ -24,6 +24,7 @@ code {
   --desaturated-purple: #644dbd;
   --nav-bar-color: #FFFDFE;
   --orange-icon-color: #ff6341;
+  --red--text-color: #ba1f1f;
   --nav-unactive-color: linear-gradient(180deg, #8561d4, rgba(184,113,240,0.9));
   --nav-active-color: linear-gradient(180deg, #552ccc, #8741df);
   --large-copy: 20px;
@@ -44,6 +45,7 @@ code {
   --category-food: ;
   --category-food: ;
   --category-food: ;
+  
   --hr-color: #e6e2ec;
 
   /* --greycliff-extrabold-font-family: 'Greycliff-ExtraBold';
@@ -182,7 +184,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, p, .p, a, link, button, in
 
 .btmRightBtn {
   position: fixed;
-  bottom: 90px;
+  bottom: 70px;
   right: 16px;
   padding: 12px 16px;
 }
@@ -197,13 +199,16 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, p, .p, a, link, button, in
 /* ////////// ////*/
 /* ////////// ////*/
 
+.navSpacer {
+  width: 25px;
+}
 
 .navStack {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 13px;
+  margin-top: 7px;
   margin-bottom: 5px;
 }
 
@@ -220,6 +225,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, p, .p, a, link, button, in
   padding-right: 30px;
   bottom: 0;
   width: 100%;
+  height: 65px;
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   box-shadow: 0 -2px 5px 0 rgba(53, 0, 138, 0.1);
@@ -266,6 +272,11 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, p, .p, a, link, button, in
 .topNavOptions {
   height: 20px;
   width: 4px;
+}
+
+.topNavOptionsWhite {
+  width: 20px;
+  height: 20px;
 }
 
 .groupsContainer {
@@ -347,6 +358,8 @@ margin:0 ;
   border: none;
   border-radius: 10px;
   box-shadow: 0 5px 20px 0 rgba(1, 0, 51, 0.05);
+  color: var(--text-dark-purple);
+  font-size: var(--small-copy);
 }
 
 .groupMembers {
@@ -368,10 +381,64 @@ img.editIcon {
   margin-left: 0.3rem;
 }
 
+button#addFriends {
+  border: none;
+  color: white;
+  padding: 20px;
+  width: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  height: 20px;
+  padding: 5.5px;
+}
+
+button#addFriends p {
+  color: white;
+  margin-top: -1.2rem;
+  font-size: 28px;
+  text-align: center;
+  margin-left: -0.1rem;
+}
+
+button#deleteFriends {
+  color: white;
+  background-color: var(--desaturated-purple);
+  padding: 20px;
+  width: 18px;
+  height: 18px;
+  /* text-align: center; */
+  /* text-decoration: none; */
+  /* display: inline-block; */
+  font-size: 16px;
+  margin: 4px 2px;
+  /* height: 20px; */
+  padding: 5.5px;
+}
+
+
+button#deleteFriends p {
+  color: white;
+  margin-top: -1.2rem;
+  font-size: 28px;
+  text-align: center;
+  margin-left: -0.27rem;
+  transform: rotate(-45deg);
+  object-fit:contain;
+}
 
 /* ADD FRIENDS */
 /* 
 */
+
+h1#friendsTitle {
+  /* margin-right: 161px; */
+  text-align: center;
+  /* width: 50%; */
+}
+
 
 #searchForm {
   width: 234px;
@@ -387,6 +454,21 @@ img.editIcon {
   box-shadow: 0 5px 20px 0 rgba(1, 0, 51, 0.05);
   background-color: #fff;
 }
+
+#searchForm::placeholder {
+  color: var(--text-dark-purple);
+  font-size: var(--small-copy);
+  padding-left: 42px;
+}
+
+#searchFormTwo::placeholder {
+  color: var(--text-dark-purple);
+  font-size: var(--small-copy);
+  padding-left: 42px;
+}
+
+
+
 
 #searchFormTwo {
   width: 327px;
@@ -577,6 +659,57 @@ hr.editFriend {
 }
 
 
+/* FRIEND SETTINGS MODAL */
+
+.viewProfile {
+  width: 327px;
+  height: 51px;
+  flex-grow: 0;
+  margin-bottom: 5px;
+  margin-top: 20px;
+  padding: 16px 16px ;
+  border-radius: 10px;
+  background-color: #f4efff;
+  font-size: var(--medium-copy);
+  
+}
+
+.blockRemove {
+  color: var(--red--text-color);
+  width: 327px;
+  height: 120px;
+  flex-grow: 0;
+  margin: 20px 8px 0 0;
+  padding: 16px 16px 15px 16px;
+  border-radius: 10px;
+  background-color: rgba(255, 151, 106, 0.35);
+}
+
+p#block, p#remove {
+  color: var(--red--text-color);
+  font-size: var(--medium-copy);
+}
+
+hr.block {
+  width: 295px;
+  height: 2.5px;
+  flex-grow: 0;
+  margin: 13.5px 0 16px;
+  transform: rotate(-0.19deg);
+  background-color: #f4c8b6;
+}
+
+img.blockFriend {
+  width: 18.3px;
+  height: 18.3px;
+  flex-grow: 0;
+  margin: 4px;
+}
+
+
+
+
+
 /* PROFILE */
 /* ////////// */
 /* ////////// */
@@ -676,7 +809,7 @@ hr.profile {
   background-image: linear-gradient(159deg, #6527c9 0%, #330a8b 36%)
 }
 
-.container, .friendsCheck {
+.friendsCheck, .container {
   background-color: var(--main-bg-color);
   font-size: var(--medium-copy);
 }
@@ -905,6 +1038,9 @@ margin-top: 5.2px;
   height: .75rem;
 }
 
+/* h2#groupSpending {
+  margin-bottom: 8px;
+
 /*costBreakdown*/
 
 .categoryTitle {
@@ -990,4 +1126,162 @@ margin-top: 5.2px;
   position: relative;
   top: -145px;
   margin-bottom:-75px;
+  
 }
+
+
+img.confirmationIcon {
+  margin-top: 15px;
+  width: 110px;
+  height:110px;
+}
+
+#modalTitle {
+  margin-top: 32px;
+}
+
+#youOwe {
+  margin-top: 14px;
+}
+
+#owedPrice {
+  margin-top: 10px;
+}
+
+#owedTo {
+  font-size: var(--medium-copy);
+  margin-top: 11px;
+}
+
+#paymentMethods {
+  margin-top: 32px;
+  font-size: var(--medium-copy);
+}
+
+#confirmationButton {
+  width: 327px;
+  margin-top: 15px;
+  font-size: var(--medium-copy);
+}
+
+#confirmationButtonTwo {
+  width: 327px;
+  margin-top: 15px;
+  font-size: var(--medium-copy);
+  border-radius: 30px;
+  color: var(--text-dark-purple);
+  box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.15);
+  border: solid 1.5px var(--text-dark-purple);
+  background-color: #fff;
+  margin-top: 12px;
+}
+
+img.venmoLogo {
+  width: 63.4px;
+  height: 12px;
+}
+
+img.noteIcon {
+  width: 18px;
+  height: 20.4px;
+}
+
+#noteIcon {
+  margin-top: 27px;
+}
+
+
+/* /////// */ 
+/* /////// */ 
+/* /////// */ 
+/* MONTHLY 
+/* /////// */ 
+/* /////// */ 
+/* /////// */ 
+
+
+
+#monthly {
+  color: var(--main-bg-color);
+}
+
+
+p#netTotal {
+  font-size: var(--medium-copy);
+  color: var(--main-bg-color);
+  margin-top: 17px;
+}
+
+h2#netTotalNumber {
+  font-size: 32px;
+  color: var(--main-bg-color);
+  margin-bottom: 233px;
+}
+
+p#youPaid {
+  color: var(--text-dark-purple);
+  font-size: var(--xsmall-copy);
+}
+
+p#entertainmentTag {
+  font-size: var(--small-copy);
+  margin-top: 27px;
+  padding: 4px 12px;
+  border-radius: 27.6px;
+  background-color: #decfff;
+  margin-bottom: 16px;
+}
+
+p#travelTag {
+  flex-grow: 0;
+  margin-top: 27px;
+  padding: 4px 12px;
+  border-radius: 27.6px;
+  background-color: #c6d6ff;
+}
+
+
+h6#monthlyDate {
+  margin-top: 17px;
+  text-align: right;
+}
+
+#monthlyCard {
+  width: 327px;
+  height: 145px;
+  flex-grow: 0;
+  /* margin-left: 24px;
+  margin-right: 24px; */
+  padding: 17px 16px 16px 14.9px;
+  border-radius: 9.6px;
+  box-shadow: 0 5.8px 23.1px 0 rgba(0, 0, 0, 0.05);
+  background-color: #fff;
+}
+
+img.monthlyArrow {
+  width: 13.9px;
+  height: 14px;
+  flex-grow: 0;
+  margin-left: 4.5px;
+}
+
+h4#totalSpend {
+  color: var(--main-bg-color);
+  margin-bottom: 51px;
+}
+
+img.dropDownArrow {
+  width: 8px;
+  height: 5px;
+  margin-left: 4px;
+  flex-grow: 0;
+}
+
+/* img.monthySwipe {
+  width: 9px;
+  height: 17px;
+  flex-grow: 0;
+  transform: rotate(-90deg);
+  border: solid 3px rgba(219, 201, 255, 0.8);
+} */
+
