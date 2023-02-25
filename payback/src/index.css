@@ -350,6 +350,31 @@ margin:0 ;
 
 /* NEW GROUP PAGE */
 
+button#addPhoto {
+  border: none;
+  color: white;
+  background-color: var(--orange-icon-color);
+  padding: 25px;
+  width: 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: -20px;
+  margin-left: 70px;
+  height: 25px;
+  padding: 5.5px;
+}
+
+button#addPhoto p {
+  color: white;
+  margin-top: -1.2rem;
+  font-size: 31px;
+  text-align: center;
+}
+
+
+
 .createGroup {
   display: flex;
   justify-content: center;

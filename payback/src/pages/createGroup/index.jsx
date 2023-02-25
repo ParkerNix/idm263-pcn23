@@ -11,6 +11,7 @@ import navMonthlyDefault from '../../components/Assets/nav_monthly_default.png'
 import navExpenseDefault from '../../components/Assets/nav_expense_default.png'
 import navGroupsDefault from '../../components/Assets/nav_groups_default.png'
 import navProfileDefault from '../../components/Assets/nav_profile_default.png'
+import photoPlaceholder from '../../components/Assets/photoPlaceholder.png'
 
 
 export const CreateGroup = () => {
@@ -21,7 +22,7 @@ export const CreateGroup = () => {
         <div class="row">
                 <div className="col mt-4 mb-2 mx-3 d-flex justify-content-between">
                     <img src={backArrow} alt="back" className="topNavBack" />
-                    <h1 className="h6 bold">Groups</h1>
+                    <h1 className="h6 bold">Create Group</h1>
                     <img src={optionsIcon} alt="back" className="topNavOptions" />
                     {/* Add back arrow and 3 vertical dots */}
                 </div>
@@ -29,8 +30,38 @@ export const CreateGroup = () => {
             <div className="row">
                 <div className="col">
                     <div className="createGroup">
-                    <img src={groupImg} alt="groupImg" className='newGroupImg mt-4 align-self-center'/>
-                    <div class="groupName d-flex flex-row align-items-center mt-3">
+                    <img src={photoPlaceholder} alt="photoPlaceholder" className='newGroupImg mt-4 align-self-center'/>
+                    <button id="addPhoto"  data-bs-toggle="modal" data-bs-target="#myModal"><p>+</p></button>
+
+                    {/* ADD PHOTO MODAL */}
+
+                    <div className="modal" id="myModal">
+                    <div className="modal-dialog">
+                    <div className="modal-content">
+
+                
+                        {/* <div className="modal-header">
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div> */}
+
+                    
+                        <div className="modal-body">
+                        <div className="row">
+                                <div className="col mt-4 mb-2 mx-3 d-flex flex-column justify-content-center align-items-center">
+                                <button id="gallery"><h1 className="h6 bold">Choose from gallery</h1></button>
+                                <button id="takePhoto"><h1 className="h6 bold">Take a photo</h1></button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    </div>
+                    </div>
+
+
+
+
+                    <div class="groupName d-flex flex-row align-items-center mt-1">
                         <h2 id="groupH2" className = 'h3 bold'>Group 1</h2>
                         <img src={editIcon} alt="editIcon" className='editIcon' />
                     </div>
@@ -57,6 +88,9 @@ export const CreateGroup = () => {
                                 Save group
                             </button>
                     </div>
+
+
+                    
 
             </div>
         </div>
