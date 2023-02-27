@@ -85,6 +85,7 @@ export const NewExpense = () => {
 
         let maxLocks = newArr.length - 2
         let unlockedNum = newArr.length - (1 + locknum)
+        console.log(unlockedNum)
 
 
         if(locknum > maxLocks) {
@@ -92,19 +93,16 @@ export const NewExpense = () => {
         } else {
             let difference = leftover - newdollar
             let divided = difference/unlockedNum
-            let divpercent = total/divided
+            let divpercent = divided/total
+            console.log(divpercent)
             for(let i=0; i<newArr.length; i++) {
                 if(newArr[i].lock === true) {
                     console.log("she's locked tho")
                 }else if(newArr[i].name === name) {
-                    console.log(`this is ${name}`)
-                    console.log(newArr[i].percent)
                     newArr[i].dollar = newdollar
                 } else if(newArr[i].lock === false) {
                     newArr[i].dollar = divided
-                    newArr[i].percent = divpercent * 10 + "%"
-                    console.log(newArr[i].dollar)
-                    console.log(newArr[i].percent)
+                    newArr[i].percent = divpercent * 100 + "%"
                 }
             }
         }
@@ -307,7 +305,7 @@ export const NewExpense = () => {
                                         </div>
                                     </div>
                                     <div className="progress">
-                                        <div className="progress-bar progressOrange" style={{ width: "50%" }}></div>
+                                        <div className="progress-bar progressOrange" style={{ width: members[1].percent }}></div>
                                     </div>
                                 </label>
                                 <label className='memberExpense'>
@@ -346,7 +344,7 @@ export const NewExpense = () => {
                                         </div>
                                     </div>
                                     <div className="progress">
-                                        <div className="progress-bar progressPink" style={{ width: "10%" }}></div>
+                                        <div className="progress-bar progressPink" style={{ width: members[2].percent }}></div>
                                     </div>
                                 </label>
                                 <label className='memberExpense'>
@@ -385,7 +383,7 @@ export const NewExpense = () => {
                                         </div>
                                     </div>
                                     <div className="progress">
-                                        <div className="progress-bar progressYellow" style={{ width: "10%" }}></div>
+                                        <div className="progress-bar progressYellow" style={{ width: members[3].percent }}></div>
                                     </div>
                                 </label>
                                 <label className='memberExpense'>
@@ -424,7 +422,7 @@ export const NewExpense = () => {
                                         </div>
                                     </div>
                                     <div className="progress">
-                                        <div className="progress-bar progressLightBlue" style={{ width: "10%" }}></div>
+                                        <div className="progress-bar progressLightBlue" style={{ width: members[4].percent }}></div>
                                     </div>
                                 </label>
                             </div>
