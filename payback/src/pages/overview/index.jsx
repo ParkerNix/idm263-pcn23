@@ -95,7 +95,7 @@ export const Overview = () => {
                         <div>
                             <div className='expenseSection mt-2'>
                                 <div className='d-flex justify-content-between align-items-center mb-3'>
-                                    <h2 className='h3 bold'>Oustanding balances</h2>
+                                    <h2 className='h3 bold'>Outstanding balances</h2>
                                 </div>
                             </div>
                             <div className='d-flex flex-column align-items-center'>

@@ -1,5 +1,6 @@
 import newGroupImg from '../../components/Assets/newGroupIcon.png'
 import lockIcon from '../../components/Assets/lock.png'
+import lockOnIcon from '../../components/Assets/lockOn.png'
 import backArrowWhite from '../../components/Assets/backArrowWhite.png'
 import note from '../../components/Assets/note.png'
 import allieSmiley from '../../components/Assets/allie_smiley.png'
@@ -19,71 +20,96 @@ export const NewExpense = () => {
 
     const [total, setTotal] = useState(0);
     const [error, seterror] = useState("");
-    let members = [
+    const [members, setMembers] = useState([
         {
             name : "Megan Lam",
-            dollar : 12.80,
+            dollar : 0,
             percent : 0,
-            lock : true
+            lock : false,
+            img : lockIcon
         },
         {
             name : "Molyna Tep",
-            dollar : 24.00,
+            dollar : 0,
             percent : 0,
-            lock : false
+            lock : false,
+            img : lockIcon
         },
         {
             name : "Parker Nix",
             dollar : 0,
             percent : 0,
-            lock : false
+            lock : false,
+            img : lockIcon
         },
         {
             name : "Allie Drake",
             dollar : 0,
             percent : 0,
-            lock : false
+            lock : false,
+            img : lockIcon
         },
         {
             name : "Joey McQuillan",
             dollar : 0,
             percent : 0,
-            lock : false
-        }
-    ]
+            lock : false,
+            img : lockIcon
+        },
+    ]);
 
-    const Evenvalues = (name) => {
+    const lockImg = (index) => {
+        let newArr = [...members]
+        if(members[index].lock === true) {
+            newArr[index].lock = false
+            newArr[index].img = lockIcon
+        }else if(members[index].lock === false) {
+            newArr[index].lock = true
+            newArr[index].img = lockOnIcon
+        }
+        setMembers(newArr)
+    }
+
+    const Evenvalues = (name, newdollar) => {
         
         let locknum = 0
         let leftover = total
+        let newArr = [...members]
 
-        for(let i=0; i<members.length; i++) {
-            if(members[i].lock === true) {
+        for(let i=0; i<newArr.length; i++) {
+            if(newArr[i].lock === true) {
                 locknum++
-                leftover = leftover - members[i].dollar
+                leftover = leftover - newArr[i].dollar
             }
         }
 
-        let maxLocks = members.length - 2
-        let unlockedNum = members.length - (1 + locknum)
+        let maxLocks = newArr.length - 2
+        let unlockedNum = newArr.length - (1 + locknum)
 
 
         if(locknum > maxLocks) {
            console.log("return")
         } else {
-            let difference = leftover - members[1].dollar
+            let difference = leftover - newdollar
             let divided = difference/unlockedNum
             let divpercent = total/divided
-            for(let i=0; i<members.length; i++) {
-                if(members[i].name === name) {
+            for(let i=0; i<newArr.length; i++) {
+                if(newArr[i].lock === true) {
+                    console.log("she's locked tho")
+                }else if(newArr[i].name === name) {
                     console.log(`this is ${name}`)
-                } else if(members[i].lock === false) {
-                    members[i].dollar = divided
-                    members[i].percent = divpercent
-                    console.log(members[i].dollar)
+                    console.log(newArr[i].percent)
+                    newArr[i].dollar = newdollar
+                } else if(newArr[i].lock === false) {
+                    newArr[i].dollar = divided
+                    newArr[i].percent = divpercent * 10 + "%"
+                    console.log(newArr[i].dollar)
+                    console.log(newArr[i].percent)
                 }
             }
         }
+
+        setMembers(newArr)
     }
     const isEven = () => {
         let totalPercent = 0
@@ -100,9 +126,6 @@ export const NewExpense = () => {
     useEffect(() => {
         isEven()
     }, [members, total])
-    let handleChange = (event) => {
-    this.setState({value: event.target.value});
-    }
 
     // Use this hook to programmatically navigate to another page
     const navigate = useNavigate();
@@ -132,11 +155,16 @@ export const NewExpense = () => {
                               <input
                                 className='ml-2 total'
                                 type="text"
-                                value={total}
+                                value={"$" + total}
                                 onChange={
                                   event => {
-                                    handleChange(event)
-                                    setTotal(event.target.value);
+                                    let eventTotal = event.target.value.substring(1)
+                                    const newTotal = parseFloat(eventTotal);
+                                    if (isNaN(newTotal)) {
+                                        setTotal("")
+                                    } else {
+                                        setTotal(newTotal);
+                                    }
                                   }
                                 }
                               />
@@ -207,43 +235,74 @@ export const NewExpense = () => {
                                     <div className='d-flex justify-content-between mb-3'>
                                         <div className='d-flex align-items-center'>
                                             <img src={meganSmiley} className="memberIconsNE" alt="member2" />
-                                            <h3 className='h6'>Megan</h3>
+                                            <h3 className='h6'>Megan Lam</h3>
                                         </div>
                                         <div className='d-flex align-items-center'>
-                                            <img src={lockIcon} alt="lockIcon" className='lockIcon' />
+                                            <img src={members[0].img} alt="lockIcon" className='lockIcon' onClick={
+                                                () => {
+                                                    lockImg(0)
+                                                }
+                                            }/>
                                             <input
                                                 className='ml-2 indivTotal bold'
                                                 type="text"
-                                                value={members[0].dollar}
+                                                value={"$" + members[0].dollar}
                                                 onChange={
                                                     event => {
-                                                        console.log(event.target.value)
-                                                        const personanew = parseFloat(event.target.value)
-                                                        members[0].dollar = personanew
-                                                        const personapercentnew = personanew / total
-                                                        members[0].percent = personapercentnew
-                                                        Evenvalues("Megan Lam")
+                                                        let newArr = [...members];
+                                                        let eventnum = event.target.value.substring(1)
+                                                        const personanew = parseFloat(eventnum)
+                                                        if (isNaN(personanew)) {
+                                                            return
+                                                        } else {
+                                                            newArr[0].dollar = personanew
+                                                            const personapercentnew = personanew / total
+                                                            newArr[0].percent = personapercentnew * 100 + "%"
+                                                            setMembers(newArr);
+                                                            Evenvalues("Megan Lam", personanew)
+                                                        }
                                                     }
-                                                  }
+                                                }
                                             />
                                         </div>
                                     </div>
                                     <div className="progress">
-                                        <div className="progress-bar progressLightPurple" style={{ width: "20%" }}></div>
+                                        <div className="progress-bar progressLightPurple" style={{ width: members[0].percent }}></div>
                                     </div>
                                 </label>
                                 <label className='memberExpense'>
                                     <div className='d-flex justify-content-between mb-3'>
                                         <div className='d-flex align-items-center'>
                                             <img src={molynaSmiley} className="memberIconsNE" alt="member2" />
-                                            <h3 className='h6'>Molyna</h3>
+                                            <h3 className='h6'>Molyna Tep</h3>
                                         </div>
                                         <div className='d-flex align-items-center'>
-                                        <img src={lockIcon} alt="lockIcon" className='lockIcon' />
+                                        <img src={members[1].img} alt="lockIcon" className='lockIcon' onClick={
+                                            () => {
+                                                lockImg(1)
+                                            }
+                                        }/>
                                         <input
                                             className='ml-2 indivTotal bold'
                                             type="text"
-                                            value={"$32.00"}
+                                            value={"$" + members[1].dollar}
+                                            onChange={
+                                                event => {
+                                                    let newArr = [...members];
+                                                    let eventnum = event.target.value.substring(1)
+                                                    const personanew = parseFloat(eventnum)
+                                                    if (isNaN(personanew)) {
+                                                        newArr[1].dollar = "";
+                                                        setMembers(newArr);
+                                                    } else {
+                                                        newArr[1].dollar = event.target.value;
+                                                        const personapercentnew = personanew / total
+                                                        newArr[1].percent = personapercentnew * 100 + "%"
+                                                        setMembers(newArr);
+                                                        Evenvalues("Molyna Tep", personanew)
+                                                    }
+                                                }
+                                              }
                                         />
                                         </div>
                                     </div>
@@ -255,14 +314,34 @@ export const NewExpense = () => {
                                     <div className='d-flex justify-content-between mb-3'>
                                         <div className='d-flex align-items-center'>
                                             <img src={parkerSmiley} className="memberIconsNE" alt="member2" />
-                                            <h3 className='h6'>Parker</h3>
+                                            <h3 className='h6'>Parker Nix</h3>
                                         </div>
                                         <div className='d-flex align-items-center'>
-                                        <img src={lockIcon} alt="lockIcon" className='lockIcon' />
+                                        <img src={members[2].img} alt="lockIcon" className='lockIcon' onClick={
+                                            () => {
+                                                lockImg(2)
+                                            }
+                                        }/>
                                         <input
                                             className='ml-2 indivTotal bold'
                                             type="text"
-                                            value={"$6.40"}
+                                            value={"$" + members[2].dollar}
+                                            onChange={
+                                                event => {
+                                                    let newArr = [...members];
+                                                    let eventnum = event.target.value.substring(1)
+                                                    const personanew = parseFloat(eventnum)
+                                                    if (isNaN(personanew)) {
+                                                        return
+                                                    } else {
+                                                        newArr[2].dollar = event.target.value;
+                                                        const personapercentnew = personanew / total
+                                                        newArr[2].percent = personapercentnew * 100 + "%"
+                                                        setMembers(newArr);
+                                                        Evenvalues("Parker Nix", personanew)
+                                                    }
+                                                }
+                                              }
                                         />
                                         </div>
                                     </div>
@@ -274,14 +353,34 @@ export const NewExpense = () => {
                                     <div className='d-flex justify-content-between mb-3'>
                                         <div className='d-flex align-items-center'>
                                             <img src={allieSmiley} className="memberIconsNE" alt="member2" />
-                                            <h3 className='h6'>Allie</h3>
+                                            <h3 className='h6'>Allie Drake</h3>
                                         </div>
                                         <div className='d-flex align-items-center'>
-                                        <img src={lockIcon} alt="lockIcon" className='lockIcon' />
+                                        <img src={members[3].img} alt="lockIcon" className='lockIcon' onClick={
+                                            () => {
+                                                lockImg(3)
+                                            }
+                                        }/>
                                         <input
                                             className='ml-2 indivTotal bold'
                                             type="text"
-                                            value={"$6.40"}
+                                            value={"$" + members[3].dollar}
+                                            onChange={
+                                                event => {
+                                                    let newArr = [...members];
+                                                    let eventnum = event.target.value.substring(1)
+                                                    const personanew = parseFloat(eventnum)
+                                                    if (isNaN(personanew)) {
+                                                        return
+                                                    } else {
+                                                        newArr[3].dollar = event.target.value;
+                                                        const personapercentnew = personanew / total
+                                                        newArr[3].percent = personapercentnew * 100 + "%"
+                                                        setMembers(newArr);
+                                                        Evenvalues("Allie Drake", personanew)
+                                                    }
+                                                }
+                                              }
                                         />
                                         </div>
                                     </div>
@@ -293,14 +392,34 @@ export const NewExpense = () => {
                                     <div className='d-flex justify-content-between mb-3'>
                                         <div className='d-flex align-items-center'>
                                             <img src={joeySmiley} className="memberIconsNE" alt="member2" />
-                                            <h3 className='h6'>Joey</h3>
+                                            <h3 className='h6'>Joey McQuillan</h3>
                                         </div>
                                         <div className='d-flex align-items-center'>
-                                        <img src={lockIcon} alt="lockIcon" className='lockIcon' />
+                                        <img src={members[4].img} alt="lockIcon" className='lockIcon' onClick={
+                                                () => {
+                                                    lockImg(4)
+                                                }
+                                            }/>
                                         <input
                                             className='ml-2 indivTotal bold'
                                             type="text"
-                                            value={"$6.40"}
+                                            value={"$" + members[4].dollar}
+                                            onChange={
+                                                event => {
+                                                    let newArr = [...members];
+                                                    let eventnum = event.target.value.substring(1)
+                                                    const personanew = parseFloat(eventnum)
+                                                    if (isNaN(personanew)) {
+                                                        return
+                                                    } else {
+                                                        newArr[4].dollar = event.target.value;
+                                                        const personapercentnew = personanew / total
+                                                        newArr[4].percent = personapercentnew * 100 + "%"
+                                                        setMembers(newArr);
+                                                        Evenvalues("Joey McQuillan", personanew)
+                                                    }
+                                                }
+                                              }
                                         />
                                         </div>
                                     </div>

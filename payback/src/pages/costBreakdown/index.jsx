@@ -6,6 +6,7 @@ import circleDarkPurple from '../../components/Assets/circleDarkPurple.png'
 import circleYellow from '../../components/Assets/circleYellow.png'
 import circleOrange from '../../components/Assets/circleOrange.png'
 import checkCostBreakdown from '../../components/Assets/checkCostBreakdown.png'
+import checkOrange from '../../components/Assets/checkOrange.png'
 import navOverviewDefault from '../../components/Assets/nav_overview_default.png'
 import navMonthlyDefault from '../../components/Assets/nav_monthly_default.png'
 import navExpenseDefault from '../../components/Assets/nav_expense_default.png'
@@ -14,37 +15,122 @@ import navProfileDefault from '../../components/Assets/nav_profile_default.png'
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Doughnut } from 'react-chartjs-2';
 import { Link, useNavigate } from 'react-router-dom';
+import { collection, onSnapshot, query, } from "firebase/firestore";
+import { db } from "../../firebase";
+import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { update } from "../../store/slices/items";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-export const data = {
-    datasets: [
-        {
-            data: [12.80, 51.20],
-            backgroundColor: [
-                '#c2a6ff',
-                'rgba(255, 255, 255, 0.2)',
-            ],
-            borderWidth: 0
-        },
-    ],
-};
-  
-const options = {
-    cutout: "87%",
-    elements: {
-        center: {
-            text: 'Red is 2/3 the total numbers',
-            color: '#FF6384', // Default is #000000
-            fontStyle: 'Arial', // Default is Arial
-            sidePadding: 20, // Default is 20 (as a percentage)
-            minFontSize: 20, // Default is 20 (in px), set to false and text will not wrap.
-            lineHeight: 25 // Default is 25 (in px), used for when text wraps
-        },
-    },
-};
-
 export const CostBreakdown = () => {
+
+    const [dataArr, setDataArr] = useState([])
+    const [colorArr, setColorArr] = useState([])
+    const [totalPaid, setTotalPaid] = useState(0.00)
+
+    const data = {
+        datasets: [
+            {
+                data: dataArr,
+                backgroundColor: colorArr,
+                borderWidth: 0
+            },
+        ],
+    };
+      
+    const options = {
+        cutout: "87%",
+        elements: {
+            center: {
+                text: 'Red is 2/3 the total numbers',
+                color: '#FF6384', // Default is #000000
+                fontStyle: 'Arial', // Default is Arial
+                sidePadding: 20, // Default is 20 (as a percentage)
+                minFontSize: 20, // Default is 20 (in px), set to false and text will not wrap.
+                lineHeight: 25 // Default is 25 (in px), used for when text wraps
+            },
+        },
+    };
+
+    const dispatch = useDispatch();
+
+    const [paidState, setPaidState] = useState(['circleCB', circleOrange])
+  
+    const [allItems, setAllItems] = useState([])
+
+    const [thisExpense, setThisExpense] = useState({
+        portions: [
+            '0',
+            '0',
+            '0',
+            '0',
+            '0',
+        ],
+        paid: [
+            false,
+            false,
+            false,
+            false,
+            false,
+        ],
+        colors: [
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000"
+        ],
+        group: "none",
+        total: "0.00",
+        category: "food"
+    })
+  
+  
+    useEffect(() => {
+      const q = query(collection(db, "Expenses"))
+      onSnapshot(q, querySnapshot => {
+        setAllItems([])
+        querySnapshot.forEach(doc => {
+          setAllItems(prevAllItems => [
+            ...prevAllItems,
+            doc.data()
+          ])
+        })
+      })
+    }, [])
+  
+    useEffect(() => {
+      dispatch(update(allItems))
+    })
+
+    useEffect(() => {
+        if (allItems[0] === undefined ) {
+            console.log("loading...")
+        } else {
+            console.log(allItems[0].paid)
+            setThisExpense(allItems[0])
+
+            let newDataArr = []
+            let newColorArr = []
+            let newTotalPaid = 0.00
+            newDataArr.push(allItems[0].total/100)
+            newColorArr.push("rgba(255, 255, 255, 0.2)")
+            
+            for (let i=0; i < allItems[0].portions.length; i++) {
+                if (allItems[0].paid[i] === true) {
+                    newDataArr.push(allItems[0].portions[i])
+                    newColorArr.push(allItems[0].color[i])
+                    let paidnum = parseFloat(allItems[0].portions[i])
+                    newTotalPaid = newTotalPaid + paidnum
+                }
+            }
+            console.log(newTotalPaid)
+            setDataArr(newDataArr)
+            setColorArr(newColorArr)
+            setTotalPaid(newTotalPaid)
+        }
+    }, [allItems])
 
       // Use this hook to programmatically navigate to another page
     const navigate = useNavigate();
@@ -71,7 +157,7 @@ export const CostBreakdown = () => {
                             <Doughnut data={data} options={options} width={231} height={231} className='doughnutGraph' />
                         </div>
                         <div className='doughnutText'>
-                            <p className='text-center white h1 bold'>$12.80</p>
+                            <p className='text-center white h1 bold'>${totalPaid}</p>
                             <p className='text-center white largeCopy demiBold lineHeight64'>of $64.00</p>
                             <p className='text-center white smallCopy demiBold'>Paid back</p>
                         </div>
@@ -83,7 +169,7 @@ export const CostBreakdown = () => {
                             <div className='expenseSection mt-2 mb-4'>
                                 <div className='d-flex justify-content-between align-items-center mb-3'>
                                     <h2 className='h4 bold'>Who covered the bill?</h2>
-                                    <p className='categoryTitle categoryFood'>Food</p>
+                                    <p className='categoryTitle categoryFood'>{thisExpense.category}</p>
                                 </div>
                                 <div className="d-flex align-items-start">
                                     <div>
@@ -91,7 +177,7 @@ export const CostBreakdown = () => {
                                     </div>
                                     <div className='ms-3'>
                                         <h3 className='mediumCopy demiBold'>Megan Lam</h3>
-                                        <p className='demiBold'>20% ($12.80)</p>
+                                        <p className='demiBold'>20% (${thisExpense.portions[0]})</p>
                                     </div>
                                 </div>
                             </div>
@@ -100,11 +186,11 @@ export const CostBreakdown = () => {
                                 <div className='row mb-4'>
                                     <div className="col-6 d-flex align-items-start">
                                         <div>
-                                            <img src={circleOrange} alt='unpaid' className='circleCB' />
+                                            <img src={paidState[1]} alt='unpaid' className={paidState[0]} />
                                         </div>
                                         <div className='ms-3'>
                                             <h3 className='mediumCopy demiBold'>Molyna Tep</h3>
-                                            <p className='demiBold'>50% ($32.00)</p>
+                                            <p className='demiBold'>50% (${thisExpense.portions[1]})</p>
                                         </div>
                                     </div>
                                     <div className="col-6 d-flex align-items-start">
@@ -113,34 +199,49 @@ export const CostBreakdown = () => {
                                         </div>
                                         <div className='ms-3'>
                                             <h3 className='mediumCopy demiBold'>Parker Nix</h3>
-                                            <p className='demiBold'>10% (%6.40)</p>
+                                            <p className='demiBold'>10% (${thisExpense.portions[2]})</p>
                                         </div>
                                     </div>
                                 </div>
                                 <div className='row mb-4'>
                                     <div className="col-6 d-flex align-items-start">
                                         <div>
-                                            <img src={circleDarkPurple} alt='unpaid' className='circleCB' />
-                                        </div>
-                                        <div className='ms-3'>
-                                            <h3 className='mediumCopy demiBold'>Joey McQuillan</h3>
-                                            <p className='demiBold'>10% ($6.40)</p>
-                                        </div>
-                                    </div>
-                                    <div className="col-6 d-flex align-items-start">
-                                        <div>
                                             <img src={circleYellow} alt='unpaid' className='circleCB' />
                                         </div>
                                         <div className='ms-3'>
                                             <h3 className='mediumCopy demiBold'>Allie Drake</h3>
-                                            <p className='demiBold'>10% ($6.40)</p>
+                                            <p className='demiBold'>10% (${thisExpense.portions[3]})</p>
+                                        </div>
+                                    </div>
+                                    <div className="col-6 d-flex align-items-start">
+                                        <div>
+                                            <img src={circleDarkPurple} alt='unpaid' className='circleCB' />
+                                        </div>
+                                        <div className='ms-3'>
+                                            <h3 className='mediumCopy demiBold'>Joey McQuillan</h3>
+                                            <p className='demiBold'>10% (${thisExpense.portions[4]})</p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div className='stickyBtn2'>
-                            <button className="btmRightBtn mediumCopy bold">Payback</button>
+                            <button className="btmRightBtn mediumCopy bold" onClick={
+                                () => {
+                                    setPaidState(['checkCB', checkOrange])
+                                    let newDataArr = [...dataArr]
+                                    let newColorArr = [...colorArr]
+                                    console.log(thisExpense.portions[1], thisExpense.color[1])
+
+                                    newDataArr.push(thisExpense.portions[1])
+                                    newColorArr.push(thisExpense.color[1])
+
+                                    setDataArr(newDataArr)
+                                    setColorArr(newColorArr)
+                                    setTotalPaid(totalPaid + parseFloat(thisExpense.portions[1]))
+
+                                }
+                            }>Payback</button>
                         </div>
                     </div>
                 </div>
