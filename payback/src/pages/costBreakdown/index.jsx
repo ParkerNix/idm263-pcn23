@@ -8,6 +8,7 @@ import circleOrange from '../../components/Assets/circleOrange.png'
 import checkCostBreakdown from '../../components/Assets/checkCostBreakdown.png'
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Doughnut } from 'react-chartjs-2';
+import { ConfirmationCard } from '../../components/confirmationCard'
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -121,13 +122,31 @@ export const CostBreakdown = () => {
                                     </div>
                                 </div>
                             </div>
-                            <button id='submit' className="btmRightBtn bold">
+                            <button id='submit' data-bs-toggle="modal" data-bs-target="#myModal" className="btmRightBtn bold">
                                 Payback
                             </button>
                         </div>
                     </div>
                 </div>
+
+
+                 {/* CONFIRMATION */}
+
+                 <div className="modal" id="myModal">
+                    <div class="modal-dialog">
+        
+                    
+
+                        <ConfirmationCard/>
+
+                    </div>
+                    </div>
+
             </div>
+
+
+
+
         </>
     )
 }

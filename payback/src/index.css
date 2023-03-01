@@ -1171,6 +1171,12 @@ margin-top: 5.2px;
 
 /*costBreakdown*/
 
+#confirmation {
+  border-radius: 10px;
+  margin-top: 100px;
+}
+
+
 .categoryTitle {
   padding: 3px 9px 0px;
   margin: 0;
@@ -1287,22 +1293,25 @@ img.confirmationIcon {
 }
 
 #confirmationButton {
-  width: 327px;
+  width: 231px;
+  /* height: 40px; */
   margin-top: 15px;
   font-size: var(--medium-copy);
 }
 
 #confirmationButtonTwo {
-  width: 327px;
-  margin-top: 15px;
+  width: 231px;
+  /* height: 40px; */
+  margin-top: 2px;
   font-size: var(--medium-copy);
   border-radius: 30px;
   color: var(--text-dark-purple);
   box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.15);
   border: solid 1.5px var(--text-dark-purple);
   background-color: #fff;
-  margin-top: 12px;
 }
+
+
 
 img.venmoLogo {
   width: 63.4px;
@@ -1316,7 +1325,11 @@ img.noteIcon {
 
 #noteIcon {
   margin-top: 27px;
+  margin-bottom: 32px;
+  font-size: var(--xsmall-copy);
 }
+
+
 
 
 /* /////// */ 
