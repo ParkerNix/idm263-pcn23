@@ -10,35 +10,131 @@ import { Link, useNavigate } from 'react-router-dom';
 import newGroupImg from '../../components/Assets/newGroupIcon.png'
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Doughnut } from 'react-chartjs-2';
-
-export const data = {
-    datasets: [
-        {
-            data: [12.80, 51.20],
-            backgroundColor: [
-                '#c2a6ff',
-                '#E7DFF8',
-            ],
-            borderWidth: 0
-        },
-    ],
-};
-  
-const options = {
-    cutout: "85%",
-    elements: {
-        center: {
-            text: 'Red is 2/3 the total numbers',
-            color: '#FF6384', // Default is #000000
-            fontStyle: 'Arial', // Default is Arial
-            sidePadding: 20, // Default is 20 (as a percentage)
-            minFontSize: 20, // Default is 20 (in px), set to false and text will not wrap.
-            lineHeight: 25 // Default is 25 (in px), used for when text wraps
-        },
-    },
-};
+import { collection, onSnapshot, query, } from "firebase/firestore";
+import { db } from "../../firebase";
+import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { update } from "../../store/slices/items";
+import { motion } from "framer-motion"
 
 export const ViewGroup = () => {
+
+    const [dataArr, setDataArr] = useState([])
+    const [colorArr, setColorArr] = useState([])
+    const [totalPaid, setTotalPaid] = useState(0.00)
+    const [overallTotal, setOverallTotal] = useState(0.00)
+
+    const data = {
+        datasets: [
+            {
+                data: dataArr,
+                backgroundColor: colorArr,
+                borderWidth: 0
+            },
+        ],
+    };
+      
+    const options = {
+        cutout: "87%",
+        elements: {
+            center: {
+                text: 'Red is 2/3 the total numbers',
+                color: '#FF6384', // Default is #000000
+                fontStyle: 'Arial', // Default is Arial
+                sidePadding: 20, // Default is 20 (as a percentage)
+                minFontSize: 20, // Default is 20 (in px), set to false and text will not wrap.
+                lineHeight: 25 // Default is 25 (in px), used for when text wraps
+            },
+        },
+    };
+
+    const dispatch = useDispatch();
+  
+    const [allItems, setAllItems] = useState([])
+
+    const [thisExpense, setThisExpense] = useState({
+        portions: [
+            '0',
+            '0',
+            '0',
+            '0',
+            '0',
+        ],
+        paid: [
+            false,
+            false,
+            false,
+            false,
+            false,
+        ],
+        colors: [
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000"
+        ],
+        group: "none",
+        total: "0.00",
+        category: "food"
+    })
+  
+  
+    useEffect(() => {
+      const q = query(collection(db, "Expenses"))
+      onSnapshot(q, querySnapshot => {
+        setAllItems([])
+        querySnapshot.forEach(doc => {
+          setAllItems(prevAllItems => [
+            ...prevAllItems,
+            doc.data()
+          ])
+        })
+      })
+    }, [])
+  
+    useEffect(() => {
+      dispatch(update(allItems))
+    })
+
+    useEffect(() => {
+        if (allItems[0] === undefined ) {
+            console.log("loading...")
+        } else {
+            setThisExpense(allItems[0])
+
+            if (allItems[0].total === undefined) {
+                setOverallTotal(0.00)
+            } else {
+                let newOverall = allItems[0].total/100
+                setOverallTotal(newOverall)
+            }
+
+            let newDataArr = []
+            let newColorArr = []
+            let newTotalPaid = 0.00
+            newColorArr.push("rgba(255, 255, 255, 0.2)")
+            
+            for (let i=0; i < allItems[0].portions.length; i++) {
+                if (allItems[0].paid[i] === true) {
+                    newColorArr.push(allItems[0].color[i])
+                    let paidNum = parseFloat(allItems[0].portions[i])
+                    newTotalPaid = newTotalPaid + paidNum
+                }
+            }
+            let totalNum = allItems[0].total/100
+            let totalPercentPaid = (newTotalPaid/totalNum) * 100
+            let leftover = (100-totalPercentPaid)
+            newDataArr.push(leftover)
+            newDataArr.push(totalPercentPaid)
+            console.log(leftover)
+            console.log(totalPercentPaid)
+            console.log(newDataArr)
+            setDataArr(newDataArr)
+            setColorArr(newColorArr)
+            setTotalPaid(totalPercentPaid)
+        }
+    }, [allItems])
 
     // Use this hook to programmatically navigate to another page
     const navigate = useNavigate();
@@ -51,7 +147,12 @@ export const ViewGroup = () => {
 
     return (
         <>
-            <div className="container gradientContainer">
+            <motion.div 
+                className="container gradientContainer"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1, transition: {duration: 0.1} }}
+                exit={{ opacity: 0, transition: {duration: 0.1} }}
+            >
                 <div className="row mx-3 mb-4 justify-content-center">
                     <div className="col mt-4 mb-4 p-0 d-flex justify-content-between">
                         <a onClick={goBack} className="bold line-height">
@@ -80,7 +181,8 @@ export const ViewGroup = () => {
                                         <div className='d-flex flex-column align-items-start'>
                                             <p className='mb-2 categoryTitle categoryFood'>Food</p>
                                             <div className='textVGCard'>
-                                                <h3 className="h2 bold">$64.00</h3>
+                                                <h3 className="h2 bold">${overallTotal}
+                                                </h3>
                                                 <p className="medium xsmallCopy">Total spending</p>
                                             </div>
                                         </div>
@@ -90,7 +192,7 @@ export const ViewGroup = () => {
                                             <Doughnut data={data} options={options} width={77} height={77} className='doughnutGraph' />
                                         </div>
                                         <div className='doughnutTextCard'>
-                                            <p className='text-center h4 bold'>20%</p>
+                                            <p className='text-center h4 bold'>{totalPaid}%</p>
                                             <p className='text-center xtestsmallCopy medium'>paid back</p>
                                         </div>
                                     </div>
@@ -110,7 +212,7 @@ export const ViewGroup = () => {
                         </div>
                     </div>
                 </div>
-            </div>
+            </motion.div>
 
             <div className="navbar">
                 <div className="navStack">

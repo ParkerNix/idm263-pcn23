@@ -13,6 +13,7 @@ import navExpenseDefault from '../../components/Assets/nav_expense_default.png'
 import navGroupsDefault from '../../components/Assets/nav_groups_default.png'
 import navProfileDefault from '../../components/Assets/nav_profile_default.png'
 import { Link, useNavigate } from 'react-router-dom';
+import { motion } from "framer-motion"
 
 export const AllGroups = () => {
 
@@ -27,7 +28,11 @@ export const AllGroups = () => {
 
     return (
         <>
-        <div className="container pb-5">
+        <motion.div className="container pb-5"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1, transition: {duration: 0.1} }}
+            exit={{ opacity: 0, transition: {duration: 0.1}}}
+        >
             <div className="row">
                 <div className="col mt-4 mb-2 mx-3 d-flex justify-content-between">
                     <a onClick={goBack} className="bold line-height">
@@ -77,10 +82,10 @@ export const AllGroups = () => {
                     </div>
                 </div>
             </div>
-                <div className='stickyBtn3 mb-5'>
-                    <Link to="/pages/createGroup" className="button mediumCopy btmRightBtn bold">Create new group</Link>
-                </div>
-        </div>
+            <div className='stickyBtn3 mb-5'>
+                <Link to="/pages/createGroup" className="button mediumCopy btmRightBtn bold">Create new group</Link>
+            </div>
+        </motion.div>
 
         <div className="navbar">
             <div className="navStack">

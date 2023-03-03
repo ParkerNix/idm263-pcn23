@@ -19,12 +19,17 @@ import navExpenseDefault from '../../components/Assets/nav_expense_default.png'
 import navGroupsDefault from '../../components/Assets/nav_groups_default.png'
 import navProfileDefault from '../../components/Assets/nav_profile_default.png'
 import { Link } from 'react-router-dom';
+import { motion } from "framer-motion"
 
 export const Groups = () => {
 
     return (
         <>
-            <div className="container gradientContainer px-0">
+            <motion.div className="container gradientContainer px-0"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1, transition: {duration: 0.1} }}
+                exit={{ opacity: 0, transition: {duration: 0.1} }}
+            >
                 <div className="mx-4 pt-4 mb-5 d-flex justify-content-between">
                     <span></span>
                     <h1 className="h6 bold" id="profile">Groups</h1>
@@ -125,8 +130,7 @@ export const Groups = () => {
                         </div>  
                     </div>     
                 </div>
-            </div>
-
+            </motion.div>
             <div className="navbar">
                 <div className="navStack">
                     <Link to='/' className="bold d-flex flex-column align-items-center">

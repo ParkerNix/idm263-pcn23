@@ -15,8 +15,77 @@ import navGroupsDefault from '../../components/Assets/nav_groups_default.png'
 import navProfileDefault from '../../components/Assets/nav_profile_default.png'
 import { Link, useNavigate } from 'react-router-dom';
 import {useEffect, useState} from 'react';
+import { useDispatch } from "react-redux"
+import { update } from "../../store/slices/items"
+import { getDoc, setDoc, doc, collection, onSnapshot, query, } from 'firebase/firestore';
+import { db } from '../../firebase';
+import { motion } from "framer-motion"
 
 export const NewExpense = () => {
+
+    const dispatch = useDispatch();
+
+    const [allItems, setAllItems] = useState([])
+    const [expenseIndex, setExpenseIndex] = useState("Payback Gang...")
+    const [category, setCategory] = useState("Category")
+    const [whoPaid, setWhoPaid] = useState("Choose group member")
+
+    useEffect(() => {
+        const q = query(collection(db, "Expenses"))
+        onSnapshot(q, querySnapshot => {
+          setAllItems([])
+          querySnapshot.forEach(doc => {
+            setAllItems(prevAllItems => [
+              ...prevAllItems,
+              doc.data()
+            ])
+          })
+        })
+      }, [])
+    
+        useEffect(() => {
+            dispatch(update(allItems))
+        })
+  
+        useEffect(() => {
+            if (allItems[0] === undefined ) {
+                console.log("loading...")
+            } else {
+                let newExInd = "Payback Gang" + allItems.length 
+                setExpenseIndex(newExInd)
+                console.log(expenseIndex)
+            }
+    }, [allItems])
+
+
+    async function updateFirestore(){
+        const docRef = doc(db, "Expenses", expenseIndex);
+        setDoc(docRef, {
+            total: total,
+            portions: [
+                members[0].dollar,
+                members[1].dollar,
+                members[2].dollar,
+                members[3].dollar,
+                members[4].dollar
+            ],
+            paid: [
+                members[0].paid,
+                members[1].paid,
+                members[2].paid,
+                members[3].paid,
+                members[4].paid
+            ],
+            category: category,
+            color: [
+                "#c2a6ff",
+                "#ff985f",
+                "#f09bd8",
+                "#ffce50",
+                "#646aff"
+            ]
+        })
+    };
 
     const [total, setTotal] = useState(0);
     const [error, seterror] = useState("");
@@ -26,35 +95,40 @@ export const NewExpense = () => {
             dollar : 0,
             percent : 0,
             lock : false,
-            img : lockIcon
+            img : lockIcon,
+            paid : false
         },
         {
             name : "Molyna Tep",
             dollar : 0,
             percent : 0,
             lock : false,
-            img : lockIcon
+            img : lockIcon,
+            paid : false
         },
         {
             name : "Parker Nix",
             dollar : 0,
             percent : 0,
             lock : false,
-            img : lockIcon
+            img : lockIcon,
+            paid : false
         },
         {
             name : "Allie Drake",
             dollar : 0,
             percent : 0,
             lock : false,
-            img : lockIcon
+            img : lockIcon,
+            paid : false
         },
         {
             name : "Joey McQuillan",
             dollar : 0,
             percent : 0,
             lock : false,
-            img : lockIcon
+            img : lockIcon,
+            paid : false
         },
     ]);
 
@@ -125,6 +199,20 @@ export const NewExpense = () => {
         isEven()
     }, [members, total])
 
+    const changePaid = (index) => {
+        let newArr = [...members]
+        setWhoPaid(members[index].name)
+        for(let i=0; i<members.length; i++) {
+            if (i === index) {
+                newArr[i].paid = true
+            } else {
+                newArr[i].paid = false
+            }
+            console.log(newArr[i].paid)
+        }
+        setMembers(newArr)
+    }
+
     // Use this hook to programmatically navigate to another page
     const navigate = useNavigate();
 
@@ -136,7 +224,12 @@ export const NewExpense = () => {
 
     return (
         <>
-            <div className="container gradientContainer">
+            <motion.div
+                className="container gradientContainer"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1, transition: {duration: 0.1} }}
+                exit={{ opacity: 0, transition: {duration: 0.1} }}
+            >
                 <div className="row">
                     <div className="col">
                         <div className='my-4 mx-3 d-flex flex-column align-items-stretch'>
@@ -180,14 +273,34 @@ export const NewExpense = () => {
                                 </div>
                                 <div className="dropdown">
                                     <button type="button" className="dropdownBtn dropdown-toggle" data-bs-toggle="dropdown">
-                                        Category
+                                        {category}
                                     </button>
                                     <ul className="dropdown-menu">
-                                        <li><a className="dropdown-item" href="#">Food</a></li>
-                                        <li><a className="dropdown-item" href="#">Travel</a></li>
-                                        <li><a className="dropdown-item" href="#">Entertainment</a></li>
-                                        <li><a className="dropdown-item" href="#">Bills</a></li>
-                                        <li><a className="dropdown-item" href="#">Other</a></li>
+                                        <li><button className="dropdown-item" href="#" onClick={
+                                            () => {
+                                                setCategory("Food")
+                                            }
+                                        }>Food</button></li>
+                                        <li><button className="dropdown-item" href="#" onClick={
+                                            () => {
+                                                setCategory("Travel")
+                                            }
+                                        }>Travel</button></li>
+                                        <li><button className="dropdown-item" href="#" onClick={
+                                            () => {
+                                                setCategory("Entertainment")
+                                            }
+                                        }>Entertainment</button></li>
+                                        <li><button className="dropdown-item" href="#" onClick={
+                                            () => {
+                                                setCategory("Bills")
+                                            }
+                                        }>Bills</button></li>
+                                        <li><button className="dropdown-item" href="#" onClick={
+                                            () => {
+                                                setCategory("Other")
+                                            }
+                                        }>Other</button></li>
                                     </ul>
                                 </div>
                                 <select value="Other" hidden>
@@ -202,14 +315,34 @@ export const NewExpense = () => {
                                 <h2 className='h4 bold mb-3'>Who covered the bill?</h2>
                                 <div className="dropdown">
                                     <button type="button" className="dropdownBtn dropdown-toggle" data-bs-toggle="dropdown">
-                                        Choose group member
+                                        {whoPaid}
                                     </button>
                                     <ul className="dropdown-menu">
-                                        <li><a className="dropdown-item" href="#">Megan</a></li>
-                                        <li><a className="dropdown-item" href="#">Molyna</a></li>
-                                        <li><a className="dropdown-item" href="#">Parker</a></li>
-                                        <li><a className="dropdown-item" href="#">Allie</a></li>
-                                        <li><a className="dropdown-item" href="#">Joey</a></li>
+                                        <li><button className="dropdown-item" onClick={
+                                            () => {
+                                                changePaid(0)
+                                            }
+                                        }>Megan</button></li>
+                                        <li><button className="dropdown-item" onClick={
+                                            () => {
+                                                changePaid(1)
+                                            }
+                                        }>Molyna</button></li>
+                                        <li><button className="dropdown-item" onClick={
+                                            () => {
+                                                changePaid(2)
+                                            }
+                                        }>Parker</button></li>
+                                        <li><button className="dropdown-item" onClick={
+                                            () => {
+                                                changePaid(3)
+                                            }
+                                        }>Allie</button></li>
+                                        <li><button className="dropdown-item" onClick={
+                                            () => {
+                                                changePaid(4)
+                                            }
+                                        }>Joey</button></li>
                                     </ul>
                                 </div>
                                 <select value="Megan" hidden>
@@ -428,11 +561,15 @@ export const NewExpense = () => {
                             </div>
                         </div>
                         <div className='stickyBtn2'>
-                            <Link to="/pages/viewGroup" className="button btmRightBtn mediumCopy bold">Save expense</Link>
+                            <Link to="/pages/viewGroup" className="button btmRightBtn mediumCopy bold" onMouseDown={
+                                () => {
+                                    updateFirestore()
+                                }
+                            }>Save expense</Link>
                         </div>
                     </div>
                 </div>
-            </div>
+            </motion.div>
 
             <div className="navbar">
                 <div className="navStack">

@@ -20,6 +20,7 @@ import { db } from "../../firebase";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { update } from "../../store/slices/items";
+import { motion } from "framer-motion"
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -143,7 +144,11 @@ export const CostBreakdown = () => {
 
     return (
         <>
-            <div className="container gradientContainerCB">
+            <motion.div className="container gradientContainerCB"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1, transition: {duration: 0.1} }}
+                exit={{ opacity: 0, transition: {duration: 0.1} }}
+            >
                 <div className="row justify-content-center">
                     <div className="col mt-4 mb-3 mx-3 d-flex justify-content-between align-items-center">
                         <a onClick={goBack} className="bold line-height">
@@ -245,7 +250,7 @@ export const CostBreakdown = () => {
                         </div>
                     </div>
                 </div>
-            </div>
+            </motion.div>
 
             <div className="navbar">
                 <div className="navStack">

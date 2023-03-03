@@ -14,6 +14,7 @@ import { db } from "../../firebase";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { update } from "../../store/slices/items";
+import { motion } from "framer-motion"
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -71,7 +72,12 @@ export const Overview = () => {
 
     return (
         <>
-            <div className="container containerHeight gradientContainerCB">
+            <motion.div 
+                className="container containerHeight gradientContainerCB"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1, transition: {duration: 0.1} }}
+                exit={{ opacity: 0, transition: {duration: 0.1} }}
+            >
                 <div className="row justify-content-center">
                     <div className="col mt-4 mb-3 mx-3 d-flex justify-content-center align-items-center">
                         <h1 className="h6 bold white">Overview</h1>
@@ -107,7 +113,7 @@ export const Overview = () => {
                         </div>
                     </div>
                 </div>
-            </div>
+            </motion.div>
 
             <div className="navbar">
                 <div className="navStack">

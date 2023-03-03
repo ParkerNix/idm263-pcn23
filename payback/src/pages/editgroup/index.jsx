@@ -19,6 +19,7 @@ import addFriend from '../../components/Assets/addFriend.png'
 import deletePlaceholder from '../../components/Assets/delete_placeholder.png'
 import addPlaceholder from '../../components/Assets/addFriendsPlaceholder.png'
 import { Link, useNavigate } from 'react-router-dom';
+import { motion } from "framer-motion"
 
 
 export const EditGroup = () => {
@@ -34,7 +35,11 @@ export const EditGroup = () => {
 
     return (
         <>
-        <div className="container">
+        <motion.div className="container"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1, transition: {duration: 0.1} }}
+            exit={{ opacity: 0, transition: {duration: 0.1} }}
+        >
             <div className="row">
                 <div className="col mt-4 mb-2 mx-3 d-flex justify-content-between">
                     <a onClick={goBack} className="bold line-height">
@@ -126,7 +131,7 @@ export const EditGroup = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </motion.div>
 
         <div className="navbar">
             <div className="navStack">

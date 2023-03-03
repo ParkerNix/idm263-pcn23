@@ -14,6 +14,7 @@ import navProfileDefault from '../../components/Assets/nav_profile_default.png'
 import deletePlaceholder from '../../components/Assets/delete_placeholder.png'
 import addPlaceholder from '../../components/Assets/addFriendsPlaceholder.png'
 import { Link, useNavigate } from 'react-router-dom';
+import { motion } from "framer-motion"
 
 
 export const CreateGroup = () => {
@@ -29,7 +30,12 @@ export const CreateGroup = () => {
 
     return (
         <>
-            <div className="container pb-5">
+            <motion.div
+                className="container pb-5"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1, transition: {duration: 0.1} }}
+                exit={{ opacity: 0, transition: {duration: 0.1} }}
+            >
                 <div className="row">
                     <div className="col mt-4 mb-2 mx-4 px-0 d-flex justify-content-between">
                         <a onClick={goBack} className="bold line-height">
@@ -69,7 +75,7 @@ export const CreateGroup = () => {
                 <div className='stickyBtn4'>
                     <button className="btmRightBtn mediumCopy inactive bold">Save group</button>
                 </div>
-            </div>
+            </motion.div>
 
 
             <div className="navbar">

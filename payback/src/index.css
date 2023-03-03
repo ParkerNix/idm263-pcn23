@@ -130,13 +130,21 @@ h6, .h6 {
   margin: 0;
 }
 
-p, .p, .dropdown-item, a:link, a:visited, a:hover, a:active, textarea {
+p, .p, .dropdown-item, a:link, a:visited, a:hover, a:active, .a, textarea {
   color: var(--text-dark-purple);
   font-size: 14px;
   margin: 0;
 }
 
-a:link, a:visited, a:hover, a:active {
+.dropdown-item {
+  color: var(--text-dark-purple) !important;
+  font-size: 14px;
+  margin: 0;
+  background-color: transparent;
+  box-shadow: none;
+}
+
+a:link, a:visited, a:hover, a:active, .a {
   text-decoration: none;
 }
 
