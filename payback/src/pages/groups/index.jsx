@@ -124,14 +124,16 @@ export const Groups = () => {
                             
                 </div>
 
-            </div>
-
+            
+                </div>  
 
             <div class="navbar">
+                
                 <div class="navStack">
                     <img src={navOverviewDefault} className="navIcons" alt="overview" />
                     <a href="#home" className="active bold">Overview</a>
                 </div>
+                
                 <div class="navStack">
                     <img src={navMonthlyDefault} className="navIcons" alt="monthly" />
                     <a href="#monthly" className="bold">Monthly</a>
@@ -150,7 +152,8 @@ export const Groups = () => {
                 </div>
             </div>
         </div>
-        </div>           
+        </div>  
+               
         
         </>
     );

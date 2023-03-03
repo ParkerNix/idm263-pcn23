@@ -1,38 +1,34 @@
-import { useParams } from "react-router-dom"
-import { format_price } from "../../funcs/money";
-import { useDispatch, useSelector } from "react-redux";
-import { addToCart } from "../../store/slices/cart"
-
-export const Details = () => {
-    const item_slicey = useSelector((state) => state.item_slicey.value);
-
-    function getItem(key) {
-        return Object.values(item_slicey).find(
-            (item) => item.id === key
-        );
-    };
-    
-
-    let params = useParams();
-    let item = getItem(params.itemKey);
-
-    const dispatch = useDispatch();
-
-    function add_to_cart(id, title, price, desc){
-        dispatch(addToCart({
-            id, title, price, desc
-        }));
-    }
+export const AddPhoto = () => {
 
     return (
         <>
-            <div className="card mb-5" key={item.id}>
-                <div className="card-body">
-                    <h3 className="card-title">{item.title}</h3>
-                    <p className="card-text">{item.desc}</p>
-                    <button className="py-2 px-2" onClick={() => add_to_cart(item.id, item.title, item.price, item.desc)}>ADD TO CART {format_price(item.price)}</button>
+        {/* <div className="container" id="addPhoto"> */}
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+       
+
+            {/* MODAL TEST */}
+
+                
+                {/* <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div> */}
+
+                
+                <div class="modal-body">
+                <div class="row">
+                            <div className="col mt-4 mb-2 mx-3 d-flex flex-column justify-content-center align-items-center" id="addPhotoModal">
+                            <button id="gallery"><h1 className="h6 bold">Choose from gallery</h1></button>
+                            <button id="takePhoto"><h1 className="h6 bold">Take a photo</h1></button>
+                            </div>
+                        </div>
                 </div>
-            </div>
-        </>
-    )
-}
+
+                
+
+                {/* </div> */}
+            
+    
+
+            </>
+         );
+    }

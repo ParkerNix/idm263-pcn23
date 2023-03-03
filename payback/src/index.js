@@ -21,18 +21,20 @@ import { Groups } from './pages/groups';
 import { EditGroup } from './pages/editgroup';
 import { AddedFriend } from './pages/addedFriend';
 import { MonthlyNetTotal } from './pages/monthlyNetTotal';
+import { AllFriends } from './pages/allFriends';
 import { MonthlyTotalSpend } from './pages/monthlyTotalSpend';
 import { MonthlyTotalGain } from './pages/monthlyTotalGain';
 import { Test} from './pages/test';
 
-import { CostBreakdown } from './pages/costBreakdown';
-import { ViewGroup } from './pages/viewGroup';
-import { Overview } from './pages/overview';
+// import { CostBreakdown } from './pages/costBreakdown';
+// import { ViewGroup } from './pages/viewGroup';
+// import { Overview } from './pages/overview';
 
 
 import { ConfirmationCard} from './components/confirmationCard';
 import { FriendSettings} from './components/friendSettings';
-
+import { AddPhoto} from './components/addPhoto';
+import { BlockFriend} from './components/blockFriend';
 
 
 
@@ -45,8 +47,6 @@ root.render(
               <Route path="/" element={<Overview />}></Route>
               <Route path="/pages/allGroups" element={<AllGroups />}></Route>
               <Route path="/pages/newExpense" element={<NewExpense />}></Route>
-              <Route path="/pages/costBreakdown" element={<CostBreakdown />}></Route>
-              <Route path="/pages/viewGroup" element={<ViewGroup />}></Route>
               <Route path="/pages/createGroup" element={<CreateGroup />}></Route>
               <Route path="/pages/friends" element={<AddFriends />}></Route>
               <Route path="/pages/searchFriends" element={<SearchFriends />}></Route>
@@ -60,9 +60,12 @@ root.render(
               <Route path="/pages/viewGroup" element={<ViewGroup />}></Route>
               <Route path="/components/confirmationCard" element={<ConfirmationCard />}></Route>
               <Route path="/components/friendSettings" element={<FriendSettings />}></Route>
+              <Route path="/components/blockFriend" element={<BlockFriend />}></Route>
+              <Route path="/components/addPhoto" element={<AddPhoto />}></Route>
               <Route path="/pages/monthlyNetTotal" element={<MonthlyNetTotal />}></Route>
               <Route path="/pages/monthlyTotalSpend" element={<MonthlyTotalSpend />}></Route>
               <Route path="/pages/monthlyTotalGain" element={<MonthlyTotalGain />}></Route>
+              <Route path="/pages/allFriends" element={<AllFriends />}></Route>
               <Route path="/pages/test" element={<Test />}></Route>
           </Routes>
       </BrowserRouter>

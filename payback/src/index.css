@@ -47,11 +47,17 @@ code {
   --category-food: ;
   
   --hr-color: #e6e2ec;
+  --category-food: ;
+  --category-food: ;
+  --category-food: ;
+  --category-food: ;
+  --category-food: ;
 
   /* --greycliff-extrabold-font-family: 'Greycliff-ExtraBold';
   --greycliff-bold-font-family: 'Greycliff-Bold';
   --greycliff-medium-font-family: 'Greycliff-Medium';
   --greycliff-regular-font-family: 'Greycliff-Regular'; */
+  
 }
 
 
@@ -199,6 +205,10 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, p, .p, a, link, button, in
 /* ////////// ////*/
 /* ////////// ////*/
 
+.highlight {
+  height:65px;
+}
+
 .navSpacer {
   width: 25px;
 }
@@ -208,8 +218,11 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, p, .p, a, link, button, in
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 7px;
-  margin-bottom: 5px;
+  /* margin-top: 7px;
+  margin-bottom: 5px; */
+  width: 65px;
+  height: 75px;
+  border-top-color: purple;
 }
 
 
@@ -221,8 +234,9 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, p, .p, a, link, button, in
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding-left: 30px;
-  padding-right: 30px;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 0;
   bottom: 0;
   width: 100%;
   height: 65px;
@@ -240,9 +254,15 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, p, .p, a, link, button, in
 }
 
 .navbar .navStack:hover {
-  background-image: linear-gradient(to bottom, rgba(140, 62, 219, 0.08) 0%, rgba(163, 84, 203, 0) 100%);
+  /* background-image: linear-gradient(to bottom, rgba(140, 62, 219, 0.08) 0%, rgba(163, 84, 203, 0) 100%); */
+  background-color: rgba(140, 62, 219, 0.08);
+  /* background-size: 90px 40px; */
+  border-top: 3px solid #552ccc;
   color: var(--nav);
+
 }
+
+
 
 /* .navbar a.active {
   background-color: #04AA6D;
@@ -335,6 +355,47 @@ margin:0 ;
 }
 
 /* NEW GROUP PAGE */
+
+button#addPhoto {
+  border: none;
+  color: white;
+  background-color: var(--orange-icon-color);
+  padding: 25px;
+  width: 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: -20px;
+  margin-left: 70px;
+  height: 25px;
+  padding: 5.5px;
+}
+
+button#addPhoto p {
+  color: white;
+  margin-top: -1.2rem;
+  font-size: 31px;
+  text-align: center;
+}
+
+.modal-body {
+  position: fixed;
+  flex: 1 1 auto;
+  padding: var(--bs-modal-padding);
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  background-color: white;
+  border-top-left-radius: 5px;
+  border-top-right-radius:5px;
+  transition: all .3s ease-out;
+}
+
+#addPhoto {
+  background-color: transparent;
+}
+
 
 .createGroup {
   display: flex;
@@ -658,6 +719,18 @@ hr.editFriend {
   color: var(--hr-color);
 }
 
+img.options {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+}
+
+hr.allFriends {
+  width: 327px;
+  height: 1px;
+  /* margin: 15px 0 0; */
+  color: var(--hr-color);
+}
 
 /* FRIEND SETTINGS MODAL */
 
@@ -706,7 +779,66 @@ img.blockFriend {
   margin: 4px;
 }
 
+.friendSettings {
+  height: 330px;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  background-color: var(--main-bg-color);
+}
 
+button#options {
+  width: 24px;
+  height: 24px;
+  background-color: transparent;
+}
+
+img.close {
+  width: 22px;
+  height: 17px;
+  flex-grow: 0;
+  position: absolute;
+  right: 16px;
+}
+
+.modal-body-block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 250px;
+}
+
+.blockCancel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 120px;
+}
+
+hr.block {
+  width: 327px;
+}
+
+p#block {
+  color: var(--red--text-color);
+}
+
+/* hr.block2 {
+  height: 51px;
+} */
+
+p#blockWarning {
+  width: 279px;
+  height: 84px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  font-size: var(--small-copy);
+  line-height: 1.5rem;
+  letter-spacing: normal;
+  text-align: center;
+  color: var(--text-dark-purple);
+}
 
 
 
@@ -885,6 +1017,8 @@ margin-top: 5.2px;
 .pageTabTwo {
   background-color: var(--main-bg-color);
   border-radius: 20px 20px 0px 0px;
+  height: 550px;
+
 }
 
 .white {
@@ -1043,6 +1177,12 @@ margin-top: 5.2px;
 
 /*costBreakdown*/
 
+#confirmation {
+  border-radius: 10px;
+  margin-top: 100px;
+}
+
+
 .categoryTitle {
   padding: 3px 9px 0px;
   margin: 0;
@@ -1159,22 +1299,25 @@ img.confirmationIcon {
 }
 
 #confirmationButton {
-  width: 327px;
+  width: 231px;
+  /* height: 40px; */
   margin-top: 15px;
   font-size: var(--medium-copy);
 }
 
 #confirmationButtonTwo {
-  width: 327px;
-  margin-top: 15px;
+  width: 231px;
+  /* height: 40px; */
+  margin-top: 2px;
   font-size: var(--medium-copy);
   border-radius: 30px;
   color: var(--text-dark-purple);
   box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.15);
   border: solid 1.5px var(--text-dark-purple);
   background-color: #fff;
-  margin-top: 12px;
 }
+
+
 
 img.venmoLogo {
   width: 63.4px;
@@ -1188,7 +1331,11 @@ img.noteIcon {
 
 #noteIcon {
   margin-top: 27px;
+  margin-bottom: 32px;
+  font-size: var(--xsmall-copy);
 }
+
+
 
 
 /* /////// */ 
@@ -1285,3 +1432,43 @@ img.dropDownArrow {
   border: solid 3px rgba(219, 201, 255, 0.8);
 } */
 
+
+
+/* Add photo modal */
+
+#gallery {
+  width: 279px;
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  margin: 8px 8px 12px 0;
+  padding: 12px 32px;
+  border-radius: 30px;
+  box-shadow: 0 3px 4px 0 rgba(0, 4, 97, 0.15);
+  background-color: var(--button-color);
+  /* margin-top: 48px; */
+}
+
+#gallery h1 {
+  color: #fff;
+}
+
+
+#takePhoto {
+  width: 279px;
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  margin: 0px 8px 0px 0;
+  padding: 12px 32px;
+  border: solid 1.5px var(--main-cta-purple);
+  border-radius: 30px;
+  box-shadow: 0 3px 4px 0 rgba(0, 4, 97, 0.15);
+  background-color: var(--button-main-cta-purple);
+}
