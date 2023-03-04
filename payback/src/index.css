@@ -1615,3 +1615,14 @@ img.dropDownArrow {
   box-shadow: 0 3px 4px 0 rgba(0, 4, 97, 0.15);
   background-color: var(--button-main-cta-purple);
 }
+
+@media screen and (max-width: 480px) {
+  #addPhotoBody {
+    margin-left: 0;
+  }
+
+  #confirmation {
+    margin-left: 0;
+    margin-top: 0;
+  }
+}
