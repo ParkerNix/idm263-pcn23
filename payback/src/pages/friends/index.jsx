@@ -16,6 +16,11 @@ import navMonthlyDefault from '../../components/Assets/nav_monthly_default.png'
 import navExpenseDefault from '../../components/Assets/nav_expense_default.png'
 import navGroupsDefault from '../../components/Assets/nav_groups_default.png'
 import navProfileDefault from '../../components/Assets/nav_profile_default.png'
+import navOverviewActive from '../../components/Assets/nav_overview_active.png'
+import navMonthlyActive from '../../components/Assets/nav_monthly_active.png'
+import navExpenseActive from '../../components/Assets/nav_expense_active.png'
+import navGroupsActive from '../../components/Assets/nav_groups_active.png'
+import navProfileActive from '../../components/Assets/nav_profile_active.png'
 import searchFriends from '../../components/Assets/searchFriends.png'
 import { Link, useNavigate } from 'react-router-dom';
 
@@ -72,7 +77,9 @@ export const AddFriends = () => {
                                     </div>
                                         <div className="friendsCheck">
                                             <input type="radio" name="radio"/>
-                                            <span class="checkmark"></span>
+                                            <span class="checkmark" id="addFriendCheck"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                                                <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
+                                            </svg></span>
                                     </div>
                                 </div>
                                 <hr className="friendsList"></hr>
@@ -84,7 +91,9 @@ export const AddFriends = () => {
                                     </div>
                                         <div className="friendsCheck">
                                             <input type="radio" name="radio"/>
-                                            <span class="checkmark"></span>
+                                            <span class="checkmark" id="addFriendCheck"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                                                <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
+                                            </svg></span>
                                     </div>
                                 </div>
                                 <hr className="friendsList"></hr>
@@ -96,7 +105,9 @@ export const AddFriends = () => {
                                     </div>
                                         <div className="friendsCheck">
                                             <input type="radio" name="radio"/>
-                                            <span class="checkmark"></span>
+                                            <span class="checkmark" id="addFriendCheck"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                                                <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
+                                            </svg></span>
                                     </div>
                                 </div>
                                 <hr className="friendsList"></hr>
