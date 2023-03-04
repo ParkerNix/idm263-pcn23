@@ -430,7 +430,7 @@ button#addPhoto {
 
 button#addPhoto p {
   color: white;
-  margin-top: -1.2rem;
+  margin-top: -.9rem;
   font-size: 31px;
   text-align: center;
 }
@@ -442,6 +442,20 @@ button#addPhoto p {
   width: 100%;
   left: 0;
   bottom: 0;
+  background-color: white;
+  border-top-left-radius: 5px;
+  border-top-right-radius:5px;
+  transition: all .3s ease-out;
+}
+
+#addPhotoBody {
+  position: relative;
+  flex: 1 1 auto;
+  padding: var(--bs-modal-padding);
+  padding-bottom: 50px;
+  width: 375px;
+  margin-left: 70px;
+  top: 500px;
   background-color: white;
   border-top-left-radius: 5px;
   border-top-right-radius:5px;
@@ -472,6 +486,16 @@ button#addPhoto p {
 
 .description {
   padding: 0 12px;
+}
+
+.groupNameEdit {
+  font-size: 20px;
+  font-weight: 700;
+  background-color: transparent;
+  border: none;
+  max-width: 164px;
+  text-align: center;
+  color: var(--text-dark-purple);
 }
 
 .form-control {
@@ -1178,9 +1202,15 @@ margin-top: 5.2px;
 
 /*costBreakdown*/
 
+.longCB {
+  padding: 16px 24px 92px;
+}
+
 #confirmation {
   border-radius: 10px;
   margin-top: 100px;
+  width: 375px;
+  margin-left: 70px;
 }
 
 
@@ -1312,7 +1342,7 @@ img.confirmationIcon {
   margin-top: 2px;
   font-size: var(--medium-copy);
   border-radius: 30px;
-  color: var(--text-dark-purple);
+  color: var(--text-dark-purple) !important;
   box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.15);
   border: solid 1.5px var(--text-dark-purple);
   background-color: #fff;

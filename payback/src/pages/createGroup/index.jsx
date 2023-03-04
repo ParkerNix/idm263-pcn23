@@ -6,6 +6,7 @@ import molynaSmiley from '../../components/Assets/molyna_smiley.png'
 import parkerSmiley from '../../components/Assets/parker_smiley.png'
 import heartEmpty from '../../components/Assets/heartEmpty.png'
 import editIcon from '../../components/Assets/editIcon.png'
+import photoPlaceholder from '../../components/Assets/photoPlaceholder.png'
 import navOverviewDefault from '../../components/Assets/nav_overview_default.png'
 import navMonthlyDefault from '../../components/Assets/nav_monthly_default.png'
 import navExpenseDefault from '../../components/Assets/nav_expense_default.png'
@@ -19,6 +20,8 @@ import { motion } from "framer-motion"
 
 
 export const CreateGroup = () => {
+
+    let photoPath = photoPlaceholder
 
     // Use this hook to programmatically navigate to another page
     const navigate = useNavigate();
@@ -106,7 +109,7 @@ export const CreateGroup = () => {
                 <div className="row">
                     <div className="col">
                         <div className="createGroup">
-                            <img src={groupImg} alt="groupImg" className='emptyGroupImg mt-4 align-self-center'/>
+                            <img src={photoPath} alt="photoPlaceholder" className='newGroupImg mt-4 align-self-center'/>
                             <button id="addPhoto"  data-bs-toggle="modal" data-bs-target="#myModal"><p>+</p></button>
 
                             {/* ADD PHOTO MODAL */}
@@ -118,7 +121,7 @@ export const CreateGroup = () => {
                             </div>
                             
                             <div className="groupName d-flex flex-row justify-content-center align-items-center mt-3">
-                                <h2 className ='h3 bold'>Group 1</h2>
+                                <input type="text" className ='groupNameEdit' placeholder='Group 1' maxLength="13"></input>
                                 <img src={editIcon} alt="editIcon" className='editIcon' />
                             </div>
                         </div>

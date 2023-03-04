@@ -33,7 +33,7 @@ export const Groups = () => {
                 <div className="mx-4 pt-4 mb-5 d-flex justify-content-between">
                     <span></span>
                     <h1 className="h6 bold" id="profile">Groups</h1>
-                    <img src={optionsIcon} alt="back" className="topNavOptions" />
+                    <img src={optionsIconWhite} alt="back" className="topNavOptions" />
                 </div>
                 <div className='mx-4 mb-4 d-flex justify-content-between'>
                     <h2 className="h4 bold" id="recentFriends">Recent Friends</h2>

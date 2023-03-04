@@ -170,7 +170,7 @@ export const CostBreakdown = () => {
                     </div>
                 </div>
                 <div className="row pageTab pb-5">
-                    <div className="col pt-3 px-4">
+                    <div className="col longCB">
                         <div>
                             <div className='expenseSection mt-2 mb-4'>
                                 <div className='d-flex justify-content-between align-items-center mb-3'>
