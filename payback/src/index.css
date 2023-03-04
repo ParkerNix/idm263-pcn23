@@ -247,16 +247,121 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, p, .p, a, link, button, in
   text-decoration: none;
 }
 
+
 .navbar .navStack:hover {
   /* background-image: linear-gradient(to bottom, rgba(140, 62, 219, 0.08) 0%, rgba(163, 84, 203, 0) 100%); */
   background-color: rgba(140, 62, 219, 0.08);
   /* background-size: 90px 40px; */
   border-top: 3px solid #552ccc;
   color: var(--nav);
-
+  margin-bottom: 3px;
 }
 
 
+
+img.navIconsActive {
+  display: none;
+}
+
+img.navIcons#overview:hover {
+  display: hidden;
+}
+
+
+
+.navIconsActive {
+  width: 24px;
+  height: 24px;
+}
+
+
+/* //////// */
+/* //////// */
+/* LOG IN */
+/* //////// */
+/* //////// */
+
+.container#landingPage {
+  background-image: linear-gradient(#6527c9, #330a8b 62.86%);
+}
+
+
+img.paybackLogo {
+  width: 145px;
+  height: 125px;
+}
+
+
+
+#landingPageContainer {
+  padding-top: 234px;
+  margin-right: 64px;
+  margin-left: 64px;
+}
+
+#createPageContainer {
+  padding-top: 137px;
+  margin-right: 64px;
+  margin-left: 64px;
+
+}
+
+h1#h1white {
+  color: var(--main-bg-color);
+  text-align: center;
+}
+
+h1#h1whiteWelcome {
+  color: var(--main-bg-color);
+  text-align: center;
+  padding: 0px;
+}
+
+h1#catchPhrase {
+  color: var(--main-bg-color);
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+span#split {
+  color: var(--progress-bar-light-purple);
+}
+
+button#create {
+  background-color: var(--button-medium-purple);
+  padding-top: 9px;
+  padding-bottom: 9px;
+}
+
+button#signUp {
+  background-color: var(--button-medium-purple);
+  padding-top: 9px;
+  padding-bottom: 9px;
+}
+
+button#login {
+  background-color: transparent;
+  border: 1px solid var(--main-bg-color);
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+
+input#name.form-control, input#email.form-control, input#password.form-control { 
+  width: 246px;
+  height: 35px;
+  border-radius: 22px;
+}
+
+input#name::placeholder, input#email::placeholder, input#password::placeholder {
+  color: var(--button-medium-purple);
+}
+
+
+h1#create {
+  color: var(--progress-bar-light-purple);
+
+}
 
 /* .navbar a.active {
   background-color: #04AA6D;
@@ -638,7 +743,8 @@ img.addFriend {
 
 /* When the radio button is checked, add a blue background */
 .friendsCheck input:checked ~ .checkmark {
-  background-color: #2196F3;
+  background-color: var(--orange-icon-color);
+  border-color: var(--orange-icon-color);
 }
 
 /* Create the indicator (the dot/circle - hidden when not checked) */
@@ -653,18 +759,24 @@ img.addFriend {
   display: block;
 }
 
-/* Style the indicator (dot/circle) */
-.friendsCheck .checkmark:after {
- 	top: 9px;
-	left: 9px;
-	width: 8px;
-	height: 8px;
-	border-radius: 50%;
-	background: white;
+.bi-check {
+    color: var(--main-bg-color);
+    position: absolute;
+    top: 2px;
+    left: 0.5px;
 }
+
+/* Style the indicator (dot/circle)  */
+ .friendsCheck .checkmark:after {
+  display: block;
+} 
 
 .checkmark#addFriendCheck {
   margin-left: 10px;
+}
+
+span.check {
+  display: hidden;
 }
 
 hr.friendsList {
