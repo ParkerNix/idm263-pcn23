@@ -70,6 +70,12 @@ html {
   height: 100vh;
   width: 100%;
   overflow-x: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000000;
 }
 
 body {
@@ -78,17 +84,26 @@ body {
   background-color: var(--main-bg-color);
   margin: 0;
   position: relative;
-  width: 100%;
+  width: 375px;
   height: 100%;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+body::-webkit-scrollbar {
+  display: none;
 }
 
 #root {
   height: 100%;
+  width: 375px;
 }
 
-.container {
+.containerHeight {
   height: 100% !important;
 }
+
+
 
 
 h1, .h1 {
@@ -127,13 +142,21 @@ h6, .h6 {
   margin: 0;
 }
 
-p, .p, .dropdown-item, a:link, a:visited, a:hover, a:active, textarea {
+p, .p, .dropdown-item, a:link, a:visited, a:hover, a:active, .a, textarea {
   color: var(--text-dark-purple);
   font-size: 14px;
   margin: 0;
 }
 
-a:link, a:visited, a:hover, a:active {
+.dropdown-item {
+  color: var(--text-dark-purple) !important;
+  font-size: 14px;
+  margin: 0;
+  background-color: transparent;
+  box-shadow: none;
+}
+
+a:link, a:visited, a:hover, a:active, .a {
   text-decoration: none;
 }
 
@@ -162,7 +185,7 @@ a:link, a:visited, a:hover, a:active {
 
 button, .button {
  background-color: var(--button-color);
- color: var(--button-text-color);
+ color: var(--button-text-color) !important;
  font-size: var(--button-text-size);
  margin: 8px 8px 12px 0;
  padding: 12px 32px;
@@ -189,13 +212,42 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, p, .p, a, link, button, in
 }
 
 .btmRightBtn {
-  position: fixed;
-  bottom: 70px;
-  right: 16px;
   padding: 12px 16px;
 }
 
+.stickyBtn {
+  display: flex;
+  justify-content: end;
+  padding-right: 12px;
+  margin-top: 16px;
+  margin-bottom: 48px;
+}
 
+.stickyBtn2 {
+  position: fixed;
+  bottom:76px;
+  left: 51.5%;
+  /* display: flex;
+  justify-content: center; */
+  padding: 1em;
+}
+
+.stickyBtn3 {
+  display: flex;
+  justify-content: end;
+  margin-right: 12px;
+  margin-top: 308px;
+}
+
+.stickyBtn4 {
+  display: flex;
+  justify-content: end;
+  margin-top: 70px;
+}
+
+.pageBottom {
+  padding-bottom: 10rem;
+}
 
 /* ////////// ////*/
 /* ////////// ////*/
@@ -238,8 +290,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, p, .p, a, link, button, in
   padding-right: 24px;
   padding-top: 0;
   bottom: 0;
-  width: 100%;
-  height: 65px;
+  width: inherit;
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   box-shadow: 0 -2px 5px 0 rgba(53, 0, 138, 0.1);
@@ -284,7 +335,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, p, .p, a, link, button, in
   text-align: center;
 }
 
-.topNavBack {
+.topNavBack, a.topNavBack, a:visited.topNavBack, :active.topNavBack, a:hover.topNavBack {
   height: 16px;
   width: 10px;
 }
@@ -330,11 +381,11 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, p, .p, a, link, button, in
   padding-top: 0.5rem;
 }
 
-.groupsCardButton button {
-padding: 8px 16px 7px;
-border-radius: 30px;
-font-size: var(--small-copy);
-margin:0 ;
+.groupsCardButton a {
+  padding: 8px 16px 7px;
+  border-radius: 30px;
+  font-size: var(--small-copy);
+  margin:0 ;
 }
 
 .groupsCardIcons {
@@ -350,8 +401,13 @@ margin:0 ;
   padding-top: 0.3rem;
 }
 
-#groupH2 {
-  margin-top: 16px;
+.groupName {
+  background-color: transparent;
+  padding: 0;
+  box-shadow: none;
+  border: none;
+  color: var(--text-dark-purple);
+  font-size: var(--large-copy);
 }
 
 /* NEW GROUP PAGE */
@@ -409,13 +465,16 @@ button#addPhoto p {
   height: 74px;
 }
 
+.emptyGroupImg {
+  width: 81px;
+  height: 74px;
+}
+
 .description {
-  padding-left: 28px;
-  padding-right: 28px;
+  padding: 0 12px;
 }
 
 .form-control {
-  height: 74px;
   border: none;
   border-radius: 10px;
   box-shadow: 0 5px 20px 0 rgba(1, 0, 51, 0.05);
@@ -426,8 +485,7 @@ button#addPhoto p {
 .groupMembers {
   margin-top: 2rem;
   flex-direction: column;
-  padding-left:28px;
-  padding-right: 28px;
+  padding:0 12px;
 }
 
 .checkbox p {
@@ -438,7 +496,6 @@ button#addPhoto p {
 img.editIcon {
   width: 24px;
   height: 24px;
-  margin-top: 1.1rem;
   margin-left: 0.3rem;
 }
 
@@ -502,68 +559,23 @@ h1#friendsTitle {
 
 
 #searchForm {
-  width: 234px;
-  height: 41px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 10px;
-  margin: 11px 12px 24px 24px;
-  padding: 12px 16px;
   border-radius: 55px;
-  box-shadow: 0 5px 20px 0 rgba(1, 0, 51, 0.05);
-  background-color: #fff;
-}
-
-#searchForm::placeholder {
-  color: var(--text-dark-purple);
-  font-size: var(--small-copy);
-  padding-left: 42px;
-}
-
-#searchFormTwo::placeholder {
-  color: var(--text-dark-purple);
-  font-size: var(--small-copy);
-  padding-left: 42px;
-}
-
-
-
-
-#searchFormTwo {
-  width: 327px;
-  height: 41px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 10px;
-  margin: 11px 12px 24px 24px;
-  padding: 12px 16px;
-  border-radius: 55px;
+  padding-right: 16px;
   box-shadow: 0 5px 20px 0 rgba(1, 0, 51, 0.05);
   background-color: #fff;
 }
 
 
-button#submit.searchButton {
-  width: 80.8px;
-  height: 30.8px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 2px;
-  margin: 16px 24.2px 29.2px 12px;
-  padding: 8px 13px;
+.searchButton {
+  padding: 0 13px;
   border-radius: 10px;
   background-color: var(--button-color);
+  font-size: var(--small-copy);
+  font-weight: 500;
 }
 
 .searchFriends {
-  padding-left: 24px;
-  padding-right: 24px;
+  margin: 0px 12px;
 }
 
 #yourFriends {
@@ -683,9 +695,15 @@ hr.friendsList {
 hr.addFriend {
   width: 327px;
   height: 1px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  color: var(--hr-color);
+  margin: 20px 0 20px 24px;
+  background-color: #ede4ff;
+}
+
+.addFriendBreak {
+  width: 327px;
+  height: 1px;
+  margin: 12px 0;
+  background-color: #ede4ff;
 }
 
 .sadSmiley {
@@ -871,11 +889,6 @@ button#addButton {
   background-color: var(--orange-icon-color);
 }
 
-h1#profileName.h1.bold {
-  color: var(--main-bg-color);
-  font-size: 24px;
-}
-
 p#profileName {
   color: var(--profile--name-purple);
   font-size: var(--medium-copy);
@@ -896,12 +909,7 @@ img.transactionSmiley {
   object-fit: contain;
 }
 
-h4#transactionsHeader {
-  margin-bottom: 24px;
-  padding-top: 32px;
-}
-
-p#groupName {
+.groupNameCard {
   color: var(--desaturated-purple);
 }
 
@@ -981,7 +989,7 @@ img.remind {
 }
 
 #viewAll {
-  color: var(--button-light-purple);
+  color: #decfff;
   text-decoration: underline;
   font-size: var(--medium-copy);
 }
@@ -1005,20 +1013,10 @@ color: var(--button-light-purple);
 margin-top: 5.2px;
 }
 
-
-
-
 .pageTab {
   background-color: var(--main-bg-color);
-  border-radius: 10px 10px 0px 0px;
-  height: 100%;
-}
-
-.pageTabTwo {
-  background-color: var(--main-bg-color);
   border-radius: 20px 20px 0px 0px;
-  height: 550px;
-
+  height: 100%;
 }
 
 .white {
@@ -1030,10 +1028,13 @@ margin-top: 5.2px;
   height: 69px;
 }
 
-.memberIcons {
+.memberIcons, .memberIconsNE {
   width: 32px;
   height: 32px;
   margin: 0 7.6px 0 0;
+}
+
+.memberIcons {
   margin-right: -10px;
 }
 
@@ -1100,7 +1101,7 @@ margin-top: 5.2px;
   line-height: 1.3;
   border-radius: 12px;
   box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.15);
-  color: var(--button-medium-purple);
+  color: var(--button-medium-purple) !important;
   margin: 0;
 }
 
@@ -1108,7 +1109,7 @@ margin-top: 5.2px;
   padding: 8px 13px 7px;
   border-radius: 12px;
   background-color: var(--button-light-purple);
-  color: var(--text-dark-purple);
+  color: var(--text-dark-purple) !important;
   margin: 0;
   font-size: var(--small-copy);
 }
@@ -1138,7 +1139,7 @@ margin-top: 5.2px;
   line-height: 1.8;
   border-radius: 12px;
   box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.15);
-  color: var(--button-medium-purple);
+  color: var(--button-medium-purple) !important;
   margin: 0;
 }
 
@@ -1248,7 +1249,7 @@ margin-top: 5.2px;
   padding: 5px 20px 3px;
   font-size: var(--small-copy);
   border-radius: 10px;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .overviewButtonsActive {

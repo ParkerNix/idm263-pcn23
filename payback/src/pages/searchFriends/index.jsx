@@ -11,6 +11,7 @@ import heartEmpty from '../../components/Assets/heartEmpty.png'
 import editIcon from '../../components/Assets/editIcon.png'
 import link from '../../components/Assets/link.png'
 import addFriend from '../../components/Assets/addFriend.png'
+import search from '../../components/Assets/search.png'
 import navOverviewDefault from '../../components/Assets/nav_overview_default.png'
 import navMonthlyDefault from '../../components/Assets/nav_monthly_default.png'
 import navExpenseDefault from '../../components/Assets/nav_expense_default.png'
@@ -23,44 +24,62 @@ import { Link, useNavigate } from 'react-router-dom';
 
 export const SearchFriends = () => {
 
+    // Use this hook to programmatically navigate to another page
+    const navigate = useNavigate();
+
+    // This function is used to navigate to the home page
+    // It will be called when the button is clicked
+    const goBack = () => {
+        navigate(-1);
+    };
+
     return (
         <>
         <div className="container">
         <div class="row">
-                <div className="col mt-4 mb-2 mx-3 d-flex justify-content-between">
-                    <img src={backArrow} alt="back" className="topNavBack" />
+                <div className="col mt-4 mx-3 d-flex justify-content-between">
+                    <a onClick={goBack} className="bold line-height">
+                        <img src={backArrow} alt="back" className="topNavBack" />
+                    </a>
                     <h1 id="friendsTitle" className="h6 bold">Friends</h1>
                     <div className="navSpacer"></div>
                 </div>
             </div>
             <div className="row">
-                <div className="col">
-                    <div className="searchFriends d-flex flex-row justify-content-center">
-                        
-                    <div className="input-group d-flex justify-content-center">
+                <div className="col my-4">
+                    <div className="searchFriends">
                         <div clasName="form-outline">
-                            <input type="text" id="searchFormTwo" class="form-control" placeholder="Search for friends"/>
+                            <Link to="/pages/searchFriends">
+                                <input type="text" id="searchForm" class="form-control" placeholder="Search for friends" style={
+                                    {
+                                        paddingLeft: 25,
+                                        background: `url(${search}) no-repeat left`,
+                                        backgroundSize: 20,
+                                    }
+                                }/>
+                            </Link>
                         </div>
                     </div>
-                    </div>
-                    </div>
+                </div>
                         <div className="friendsList">
-                            <h3 className="h5 bold mb-3" id="yourFriends">Add New Friends</h3>
+                            <h3 className="h6 bold mb-3" id="yourFriends">Add New Friends</h3>
                             <div className="row d-flex flex-row justify-content-center">
 
                                 <div className="friendsRow d-flex flex-row justify-content-between">
-                                    <div className="friendsName d-flex flex-row">
-                                    <img src={parkerSmiley} alt="smiley" className="smiley"/>
-                                    <p className="p demiBold" id="friendName">Parker Nix</p>
+                                    <div className="friendsName d-flex align-items-center">
+                                        <img src={parkerSmiley} alt="smiley" className="smiley"/>
+                                        <p className="p demiBold" id="friendName">Parker Nix</p>
                                     </div>
-                                        <div className="addFriend">
+                                    <div className="addFriend">
+                                        <Link to="/pages/friends">
                                             <img src={addFriend} alt="addFriend" className="addFriend"/>
+                                        </Link>
                                     </div>
                                 </div>
-                                <hr className="addFriend"></hr>
+                                <hr className="addFriendBreak"></hr>
                                 
                                 <div className="friendsRow d-flex flex-row justify-content-between">
-                                    <div className="friendsName d-flex flex-row">
+                                    <div className="friendsName d-flex align-items-center">
                                     <img src={parkerSmiley} alt="smiley" className="smiley"/>
                                     <p className="p demiBold" id="friendName">Parkour Nix</p>
                                     </div>
@@ -68,10 +87,10 @@ export const SearchFriends = () => {
                                             <img src={addFriend} alt="addFriend" className="addFriend"/>
                                     </div>
                                 </div>
-                                <hr className="addFriend"></hr>
+                                <hr className="addFriendBreak"></hr>
 
                                 <div className="friendsRow d-flex flex-row justify-content-between">
-                                    <div className="friendsName d-flex flex-row">
+                                    <div className="friendsName d-flex align-items-center">
                                     <img src={parkerSmiley} alt="smiley" className="smiley"/>
                                     <p className="p demiBold" id="friendName">Parkourrrrrr</p>
                                     </div>
@@ -79,10 +98,10 @@ export const SearchFriends = () => {
                                             <img src={addFriend} alt="addFriend" className="addFriend"/>
                                     </div>
                                 </div>
-                                <hr className="addFriend"></hr>
+                                <hr className="addFriendBreak"></hr>
                         
                                 <div className="friendsRow d-flex flex-row justify-content-between">
-                                    <div className="friendsName d-flex flex-row">
+                                    <div className="friendsName d-flex align-items-center">
                                     <img src={parkerSmiley} alt="smiley" className="smiley"/>
                                     <p className="p demiBold" id="friendName">Peter Parker</p>
                                     </div>
@@ -90,10 +109,10 @@ export const SearchFriends = () => {
                                             <img src={addFriend} alt="addFriend" className="addFriend"/>
                                     </div>
                                 </div>
-                                <hr className="addFriend"></hr>
+                                <hr className="addFriendBreak"></hr>
 
                                 <div className="friendsRow d-flex flex-row justify-content-between">
-                                    <div className="friendsName d-flex flex-row">
+                                    <div className="friendsName d-flex align-items-center">
                                     <img src={parkerSmiley} alt="smiley" className="smiley"/>
                                     <p className="p demiBold" id="friendName">Peter Mix</p>
                                     </div>
@@ -101,34 +120,42 @@ export const SearchFriends = () => {
                                             <img src={addFriend} alt="addFriend" className="addFriend"/>
                                     </div>
                                 </div>
-                                <hr className="addFriend"></hr>
+                                <hr className="addFriendBreak"></hr>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="navbar">
-                <div class="navStack">
-                    <img src={navOverviewDefault} className="navIcons" alt="overview" />
-                    <a href="#home" className="active bold">Overview</a>
+            <div className="navbar">
+                <div className="navStack">
+                    <Link to='/' className="bold d-flex flex-column align-items-center">
+                        <img src={navOverviewDefault} className="navIcons" alt="overview" />
+                        Overview
+                    </Link>
                 </div>
-                <div class="navStack">
+                <div className="navStack">
                     <img src={navMonthlyDefault} className="navIcons" alt="monthly" />
                     <a href="#monthly" className="bold">Monthly</a>
                 </div>
-                <div class="navStack">
-                    <img src={navExpenseDefault} className="navIcons" alt="expense" />
-                    <a href="#expense" className="bold">Expense</a>
+                <div className="navStack">
+                    <Link to='/pages/allGroups' className="bold d-flex flex-column align-items-center">
+                        <img src={navExpenseDefault} className="navIcons" alt="expense" />
+                        Expense
+                    </Link>
                 </div>
-                <div class="navStack">
-                    <img src={navGroupsDefault} className="navIcons" alt="groups" />
-                    <a href="#groups" className="bold">Groups</a>
+                <div className="navStack">
+                    <Link to='/pages/groups' className="bold d-flex flex-column align-items-center">
+                        <img src={navGroupsDefault} className="navIcons" alt="groups" />
+                        Groups
+                    </Link>
                 </div>
-                <div class="navStack">
-                    <img src={navProfileDefault} className="navIcons" alt="profile" />
-                    <a href="#groups" className="bold">Profile</a>
+                <div className="navStack">
+                    <Link to='/pages/profile' className="bold d-flex flex-column align-items-center">
+                        <img src={navProfileDefault} className="navIcons" alt="profile" />
+                        Profile
+                    </Link>
                 </div>
-            </div>
+            </div> 
 
             </>
          );

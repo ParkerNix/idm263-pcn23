@@ -1,6 +1,6 @@
 import {useEffect, useState} from 'react';
 
-function App() {
+function Calculation() {
   const [total, setTotal] = useState(100);
   const [persona, setPersona] = useState(20);
   const [personb, setPersonb] = useState(30);
@@ -357,4 +357,4 @@ function App() {
   );
 }
 
-export default App;
+export default Calculation;
