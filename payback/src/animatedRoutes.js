@@ -17,7 +17,16 @@ import { MonthlyNetTotal } from './pages/monthlyNetTotal';
 import { AllFriends } from './pages/allFriends';
 import { MonthlyTotalSpend } from './pages/monthlyTotalSpend';
 import { MonthlyTotalGain } from './pages/monthlyTotalGain';
+import { Create } from './pages/create';
+import { Landing } from './pages/landing';
+import { Login } from './pages/login';
 import { Test} from './pages/test';
+
+// import { CostBreakdown } from './pages/costBreakdown';
+// import { ViewGroup } from './pages/viewGroup';
+// import { Overview } from './pages/overview';
+
+
 import { ConfirmationCard} from './components/confirmationCard';
 import { FriendSettings} from './components/friendSettings';
 import { AddPhoto} from './components/addPhoto';
@@ -54,6 +63,9 @@ function AnimatedRoutes() {
             	<Route path="/pages/monthlyTotalSpend" element={<MonthlyTotalSpend />}></Route>
             	<Route path="/pages/monthlyTotalGain" element={<MonthlyTotalGain />}></Route>
             	<Route path="/pages/allFriends" element={<AllFriends />}></Route>
+            	<Route path="/pages/create" element={<Create />}></Route>
+            	<Route path="/pages/landing" element={<Landing />}></Route>
+            	<Route path="/pages/login" element={<Login />}></Route>
             	<Route path="/pages/test" element={<Test />}></Route>
 			</Routes>
 		</AnimatePresence>
