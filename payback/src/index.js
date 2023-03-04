@@ -41,7 +41,6 @@ import { BlockFriend} from './components/blockFriend';
 
 
 
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
@@ -51,8 +50,6 @@ root.render(
               <Route path="/" element={<Overview />}></Route>
               <Route path="/pages/allGroups" element={<AllGroups />}></Route>
               <Route path="/pages/newExpense" element={<NewExpense />}></Route>
-              <Route path="/pages/costBreakdown" element={<CostBreakdown />}></Route>
-              <Route path="/pages/viewGroup" element={<ViewGroup />}></Route>
               <Route path="/pages/createGroup" element={<CreateGroup />}></Route>
               <Route path="/pages/friends" element={<AddFriends />}></Route>
               <Route path="/pages/searchFriends" element={<SearchFriends />}></Route>
