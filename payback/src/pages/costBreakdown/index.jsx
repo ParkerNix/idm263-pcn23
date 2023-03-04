@@ -14,6 +14,7 @@ import navGroupsDefault from '../../components/Assets/nav_groups_default.png'
 import navProfileDefault from '../../components/Assets/nav_profile_default.png'
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Doughnut } from 'react-chartjs-2';
+import { ConfirmationCard } from '../../components/confirmationCard'
 import { Link, useNavigate } from 'react-router-dom';
 import { collection, onSnapshot, query, } from "firebase/firestore";
 import { db } from "../../firebase";
@@ -169,7 +170,7 @@ export const CostBreakdown = () => {
                     </div>
                 </div>
                 <div className="row pageTab pb-5">
-                    <div className="col pt-3 px-4">
+                    <div className="col longCB">
                         <div>
                             <div className='expenseSection mt-2 mb-4'>
                                 <div className='d-flex justify-content-between align-items-center mb-3'>
@@ -231,7 +232,7 @@ export const CostBreakdown = () => {
                             </div>
                         </div>
                         <div className='stickyBtn2'>
-                            <button className="btmRightBtn mediumCopy bold" onClick={
+                            <button className="btmRightBtn mediumCopy bold" data-bs-toggle="modal" data-bs-target="#myModal" onClick={
                                 () => {
                                     setPaidState(['checkCB', checkOrange])
                                     let newDataArr = [...dataArr]
@@ -248,6 +249,14 @@ export const CostBreakdown = () => {
                                 }
                             }>Payback</button>
                         </div>
+                    </div>
+                </div>
+                
+                 {/* CONFIRMATION */}
+
+                 <div className="modal" id="myModal">
+                    <div class="modal-dialog">
+                        <ConfirmationCard/>
                     </div>
                 </div>
             </motion.div>

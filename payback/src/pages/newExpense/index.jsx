@@ -175,7 +175,7 @@ export const NewExpense = () => {
                 }else if(newArr[i].name === name) {
                     newArr[i].dollar = newdollar
                 } else if(newArr[i].lock === false) {
-                    newArr[i].dollar = divided
+                    newArr[i].dollar = divided.toFixed(2)
                     newArr[i].percent = divpercent * 100 + "%"
                 }
             }
@@ -254,7 +254,7 @@ export const NewExpense = () => {
                                     if (isNaN(newTotal)) {
                                         setTotal("")
                                     } else {
-                                        setTotal(newTotal);
+                                        setTotal(newTotal.toFixed(2));
                                     }
                                   }
                                 }
@@ -382,7 +382,7 @@ export const NewExpense = () => {
                                                     event => {
                                                         let newArr = [...members];
                                                         let eventnum = event.target.value.substring(1)
-                                                        const personanew = parseFloat(eventnum)
+                                                        const personanew = parseFloat(eventnum).toFixed(2)
                                                         if (isNaN(personanew)) {
                                                             return
                                                         } else {
@@ -421,7 +421,7 @@ export const NewExpense = () => {
                                                 event => {
                                                     let newArr = [...members];
                                                     let eventnum = event.target.value.substring(1)
-                                                    const personanew = parseFloat(eventnum)
+                                                    const personanew = parseFloat(eventnum).toFixed(2)
                                                     if (isNaN(personanew)) {
                                                         newArr[1].dollar = "";
                                                         setMembers(newArr);
@@ -461,7 +461,7 @@ export const NewExpense = () => {
                                                 event => {
                                                     let newArr = [...members];
                                                     let eventnum = event.target.value.substring(1)
-                                                    const personanew = parseFloat(eventnum)
+                                                    const personanew = parseFloat(eventnum).toFixed(2)
                                                     if (isNaN(personanew)) {
                                                         return
                                                     } else {
@@ -500,7 +500,7 @@ export const NewExpense = () => {
                                                 event => {
                                                     let newArr = [...members];
                                                     let eventnum = event.target.value.substring(1)
-                                                    const personanew = parseFloat(eventnum)
+                                                    const personanew = parseFloat(eventnum).toFixed(2)
                                                     if (isNaN(personanew)) {
                                                         return
                                                     } else {
@@ -539,7 +539,7 @@ export const NewExpense = () => {
                                                 event => {
                                                     let newArr = [...members];
                                                     let eventnum = event.target.value.substring(1)
-                                                    const personanew = parseFloat(eventnum)
+                                                    const personanew = parseFloat(eventnum).toFixed(2)
                                                     if (isNaN(personanew)) {
                                                         return
                                                     } else {

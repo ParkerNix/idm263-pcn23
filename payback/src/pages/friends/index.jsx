@@ -16,6 +16,7 @@ import navMonthlyDefault from '../../components/Assets/nav_monthly_default.png'
 import navExpenseDefault from '../../components/Assets/nav_expense_default.png'
 import navGroupsDefault from '../../components/Assets/nav_groups_default.png'
 import navProfileDefault from '../../components/Assets/nav_profile_default.png'
+import searchFriends from '../../components/Assets/searchFriends.png'
 import { Link, useNavigate } from 'react-router-dom';
 
 
@@ -40,7 +41,7 @@ export const AddFriends = () => {
                         <img src={backArrow} alt="back" className="topNavBack" />
                     </Link>
                     <h1 id="friendsTitle" className="h6 bold">Friends</h1>
-                    <img src={optionsIcon} alt="back" className="topNavOptions" />
+                    <div className="navSpacer"></div>
                 </div>
             </div>
             <div className="row">
@@ -99,8 +100,6 @@ export const AddFriends = () => {
                                     </div>
                                 </div>
                                 <hr className="friendsList"></hr>
-                        
-
 
                             </div>
                         </div>

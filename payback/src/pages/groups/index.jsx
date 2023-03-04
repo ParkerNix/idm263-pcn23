@@ -1,6 +1,6 @@
 import backArrow from '../../components/Assets/Back arrow.png'
 import backArrowWhite from '../../components/Assets/backArrowWhite.png'
-import optionsIcon from '../../components/Assets/optionsDotsWhite.png'
+import optionsIconWhite from '../../components/Assets/optionsIconWhite.png'
 import groupImg from '../../components/Assets/groupImg.png'
 import smileySmiley from '../../components/Assets/smiley_smiley.png'
 import molynaSmiley from '../../components/Assets/molyna_smiley.png'
@@ -33,7 +33,7 @@ export const Groups = () => {
                 <div className="mx-4 pt-4 mb-5 d-flex justify-content-between">
                     <span></span>
                     <h1 className="h6 bold" id="profile">Groups</h1>
-                    <img src={optionsIcon} alt="back" className="topNavOptions" />
+                    <img src={optionsIconWhite} alt="back" className="topNavOptions" />
                 </div>
                 <div className='mx-4 mb-4 d-flex justify-content-between'>
                     <h2 className="h4 bold" id="recentFriends">Recent Friends</h2>

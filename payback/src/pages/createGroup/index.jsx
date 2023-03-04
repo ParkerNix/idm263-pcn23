@@ -6,11 +6,13 @@ import molynaSmiley from '../../components/Assets/molyna_smiley.png'
 import parkerSmiley from '../../components/Assets/parker_smiley.png'
 import heartEmpty from '../../components/Assets/heartEmpty.png'
 import editIcon from '../../components/Assets/editIcon.png'
+import photoPlaceholder from '../../components/Assets/photoPlaceholder.png'
 import navOverviewDefault from '../../components/Assets/nav_overview_default.png'
 import navMonthlyDefault from '../../components/Assets/nav_monthly_default.png'
 import navExpenseDefault from '../../components/Assets/nav_expense_default.png'
 import navGroupsDefault from '../../components/Assets/nav_groups_default.png'
 import navProfileDefault from '../../components/Assets/nav_profile_default.png'
+import { AddPhoto } from '../../components/addPhoto'
 import deletePlaceholder from '../../components/Assets/delete_placeholder.png'
 import addPlaceholder from '../../components/Assets/addFriendsPlaceholder.png'
 import { Link, useNavigate } from 'react-router-dom';
@@ -18,6 +20,8 @@ import { motion } from "framer-motion"
 
 
 export const CreateGroup = () => {
+
+    let photoPath = photoPlaceholder
 
     // Use this hook to programmatically navigate to another page
     const navigate = useNavigate();
@@ -30,6 +34,62 @@ export const CreateGroup = () => {
 
     return (
         <>
+
+{/*
+        <div className="container">
+            <div class="row">
+                <div className="col mt-4 mb-2 mx-3 d-flex justify-content-between">
+                    <img src={backArrow} alt="back" className="topNavBack" />
+                    <h1 className="h6 bold">Create Group</h1>
+                    <img src={optionsIcon} alt="back" className="topNavOptions" />
+                </div>
+            </div>
+            <div className="row">
+                <div className="col">
+                    <div className="createGroup">
+                        <img src={photoPlaceholder} alt="photoPlaceholder" className='newGroupImg mt-4 align-self-center'/>
+                        <button id="addPhoto"  data-bs-toggle="modal" data-bs-target="#myModal"><p>+</p></button>
+
+
+                        <div className="modal" id="myModal">
+                            <div class="modal-dialog">
+                                <AddPhoto/>
+                            </div>
+                        </div>
+                   
+                   
+
+
+                    <div class="groupName d-flex flex-row align-items-center mt-1">
+                        <h2 id="groupH2" className = 'h3 bold'>Group 1</h2>
+                        <img src={editIcon} alt="editIcon" className='editIcon' />
+                    </div>
+                </div>
+                    <div className="description">
+                        <h3 className="h5 bold mt-4 mb-3">Description</h3>
+                        <div class="form-group">
+                            <textarea class="form-control" rows="5" cols="50" id="addGroupDescription">Add group description</textarea>
+                          </div>
+                    </div>
+                    <div className="groupMembers d-flex justify-content-center">
+                        <h3 className='h5 bold mb-3'>Groups Members (0)</h3>
+                        <div class="checkbox d-flex flex-row gap-2">
+                        <input
+                             className='add'
+                             type="checkbox"
+                             min="0"
+                             />
+                             <button id="addFriends"><p>+</p></button>
+                             <p className="p demiBold">Add Friends</p>
+                          </div>
+                          </div>
+                          <button id='submit' className="btmRightBtn bold">
+                                Save group
+                            </button>
+                    </div>
+            </div>
+        </div>
+-------------------------------------------------*/}
             <motion.div
                 className="container pb-5"
                 initial={{ opacity: 0 }}
@@ -49,9 +109,19 @@ export const CreateGroup = () => {
                 <div className="row">
                     <div className="col">
                         <div className="createGroup">
-                            <img src={groupImg} alt="groupImg" className='emptyGroupImg mt-4 align-self-center'/>
+                            <img src={photoPath} alt="photoPlaceholder" className='newGroupImg mt-4 align-self-center'/>
+                            <button id="addPhoto"  data-bs-toggle="modal" data-bs-target="#myModal"><p>+</p></button>
+
+                            {/* ADD PHOTO MODAL */}
+                                                    
+                            <div className="modal" id="myModal">
+                                <div class="modal-dialog">
+                                    <AddPhoto/>
+                                </div>
+                            </div>
+                            
                             <div className="groupName d-flex flex-row justify-content-center align-items-center mt-3">
-                                <h2 className ='h3 bold'>Group 1</h2>
+                                <input type="text" className ='groupNameEdit' placeholder='Group 1' maxLength="13"></input>
                                 <img src={editIcon} alt="editIcon" className='editIcon' />
                             </div>
                         </div>
@@ -76,7 +146,7 @@ export const CreateGroup = () => {
                     <button className="btmRightBtn mediumCopy inactive bold">Save group</button>
                 </div>
             </motion.div>
-
+{/*-------------------------------------------------*/}
 
             <div className="navbar">
                 <div className="navStack">

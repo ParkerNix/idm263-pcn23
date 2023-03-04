@@ -10,16 +10,18 @@ import meganSmiley from '../../components/Assets/megan_smiley.png'
 import heartEmpty from '../../components/Assets/heartEmpty.png'
 import editIcon from '../../components/Assets/editIcon.png'
 import link from '../../components/Assets/link.png'
-import addFriend from '../../components/Assets/addFriend.png'
 import navOverviewDefault from '../../components/Assets/nav_overview_default.png'
 import navMonthlyDefault from '../../components/Assets/nav_monthly_default.png'
 import navExpenseDefault from '../../components/Assets/nav_expense_default.png'
 import navGroupsDefault from '../../components/Assets/nav_groups_default.png'
 import navProfileDefault from '../../components/Assets/nav_profile_default.png'
+import searchFriends from '../../components/Assets/searchFriends.png'
+import optionsIconHorizontal from '../../components/Assets/purpleDotsHorizontal.png'
 
+import { FriendSettings } from '../../components/friendSettings'
+import { BlockFriend } from '../../components/blockFriend'
 
-
-export const AddedFriend = () => {
+export const AllFriends = () => {
 
     return (
         <>
@@ -35,92 +37,89 @@ export const AddedFriend = () => {
                 <div className="col">
                     <div className="searchFriends d-flex flex-row justify-content-center">
                         
-                    <div className="input-group d-flex justify-content-center">
+                    <div className="input-group">
                         <div clasName="form-outline">
-                            <input type="text" id="searchFormTwo" class="form-control" placeholder="Search for friends"/>
+                        {/* <img src={searchFriends} alt="back" className="searchFriends" /> */}
+                            <input type="text" id="searchForm" class="form-control" placeholder="Search for friends"/>
+                            {/* <label class="form-label" for="searchForm">Search</label> */}
                         </div>
+                        </div>
+                    <div className="searchButton">
+                    <button id='submit' className="searchButton bold">
+                    <img src={link} alt="link" className="link" />Invite
+                            </button>
                     </div>
                     </div>
                     </div>
-
                         <div className="friendsList">
+                            <h3 className="h5 bold mb-3" id="yourFriends">Your Friends</h3>
+                            <div className="row d-flex flex-row justify-content-center">
 
-                        <h3 className="h5 bold mb-3" id="yourFriends">Friends</h3>
+                                <div className="friendsRow d-flex flex-row justify-content-between">
+                                    <div className="friendsName d-flex flex-row">
+                                    <img src={allieSmiley} alt="smiley" className="smiley"/>
+                                    <p className="p demiBold" id="friendName">Allie Drake</p>
+                                    </div>
+                                        <div className="friendsCheck">
+                                        <img src={optionsIconHorizontal} alt="options" className="options" data-bs-toggle="modal" data-bs-target="#myModal"/>
+                                    </div>
+                                </div>
+                                <hr className="allFriends"></hr>
+                                
+                                <div className="friendsRow d-flex flex-row justify-content-between">
+                                    <div className="friendsName d-flex flex-row">
+                                    <img src={allieSmiley} alt="smiley" className="smiley"/>
+                                    <p className="p demiBold" id="friendName">Joey McQuillan</p>
+                                    </div>
+                                        <div className="friendsCheck">
+                                        <img src={optionsIconHorizontal} alt="options" className="options" data-bs-toggle="modal" data-bs-target="#myModal"/>
+                                            
+                                    </div>
+                                </div>
+                                <hr className="allFriends"></hr>
 
-                        <div className="friendsRow d-flex flex-row justify-content-between">
+                                <div className="friendsRow d-flex flex-row justify-content-between">
                                     <div className="friendsName d-flex flex-row">
                                     <img src={allieSmiley} alt="smiley" className="smiley"/>
                                     <p className="p demiBold" id="friendName">Megan Lam</p>
                                     </div>
                                         <div className="friendsCheck">
-                                            <input type="radio" name="radio"/>
-                                            <span class="checkmark" id="addFriendCheck"></span>
+                                        <img src={optionsIconHorizontal} alt="options" className="options" data-bs-toggle="modal" data-bs-target="#myModal"/>
                                     </div>
                                 </div>
-                                <hr className="friendsList"></hr>
-
-
-                            <h3 className="h5 bold mb-3" id="yourFriends">Add New Friends</h3>
-                                <div className="row d-flex flex-row justify-content-center">
+                                <hr className="allFriends"></hr>
 
                                 <div className="friendsRow d-flex flex-row justify-content-between">
                                     <div className="friendsName d-flex flex-row">
                                     <img src={parkerSmiley} alt="smiley" className="smiley"/>
                                     <p className="p demiBold" id="friendName">Parker Nix</p>
                                     </div>
-                                        <div className="addFriend">
-                                            <img src={addFriend} alt="addFriend" className="addFriend"/>
+                                        <div className="friendsCheck">
+                                            <img src={optionsIconHorizontal} alt="options" className="options" data-bs-toggle="modal" data-bs-target="#myModal"/>
                                     </div>
                                 </div>
-                                <hr className="addFriend"></hr>
-                                
-                                <div className="friendsRow d-flex flex-row justify-content-between">
-                                    <div className="friendsName d-flex flex-row">
-                                    <img src={parkerSmiley} alt="smiley" className="smiley"/>
-                                    <p className="p demiBold" id="friendName">Parkour Nix</p>
-                                    </div>
-                                    <div className="addFriend">
-                                            <img src={addFriend} alt="addFriend" className="addFriend"/>
-                                    </div>
-                                </div>
-                                <hr className="addFriend"></hr>
+                                <hr className="allFriends"></hr>
 
-                                <div className="friendsRow d-flex flex-row justify-content-between">
-                                    <div className="friendsName d-flex flex-row">
-                                    <img src={parkerSmiley} alt="smiley" className="smiley"/>
-                                    <p className="p demiBold" id="friendName">Parkourrrrrr</p>
-                                    </div>
-                                    <div className="addFriend">
-                                            <img src={addFriend} alt="addFriend" className="addFriend"/>
-                                    </div>
-                                </div>
-                                <hr className="addFriend"></hr>
-                        
-                                <div className="friendsRow d-flex flex-row justify-content-between">
-                                    <div className="friendsName d-flex flex-row">
-                                    <img src={parkerSmiley} alt="smiley" className="smiley"/>
-                                    <p className="p demiBold" id="friendName">Peter Parker</p>
-                                    </div>
-                                    <div className="addFriend">
-                                            <img src={addFriend} alt="addFriend" className="addFriend"/>
-                                    </div>
-                                </div>
-                                <hr className="addFriend"></hr>
-
-                                <div className="friendsRow d-flex flex-row justify-content-between">
-                                    <div className="friendsName d-flex flex-row">
-                                    <img src={parkerSmiley} alt="smiley" className="smiley"/>
-                                    <p className="p demiBold" id="friendName">Peter Mix</p>
-                                    </div>
-                                    <div className="addFriend">
-                                            <img src={addFriend} alt="addFriend" className="addFriend"/>
-                                    </div>
-                                </div>
-                                <hr className="addFriend"></hr>
                             </div>
                         </div>
                     </div>
                 </div>
+
+
+                 {/* FRIEND SETTINGS MODAL */}
+
+                 <div className="modal" id="myModal">
+                    <div class="modal-dialog">
+        
+                    
+
+                        <FriendSettings/>
+
+                    </div>
+                    </div>
+                   
+
+
 
                 <div class="navbar">
                 <div class="navStack">

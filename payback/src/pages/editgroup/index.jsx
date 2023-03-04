@@ -18,6 +18,7 @@ import newGroupIcon from '../../components/Assets/newGroupIcon.png'
 import addFriend from '../../components/Assets/addFriend.png'
 import deletePlaceholder from '../../components/Assets/delete_placeholder.png'
 import addPlaceholder from '../../components/Assets/addFriendsPlaceholder.png'
+import { AddPhoto } from '../../components/addPhoto'
 import { Link, useNavigate } from 'react-router-dom';
 import { motion } from "framer-motion"
 
@@ -53,7 +54,16 @@ export const EditGroup = () => {
             <div className="row pb-5">
                 <div className="col pb-5">
                     <div className="createGroup">
-                        <img src={newGroupIcon} alt="groupImg" className='newGroupImg mt-4 align-self-center'/>
+                    <img src={newGroupIcon} alt="photoPlaceholder" className='newGroupImg mt-4 align-self-center'/>
+                            <button id="addPhoto"  data-bs-toggle="modal" data-bs-target="#myModal"><p>+</p></button>
+
+                            {/* ADD PHOTO MODAL */}
+                                                    
+                            <div className="modal" id="myModal">
+                                <div class="modal-dialog">
+                                    <AddPhoto/>
+                                </div>
+                            </div>
                         <div className="groupName d-flex flex-row align-items-center mt-3">
                             <h2 id="groupH2" className = 'h3 bold'>Payback Gang</h2>
                             <img src={editIcon} alt="editIcon" className='editIcon' />

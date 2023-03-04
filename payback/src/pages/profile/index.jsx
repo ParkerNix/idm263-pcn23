@@ -1,4 +1,7 @@
 import backArrowWhite from '../../components/Assets/backArrowWhite.png'
+import groupImg from '../../components/Assets/groupImg.png'
+import smileySmiley from '../../components/Assets/smiley_smiley.png'
+import molynaSmiley from '../../components/Assets/molyna_smiley.png'
 import optionsIcon from '../../components/Assets/optionsDotsWhite.png'
 import parkerSmiley from '../../components/Assets/parker_smiley.png'
 import meganSmiley from '../../components/Assets/megan_smiley.png'
@@ -36,7 +39,7 @@ export const Profile = () => {
                         <img src={backArrowWhite} alt="back" className="topNavBack" />
                     </a>
                     <h1 className="h6 bold" id="profile">Profile</h1>
-                    <img src={optionsIcon} alt="back" className="topNavOptions" />
+                    <img src={optionsIcon} alt="back" className="topNavOptionsWhite" />
                  </div>
                 <div className='d-flex flex-column align-items-center'>
                     <div className='profilePic d-flex flex-row justify-content-center'>

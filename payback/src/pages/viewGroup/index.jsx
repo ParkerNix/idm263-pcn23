@@ -173,7 +173,7 @@ export const ViewGroup = () => {
                 </div>
                 <div className="row pageTab pb-5">
                     <div className="col pt-3 px-4">
-                        <h2 className='h4 bold mt-3 mb-1'>Group spending</h2>
+                        <h2 className='h4 bold mt-3 mb-2' id="groupSpending">Group spending</h2>
                         <div className ='card'>
                             <div className='card-body'>
                                 <div className='d-flex align-items-top justify-content-between mb-3'>
@@ -202,6 +202,8 @@ export const ViewGroup = () => {
                                         <p className='bold line-height'>10/10/22</p>
                                     </div>
                                     <div className="groupsCardButton">
+                                        {/* Need to move this to around the entire card div so that hit box is whole entire card */}
+
                                         <Link to="/pages/costBreakdown" className="demiBold px-0 line-height">View breakdown →</Link>
                                     </div>
                                 </div>
