@@ -39,7 +39,7 @@ export const Profile = () => {
                         <img src={backArrowWhite} alt="back" className="topNavBack" />
                     </a>
                     <h1 className="h6 bold" id="profile">Profile</h1>
-                    <img src={optionsIcon} alt="back" className="topNavOptionsWhite" />
+                    <img src={optionsIcon} alt="back" className="topNavOptions" />
                  </div>
                 <div className='d-flex flex-column align-items-center'>
                     <div className='profilePic d-flex flex-row justify-content-center'>

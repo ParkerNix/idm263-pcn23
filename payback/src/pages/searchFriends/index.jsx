@@ -22,6 +22,8 @@ import { Link, useNavigate } from 'react-router-dom';
 
 
 
+
+
 export const SearchFriends = () => {
 
     // Use this hook to programmatically navigate to another page
