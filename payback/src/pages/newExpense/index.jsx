@@ -247,7 +247,7 @@ export const NewExpense = () => {
                                 className='ml-2 total'
                                 type="text"
                                 value={"$" + total}
-                                onChange={
+                                onBlur={
                                   event => {
                                     let eventTotal = event.target.value.substring(1)
                                     const newTotal = parseFloat(eventTotal);
@@ -378,7 +378,7 @@ export const NewExpense = () => {
                                                 className='ml-2 indivTotal bold'
                                                 type="text"
                                                 value={"$" + members[0].dollar}
-                                                onChange={
+                                                onBlur={
                                                     event => {
                                                         let newArr = [...members];
                                                         let eventnum = event.target.value.substring(1)
@@ -417,7 +417,7 @@ export const NewExpense = () => {
                                             className='ml-2 indivTotal bold'
                                             type="text"
                                             value={"$" + members[1].dollar}
-                                            onChange={
+                                            onBlur={
                                                 event => {
                                                     let newArr = [...members];
                                                     let eventnum = event.target.value.substring(1)
@@ -457,7 +457,7 @@ export const NewExpense = () => {
                                             className='ml-2 indivTotal bold'
                                             type="text"
                                             value={"$" + members[2].dollar}
-                                            onChange={
+                                            onBlur={
                                                 event => {
                                                     let newArr = [...members];
                                                     let eventnum = event.target.value.substring(1)
@@ -496,7 +496,7 @@ export const NewExpense = () => {
                                             className='ml-2 indivTotal bold'
                                             type="text"
                                             value={"$" + members[3].dollar}
-                                            onChange={
+                                            onBlur={
                                                 event => {
                                                     let newArr = [...members];
                                                     let eventnum = event.target.value.substring(1)
@@ -535,7 +535,7 @@ export const NewExpense = () => {
                                             className='ml-2 indivTotal bold'
                                             type="text"
                                             value={"$" + members[4].dollar}
-                                            onChange={
+                                            onBlur={
                                                 event => {
                                                     let newArr = [...members];
                                                     let eventnum = event.target.value.substring(1)
