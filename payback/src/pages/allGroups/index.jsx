@@ -72,7 +72,11 @@ export const AllGroups = () => {
                                         <img src={parkerSmiley} className="memberIcons" alt="member3" />
                                     </div>
                                     <div className="groupsCardButton">
-                                        <Link to='/pages/viewGroup' className="button demiBold">
+                                        <Link to='/pages/viewGroup' className="button demiBold"  onClick={
+                                            () => {
+                                                window.scrollTo(0,0)
+                                            }
+                                        }>
                                             View group
                                         </Link>
                                     </div>
@@ -82,8 +86,12 @@ export const AllGroups = () => {
                     </div>
                 </div>
             </div>
-            <div className='stickyBtn3 mb-5'>
-                <Link to="/pages/createGroup" className="button mediumCopy btmRightBtn bold">Create new group</Link>
+            <div className='stickyBtn mb-5'>
+                <Link to="/pages/createGroup" className="button mediumCopy btmRightBtn bold buttonSpacer"  onClick={
+                    () => {
+                        window.scrollTo(0,0)
+                    }
+                }>Create new group</Link>
             </div>
         </motion.div>
 

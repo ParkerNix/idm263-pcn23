@@ -1,6 +1,6 @@
 import backArrow from '../../components/Assets/Back arrow.png'
 import backArrowWhite from '../../components/Assets/backArrowWhite.png'
-import optionsIconWhite from '../../components/Assets/optionsIconWhite.png'
+import optionsIconWhite from '../../components/Assets/optionsDotsWhite.png'
 import groupImg from '../../components/Assets/groupImg.png'
 import smileySmiley from '../../components/Assets/smiley_smiley.png'
 import molynaSmiley from '../../components/Assets/molyna_smiley.png'
@@ -125,7 +125,7 @@ export const Groups = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className='stickyBtn px-0 mt-4'>
+                        <div className='stickyBtn'>
                             <Link to="/pages/createGroup" className="button mediumCopy btmRightBtn bold">Create new group</Link>
                         </div>  
                     </div>     

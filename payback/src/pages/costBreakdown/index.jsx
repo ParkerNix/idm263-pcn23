@@ -30,6 +30,9 @@ export const CostBreakdown = () => {
     const [dataArr, setDataArr] = useState([])
     const [colorArr, setColorArr] = useState([])
     const [totalPaid, setTotalPaid] = useState(0.00)
+    const [overallTotal, setOverallTotal] = useState(0.00)
+    const [youPaid, setYouPaid] = useState(false)
+    const [youPaidText, setYouPaidText] = useState("Payback")
 
     const data = {
         datasets: [
@@ -116,8 +119,6 @@ export const CostBreakdown = () => {
             let newDataArr = []
             let newColorArr = []
             let newTotalPaid = 0.00
-            newDataArr.push(allItems[0].total/100)
-            newColorArr.push("rgba(255, 255, 255, 0.2)")
             
             for (let i=0; i < allItems[0].portions.length; i++) {
                 if (allItems[0].paid[i] === true) {
@@ -127,10 +128,15 @@ export const CostBreakdown = () => {
                     newTotalPaid = newTotalPaid + paidnum
                 }
             }
-            console.log(newTotalPaid)
+
+            let leftover = allItems[0].total - newTotalPaid
+            newDataArr.push(leftover)
+            newColorArr.push("rgba(255, 255, 255, 0.2)")
+            console.log(newDataArr)
             setDataArr(newDataArr)
             setColorArr(newColorArr)
             setTotalPaid(newTotalPaid)
+            setOverallTotal(allItems[0].total)
         }
     }, [allItems])
 
@@ -156,7 +162,7 @@ export const CostBreakdown = () => {
                             <img src={backArrowWhite} alt="back" className="topNavBack" />
                         </a>
                         <h1 className="h6 bold white">Cost Breakdown</h1>
-                        <img src={note} alt="note" className="noteIcon iconButton" />
+                        <img src={note} alt="note" className="noteIcon iconButton" id="noteCB" />
                     </div>
                     <div className='d-flex flex-column justify-content-center align-items-center'>
                         <div style={{height:'231px',width:'231px'}}>
@@ -164,7 +170,7 @@ export const CostBreakdown = () => {
                         </div>
                         <div className='doughnutText'>
                             <p className='text-center white h1 bold'>${totalPaid}</p>
-                            <p className='text-center white largeCopy demiBold lineHeight64'>of $64.00</p>
+                            <p className='text-center white largeCopy demiBold lineHeight64'>of ${overallTotal}</p>
                             <p className='text-center white smallCopy demiBold'>Paid back</p>
                         </div>
                     </div>
@@ -232,22 +238,37 @@ export const CostBreakdown = () => {
                             </div>
                         </div>
                         <div className='stickyBtn2'>
-                            <button className="btmRightBtn mediumCopy bold" data-bs-toggle="modal" data-bs-target="#myModal" onClick={
+                            <button disabled={youPaid} className="btmRightBtn mediumCopy bold" data-bs-toggle="modal" data-bs-target="#myModal" onClick={
                                 () => {
-                                    setPaidState(['checkCB', checkOrange])
-                                    let newDataArr = [...dataArr]
-                                    let newColorArr = [...colorArr]
-                                    console.log(thisExpense.portions[1], thisExpense.color[1])
+                                    if (youPaid === true) {
+                                        console.log("already paid back!")
+                                    } else {
+                                        setPaidState(['checkCB', checkOrange])
+                                        let newDataArr = [...dataArr]
+                                        let newColorArr = [...colorArr]
+                                        console.log(thisExpense.portions[1], thisExpense.color[1])
 
-                                    newDataArr.push(thisExpense.portions[1])
-                                    newColorArr.push(thisExpense.color[1])
+                                        let leftover = newDataArr[1]
+                                        let leftoverColor = newColorArr[1]
+                                        leftover = leftover - thisExpense.portions[1]
+                                        newDataArr[1] = thisExpense.portions[1]
+                                        newColorArr[1] = thisExpense.color[1]
+                                        let newTotalPaid = totalPaid + thisExpense.portions[1]
 
-                                    setDataArr(newDataArr)
-                                    setColorArr(newColorArr)
-                                    setTotalPaid(totalPaid + parseFloat(thisExpense.portions[1]))
+                                        newDataArr.push(leftover)
+                                        newColorArr.push(leftoverColor)
+
+                                        setYouPaid(true)
+
+                                        setDataArr(newDataArr)
+                                        console.log(newDataArr)
+                                        setColorArr(newColorArr)
+                                        setTotalPaid(newTotalPaid)
+                                        setYouPaidText("Paid back")
+                                    }
 
                                 }
-                            }>Payback</button>
+                            }>{youPaidText}</button>
                         </div>
                     </div>
                 </div>

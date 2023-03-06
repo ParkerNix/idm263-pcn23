@@ -108,7 +108,11 @@ export const Overview = () => {
                                 <img src={woohooSmiley} className="woohooSmiley mb-3" alt="Smiley" />
                                 <h3 className='bold'>Woohoo!</h3>
                                 <p className='mediumCopy medium mb-3'>All balances are cleared!</p>
-                                <Link to='/pages/allGroups' className='button mediumCopy bold'>Create a new expense</Link>
+                                <Link to='/pages/allGroups' className='button mediumCopy bold' onClick={
+                                    () => {
+                                        window.scrollTo(0,0)
+                                    }
+                                }>Create a new expense</Link>
                             </div>
                         </div>
                     </div>
