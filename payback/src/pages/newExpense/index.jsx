@@ -63,11 +63,11 @@ export const NewExpense = () => {
         setDoc(docRef, {
             total: total,
             portions: [
-                members[0].dollar,
-                members[1].dollar,
-                members[2].dollar,
-                members[3].dollar,
-                members[4].dollar
+                parseFloat(members[0].dollar),
+                parseFloat(members[1].dollar),
+                parseFloat(members[2].dollar),
+                parseFloat(members[3].dollar),
+                parseFloat(members[4].dollar)
             ],
             paid: [
                 members[0].paid,
