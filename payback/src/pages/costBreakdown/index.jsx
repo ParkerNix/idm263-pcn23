@@ -169,8 +169,8 @@ export const CostBreakdown = () => {
                             <Doughnut data={data} options={options} width={231} height={231} className='doughnutGraph' />
                         </div>
                         <div className='doughnutText'>
-                            <p className='text-center white h1 bold'>${totalPaid}</p>
-                            <p className='text-center white largeCopy demiBold lineHeight64'>of ${overallTotal}</p>
+                            <p className='text-center white h1 bold'>${totalPaid.toFixed(2)}</p>
+                            <p className='text-center white largeCopy demiBold lineHeight64'>of ${overallTotal.toFixed(2)}</p>
                             <p className='text-center white smallCopy demiBold'>Paid back</p>
                         </div>
                     </div>
