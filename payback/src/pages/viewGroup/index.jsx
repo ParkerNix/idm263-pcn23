@@ -108,7 +108,7 @@ export const ViewGroup = () => {
             if (allItems[0].total === undefined) {
                 setOverallTotal(0.00)
             } else {
-                let newOverall = allItems[0].total/100
+                let newOverall = allItems[0].total
                 setOverallTotal(newOverall)
             }
 
@@ -124,7 +124,7 @@ export const ViewGroup = () => {
                     newTotalPaid = newTotalPaid + paidNum
                 }
             }
-            let totalNum = allItems[0].total/100
+            let totalNum = allItems[0].total
             let totalPercentPaid = (newTotalPaid/totalNum) * 100
             let leftover = (100-totalPercentPaid)
             newDataArr.push(leftover)
@@ -206,7 +206,11 @@ export const ViewGroup = () => {
                                     <div className="groupsCardButton">
                                         {/* Need to move this to around the entire card div so that hit box is whole entire card */}
 
-                                        <Link to="/pages/costBreakdown" className="demiBold px-0 line-height">View breakdown →</Link>
+                                        <Link to="/pages/costBreakdown" className="demiBold px-0 line-height"  onClick={
+                                            () => {
+                                                window.scrollTo(0,0)
+                                            }
+                                        }>View breakdown →</Link>
                                     </div>
                                 </div>
                             </div>

@@ -61,15 +61,15 @@ export const NewExpense = () => {
 
 
     async function updateFirestore(){
-        const docRef = doc(db, "Expenses", expenseIndex);
+        const docRef = doc(db, "Expenses", "Payback Gang01");
         setDoc(docRef, {
             total: total,
             portions: [
-                members[0].dollar,
-                members[1].dollar,
-                members[2].dollar,
-                members[3].dollar,
-                members[4].dollar
+                parseFloat(members[0].dollar),
+                parseFloat(members[1].dollar),
+                parseFloat(members[2].dollar),
+                parseFloat(members[3].dollar),
+                parseFloat(members[4].dollar)
             ],
             paid: [
                 members[0].paid,
@@ -142,7 +142,49 @@ export const NewExpense = () => {
         }else if(members[index].lock === false) {
             newArr[index].lock = true
             newArr[index].img = lockOnIcon
+            console.log(newArr[index].lock)
         }
+        setMembers(newArr)
+    }
+
+    const EvenValuesTotal = () => {
+        
+        let locknum = 0
+        let leftover = total
+        let newArr = [...members]
+
+        for(let i=0; i<newArr.length; i++) {
+            if(newArr[i].lock === true) {
+                locknum++
+                leftover = leftover - newArr[i].dollar
+            }
+        }
+
+        let maxLocks = newArr.length - 2
+        if (maxLocks < 0) {
+            maxLocks= 0
+        }
+        let unlockedNum = newArr.length - locknum
+        console.log(unlockedNum)
+
+
+        if(locknum > maxLocks) {
+           console.log("return")
+        } else {
+            let difference = leftover
+            let divided = difference/unlockedNum
+            let divpercent = divided/total
+            console.log(divpercent)
+            for(let i=0; i<newArr.length; i++) {
+                if(newArr[i].lock === true) {
+                    console.log("she's locked tho")
+                } else if(newArr[i].lock === false) {
+                    newArr[i].dollar = divided.toFixed(2)
+                    newArr[i].percent = divpercent * 100 + "%"
+                }
+            }
+        }
+
         setMembers(newArr)
     }
 
@@ -250,15 +292,26 @@ export const NewExpense = () => {
                                 type="text"
                                 value={"$" + total}
                                 onChange={
-                                  event => {
-                                    let eventTotal = event.target.value.substring(1)
-                                    const newTotal = parseFloat(eventTotal);
-                                    if (isNaN(newTotal)) {
-                                        setTotal("")
-                                    } else {
-                                        setTotal(newTotal.toFixed(2));
+                                    event => {
+                                        let eventTotal = event.target.value.substring(1)
+                                        const newTotal = parseFloat(eventTotal);
+                                        if (isNaN(newTotal)) {
+                                            setTotal("")
+                                        } else {
+                                            setTotal(newTotal);
+                                        }
                                     }
-                                  }
+                                }
+                                onBlur={
+                                    event => {
+                                        let eventTotal = event.target.value.substring(1)
+                                        const newTotal = parseFloat(eventTotal);
+                                        if (isNaN(newTotal)) {
+                                            setTotal("")
+                                        } else {
+                                            EvenValuesTotal()
+                                        }
+                                    }
                                 }
                               />
                             </label>
@@ -377,6 +430,7 @@ export const NewExpense = () => {
                                                 }
                                             }/>
                                             <input
+                                                disabled={members[0].lock}
                                                 className='ml-2 indivTotal bold'
                                                 type="text"
                                                 value={"$" + members[0].dollar}
@@ -384,15 +438,23 @@ export const NewExpense = () => {
                                                     event => {
                                                         let newArr = [...members];
                                                         let eventnum = event.target.value.substring(1)
-                                                        const personanew = parseFloat(eventnum).toFixed(2)
+                                                        newArr[0].dollar = eventnum
+                                                        setMembers(newArr);
+                                                    }
+                                                }
+                                                onBlur={
+                                                    event => {
+                                                        let newArr = [...members];
+                                                        let eventnum = event.target.value.substring(1)
+                                                        const personanew = parseFloat(eventnum)
                                                         if (isNaN(personanew)) {
                                                             return
                                                         } else {
-                                                            newArr[0].dollar = personanew
+                                                            newArr[0].dollar = personanew.toFixed(2)
                                                             const personapercentnew = personanew / total
                                                             newArr[0].percent = personapercentnew * 100 + "%"
                                                             setMembers(newArr);
-                                                            Evenvalues("Megan Lam", personanew)
+                                                            Evenvalues("Megan Lam", personanew.toFixed(2))
                                                         }
                                                     }
                                                 }
@@ -416,6 +478,7 @@ export const NewExpense = () => {
                                             }
                                         }/>
                                         <input
+                                            disabled={members[1].lock}
                                             className='ml-2 indivTotal bold'
                                             type="text"
                                             value={"$" + members[1].dollar}
@@ -423,19 +486,26 @@ export const NewExpense = () => {
                                                 event => {
                                                     let newArr = [...members];
                                                     let eventnum = event.target.value.substring(1)
-                                                    const personanew = parseFloat(eventnum).toFixed(2)
+                                                    newArr[1].dollar = eventnum
+                                                    setMembers(newArr);
+                                                }
+                                            }
+                                            onBlur={
+                                                event => {
+                                                    let newArr = [...members];
+                                                    let eventnum = event.target.value.substring(1)
+                                                    const personanew = parseFloat(eventnum)
                                                     if (isNaN(personanew)) {
-                                                        newArr[1].dollar = "";
-                                                        setMembers(newArr);
+                                                        return
                                                     } else {
-                                                        newArr[1].dollar = event.target.value;
+                                                        newArr[1].dollar = personanew.toFixed(2)
                                                         const personapercentnew = personanew / total
                                                         newArr[1].percent = personapercentnew * 100 + "%"
                                                         setMembers(newArr);
-                                                        Evenvalues("Molyna Tep", personanew)
+                                                        Evenvalues("Molyna Tep", personanew.toFixed(2))
                                                     }
                                                 }
-                                              }
+                                            }
                                         />
                                         </div>
                                     </div>
@@ -456,6 +526,7 @@ export const NewExpense = () => {
                                             }
                                         }/>
                                         <input
+                                            disabled={members[2].lock}
                                             className='ml-2 indivTotal bold'
                                             type="text"
                                             value={"$" + members[2].dollar}
@@ -463,11 +534,19 @@ export const NewExpense = () => {
                                                 event => {
                                                     let newArr = [...members];
                                                     let eventnum = event.target.value.substring(1)
-                                                    const personanew = parseFloat(eventnum).toFixed(2)
+                                                    newArr[2].dollar = eventnum
+                                                    setMembers(newArr);
+                                                }
+                                            }
+                                            onBlur={
+                                                event => {
+                                                    let newArr = [...members];
+                                                    let eventnum = event.target.value.substring(1)
+                                                    const personanew = parseFloat(eventnum)
                                                     if (isNaN(personanew)) {
                                                         return
                                                     } else {
-                                                        newArr[2].dollar = event.target.value;
+                                                        newArr[2].dollar = personanew.toFixed(2)
                                                         const personapercentnew = personanew / total
                                                         newArr[2].percent = personapercentnew * 100 + "%"
                                                         setMembers(newArr);
@@ -495,6 +574,7 @@ export const NewExpense = () => {
                                             }
                                         }/>
                                         <input
+                                            disabled={members[3].lock}
                                             className='ml-2 indivTotal bold'
                                             type="text"
                                             value={"$" + members[3].dollar}
@@ -502,11 +582,19 @@ export const NewExpense = () => {
                                                 event => {
                                                     let newArr = [...members];
                                                     let eventnum = event.target.value.substring(1)
-                                                    const personanew = parseFloat(eventnum).toFixed(2)
+                                                    newArr[3].dollar = eventnum
+                                                    setMembers(newArr);
+                                                }
+                                            }
+                                            onBlur={
+                                                event => {
+                                                    let newArr = [...members];
+                                                    let eventnum = event.target.value.substring(1)
+                                                    const personanew = parseFloat(eventnum)
                                                     if (isNaN(personanew)) {
                                                         return
                                                     } else {
-                                                        newArr[3].dollar = event.target.value;
+                                                        newArr[3].dollar = personanew.toFixed(2)
                                                         const personapercentnew = personanew / total
                                                         newArr[3].percent = personapercentnew * 100 + "%"
                                                         setMembers(newArr);
@@ -534,6 +622,7 @@ export const NewExpense = () => {
                                                 }
                                             }/>
                                         <input
+                                            disabled={members[4].lock}
                                             className='ml-2 indivTotal bold'
                                             type="text"
                                             value={"$" + members[4].dollar}
@@ -541,11 +630,21 @@ export const NewExpense = () => {
                                                 event => {
                                                     let newArr = [...members];
                                                     let eventnum = event.target.value.substring(1)
-                                                    const personanew = parseFloat(eventnum).toFixed(2)
-                                                    if (isNaN(personanew)) {
+                                                    newArr[4].dollar = eventnum
+                                                    setMembers(newArr);
+                                                }
+                                            }
+                                            onBlur={
+                                                event => {
+                                                    let newArr = [...members];
+                                                    let eventnum = event.target.value.substring(1)
+                                                    const personanew = parseFloat(eventnum)
+                                                    if (personanew === members[4].dollar) {
+                                                        return
+                                                    } else if (isNaN(personanew)){
                                                         return
                                                     } else {
-                                                        newArr[4].dollar = event.target.value;
+                                                        newArr[4].dollar = personanew.toFixed(2)
                                                         const personapercentnew = personanew / total
                                                         newArr[4].percent = personapercentnew * 100 + "%"
                                                         setMembers(newArr);
@@ -566,6 +665,10 @@ export const NewExpense = () => {
                             <Link to="/pages/viewGroup" className="button btmRightBtn mediumCopy bold" onMouseDown={
                                 () => {
                                     updateFirestore()
+                                }
+                            }  onClick={
+                                () => {
+                                    window.scrollTo(0,0)
                                 }
                             }>Save expense</Link>
                         </div>

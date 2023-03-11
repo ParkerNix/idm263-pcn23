@@ -3,7 +3,8 @@ import groupImg from '../../components/Assets/groupImg.png'
 import paybackLogo from '../../components/Assets/paybackLogo.png'
 import smileySmiley from '../../components/Assets/smiley_smiley.png'
 import molynaSmiley from '../../components/Assets/molyna_smiley.png'
-import optionsIcon from '../../components/Assets/optionsDotsWhite.png'
+import optionsIcon from '../../components/Assets/optionsIconWhite.png'
+import editImgIcon from '../../components/Assets/editImgIcon.png'
 import parkerSmiley from '../../components/Assets/parker_smiley.png'
 import meganSmiley from '../../components/Assets/megan_smiley.png'
 import allieSmiley from '../../components/Assets/allie_smiley.png'
@@ -47,8 +48,10 @@ export const Profile = () => {
                  </div>
                 <div className='d-flex flex-column align-items-center'>
                     <div className='profilePic d-flex flex-row justify-content-center'>
-                        <img src={molynaProfile} alt="smiley" className="profileSmiley" />
-                        <button id="addButton" data-bs-toggle="modal" data-bs-target="#myModal"><p>+</p></button>
+                        <div>
+                            <img src={molynaProfile} alt="smiley" className="profileSmiley" />
+                            <button id="addPhoto"><img src={editImgIcon} alt="edit the group icon" id="editImgIcon"></img></button>
+                        </div>
                     </div>
                     <h2 className='h3 bold white'>Molyna Tep</h2>
                     <p className="p demiBold mt-2" id="profileName">@mochi</p>

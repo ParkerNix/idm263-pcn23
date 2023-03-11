@@ -6,6 +6,7 @@ import molynaSmiley from '../../components/Assets/molyna_smiley.png'
 import parkerSmiley from '../../components/Assets/parker_smiley.png'
 import heartEmpty from '../../components/Assets/heartEmpty.png'
 import editIcon from '../../components/Assets/editIcon.png'
+import editImgIcon from '../../components/Assets/editImgIcon.png'
 import photoPlaceholder from '../../components/Assets/photoPlaceholder.png'
 import navOverviewDefault from '../../components/Assets/nav_overview_default.png'
 import navMonthlyDefault from '../../components/Assets/nav_monthly_default.png'
@@ -111,8 +112,8 @@ export const CreateGroup = () => {
                 <div className="row">
                     <div className="col">
                         <div className="createGroup">
-                            <img src={photoPath} alt="photoPlaceholder" className='newGroupImg mt-4 align-self-center'/>
-                            <button id="addPhoto"  data-bs-toggle="modal" data-bs-target="#myModal"><p>+</p></button>
+                            <img src={photoPath} alt="placeholder icon" className='newGroupImg mt-4 align-self-center'/>
+                            <button id="editPhoto"  data-bs-toggle="modal" data-bs-target="#myModal"><img src={editImgIcon} alt="edit the group icon" id="editImgIcon"></img></button>
 
                             {/* ADD PHOTO MODAL */}
                                                     
@@ -122,7 +123,7 @@ export const CreateGroup = () => {
                                 </div>
                             </div>
                             
-                            <div className="groupName d-flex flex-row justify-content-center align-items-center mt-3">
+                            <div className="groupName d-flex flex-row justify-content-center align-items-center">
                                 <input type="text" className ='groupNameEdit' placeholder='Group 1' maxLength="13"></input>
                                 <img src={editIcon} alt="editIcon" className='editIcon' />
                             </div>
@@ -144,7 +145,7 @@ export const CreateGroup = () => {
                         </div>
                     </div>
                 </div>
-                <div className='stickyBtn4'>
+                <div className='stickyBtn2'>
                     <button className="btmRightBtn mediumCopy inactive bold">Save group</button>
                 </div>
             </motion.div>

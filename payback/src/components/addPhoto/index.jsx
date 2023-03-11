@@ -1,3 +1,5 @@
+import close from '../../components/Assets/close.png'
+
 export const AddPhoto = () => {
 
     return (
@@ -15,8 +17,9 @@ export const AddPhoto = () => {
 
                 
             <div class="modal-body" id="addPhotoBody">
+                <img src={close} alt="close" className="closePhoto" data-bs-dismiss="modal"/>
                 <div class="row">
-                    <div className="col mt-4 mb-2 mx-3 d-flex flex-column justify-content-center align-items-center" id="addPhotoModal">
+                    <div className="col mb-2 mx-3 d-flex flex-column justify-content-center align-items-center" id="addPhotoModal">
                         <button id="gallery"><h1 className="h6 bold">Choose from gallery</h1></button>
                         <button id="takePhoto"><h1 className="h6 bold">Take a photo</h1></button>
                     </div>
