@@ -14,11 +14,11 @@ import link from '../../components/Assets/link.png'
 import navOverviewDefault from '../../components/Assets/nav_overview_default.png'
 import navMonthlyDefault from '../../components/Assets/nav_monthly_default.png'
 import navExpenseDefault from '../../components/Assets/nav_expense_default.png'
+import navExpenseActive from '../../components/Assets/nav_expense_active.png'
 import navGroupsDefault from '../../components/Assets/nav_groups_default.png'
 import navProfileDefault from '../../components/Assets/nav_profile_default.png'
 import navOverviewActive from '../../components/Assets/nav_overview_active.png'
 import navMonthlyActive from '../../components/Assets/nav_monthly_active.png'
-import navExpenseActive from '../../components/Assets/nav_expense_active.png'
 import navGroupsActive from '../../components/Assets/nav_groups_active.png'
 import navProfileActive from '../../components/Assets/nav_profile_active.png'
 import searchFriends from '../../components/Assets/searchFriends.png'
@@ -117,36 +117,39 @@ export const AddFriends = () => {
                     </div>
                 </div>
 
-            <div className="navbar">
-                <div className="navStack">
-                    <Link to='/' className="bold d-flex flex-column align-items-center">
-                        <img src={navOverviewDefault} className="navIcons" alt="overview" />
-                        Overview
-                    </Link>
-                </div>
-                <div className="navStack">
-                    <img src={navMonthlyDefault} className="navIcons" alt="monthly" />
-                    <a href="#monthly" className="bold">Monthly</a>
-                </div>
-                <div className="navStack">
-                    <Link to='/pages/allGroups' className="bold d-flex flex-column align-items-center">
-                        <img src={navExpenseDefault} className="navIcons" alt="expense" />
-                        Expense
-                    </Link>
-                </div>
-                <div className="navStack">
-                    <Link to='/pages/groups' className="bold d-flex flex-column align-items-center">
-                        <img src={navGroupsDefault} className="navIcons" alt="groups" />
-                        Groups
-                    </Link>
-                </div>
-                <div className="navStack">
-                    <Link to='/pages/profile' className="bold d-flex flex-column align-items-center">
-                        <img src={navProfileDefault} className="navIcons" alt="profile" />
-                        Profile
-                    </Link>
-                </div>
-            </div> 
+                <div className="navbar">
+            <div className="navStack">
+                <Link to='/' className="bold d-flex flex-column align-items-center">
+                    <img src={navOverviewDefault} className="navIcons" alt="overview" />
+                    Overview
+                </Link>
+            </div>
+            <div className="navStack">
+                <Link to='/pages/monthlyNetTotal' className="bold d-flex flex-column align-items-center">
+                <img src={navMonthlyDefault} className="navIcons" alt="monthly" />
+                Monthly
+                </Link>
+            </div>
+            <div className="navStack active">
+                <Link to='/pages/allGroups' className="bold d-flex flex-column align-items-center">
+                    <img src={navExpenseDefault} className="navIcons" alt="expense" />
+                    <img src={navExpenseActive} className="navIcons" alt="expense" id ="active" />
+                    Expense
+                </Link>
+            </div>
+            <div className="navStack">
+                <Link to='/pages/groups' className="bold d-flex flex-column align-items-center">
+                    <img src={navGroupsDefault} className="navIcons" alt="groups" />
+                    Groups
+                </Link>
+            </div>
+            <div className="navStack">
+                <Link to='/pages/profile' className="bold d-flex flex-column align-items-center">
+                    <img src={navProfileDefault} className="navIcons" alt="profile" />
+                    Profile
+                </Link>
+            </div>
+        </div> 
 
             </>
          );

@@ -2,6 +2,7 @@ import backArrow from '../../components/Assets/Back arrow.png'
 import backArrowWhite from '../../components/Assets/backArrowWhite.png'
 import optionsIconWhite from '../../components/Assets/optionsDotsWhite.png'
 import groupImg from '../../components/Assets/groupImg.png'
+import paybackLogo from '../../components/Assets/paybackLogo.png'
 import smileySmiley from '../../components/Assets/smiley_smiley.png'
 import molynaSmiley from '../../components/Assets/molyna_smiley.png'
 import parkerSmiley from '../../components/Assets/parker_smiley.png'
@@ -17,6 +18,7 @@ import navOverviewDefault from '../../components/Assets/nav_overview_default.png
 import navMonthlyDefault from '../../components/Assets/nav_monthly_default.png'
 import navExpenseDefault from '../../components/Assets/nav_expense_default.png'
 import navGroupsDefault from '../../components/Assets/nav_groups_default.png'
+import navGroupsActive from '../../components/Assets/nav_groups_active.png'
 import navProfileDefault from '../../components/Assets/nav_profile_default.png'
 import { Link } from 'react-router-dom';
 import { motion } from "framer-motion"
@@ -31,13 +33,15 @@ export const Groups = () => {
                 exit={{ opacity: 0, transition: {duration: 0.1} }}
             >
                 <div className="mx-4 pt-4 mb-5 d-flex justify-content-between">
-                    <span></span>
+                    <span>   </span>
                     <h1 className="h6 bold" id="profile">Groups</h1>
-                    <img src={optionsIconWhite} alt="back" className="topNavOptions" />
+                    <img src={optionsIconWhite} alt="back" className="topNavOptionsWhite" />
                 </div>
                 <div className='mx-4 mb-4 d-flex justify-content-between'>
                     <h2 className="h4 bold" id="recentFriends">Recent Friends</h2>
-                    <p className="p demiBold" id="viewAll">View All</p> 
+                    <Link to='/pages/allFriends'>
+                        <p className="p demiBold" id="viewAll">View All</p> 
+                    </Link>
                 </div>
 
                 <div className="mx-4 mb-5 d-flex justify-content-between">
@@ -86,7 +90,7 @@ export const Groups = () => {
                                         <img src={parkerSmiley} className="memberIcons" alt="member3" />
                                     </div>
                                     <div className="groupsCardButton">
-                                        <Link to='/pages/viewGroup' className="button demiBold">
+                                        <Link to='/pages/viewGroup' className="button bold">
                                             View group
                                         </Link>
                                     </div>
@@ -98,7 +102,7 @@ export const Groups = () => {
                                 <div className='d-flex align-items-center justify-content-between mb-2'>
                                     <div className='d-flex align-items-center'>
                                         <div className='groupsCardImg'>
-                                            <img src={newGroupIcon} alt="groupImg" className='groupImg' />
+                                            <img src={paybackLogo} alt="groupImg" className='groupImg' />
                                             <span className="placeholder"></span>
                                         </div>
                                         <div className='ms-2'>
@@ -118,7 +122,7 @@ export const Groups = () => {
                                         <img src={meganSmiley} className="memberIcons" alt="member3" />
                                     </div>
                                     <div className="groupsCardButton">
-                                        <Link to='/pages/viewGroup' className="button demiBold">
+                                        <Link to='/pages/viewGroup' className="button bold">
                                             View group
                                         </Link>
                                     </div>
@@ -131,36 +135,41 @@ export const Groups = () => {
                     </div>     
                 </div>
             </motion.div>
+
             <div className="navbar">
-                <div className="navStack">
-                    <Link to='/' className="bold d-flex flex-column align-items-center">
-                        <img src={navOverviewDefault} className="navIcons" alt="overview" />
-                        Overview
-                    </Link>
-                </div>
-                <div className="navStack">
-                    <img src={navMonthlyDefault} className="navIcons" alt="monthly" />
-                    <a href="#monthly" className="bold">Monthly</a>
-                </div>
-                <div className="navStack">
-                    <Link to='/pages/allGroups' className="bold d-flex flex-column align-items-center">
-                        <img src={navExpenseDefault} className="navIcons" alt="expense" />
-                        Expense
-                    </Link>
-                </div>
-                <div className="navStack">
-                    <Link to='/pages/groups' className="bold d-flex flex-column align-items-center">
-                        <img src={navGroupsDefault} className="navIcons" alt="groups" />
-                        Groups
-                    </Link>
-                </div>
-                <div className="navStack">
-                    <Link to='/pages/profile' className="bold d-flex flex-column align-items-center">
-                        <img src={navProfileDefault} className="navIcons" alt="profile" />
-                        Profile
-                    </Link>
-                </div>
-            </div> 
+            <div className="navStack">
+                <Link to='/' className="bold d-flex flex-column align-items-center">
+                    <img src={navOverviewDefault} className="navIcons" alt="overview" />
+
+                    Overview
+                </Link>
+            </div>
+            <div className="navStack">
+                <Link to='/pages/monthlyNetTotal' className="bold d-flex flex-column align-items-center">
+                <img src={navMonthlyDefault} className="navIcons" alt="monthly" />
+                Monthly
+                </Link>
+            </div>
+            <div className="navStack">
+                <Link to='/pages/allGroups' className="bold d-flex flex-column align-items-center">
+                    <img src={navExpenseDefault} className="navIcons" alt="expense" />
+                    Expense
+                </Link>
+            </div>
+            <div className="navStack active">
+                <Link to='/pages/groups' className="bold d-flex flex-column align-items-center">
+                    <img src={navGroupsDefault} className="navIcons" alt="groups" />
+                    <img src={navGroupsActive} className="navIcons" alt="groups" id="active" />
+                    Groups
+                </Link>
+            </div>
+            <div className="navStack">
+                <Link to='/pages/profile' className="bold d-flex flex-column align-items-center">
+                    <img src={navProfileDefault} className="navIcons" alt="profile" />
+                    Profile
+                </Link>
+            </div>
+        </div> 
         
         </>
     );

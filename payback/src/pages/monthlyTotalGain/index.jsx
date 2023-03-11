@@ -3,6 +3,7 @@ import backArrowWhite from '../../components/Assets/backArrowWhite.png'
 import optionsIcon from '../../components/Assets/optionsDots.png'
 import navOverviewDefault from '../../components/Assets/nav_overview_default.png'
 import navMonthlyDefault from '../../components/Assets/nav_monthly_default.png'
+import navMonthlyActive from '../../components/Assets/nav_monthly_active.png'
 import navExpenseDefault from '../../components/Assets/nav_expense_default.png'
 import navGroupsDefault from '../../components/Assets/nav_groups_default.png'
 import navProfileDefault from '../../components/Assets/nav_profile_default.png'
@@ -11,6 +12,7 @@ import monthlyArrow from '../../components/Assets/monthlyArrow.png'
 import monthlySwipe from '../../components/Assets/monthlySwipe.png'
 import optionsIconWhite from '../../components/Assets/optionsIconWhite.png'
 import dropDownArrow from '../../components/Assets/dropDownArrow.png'
+import { Link, useNavigate } from 'react-router-dom';
 
 export const MonthlyTotalGain = () => {
 
@@ -19,7 +21,7 @@ export const MonthlyTotalGain = () => {
         <div className="gradientContainer">
             <div className="row">
                 <div className="col mt-4 mb-2 mx-3 d-flex justify-content-between">
-                    <div className="navSpacer"></div>
+                    <span id="nav"></span>
                     <h1 className="h6 bold" id="monthly">Monthly</h1>
                     <img src={optionsIconWhite} alt="back" className="topNavOptionsWhite" />
                  </div>
@@ -41,7 +43,7 @@ export const MonthlyTotalGain = () => {
 
             <div className="pageTab">
                 <div className="col px-4">
-                        <h4 className="h4 bold" id="transactionsHeader">Category <img src={dropDownArrow} alt="down" className="dropDownArrow" /></h4>
+                        <h4 className="h4 bold pt-4 pb-4" id="transactionsHeader">Category <img src={dropDownArrow} alt="down" className="dropDownArrow" /></h4>
                             <div className="d-flex flex-column" id="monthlyCard">
                                 <div className="d-flex justify-content-between">
                                     <div className="transactionInfo d-flex flex-column justify-content-center">
@@ -68,28 +70,39 @@ export const MonthlyTotalGain = () => {
                 </div>
             </div>
 
-            <div class="navbar">
-                <div class="navStack">
-                    <img src={navOverviewDefault} className="navIcons" alt="overview" />
-                    <a href="#home" className="active bold">Overview</a>
+            <div className="navbar">
+                <div className="navStack">
+                    <Link to='/' className="bold d-flex flex-column align-items-center">
+                        <img src={navOverviewDefault} className="navIcons" alt="overview" />
+                        Overview
+                    </Link>
                 </div>
-                <div class="navStack">
+                <div className="navStack active">
+                    <Link to='/pages/monthlyNetTotal' className="bold d-flex flex-column align-items-center">
                     <img src={navMonthlyDefault} className="navIcons" alt="monthly" />
-                    <a href="#monthly" className="bold">Monthly</a>
+                    <img src={navMonthlyActive} className="navIcons" alt="monthly" id="active" />
+                    Monthly
+                    </Link>
                 </div>
-                <div class="navStack">
-                    <img src={navExpenseDefault} className="navIcons" alt="expense" />
-                    <a href="#expense" className="bold">Expense</a>
+                <div className="navStack">
+                    <Link to='/pages/allGroups' className="bold d-flex flex-column align-items-center">
+                        <img src={navExpenseDefault} className="navIcons" alt="expense" />
+                        Expense
+                    </Link>
                 </div>
-                <div class="navStack">
-                    <img src={navGroupsDefault} className="navIcons" alt="groups" />
-                    <a href="#groups" className="bold">Groups</a>
+                <div className="navStack">
+                    <Link to='/pages/groups' className="bold d-flex flex-column align-items-center">
+                        <img src={navGroupsDefault} className="navIcons" alt="groups" />
+                        Groups
+                    </Link>
                 </div>
-                <div class="navStack">
-                    <img src={navProfileDefault} className="navIcons" alt="profile" />
-                    <a href="#groups" className="bold">Profile</a>
-                </div>
+                <div className="navStack">
+                    <Link to='/pages/profile' className="bold d-flex flex-column align-items-center">
+                        <img src={navProfileDefault} className="navIcons" alt="profile" />
+                        Profile
+                    </Link>
             </div>
+        </div> 
                        
             
         </>
