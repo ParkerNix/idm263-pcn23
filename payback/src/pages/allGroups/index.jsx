@@ -10,6 +10,7 @@ import newGroupIcon from '../../components/Assets/newGroupIcon.png'
 import navOverviewDefault from '../../components/Assets/nav_overview_default.png'
 import navMonthlyDefault from '../../components/Assets/nav_monthly_default.png'
 import navExpenseDefault from '../../components/Assets/nav_expense_default.png'
+import navExpenseActive from '../../components/Assets/nav_expense_active.png'
 import navGroupsDefault from '../../components/Assets/nav_groups_default.png'
 import navProfileDefault from '../../components/Assets/nav_profile_default.png'
 import { Link, useNavigate } from 'react-router-dom';
@@ -95,12 +96,15 @@ export const AllGroups = () => {
                 </Link>
             </div>
             <div className="navStack">
+                <Link to='/pages/monthlyNetTotal' className="bold d-flex flex-column align-items-center">
                 <img src={navMonthlyDefault} className="navIcons" alt="monthly" />
-                <a href="#monthly" className="bold">Monthly</a>
+                Monthly
+                </Link>
             </div>
-            <div className="navStack">
+            <div className="navStack active">
                 <Link to='/pages/allGroups' className="bold d-flex flex-column align-items-center">
                     <img src={navExpenseDefault} className="navIcons" alt="expense" />
+                    <img src={navExpenseActive} className="navIcons" alt="expense" id ="active" />
                     Expense
                 </Link>
             </div>

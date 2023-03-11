@@ -1,6 +1,8 @@
 
 import woohooSmiley from '../../components/Assets/woohoo_smiley.png'
 import navOverviewDefault from '../../components/Assets/nav_overview_default.png'
+import navOverviewActive from '../../components/Assets/nav_overview_active.png'
+
 import navMonthlyDefault from '../../components/Assets/nav_monthly_default.png'
 import navExpenseDefault from '../../components/Assets/nav_expense_default.png'
 import navGroupsDefault from '../../components/Assets/nav_groups_default.png'
@@ -116,35 +118,39 @@ export const Overview = () => {
             </motion.div>
 
             <div className="navbar">
-                <div className="navStack">
-                    <Link to='/' className="bold d-flex flex-column align-items-center">
-                        <img src={navOverviewDefault} className="navIcons" alt="overview" />
-                        Overview
-                    </Link>
-                </div>
-                <div className="navStack">
-                    <img src={navMonthlyDefault} className="navIcons" alt="monthly" />
-                    <a href="#monthly" className="bold">Monthly</a>
-                </div>
-                <div className="navStack">
-                    <Link to='/pages/allGroups' className="bold d-flex flex-column align-items-center">
-                        <img src={navExpenseDefault} className="navIcons" alt="expense" />
-                        Expense
-                    </Link>
-                </div>
-                <div className="navStack">
-                    <Link to='/pages/groups' className="bold d-flex flex-column align-items-center">
-                        <img src={navGroupsDefault} className="navIcons" alt="groups" />
-                        Groups
-                    </Link>
-                </div>
-                <div className="navStack">
-                    <Link to='/pages/profile' className="bold d-flex flex-column align-items-center">
-                        <img src={navProfileDefault} className="navIcons" alt="profile" />
-                        Profile
-                    </Link>
-                </div>
-            </div> 
+            <div className="navStack active">
+                <Link to='/' className="bold d-flex flex-column align-items-center">
+                    <img src={navOverviewDefault} className="navIcons" alt="overview" />
+                    <img src={navOverviewActive} className="navIcons" alt="overview" id="active" />
+                    Overview
+                </Link>
+            </div>
+            <div className="navStack">
+                <Link to='/pages/monthlyNetTotal' className="bold d-flex flex-column align-items-center">
+                <img src={navMonthlyDefault} className="navIcons" alt="monthly" />
+                Monthly
+                </Link>
+            </div>
+            <div className="navStack">
+                <Link to='/pages/allGroups' className="bold d-flex flex-column align-items-center">
+                    <img src={navExpenseDefault} className="navIcons" alt="expense" />
+                    Expense
+                </Link>
+            </div>
+            <div className="navStack">
+                <Link to='/pages/groups' className="bold d-flex flex-column align-items-center">
+                    <img src={navGroupsDefault} className="navIcons" alt="groups" />
+                    Groups
+                </Link>
+            </div>
+            <div className="navStack">
+                <Link to='/pages/profile' className="bold d-flex flex-column align-items-center">
+                    <img src={navProfileDefault} className="navIcons" alt="profile" />
+                    Profile
+                </Link>
+            </div>
+        </div> 
+                   
         </>
     )
 }
