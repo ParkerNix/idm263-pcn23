@@ -9,6 +9,7 @@ import { AddFriends } from './pages/friends';
 import { SearchFriends } from './pages/searchFriends';
 import { NoFriends } from './pages/noFriends';
 import { Profile } from './pages/profile';
+import { ViewProfile } from './pages/viewProfile';
 import { FriendProfile } from './pages/friendProfile';
 import { Groups } from './pages/groups';
 import { EditGroup } from './pages/editgroup';
@@ -67,6 +68,7 @@ function AnimatedRoutes() {
             	<Route path="/pages/landing" element={<Landing />}></Route>
             	<Route path="/pages/login" element={<Login />}></Route>
             	<Route path="/pages/test" element={<Test />}></Route>
+				<Route path="/pages/viewProfile" element={<ViewProfile />}></Route>
 			</Routes>
 		</AnimatePresence>
 	)
