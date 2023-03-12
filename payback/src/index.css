@@ -211,13 +211,17 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, p, .p, a, link, button, in
   font-weight: 700;
 }
 
+.pb-6 {
+  padding-bottom: 120px;
+}
+
 .btmRightBtn {
   padding: 12px 16px;
 }
 
 .stickyBtn {
   position: fixed;
-  bottom: 50px;
+  bottom: 30px;
   left: 50%;
   /* display: flex;
   justify-content: center; */
@@ -232,6 +236,24 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, p, .p, a, link, button, in
   position: fixed;
   bottom: 86px;
   left: 51.5%;
+  /* display: flex;
+  justify-content: center; */
+  padding: 1em;
+}
+
+.stickyBtnCB {
+  position: fixed;
+  bottom: 60px;
+  left: 51.5%;
+  /* display: flex;
+  justify-content: center; */
+  padding: 1em;
+}
+
+.stickyBtnG {
+  position: fixed;
+  bottom: 80px;
+  left: 49%;
   /* display: flex;
   justify-content: center; */
   padding: 1em;
@@ -608,7 +630,7 @@ button#addPhoto p {
 }
 
 #addPhotoBody {
-  position: fixed;
+  position: relative;
   height: 175px;
   bottom: 0;
   flex: 1 1 auto;
@@ -617,7 +639,6 @@ button#addPhoto p {
   width: 375px;
   margin-left: 71px;
   top: 530px;
-  width: 100%;
   /* margin-left: 70px; */
   /* top: 500px; */
   background-color: white;
@@ -1294,6 +1315,12 @@ img.smileyInScroll {
 #smileyScrollName {
 color: var(--button-light-purple);
 margin-top: 5.2px;
+}
+
+.pageTab2 {
+  background-color: var(--main-bg-color);
+  border-radius: 20px 20px 0px 0px;
+  height: 60%;
 }
 
 .pageTab {

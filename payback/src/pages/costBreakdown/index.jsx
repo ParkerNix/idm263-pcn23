@@ -238,7 +238,7 @@ export const CostBreakdown = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className='stickyBtn2'>
+                        <div className='stickyBtnCB'>
                             <button disabled={youPaid} className="btmRightBtn mediumCopy bold" data-bs-toggle="modal" data-bs-target="#myModal" onClick={
                                 () => {
                                     if (youPaid === true) {

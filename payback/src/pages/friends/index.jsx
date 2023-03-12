@@ -61,7 +61,7 @@ export const AddFriends = () => {
                                 }
                             }/>
                         </Link>
-                        <button className="searchButton my-0">
+                        <button className="searchButton my-0 mx-0">
                             <img src={link} alt="link" className="link" />Invite
                         </button>
                     </div>

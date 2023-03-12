@@ -98,7 +98,7 @@ export const Overview = () => {
                         </div>
                     </div>
                 </div>
-                <div className="row pageTab mt-5 pb-5">
+                <div className="row pageTab2 mt-5">
                     <div className="col pt-3 px-4">
                         <div>
                             <div className='expenseSection mt-2'>
