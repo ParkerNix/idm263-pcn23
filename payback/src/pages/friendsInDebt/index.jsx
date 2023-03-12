@@ -3,6 +3,10 @@ import woohooSmiley from '../../components/Assets/woohoo_smiley.png'
 import navOverviewDefault from '../../components/Assets/nav_overview_default.png'
 import navOverviewActive from '../../components/Assets/nav_overview_active.png'
 
+import smileySmiley from '../../components/Assets/smiley_smiley.png'
+import remind from '../../components/Assets/remind.png'
+
+
 import navMonthlyDefault from '../../components/Assets/nav_monthly_default.png'
 import navExpenseDefault from '../../components/Assets/nav_expense_default.png'
 import navGroupsDefault from '../../components/Assets/nav_groups_default.png'
@@ -47,7 +51,7 @@ const options = {
     },
 };
 
-export const Overview = () => {
+export const FriendsInDebt = () => {
 
     const dispatch = useDispatch();
   
@@ -85,10 +89,10 @@ export const Overview = () => {
                         <h1 className="h6 bold white">Overview</h1>
                     </div>
                     <div className='d-flex justify-content-center'>
-                        <button className='overviewButtonsActive'>Your Balance</button>
-                        <Link to='/pages/friendsInDebt'>
-                            <button className='overviewButtons'>Friends in Debt</button>
-                        </Link>
+                    <Link to='/'>
+                        <button className='overviewButtons'>Your Balance</button>
+                    </Link>
+                        <button className='overviewButtonsActive'>Friends in Debt</button>
                     </div>
                     <div className='d-flex flex-column justify-content-center align-items-center'>
                         <div style={{height:'231px',width:'231px'}}>
@@ -96,7 +100,8 @@ export const Overview = () => {
                         </div>
                         <div className='doughnutTextOverview'>
                             <p className='text-center white h1 bold'>$0.00</p>
-                            <p className='text-center white largeCopy demiBold lineHeight64'>you owe</p>
+                            <p className='text-center white largeCopy demiBold lineHeight64'>Others owe you</p>
+                            <p className='text-center white smallCopy demiBold lineHeight64'>in 1 group</p>
                         </div>
                     </div>
                 </div>
@@ -105,19 +110,58 @@ export const Overview = () => {
                         <div>
                             <div className='expenseSection mt-2'>
                                 <div className='d-flex justify-content-between align-items-center mb-3'>
-                                    <h2 className='h3 bold'>Outstanding balances</h2>
+                                    <h2 className='h3 bold' id="othersOweYou">Others owe you</h2>
                                 </div>
                             </div>
-                            <div className='d-flex flex-column align-items-center'>
-                                <img src={woohooSmiley} className="woohooSmiley mb-3" alt="Smiley" />
-                                <h3 className='bold'>Woohoo!</h3>
-                                <p className='mediumCopy medium mb-3'>All balances are cleared!</p>
-                                <Link to='/pages/allGroups' className='button mediumCopy bold' onClick={
-                                    () => {
-                                        window.scrollTo(0,0)
-                                    }
-                                }>Create a new expense</Link>
+                            <div className ='card'>
+                            <div className='card-body'>
+                                <div className='d-flex align-items-center justify-content-between mb-2'>
+                                    <div className='d-flex align-items-center'>
+                                        <div className='groupsCardImg'>
+                                        <img src={smileySmiley} className="memberIcons" alt="member1" />
+                                            <span className="placeholder"></span>
+                                        </div>
+                                        <div className='ms-2'>
+                                            <h1 className="h4 bold" id="cardGroupName">Roomies</h1>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className ='d-flex align-items-center justify-content-between'>
+                                    <div class="col">
+                                        <h2 className="h2 bold">$10.90</h2>
+                                        <p className="p demiBold">Megan owes you</p>
+                                    </div>
+                                    <div class="groupsCardButton">
+                                        <button className='bold' id="remind"><img src={remind} className="remind" alt="remind"/>Remind</button>
+                                    </div>
+                                </div>
                             </div>
+                        </div>
+
+                        <div className ='card mt-3'>
+                            <div className='card-body'>
+                                <div className='d-flex align-items-center justify-content-between mb-2'>
+                                    <div className='d-flex align-items-center'>
+                                        <div className='groupsCardImg'>
+                                        <img src={smileySmiley} className="memberIcons" alt="member1" />
+                                            <span className="placeholder"></span>
+                                        </div>
+                                        <div className='ms-2'>
+                                            <h1 className="h4 bold" id="cardGroupName">Roomies</h1>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className ='d-flex align-items-center justify-content-between'>
+                                    <div class="col">
+                                        <h2 className="h2 bold">$5.90</h2>
+                                        <p className="p demiBold">Parker owes you</p>
+                                    </div>
+                                    <div class="groupsCardButton">
+                                        <button className='bold' id="remind"><img src={remind} className="remind" alt="remind"/>Remind</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         </div>
                     </div>
                 </div>

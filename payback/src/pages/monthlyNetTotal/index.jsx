@@ -56,7 +56,7 @@ export const MonthlyNetTotal = () => {
                                     </div>
                                     <div className="d-flex flex-column justify-content-right">
                                     <h6 className="h6 bold" id="monthlyDate">10/28/22</h6>
-                                    <p className="p demibold" id="viewGroup">View Payback Gang<img src={monthlyArrow} className="monthlyArrow" alt="monthlyArrow" /></p>    
+                                    <p className="p demiBold" id="viewGroup">View Payback Gang<img src={monthlyArrow} className="monthlyArrow" alt="monthlyArrow" /></p>    
                                     </div>
                                 </div>
                             </div>
@@ -76,7 +76,7 @@ export const MonthlyNetTotal = () => {
                                     </div>
                                     <div className="d-flex flex-column justify-content-right">
                                     <h6 className="h6 bold" id="monthlyDate">10/28/22</h6>
-                                    <p className="p demibold" id="viewGroup">View Roomies<img src={monthlyArrow} className="monthlyArrow" alt="monthlyArrow" /></p>    
+                                    <p className="p demiBold" id="viewGroup">View Roomies<img src={monthlyArrow} className="monthlyArrow" alt="monthlyArrow" /></p>    
                                     </div>
                                 </div>
                             </div>

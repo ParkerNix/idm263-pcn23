@@ -54,8 +54,10 @@ export const Groups = () => {
                         <p className="p demiBold" id="smileyScrollName">Joey M.</p>
                     </div>
                     <div className="d-flex flex-column align-items-center">
-                        <img src={meganSmiley} alt="smileyInScroll" className="smileyInScroll" />
-                        <p className="p demiBold" id="smileyScrollName">Megan L.</p>
+                        <Link to='/pages/friendProfile'>
+                            <img src={meganSmiley} alt="smileyInScroll" className="smileyInScroll" />
+                            <p className="p demiBold" id="smileyScrollName">Megan L.</p>
+                        </Link>
                     </div>
                     <div className="d-flex flex-column align-items-center">
                         <img src={parkerSmiley} alt="smileyInScroll" className="smileyInScroll" />
@@ -120,6 +122,8 @@ export const Groups = () => {
                                         <img src={molynaSmiley} className="memberIcons" alt="member2" />
                                         <img src={parkerSmiley} className="memberIcons" alt="member3" />
                                         <img src={meganSmiley} className="memberIcons" alt="member3" />
+                                        
+                                        
                                     </div>
                                     <div className="groupsCardButton">
                                         <Link to='/pages/viewGroup' className="button bold">
