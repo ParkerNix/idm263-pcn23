@@ -278,7 +278,7 @@ export const CostBreakdown = () => {
 
                  <div className="modal" id="myModal">
                     <div class="modal-dialog">
-                        <ConfirmationCard/>
+                        <ConfirmationCard toPay={thisExpense.portions[1]} />
                     </div>
                 </div>
             </motion.div>
