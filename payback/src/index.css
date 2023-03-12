@@ -270,6 +270,10 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, p, .p, a, link, button, in
   width: 25px;
 }
 
+span#nav {
+  width: 25px;
+}
+
 .navStack {
   display: flex;
   flex-direction: column;
@@ -278,7 +282,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, p, .p, a, link, button, in
   /* margin-top: 7px;
   margin-bottom: 5px; */
   width: 65px;
-  height: 75px;
+  height: 65px;
   border-top-color: purple;
 }
 
@@ -309,16 +313,35 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, p, .p, a, link, button, in
   text-decoration: none;
 }
 
-
-.navbar .navStack:hover {
-  /* background-image: linear-gradient(to bottom, rgba(140, 62, 219, 0.08) 0%, rgba(163, 84, 203, 0) 100%); */
+ /* .navbar .navStack:hover {
+  background-image: linear-gradient(to bottom, rgba(140, 62, 219, 0.08) 0%, rgba(163, 84, 203, 0) 100%);
   background-color: rgba(140, 62, 219, 0.08);
-  /* background-size: 90px 40px; */
+  background-size: 90px 40px; 
   border-top: 3px solid #552ccc;
   color: var(--nav);
+  margin-bottom: 3px;  
+}  */
+
+
+.active {
+  border-top: 3px solid #552ccc;
+  color: var(--text-dark-purple);
+  background-color: rgba(140, 62, 219, 0.08);
   margin-bottom: 3px;
+  background-size: 90px 40px; 
 }
 
+.active a {
+  color: var(--text-dark-purple);
+}
+
+.active img {
+  display: none;
+}
+
+.active img#active {
+  display: block;
+}
 
 
 img.navIconsActive {
@@ -328,8 +351,6 @@ img.navIconsActive {
 img.navIcons#overview:hover {
   display: hidden;
 }
-
-
 
 .navIconsActive {
   width: 24px;
@@ -345,6 +366,7 @@ img.navIcons#overview:hover {
 
 .container#landingPage {
   background-image: linear-gradient(#6527c9, #330a8b 62.86%);
+  height: 100%;
 }
 
 
@@ -419,6 +441,11 @@ input#name::placeholder, input#email::placeholder, input#password::placeholder {
   color: var(--button-medium-purple);
 }
 
+input#searchForm::placeholder {
+  color: var(--text-dark-purple);
+  font-size: var(--small-copy);
+}
+
 
 h1#create {
   color: var(--progress-bar-light-purple);
@@ -456,7 +483,7 @@ h1#create {
 }
 
 .topNavOptionsWhite {
-  width: 20px;
+  /* width: 20px; */
   height: 20px;
 }
 
@@ -532,6 +559,7 @@ button#addPhoto {
   box-shadow: none;
 }
 
+
 button#editPhoto {
   background-color: transparent;
   margin-top: -27.5px;
@@ -539,6 +567,15 @@ button#editPhoto {
   padding: 0px;
   box-shadow: none;
 }
+
+button#addPhoto p {
+  color: white;
+  margin-top: -1.2rem;
+  font-size: 31px;
+  text-align: center;
+}
+
+
 
 .modal-body {
   position: fixed;
@@ -553,17 +590,39 @@ button#editPhoto {
   transition: all .3s ease-out;
 }
 
-#addPhotoBody {
+.animate-bottom {
   position: relative;
+  animation: animatebottom 0.4s;
+}
+
+@keyframes animatebottom {
+  from {
+    bottom: -300px;
+    opacity: 0;
+  }
+
+  to {
+    bottom: 0;
+    opacity: 1;
+  }
+}
+
+#addPhotoBody {
+  position: fixed;
+  height: 175px;
+  bottom: 0;
   flex: 1 1 auto;
   padding: var(--bs-modal-padding);
   padding-bottom: 50px;
   width: 375px;
   margin-left: 71px;
   top: 530px;
+  width: 100%;
+  /* margin-left: 70px; */
+  /* top: 500px; */
   background-color: white;
   border-top-left-radius: 5px;
-  border-top-right-radius:5px;
+  border-top-right-radius: 5px;
   transition: all .3s ease-out;
 }
 
@@ -696,6 +755,7 @@ h1#friendsTitle {
 #searchForm {
   border-radius: 55px;
   padding-right: 16px;
+  width: 234px;
   box-shadow: 0 5px 20px 0 rgba(1, 0, 51, 0.05);
   background-color: #fff;
 }
@@ -718,6 +778,7 @@ h1#friendsTitle {
 }
 
 .friendsList {
+  margin-top: -5px;
   padding-left: 24px;
   padding-right: 24px;
 }
@@ -887,8 +948,8 @@ img.options {
 
 hr.allFriends {
   width: 327px;
-  height: 1px;
-  /* margin: 15px 0 0; */
+  height: 4px;
+  margin: 11px 24px 11px 24px;
   color: var(--hr-color);
 }
 
@@ -1010,6 +1071,10 @@ p#blockWarning {
   color: var(--text-dark-purple);
 }
 
+button#submit {
+color:red;
+}
+
 
 
 /* PROFILE */
@@ -1030,6 +1095,15 @@ h1#profile {
   margin-top: 18px;
 }
 
+.personSmiley {
+  width: 92.8px;
+  height: 92.8px;
+  border: 3px solid var(--progress-bar-light-purple);
+  border-radius: 100px;
+  margin-top: 18px;
+  margin-bottom: 18px;
+}
+
 button#addButton {
   width: 32px;
   height: 32px;
@@ -1039,6 +1113,14 @@ button#addButton {
   padding: 11px 10px 10px 11px;
   border-radius: 21px;
   background-color: var(--orange-icon-color);
+}
+
+button#addButton p {
+  color: white;
+  margin-top: -1.7rem;
+  margin-left: -0.2rem;
+  font-size: 38px;
+  text-align: center;
 }
 
 p#profileName {
@@ -1086,7 +1168,54 @@ hr.profile {
   color: var(--hr-color);
 }
 
+/* ////////// */
+/* ////////// */
+/* VIEW PROFILE */
+/* ////////// */
+/* ////////// */
 
+
+p#addFriend {
+  width: 126px;
+  height: 28px;
+  display: flex;
+  font-size: var(--small-copy);
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin: 13px 85px 24px 91px;
+  padding: 6px 16px;
+  border-radius: 10px;
+  background-color: var(--button-medium-purple);
+  color: var(--main-bg-color);
+}
+
+img#addFriendIcon {
+  width: 16px;
+  height: 16px;
+}
+
+img.purpleLock {
+  width: 45px;
+  height: 63.6px;
+  margin-top: 94.7px;
+  padding:0;
+}
+
+h1#profileLocked {
+  font-size: 24px;
+  margin-top: 11.7px;
+  text-align: center;
+}
+
+p#lockedText {
+  line-height: 1.5;
+  width: 212px;
+  letter-spacing: normal;
+  text-align: center;
+  font-size: var(--medium-copy);
+}
 
 
 .gradientContainer {
@@ -1153,6 +1282,8 @@ img.remind {
 img.smileyInScroll {
   width: 63px;
   height: 62px;
+  border: 3px solid var(--progress-bar-light-purple);
+  border-radius: 100px;
 }
 
 .smileyScroll {
@@ -1176,6 +1307,13 @@ margin-top: 5.2px;
 }
 
 .groupImg {
+  width: 69px;
+  height: 69px;
+  border: 2.5px solid var(--progress-bar-light-purple);
+  border-radius: 100px;
+}
+
+.groupImg2 {
   width: 69px;
   height: 69px;
 }
@@ -1339,6 +1477,8 @@ margin-top: 5.2px;
   margin-top: 100px;
   width: 327px;
   margin-left: 87.5px;
+  width: 375px;
+  /* margin-left: 70px; */
 }
 
 

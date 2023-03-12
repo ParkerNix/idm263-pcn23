@@ -1,5 +1,6 @@
 import backArrowWhite from '../../components/Assets/backArrowWhite.png'
 import groupImg from '../../components/Assets/groupImg.png'
+import paybackLogo from '../../components/Assets/paybackLogo.png'
 import smileySmiley from '../../components/Assets/smiley_smiley.png'
 import molynaSmiley from '../../components/Assets/molyna_smiley.png'
 import optionsIcon from '../../components/Assets/optionsIconWhite.png'
@@ -13,8 +14,11 @@ import navMonthlyDefault from '../../components/Assets/nav_monthly_default.png'
 import navExpenseDefault from '../../components/Assets/nav_expense_default.png'
 import navGroupsDefault from '../../components/Assets/nav_groups_default.png'
 import navProfileDefault from '../../components/Assets/nav_profile_default.png'
+import navProfileActive from '../../components/Assets/nav_profile_active.png'
+import optionsIconWhite from '../../components/Assets/optionsIconWhite.png'
 import { Link, useNavigate } from 'react-router-dom';
 import { motion } from "framer-motion"
+import { AddPhoto } from '../../components/addPhoto'
 
 export const Profile = () => {
 
@@ -40,7 +44,7 @@ export const Profile = () => {
                         <img src={backArrowWhite} alt="back" className="topNavBack" />
                     </a>
                     <h1 className="h6 bold" id="profile">Profile</h1>
-                    <img src={optionsIcon} alt="back" className="topNavOptionsWhite" />
+                    <img src={optionsIconWhite} alt="back" className="topNavOptionsWhite" />
                  </div>
                 <div className='d-flex flex-column align-items-center'>
                     <div className='profilePic d-flex flex-row justify-content-center'>
@@ -51,7 +55,17 @@ export const Profile = () => {
                     </div>
                     <h2 className='h3 bold white'>Molyna Tep</h2>
                     <p className="p demiBold mt-2" id="profileName">@mochi</p>
+                    <Link to='/pages/allFriends'>
                     <p className="p demiBold mt-2" id="profileFriends">24 friends</p>
+                    </Link>
+                </div>
+            </div>
+
+            {/* ADD PHOTO MODAL */}
+                                                    
+            <div className="modal" id="myModal">
+                <div class="modal-dialog animate-bottom">
+                    <AddPhoto/>
                 </div>
             </div>
         
@@ -132,8 +146,10 @@ export const Profile = () => {
                 </Link>
             </div>
             <div className="navStack">
+                <Link to='/pages/monthlyNetTotal' className="bold d-flex flex-column align-items-center">
                 <img src={navMonthlyDefault} className="navIcons" alt="monthly" />
-                <a href="#monthly" className="bold">Monthly</a>
+                Monthly
+                </Link>
             </div>
             <div className="navStack">
                 <Link to='/pages/allGroups' className="bold d-flex flex-column align-items-center">
@@ -147,9 +163,10 @@ export const Profile = () => {
                     Groups
                 </Link>
             </div>
-            <div className="navStack">
+            <div className="navStack active">
                 <Link to='/pages/profile' className="bold d-flex flex-column align-items-center">
                     <img src={navProfileDefault} className="navIcons" alt="profile" />
+                    <img src={navProfileActive} className="navIcons" alt="profile" id="active" />
                     Profile
                 </Link>
             </div>
