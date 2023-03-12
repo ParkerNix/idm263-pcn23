@@ -9,8 +9,8 @@ import backArrowWhite from '../../components/Assets/backArrowWhite.png'
 import newGroupIcon from '../../components/Assets/newGroupIcon.png'
 import navOverviewDefault from '../../components/Assets/nav_overview_default.png'
 import navMonthlyDefault from '../../components/Assets/nav_monthly_default.png'
-import navExpenseDefault from '../../components/Assets/nav_expense_default.png'
-import navExpenseActive from '../../components/Assets/nav_expense_active.png'
+import navExpenseDefault from '../../components/Assets/new_expense_default.svg'
+import navExpenseActive from '../../components/Assets/nav_expense_active.svg'
 import navGroupsDefault from '../../components/Assets/nav_groups_default.png'
 import navProfileDefault from '../../components/Assets/nav_profile_default.png'
 import { Link, useNavigate } from 'react-router-dom';
@@ -37,7 +37,7 @@ export const AllGroups = () => {
             <div className="row">
                 <div className="col mt-4 mb-2 mx-3 d-flex justify-content-between">
                     <a onClick={goBack} className="bold line-height">
-                        <img src={backArrow} alt="back" className="topNavBack" />
+                        <img src={backArrow} alt="back" className="topNavBackLink" />
                     </a>
                     <h1 className="h6 bold">Groups</h1>
                     <img src={optionsIcon} alt="options" className="topNavOptions" />

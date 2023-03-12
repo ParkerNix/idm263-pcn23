@@ -4,7 +4,7 @@ import optionsIconHorizontal from '../../components/Assets/optionsDotsHorizontal
 import navOverviewDefault from '../../components/Assets/nav_overview_default.png'
 import navMonthlyDefault from '../../components/Assets/nav_monthly_default.png'
 import navExpenseDefault from '../../components/Assets/nav_expense_default.png'
-import navExpenseActive from '../../components/Assets/nav_expense_active.png'
+import navExpenseActive from '../../components/Assets/nav_expense_active.svg'
 import navGroupsDefault from '../../components/Assets/nav_groups_default.png'
 import navProfileDefault from '../../components/Assets/nav_profile_default.png'
 import React from 'react';
@@ -158,7 +158,7 @@ export const ViewGroup = () => {
                 <div className="row mx-3 mb-4 justify-content-center">
                     <div className="col mt-4 mb-4 p-0 d-flex justify-content-between">
                         <a onClick={goBack} className="bold line-height">
-                            <img src={backArrowWhite} alt="back" className="topNavBack" />
+                            <img src={backArrowWhite} alt="back" className="topNavBackLink" />
                         </a>
                         <h1 className="h6 bold white">View Group</h1>
                         <img src={optionsIconHorizontal} alt="options" className="OptionsHorizontal" />

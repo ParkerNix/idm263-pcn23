@@ -3,8 +3,9 @@ import woohooSmiley from '../../components/Assets/woohoo_smiley.png'
 import navOverviewDefault from '../../components/Assets/nav_overview_default.png'
 import navOverviewActive from '../../components/Assets/nav_overview_active.png'
 
+
 import navMonthlyDefault from '../../components/Assets/nav_monthly_default.png'
-import navExpenseDefault from '../../components/Assets/nav_expense_default.png'
+import navExpenseDefault from '../../components/Assets/new_expense_default.svg'
 import navGroupsDefault from '../../components/Assets/nav_groups_default.png'
 import navProfileDefault from '../../components/Assets/nav_profile_default.png'
 import React from 'react';

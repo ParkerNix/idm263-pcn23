@@ -463,6 +463,12 @@ h1#create {
   height: 24px;
 }
 
+.topNavBackLink {
+  height: 16px;
+  width: 10px;
+  margin-bottom: 0.4rem;
+}
+
 h2#othersOweYou {
   margin-bottom: -1.5rem;
 }
@@ -860,6 +866,7 @@ img.addFriend {
   border-color: var(--orange-icon-color);
 }
 
+
 /* Create the indicator (the dot/circle - hidden when not checked) */
 .checkmark:after {
   content: "";
@@ -1224,6 +1231,10 @@ p#lockedText {
 
 .gradientContainer {
   background-image: linear-gradient(#6527c9, #330a8b 62.86%);
+}
+
+.gradientContainerGroups {
+  background-image: linear-gradient(#6527c9, #330a8b 30.86%);
 }
 
 .gradientContainerTwo {
@@ -1666,7 +1677,7 @@ img.venmoLogo {
 
 img.noteIcon {
   width: 18px;
-  height: 20.4px;
+  height: 16px;
 }
 
 #noteCB {

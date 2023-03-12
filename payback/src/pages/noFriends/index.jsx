@@ -16,7 +16,7 @@ import sadSmiley from '../../components/Assets/sad_smiley.png'
 import navOverviewDefault from '../../components/Assets/nav_overview_default.png'
 import navMonthlyDefault from '../../components/Assets/nav_monthly_default.png'
 import navExpenseDefault from '../../components/Assets/nav_expense_default.png'
-import navExpenseActive from '../../components/Assets/nav_expense_active.png'
+import navExpenseActive from '../../components/Assets/nav_expense_active.svg'
 import navGroupsDefault from '../../components/Assets/nav_groups_default.png'
 import navProfileDefault from '../../components/Assets/nav_profile_default.png'
 import { Link, useNavigate } from 'react-router-dom';

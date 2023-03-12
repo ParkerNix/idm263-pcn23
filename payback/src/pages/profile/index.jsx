@@ -11,7 +11,7 @@ import allieSmiley from '../../components/Assets/allie_smiley.png'
 import molynaProfile from '../../components/Assets/molyna_profile.png'
 import navOverviewDefault from '../../components/Assets/nav_overview_default.png'
 import navMonthlyDefault from '../../components/Assets/nav_monthly_default.png'
-import navExpenseDefault from '../../components/Assets/nav_expense_default.png'
+import navExpenseDefault from '../../components/Assets/new_expense_default.svg'
 import navGroupsDefault from '../../components/Assets/nav_groups_default.png'
 import navProfileDefault from '../../components/Assets/nav_profile_default.png'
 import navProfileActive from '../../components/Assets/nav_profile_active.png'
@@ -41,7 +41,7 @@ export const Profile = () => {
             <div className="row">
                 <div className="col mt-4 mb-2 mx-3 d-flex justify-content-between">
                     <a onClick={goBack} className="bold line-height">
-                        <img src={backArrowWhite} alt="back" className="topNavBack" />
+                        <img src={backArrowWhite} alt="back" className="topNavBackLink" />
                     </a>
                     <h1 className="h6 bold" id="profile">Profile</h1>
                     <img src={optionsIconWhite} alt="back" className="topNavOptionsWhite" />
@@ -50,7 +50,7 @@ export const Profile = () => {
                     <div className='profilePic d-flex flex-row justify-content-center'>
                         <div>
                             <img src={molynaProfile} alt="smiley" className="profileSmiley" />
-                            <button id="addPhoto"><img src={editImgIcon} alt="edit the group icon" id="editImgIcon"></img></button>
+                            <button id="addPhoto"><img src={editImgIcon} alt="edit the group icon" id="editImgIcon" data-bs-toggle="modal" data-bs-target="#myModal"></img></button>
                         </div>
                     </div>
                     <h2 className='h3 bold white'>Molyna Tep</h2>

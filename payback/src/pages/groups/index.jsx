@@ -1,6 +1,6 @@
 import backArrow from '../../components/Assets/Back arrow.png'
 import backArrowWhite from '../../components/Assets/backArrowWhite.png'
-import optionsIconWhite from '../../components/Assets/optionsDotsWhite.png'
+import optionsIconWhite from '../../components/Assets/optionsIconWhite.png'
 import groupImg from '../../components/Assets/groupImg.png'
 import paybackLogo from '../../components/Assets/paybackLogo.png'
 import smileySmiley from '../../components/Assets/smiley_smiley.png'
@@ -16,7 +16,7 @@ import remind from '../../components/Assets/remind.png'
 import newGroupIcon from '../../components/Assets/newGroupIcon.png'
 import navOverviewDefault from '../../components/Assets/nav_overview_default.png'
 import navMonthlyDefault from '../../components/Assets/nav_monthly_default.png'
-import navExpenseDefault from '../../components/Assets/nav_expense_default.png'
+import navExpenseDefault from '../../components/Assets/new_expense_default.svg'
 import navGroupsDefault from '../../components/Assets/nav_groups_default.png'
 import navGroupsActive from '../../components/Assets/nav_groups_active.png'
 import navProfileDefault from '../../components/Assets/nav_profile_default.png'
@@ -27,12 +27,12 @@ export const Groups = () => {
 
     return (
         <>
-            <motion.div className="container gradientContainer px-0"
+            <motion.div className="container gradientContainerGroups px-0"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1, transition: {duration: 0.1} }}
                 exit={{ opacity: 0, transition: {duration: 0.1} }}
             >
-                <div className="mx-4 pt-4 mb-5 d-flex justify-content-between">
+                <div className="mx-4 pt-4 mb-5 d-flex justify-content-between align-items-center">
                     <span>   </span>
                     <h1 className="h6 bold" id="profile">Groups</h1>
                     <img src={optionsIconWhite} alt="back" className="topNavOptionsWhite" />

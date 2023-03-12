@@ -8,7 +8,7 @@ import remind from '../../components/Assets/remind.png'
 
 
 import navMonthlyDefault from '../../components/Assets/nav_monthly_default.png'
-import navExpenseDefault from '../../components/Assets/nav_expense_default.png'
+import navExpenseDefault from '../../components/Assets/new_expense_default.svg'
 import navGroupsDefault from '../../components/Assets/nav_groups_default.png'
 import navProfileDefault from '../../components/Assets/nav_profile_default.png'
 import React from 'react';
