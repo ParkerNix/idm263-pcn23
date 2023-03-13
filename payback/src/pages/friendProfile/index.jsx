@@ -14,9 +14,11 @@ import friendCheck from '../../components/Assets/friend_check.png'
 import remind from '../../components/Assets/remind.png'
 import navOverviewDefault from '../../components/Assets/nav_overview_default.png'
 import navMonthlyDefault from '../../components/Assets/nav_monthly_default.png'
-import navExpenseDefault from '../../components/Assets/nav_expense_default.png'
+import navExpenseDefault from '../../components/Assets/new_expense_default.svg'
 import navGroupsDefault from '../../components/Assets/nav_groups_default.png'
 import navProfileDefault from '../../components/Assets/nav_profile_default.png'
+import navProfileActive from '../../components/Assets/nav_profile_active.png'
+import { Link, useNavigate } from 'react-router-dom';
 
 export const FriendProfile = () => {
 
@@ -25,7 +27,9 @@ export const FriendProfile = () => {
             <div className="gradientContainer">
                 <div className="row">
                     <div className="col mt-4 mb-2 mx-3 d-flex justify-content-between">
+                    <Link to='/pages/groups'>
                         <img src={backArrowWhite} alt="back" className="topNavBack" />
+                    </Link>
                         <h1 className="h6 bold" id="profile">Profile</h1>
                         <img src={optionsIconWhite} alt="back" className="topNavOptionsWhite" />
                     </div>
@@ -34,16 +38,16 @@ export const FriendProfile = () => {
                             <img src={meganProfile} alt="smiley" className="profileSmiley" />
                             </div>
 
-                            <h1 className='h1 bold mt-1' id="profileName">Megan Lam</h1>
+                            <h1 className='h1 bold' id="profileName">Megan Lam</h1>
                             <p className="p demiBold mt-1" id="profileName">@meganhadalittlelam</p>
-                            <p className="p demiBold mt-2" id="profileFriends"><img src={friendCheck} alt="friendCheck" className="friendCheck"/>Friend</p>
+                            <p className="p demiBold" id="profileFriends"><img src={friendCheck} alt="friendCheck" className="friendCheck"/>Friend</p>
                         </div>
                     </div>
         
 
             <div className="pageTab">
                 <div className="col px-4">
-                <h4 className="h4 bold" id="transactionsHeader">Between You</h4>
+                <h4 className="h4 bold mb-3" id="transactionsHeader">Between You</h4>
                 <div className ='card'>
                             <div className='card-body'>
                                 <div className='d-flex align-items-center justify-content-between mb-2'>
@@ -63,14 +67,14 @@ export const FriendProfile = () => {
                                         <p className="p demiBold">Megan owes you</p>
                                     </div>
                                     <div class="groupsCardButton">
-                                        <button className='bold'><img src={remind} className="remind" alt="remind" />Remind</button>
+                                        <button className='bold' id="remind"><img src={remind} className="remind" alt="remind"/>Remind</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
 
-                    <h4 className="h4 bold" id="transactionsHeader">Previous Spending</h4>
+                    <h4 className="h4 bold" id="transactionsHeader2">Previous Spending</h4>
                         <div className="d-flex justify-content-between">
                             <div className="d-flex justify-content-between">
                                 <div className="transactions">
@@ -89,7 +93,7 @@ export const FriendProfile = () => {
                             </div>
                         </div>
                 </div>
-                <hr className="addFriend"></hr>
+                <hr className="friendProfile"></hr>
 
                 <div className="col px-4">
                         <div className="d-flex justify-content-between">
@@ -110,7 +114,7 @@ export const FriendProfile = () => {
                             </div>
                         </div>
                 </div>
-                <hr className="addFriend"></hr>
+                <hr className="friendProfile"></hr>
 
                 <div className="col px-4">
                         <div className="d-flex justify-content-between">
@@ -131,33 +135,44 @@ export const FriendProfile = () => {
                             </div>
                         </div>
                 </div>
-                <hr className="profile"></hr>
+                <hr className="friendProfile"></hr>
             </div>
 
             </div>
 
-            <div class="navbar">
-                <div class="navStack">
+            <div className="navbar">
+            <div className="navStack">
+                <Link to='/' className="bold d-flex flex-column align-items-center">
                     <img src={navOverviewDefault} className="navIcons" alt="overview" />
-                    <a href="#home" className="active bold">Overview</a>
-                </div>
-                <div class="navStack">
-                    <img src={navMonthlyDefault} className="navIcons" alt="monthly" />
-                    <a href="#monthly" className="bold">Monthly</a>
-                </div>
-                <div class="navStack">
-                    <img src={navExpenseDefault} className="navIcons" alt="expense" />
-                    <a href="#expense" className="bold">Expense</a>
-                </div>
-                <div class="navStack">
-                    <img src={navGroupsDefault} className="navIcons" alt="groups" />
-                    <a href="#groups" className="bold">Groups</a>
-                </div>
-                <div class="navStack">
-                    <img src={navProfileDefault} className="navIcons" alt="profile" />
-                    <a href="#groups" className="bold">Profile</a>
-                </div>
+                    Overview
+                </Link>
             </div>
+            <div className="navStack">
+                <Link to='/pages/monthlyNetTotal' className="bold d-flex flex-column align-items-center">
+                <img src={navMonthlyDefault} className="navIcons" alt="monthly" />
+                Monthly
+                </Link>
+            </div>
+            <div className="navStack">
+                <Link to='/pages/allGroups' className="bold d-flex flex-column align-items-center">
+                    <img src={navExpenseDefault} className="navIcons" alt="expense" />
+                    Expense
+                </Link>
+            </div>
+            <div className="navStack">
+                <Link to='/pages/groups' className="bold d-flex flex-column align-items-center">
+                    <img src={navGroupsDefault} className="navIcons" alt="groups" />
+                    Groups
+                </Link>
+            </div>
+            <div className="navStack active">
+                <Link to='/pages/profile' className="bold d-flex flex-column align-items-center">
+                    <img src={navProfileDefault} className="navIcons" alt="profile" />
+                    <img src={navProfileActive} className="navIcons" alt="profile" id="active" />
+                    Profile
+                </Link>
+            </div>
+        </div> 
                        
         </>
     );

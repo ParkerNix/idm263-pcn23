@@ -22,6 +22,7 @@ import { Create } from './pages/create';
 import { Landing } from './pages/landing';
 import { Login } from './pages/login';
 import { Test} from './pages/test';
+import {FriendsInDebt} from './pages/friendsInDebt';
 
 // import { CostBreakdown } from './pages/costBreakdown';
 // import { ViewGroup } from './pages/viewGroup';
@@ -69,6 +70,7 @@ function AnimatedRoutes() {
             	<Route path="/pages/login" element={<Login />}></Route>
             	<Route path="/pages/test" element={<Test />}></Route>
 				<Route path="/pages/viewProfile" element={<ViewProfile />}></Route>
+				<Route path="/pages/friendsInDebt" element={<FriendsInDebt />}></Route>
 			</Routes>
 		</AnimatePresence>
 	)
