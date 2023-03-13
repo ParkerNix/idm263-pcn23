@@ -1,7 +1,6 @@
 import backArrow from '../../components/Assets/Back arrow.png'
 import optionsIcon from '../../components/Assets/optionsDots.png'
 import groupImg from '../../components/Assets/groupImg.png'
-import paybackLogo from '../../components/Assets/paybackLogo.png'
 import smileySmiley from '../../components/Assets/smiley_smiley.png'
 import allieSmiley from '../../components/Assets/allie_smiley.png'
 import molynaSmiley from '../../components/Assets/molyna_smiley.png'

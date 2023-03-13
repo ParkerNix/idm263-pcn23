@@ -35,7 +35,7 @@ export const AllFriends = () => {
         <div className="container">
         <div class="row mb-4">
                 <div className="col mt-4 mx-3 d-flex justify-content-between">
-                    <Link to="/pages/editGroup">
+                    <Link to="/pages/groups">
                         <img src={backArrow} alt="back" className="topNavBack" />
                     </Link>
                     <h1 id="friendsTitle" className="h6 bold">Friends</h1>

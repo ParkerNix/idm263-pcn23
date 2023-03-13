@@ -1,6 +1,4 @@
-import backArrow from '../../components/Assets/Back arrow.png'
-import backArrowWhite from '../../components/Assets/backArrowWhite.png'
-import optionsIconWhite from '../../components/Assets/optionsIconWhite.png'
+import optionsIconWhite from '../../components/Assets/optionsDotsWhite.png'
 import groupImg from '../../components/Assets/groupImg.png'
 import paybackLogo from '../../components/Assets/paybackLogo.png'
 import smileySmiley from '../../components/Assets/smiley_smiley.png'
@@ -9,11 +7,6 @@ import parkerSmiley from '../../components/Assets/parker_smiley.png'
 import joeySmiley from '../../components/Assets/joey_smiley.png'
 import meganSmiley from '../../components/Assets/megan_smiley.png'
 import heartEmpty from '../../components/Assets/heartEmpty.png'
-import molynaProfile from '../../components/Assets/molyna_profile.png'
-import meganProfile from '../../components/Assets/megan_profile.png'
-import friendCheck from '../../components/Assets/friend_check.png'
-import remind from '../../components/Assets/remind.png'
-import newGroupIcon from '../../components/Assets/newGroupIcon.png'
 import navOverviewDefault from '../../components/Assets/nav_overview_default.png'
 import navMonthlyDefault from '../../components/Assets/nav_monthly_default.png'
 import navExpenseDefault from '../../components/Assets/new_expense_default.svg'
@@ -65,7 +58,7 @@ export const Groups = () => {
                     </div>
                 </div>
 
-                <div className="pageTab pb-5">
+                <div className="pageTab pb-6">
                     <div className="col px-4 pt-3">
                         <h2 className="h3 bold mb-3" id="transactionsHeader">All Groups</h2>
                         <div className ='card mb-3'>
@@ -133,11 +126,11 @@ export const Groups = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className='stickyBtn'>
-                            <Link to="/pages/createGroup" className="button mediumCopy btmRightBtn bold">Create new group</Link>
-                        </div>  
                     </div>     
                 </div>
+                <div className='stickyBtnG'>
+                    <Link to="/pages/createGroup" className="button mediumCopy btmRightBtn bold">Create new group</Link>
+                </div>  
             </motion.div>
 
             <div className="navbar">

@@ -4,7 +4,7 @@ import noteIcon from '../../components/Assets/noteIcon.png'
 import close from '../../components/Assets/close.png'
 
 
-export const ConfirmationCard = () => {
+export const ConfirmationCard = ({toPay}) => {
 
     return (
         <>
@@ -21,7 +21,7 @@ export const ConfirmationCard = () => {
             <div className="col d-flex flex-column justify-content-center align-items-center mx-5">
                 <img src={confirmationIcon} alt="back" className="confirmationIcon" />
                 <p className="p demiBold" id="youOwe">You owe</p>
-                <h1 className="h1 bold" id="owedPrice">$32.00</h1>
+                <h1 className="h1 bold" id="owedPrice">${toPay}</h1>
                 <p className="p demiBold" id="owedTo">to Megan Lam</p>
                 <p className="p bold" id="paymentMethods">Payment Methods</p>
             </div>

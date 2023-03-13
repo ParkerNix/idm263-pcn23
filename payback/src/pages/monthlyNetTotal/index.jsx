@@ -29,7 +29,7 @@ export const MonthlyNetTotal = () => {
 
                 <div className='d-flex flex-column align-items-center'>
                     <p className="p demiBold mb-2" id="netTotal">Net Total</p>
-                    <h2 className="h2 bold" id="netTotalNumber">$64.34</h2>
+                    <h2 className="bold mb-4" id="netTotalNumber">$64.34</h2>
 
                     {/* <img src={monthlySwipe} alt="back" className="monthlySwipe" /> */}
                     {/* Monthly swipe arrow */}
@@ -39,7 +39,7 @@ export const MonthlyNetTotal = () => {
             </div>
         
 
-            <div className="pageTab">
+            <div className="pageTab pb-6">
                 <div className="col px-4">
                         <h4 className="h4 bold pt-4 pb-4" id="transactionsHeader">October Expenses <img src={dropDownArrow} className="dropDownArrow" alt="dropDownArrow" /></h4>
                             <div className="d-flex flex-column" id="monthlyCard">

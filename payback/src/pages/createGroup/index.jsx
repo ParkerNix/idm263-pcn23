@@ -1,10 +1,5 @@
 import backArrow from '../../components/Assets/Back arrow.png'
 import optionsIcon from '../../components/Assets/optionsDots.png'
-import groupImg from '../../components/Assets/emptyGroupImg.png'
-import smileySmiley from '../../components/Assets/smiley_smiley.png'
-import molynaSmiley from '../../components/Assets/molyna_smiley.png'
-import parkerSmiley from '../../components/Assets/parker_smiley.png'
-import heartEmpty from '../../components/Assets/heartEmpty.png'
 import editIcon from '../../components/Assets/editIcon.png'
 import editImgIcon from '../../components/Assets/editImgIcon.png'
 import photoPlaceholder from '../../components/Assets/photoPlaceholder.png'
@@ -13,10 +8,8 @@ import navMonthlyDefault from '../../components/Assets/nav_monthly_default.png'
 import navExpenseDefault from '../../components/Assets/new_expense_default.svg'
 import navExpenseActive from '../../components/Assets/nav_expense_active.svg'
 import navGroupsDefault from '../../components/Assets/nav_groups_default.png'
-import navGroupsActive from '../../components/Assets/nav_groups_active.png'
 import navProfileDefault from '../../components/Assets/nav_profile_default.png'
 import { AddPhoto } from '../../components/addPhoto'
-import deletePlaceholder from '../../components/Assets/delete_placeholder.png'
 import addPlaceholder from '../../components/Assets/addFriendsPlaceholder.png'
 import { Link, useNavigate } from 'react-router-dom';
 import { motion } from "framer-motion"
@@ -145,7 +138,7 @@ export const CreateGroup = () => {
                         </div>
                     </div>
                 </div>
-                <div className='stickyBtn2'>
+                <div className='stickyBtnCB'>
                     <button className="btmRightBtn mediumCopy inactive bold">Save group</button>
                 </div>
             </motion.div>

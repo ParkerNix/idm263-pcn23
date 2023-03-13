@@ -115,11 +115,11 @@ export const ViewGroup = () => {
             let newDataArr = []
             let newColorArr = []
             let newTotalPaid = 0.00
-            newColorArr.push("rgba(255, 255, 255, 0.2)")
+            newColorArr.push("#644dbd")
+            newColorArr.push("#eae3fb")
             
             for (let i=0; i < allItems[0].portions.length; i++) {
                 if (allItems[0].paid[i] === true) {
-                    newColorArr.push(allItems[0].color[i])
                     let paidNum = parseFloat(allItems[0].portions[i])
                     newTotalPaid = newTotalPaid + paidNum
                 }
@@ -127,10 +127,9 @@ export const ViewGroup = () => {
             let totalNum = allItems[0].total
             let totalPercentPaid = (newTotalPaid/totalNum) * 100
             let leftover = (100-totalPercentPaid)
-            newDataArr.push(leftover)
             newDataArr.push(totalPercentPaid)
-            console.log(leftover)
-            console.log(totalPercentPaid)
+            newDataArr.push(leftover)
+            console.log(newColorArr)
             console.log(newDataArr)
             setDataArr(newDataArr)
             setColorArr(newColorArr)
